@@ -15,15 +15,19 @@
  </url>
  <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2016-10-18T03:52:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2016-10-18T03:17:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/cas/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/fea/</loc>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/graficas/</loc>
@@ -62,6 +66,10 @@
   <lastmod>2016-10-18T02:14:00Z</lastmod>
  </url>
  <url>
+  <loc>https://numython.github.io/categories/structural-analysis/</loc>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://numython.github.io/categories/sympy/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
  </url>
@@ -75,7 +83,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-1.html</loc>
-  <lastmod>2016-10-18T03:52:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -136,6 +144,10 @@
  <url>
   <loc>https://numython.github.io/posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/analisis-estructural-con-python-i/</loc>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/hola-mundo/</loc>
