@@ -39,53 +39,43 @@ Como primer paso debemos importar lo que necesitaremos del paquete SymPy:
 Del módulo `abc` importamos la variable simbólica `x` e `ìntegrate` para resolver nuestra integral. Ahora, podemos 
 *guardar* la función a integrar en una variable o bien pasarla directamente como argumento:
 
-```python
->>> f=x**2-3*x+2
->>> integrate(f)
-x**3/3 - 3*x**2/2 + 2*x
-```
+    >>> f=x**2-3*x+2
+    >>> integrate(f)
+    x**3/3 - 3*x**2/2 + 2*x
 
 En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
 si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra:
 
-```python
->>> from sympy.abc import x,a,b,c
->>> from sympy import integrate
->>> f=a*x**2+b*x+c
->>> integrate(f)
+    >>> from sympy.abc import x,a,b,c
+    >>> from sympy import integrate
+    >>> f=a*x**2+b*x+c
+    >>> integrate(f)
 
-Traceback (most recent call last):
-  File "<pyshell#14>", line 1, in <module>
-    integrate(f)
-  File "C:\Python27\lib\site-packages\sympy\utilities\decorator.py", line 35, in threaded_func
-    return func(expr, *args, **kwargs)
-  File "C:\Python27\lib\site-packages\sympy\integrals\integrals.py", line 1228, in integrate
-    integral = Integral(*args, **kwargs)
-  File "C:\Python27\lib\site-packages\sympy\integrals\integrals.py", line 79, in __new__
-    obj = AddWithLimits.__new__(cls, function, *symbols, **assumptions)
-  File "C:\Python27\lib\site-packages\sympy\concrete\expr_with_limits.py", line 362, in __new__
-    % function)
-ValueError:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than 
-one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)
-```
+    Traceback (most recent call last):
+      File "<pyshell#14>", line 1, in <module>
+        integrate(f)
+      File "C:\Python27\lib\site-packages\sympy\utilities\decorator.py", line 35, in threaded_func
+        return func(expr, *args, **kwargs)
+      File "C:\Python27\lib\site-packages\sympy\integrals\integrals.py", line 1228, in integrate
+        integral = Integral(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\sympy\integrals\integrals.py", line 79, in __new__
+        obj = AddWithLimits.__new__(cls, function, *symbols, **assumptions)
+      File "C:\Python27\lib\site-packages\sympy\concrete\expr_with_limits.py", line 362, in __new__
+        % function)
+    ValueError:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than 
+    one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)
 
 Pues eso, si intentamos integrar la función \\(f(x)=ax^2+bx+c\\) sin especificar la variable de integración, Python nos mandará un 
 error que es bastante sugerente al respecto. Así, lo correcto sería:
 
-```python
->>> integrate(f,x)
-a*x**3/3 + b*x**2/2 + c*x
-```
+    >>> integrate(f,x)
+    a*x**3/3 + b*x**2/2 + c*x
 
 ### Integrales definidas
 
 
-
-
-```python
->>> from sympy.abc import x
->>> from sympy import cos,pi,integrate
->>> integrate(cos(x),(x,0,pi/2.0))
-1
-```
+    >>> from sympy.abc import x
+    >>> from sympy import cos,pi,integrate
+    >>> integrate(cos(x),(x,0,pi/2.0))
+    1
 

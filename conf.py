@@ -253,8 +253,8 @@ TIMEZONE = "America/Mexico_City"
 # 'markdown' is MarkDown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
+    "rest": ('.rst', '.txt'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
     "bbcode": ('.bb',),
