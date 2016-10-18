@@ -7345,24 +7345,6 @@ article.post-micro {
 
 .entry-content {
     margin-top: 1em;
-    font-family: Helvetica, Arial, Georgia, Serif;
-    font-size: 16px;
-    font-weight: normal;
-    text-align: justify;
-    /* user mod */
-/*
-    margin-left: 20em;
-    margin-right: 20em;
-*/
-    /* user mod */
-}
-
-.post-text {
-    margin-top: 2em;
-    /* user mod */
-    margin-left: auto;
-    margin-right: auto;
-    /* user mod */
 }
 
 .navbar-brand {

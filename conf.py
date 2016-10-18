@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
 import time
@@ -140,7 +139,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "numython"
+THEME = "bootstrap3"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
