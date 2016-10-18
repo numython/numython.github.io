@@ -38,6 +38,10 @@
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://numython.github.io/categories/python.xml</loc>
+  <lastmod>2016-10-18T03:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://numython.github.io/categories/scikit-image.xml</loc>
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
@@ -55,10 +59,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T03:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-10-18T03:12:00Z</lastmod>
+  <lastmod>2016-10-18T03:17:00Z</lastmod>
  </sitemap>
 </sitemapindex>
