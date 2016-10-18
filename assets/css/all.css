@@ -588,6 +588,7 @@ article.post-micro {
 .entry-content {
     margin-top: 1em;
     font-size: 18px;
+    font-weight: normal;
     /* user mod */
 /*
     margin-left: 20em;
