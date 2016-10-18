@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2016-10-18T02:14:00Z</lastmod>
+  <lastmod>2016-10-18T02:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/cas/</loc>
@@ -28,6 +28,14 @@
  <url>
   <loc>https://numython.github.io/categories/graficas/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/mathjax/</loc>
+  <lastmod>2016-10-18T02:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/matplotlib-mathjax/</loc>
+  <lastmod>2016-10-18T02:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/matplotlib/</loc>
@@ -63,7 +71,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-1.html</loc>
-  <lastmod>2016-10-18T02:14:00Z</lastmod>
+  <lastmod>2016-10-18T02:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
