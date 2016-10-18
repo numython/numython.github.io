@@ -128,9 +128,9 @@ tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene
 
 <p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
 <em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<pre class="code literal-block"><span></span>&gt;&gt;&gt; f=x**2-3*x+2
+&gt;&gt;&gt; integrate(f)
+x**3/3 - 3*x**2/2 + 2*x
 </pre>
 
 
@@ -159,8 +159,8 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 
 <p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un 
 error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span>
+<pre class="code literal-block"><span></span>&gt;&gt;&gt; integrate(f,x)
+a*x**3/3 + b*x**2/2 + c*x
 </pre>
 
 

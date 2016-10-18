@@ -110,9 +110,9 @@ tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene
 
 <p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
 <em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<pre class="code literal-block"><span></span>&gt;&gt;&gt; f=x**2-3*x+2
+&gt;&gt;&gt; integrate(f)
+x**3/3 - 3*x**2/2 + 2*x
 </pre>
 
 
@@ -141,8 +141,8 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 
 <p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un 
 error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span>
+<pre class="code literal-block"><span></span>&gt;&gt;&gt; integrate(f,x)
+a*x**3/3 + b*x**2/2 + c*x
 </pre>
 
 
@@ -169,90 +169,102 @@ error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>Esta es una traducción/adaptación de <a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html">Numpy for Matlab users</a>.</p>
-<div class="section" id="introduccion">
-<h2>Introducción</h2>
-<!-- MATLAB® and NumPy/SciPy have a lot in common. But there are many differences. NumPy and SciPy were created to do numerical and  scientific computing in the most natural way with Python, not to be MATLAB® clones. This page is intended to be a place to collect wisdom about the differences, mostly for the purpose of helping proficient MATLAB® users become proficient NumPy and SciPy users. -->
-<p>MATLAB y NumPy/SciPy tienen mucho en común. Pero hay muchas diferencias. NumPy y SciPy fueron creados para
-<em>hacer</em> computación científica y numérica de manera más natural con Python, no como un clon de MATLAB.</p>
-<!-- Some Key Differences -->
-</div>
-<div class="section" id="algunas-diferencias-fundamentales">
-<h2>Algunas diferencias fundamentales</h2>
+<p>Esta es una traducción/adaptación de <a href="https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html">Numpy for Matlab users</a>.</p>
+<h4>Introducción</h4>
+<!-- MATLAB® and NumPy/SciPy have a lot in common. But there are many differences. NumPy and SciPy were created to do numerical and scientific computing in the most natural way with Python, not to be MATLAB® clones. This page is intended to be a place to collect wisdom about the differences, mostly for the purpose of helping proficient MATLAB® users become proficient NumPy and SciPy users. -->
+
+<p>MATLAB y NumPy/SciPy tienen mucho en común. Pero hay muchas diferencias. NumPy y SciPy fueron creados para 
+<em>hacer</em> computación científica y numérica de manera más natural con Python, no como un clon de MATLAB. </p>
+<!-- ### Some Key Differences -->
+
+<h4>Algunas diferencias fundamentales</h4>
 <!-- In MATLAB®, the basic data type is a multidimensional array of double precision floating point numbers. Most expressions take such arrays and return such arrays. Operations on the 2-D instances of these arrays are designed to act more or less like matrix operations in linear algebra. -->
-<p>En MATLAB, el tipo de dato básico es un array multidimensional de precisión doble. La mayoría de las expresiones
-toman un array y devuelven justamente el mismo tipo de dato. Las operaciones de arrays bidimensionales están
+
+<p>En MATLAB, el tipo de dato básico es un array multidimensional de precisión doble. La mayoría de las expresiones 
+toman un array y devuelven justamente el mismo tipo de dato. Las operaciones de arrays bidimensionales están 
 diseñadas para actuar más o menos como las operaciones matriciales del álgebra lineal.</p>
 <!-- In NumPy the basic type is a multidimensional array. Operations on these arrays in all dimensionalities including 2D are elementwise operations. However, there is a special matrix type for doing linear algebra, which is just a subclass of the array class. Operations on matrix-class arrays are linear algebra operations. -->
-<p>En NumPy el tipo básico es un array multidimensional. Las operaciones en estos arrays en todas sus dimensiones,
-incluyendo 2D, son operaciones elemento a elemento. Sin embargo, hay un tipo <cite>matrix</cite> especial para hacer
-operaciones de álgebra lineal, el cual es justamente una subclase de la clase <cite>array</cite>. Las operaciones
-en la clase <cite>matrix</cite> son operaciones de álgebra lineal.</p>
-<!-- MATLAB® uses 1 (one) based indexing. The initial element of a sequence is found using a(1). See note INDEXING -->
+
+<p>En NumPy el tipo básico es un array multidimensional. Las operaciones en estos arrays en todas sus dimensiones, 
+incluyendo 2D, son operaciones elemento a elemento. Sin embargo, hay un tipo <code>matrix</code> especial para hacer 
+operaciones de álgebra lineal, el cual es justamente una subclase de la clase <code>array</code>. Las operaciones 
+en la clase <code>matrix</code> son operaciones de álgebra lineal.</p>
+<!-- MATLAB® uses 1 (one) based indexing. The initial element of a sequence is found using a(1). See note INDEXING   -->
+
 <p>MATLAB utiliza indexación basada en 1 (uno). El elemento inicial de la secuencia A se obtiene usando A(1).</p>
 <!-- Python uses 0 (zero) based indexing. The initial element of a sequence is found using a[0]. -->
+
 <p>Python utiliza indexación basada en 0 (cero). El elemento inicial de la secuencia A se obtiene usando A[0].</p>
-<!-- MATLAB®’s scripting language was created for doing linear algebra. The syntax for basic matrix operations is nice and clean, but the API for adding GUIs and making full-fledged applications is more or less an afterthought. -->
-<p>El lenguaje de scripting MATLAB fue creado para <em>hacer</em> algebra lineal. La sintaxis para la mayoría de las operaciones
-matriciales básicas es buena y clara, pero la API para agregar una interfaz gráfica y hacer <em>aplicaciones de verdad</em>
+<!-- MATLAB®’s scripting language was created for doing linear algebra. The syntax for basic matrix operations is nice and clean, but the API for adding GUIs and making full-fledged applications is more or less an afterthought.  -->
+
+<p>El lenguaje de scripting MATLAB fue creado para <em>hacer</em> algebra lineal. La sintaxis para la mayoría de las operaciones 
+matriciales básicas es buena y clara, pero la API para agregar una interfaz gráfica y hacer <em>aplicaciones de verdad</em> 
 es más o menos una idea adicionada posteriormente y cuya integración es poco fluida.</p>
 <!-- NumPy is based on Python, which was designed from the outset to be an excellent general-purpose programming language. While Matlab’s syntax for some array manipulations is more compact than NumPy’s, NumPy (by virtue of being an add-on to Python) can do many things that Matlab just cannot, for instance subclassing the main array type to do both array and matrix math cleanly. -->
-<p>NumPy está basado en Python, el cuál fue diseñado desde un inicio para ser un excelente lenguaje de programación
-de propósito general. Mientras la sintaxis de MATLAB para algunas manipulaciones de arrays es más compacta
-que la de NumPy, NumPy puede hacer muchas cosas que en MATLAB son imposibles, por ejemplo heredar desde el
-principal tipo de array (clase <cite>np.ndarray</cite>) para hacer un tipo <cite>matrix</cite> que sea más claro para realizar
-operaciones de álgebra lineal.</p>
-<!-- In MATLAB®, arrays have pass-by-value semantics, with a lazy copy-on-write scheme to prevent actually creating copies until they are actually needed. Slice operations copy parts of the array. -->
-<p>En MATLAB, los arrays tiene</p>
-<!-- In NumPy arrays have pass-by-reference semantics. Slice operations are views into an array. -->
-<p>En NumPy, los arrays</p>
-<!-- ‘array’ or ‘matrix’? Which should I use? -->
-</div>
-<div class="section" id="array-o-matrix-cual-deberia-utilizar">
-<h2>¿<cite>array</cite> o <cite>matrix</cite>? ¿Cuál debería utilizar?</h2>
-<!-- Numpy provides, in addition to np.ndarray` an additional matrix type that you may see used in some existing code. Which one to use? -->
-<p>NumPy proporciona adicionalmente a <cite>np.ndarray</cite> un tipo <cite>matrix</cite>, que puede utilizarse en algunas
-situaciones, ¿Cuál debo usar?.</p>
-<p>... #### Short answer</p>
-<div class="section" id="respuesta-corta">
-<h3>Respuesta corta</h3>
-<!-- **Use arrays** -->
-<p><strong>Usar el tipo `array`</strong></p>
-<!-- <!- - They are the standard vector/matrix/tensor type of numpy. Many numpy function return arrays, not matrices.
-There is a clear distinction between element-wise operations and linear algebra operations.
-You can have standard vectors or row/column vectors if you like. - ->
 
-<!- - The only disadvantage of using the array type is that you will have to use dot instead of * to multiply (reduce) two tensors (scalar product, matrix vector multiplication etc.). - -> -->
-<ul class="simple">
+<p>NumPy está basado en Python, el cuál fue diseñado desde un inicio para ser un excelente lenguaje de programación 
+de propósito general. Mientras la sintaxis de MATLAB para algunas manipulaciones de arrays es más compacta 
+que la de NumPy, NumPy puede hacer muchas cosas que en MATLAB son imposibles, por ejemplo heredar desde el 
+principal tipo de array (clase <code>np.ndarray</code>) para hacer un tipo <code>matrix</code> que sea más claro para realizar 
+operaciones de álgebra lineal.</p>
+<!-- In MATLAB®, arrays have pass-by-value semantics, with a lazy copy-on-write scheme to prevent actually creating copies until they are actually needed. Slice operations copy parts of the array.     -->
+
+<p>En MATLAB, los arrays tiene </p>
+<!-- In NumPy arrays have pass-by-reference semantics. Slice operations are views into an array. -->
+
+<p>En NumPy, los arrays </p>
+<!-- ### ‘array’ or ‘matrix’? Which should I use? -->
+
+<h4>¿<code>array</code> o <code>matrix</code>? ¿Cuál debería utilizar?</h4>
+<!-- Numpy provides, in addition to np.ndarray` an additional matrix type that you may see used in some existing code. Which one to use? -->
+
+<p>NumPy proporciona adicionalmente a <code>np.ndarray</code> un tipo <code>matrix</code>, que puede utilizarse en algunas situaciones 
+¿Cuál debo usar?</p>
+<!-- #### Short answer -->
+
+<h5>Respuesta corta</h5>
+<!-- **Use arrays** -->
+
+<p><strong>Usar el tipo <code>array</code></strong></p>
+<!-- They are the standard vector/matrix/tensor type of numpy. Many numpy function return arrays, not matrices.
+There is a clear distinction between element-wise operations and linear algebra operations.
+You can have standard vectors or row/column vectors if you like. -->
+
+<!-- The only disadvantage of using the array type is that you will have to use dot instead of * to multiply (reduce) two tensors (scalar product, matrix vector multiplication etc.). -->
+
+<ul>
 <li>Es el tipo de matriz/vector estándar de NumPy. Muchas funciones de NumPy devuelven un array, no matrices.</li>
 <li>Hay una distinción clara entre las operaciones elemento a elemento y las de álgebra lineal.</li>
 <li>Puede tener vectores estándar o vectores filas/columnas si lo requiere.</li>
 </ul>
-<p>La única desventaja de usar el tipo array es que tendrás que utilizar la función/método <cite>dot</cite> en lugar de <cite>*</cite> para
+<p>La única desventaja de usar el tipo array es que tendrás que utilizar la función/método <code>dot</code> en lugar de <code>*</code> para 
 multiplicar dos tensores (producto escalar, multiplicación matricial,...)</p>
 <!-- #### Long answer -->
-</div>
-<div class="section" id="respuesta-larga">
-<h3>Respuesta larga</h3>
+
+<h5>Respuesta larga</h5>
 <!-- Numpy contains both an array class and a matrix class. The array class is intended to be a general-purpose n-dimensional array for many kinds of numerical computing, while matrix is intended to facilitate linear algebra computations specifically. In practice there are only a handful of key differences between the two. -->
-<p>NumPy contiene una clase <cite>array</cite> y una clase <cite>matrix</cite>. La clase <cite>array</cite> tiene la finalidad de ser un
-array n-dimensional de propósito general para muchos tipos de computación numérica, mientras la
-clase <cite>matrix</cite> tiene la finalidad de facilitar especificamente cuestiones relacionadas con la
-computación del álgebra lineal. En la práctica, sólo hay un puñado de diferencias claves
+
+<p>NumPy contiene una clase <code>array</code> y una clase <code>matrix</code>. La clase <code>array</code> tiene la finalidad de ser un 
+array n-dimensional de propósito general para muchos tipos de computación numérica, mientras la 
+clase <code>matrix</code> tiene la finalidad de facilitar especificamente cuestiones relacionadas con la 
+computación del álgebra lineal. En la práctica, sólo hay un puñado de diferencias claves 
 entre ambas:</p>
-<!-- <!- - Operator *, dot(), and multiply():
+<!-- Operator *, dot(), and multiply():
 For array, ‘``*``’ means element-wise multiplication, and the dot() function is used for matrix multiplication.
-For matrix, ‘``*``’ means matrix multiplication, and the multiply() function is used for element-wise multiplication. - ->
+For matrix, ‘``*``’ means matrix multiplication, and the multiply() function is used for element-wise multiplication. -->
 
-* Operator `*`, `dot()`, and `multiply()`:
-    - Para array - - -
-    - Para matrix
-
-Handling of vectors (rank-1 arrays)
+<ul>
+<li>Operator <code>*</code>, <code>dot()</code>, and <code>multiply()</code>:<ul>
+<li>Para array ---</li>
+<li>Para matrix</li>
+</ul>
+</li>
+</ul>
+<p>Handling of vectors (rank-1 arrays)
 For array, the vector shapes 1xN, Nx1, and N are all different things. Operations like A[:,1] return a rank-1 array of shape N, not a rank-2 of shape Nx1. Transpose on a rank-1 array does nothing.
 For matrix, rank-1 arrays are always upconverted to 1xN or Nx1 matrices (row or column vectors). A[:,1] returns a rank-2 matrix of shape Nx1.
-Handling of higher-rank arrays (rank > 2)
-array objects can have rank > 2.
+Handling of higher-rank arrays (rank &gt; 2)
+array objects can have rank &gt; 2.
 matrix objects always have exactly rank 2.
 Convenience attributes
 array has a .T attribute, which returns the transpose of the data.
@@ -260,63 +272,53 @@ matrix also has .H, .I, and .A attributes, which return the conjugate transpose,
 Convenience constructor
 The array constructor takes (nested) Python sequences as initializers. As in, array([[1,2,3],[4,5,6]]).
 The matrix constructor additionally takes a convenient string initializer. As in matrix("[1 2 3; 4 5 6]").
-There are pros and cons to using both:
-
-array
+There are pros and cons to using both:</p>
+<p>array
 :) You can treat rank-1 arrays as either row or column vectors. dot(A,v) treats v as a column vector, while dot(v,A) treats v as a row vector. This can save you having to type a lot of transposes.
-<:( Having to use the dot() function for matrix-multiply is messy – dot(dot(A,B),C) vs. A*B*C.
-:) Element-wise multiplication is easy: A*B.
+&lt;:( Having to use the dot() function for matrix-multiply is messy – dot(dot(A,B),C) vs. A<em>B</em>C.
+:) Element-wise multiplication is easy: A<em>B.
 :) array is the “default” NumPy type, so it gets the most testing, and is the type most likely to be returned by 3rd party code that uses NumPy.
 :) Is quite at home handling data of any rank.
 :) Closer in semantics to tensor algebra, if you are familiar with that.
-:) All operations (*, /, +, ```` etc.) are elementwise
+:) All operations (</em>, /, +, ```` etc.) are elementwise
 matrix
-:\\ Behavior is more like that of MATLAB® matrices.
-<:( Maximum of rank-2. To hold rank-3 data you need array or perhaps a Python list of matrix.
-<:( Minimum of rank-2. You cannot have vectors. They must be cast as single-column or single-row matrices.
-<:( Since array is the default in NumPy, some functions may return an array even if you give them a matrix as an argument. This shouldn’t happen with NumPy functions (if it does it’s a bug), but 3rd party code based on NumPy may not honor type preservation like NumPy does.
+:\ Behavior is more like that of MATLAB® matrices.
+&lt;:( Maximum of rank-2. To hold rank-3 data you need array or perhaps a Python list of matrix.
+&lt;:( Minimum of rank-2. You cannot have vectors. They must be cast as single-column or single-row matrices.
+&lt;:( Since array is the default in NumPy, some functions may return an array even if you give them a matrix as an argument. This shouldn’t happen with NumPy functions (if it does it’s a bug), but 3rd party code based on NumPy may not honor type preservation like NumPy does.
 :) A*B is matrix multiplication, so more convenient for linear algebra.
-<:( Element-wise multiplication requires calling a function, multipy(A,B).
-<:( The use of operator overloading is a bit illogical: * does not work elementwise but / does.
-The array is thus much more advisable to use.
-
-### Facilities for Matrix Users
-Numpy has some features that facilitate the use of the matrix type, which hopefully make things easier for Matlab converts.
-
-A matlib module has been added that contains matrix versions of common array constructors like ones(), zeros(), empty(), eye(), rand(), repmat(), etc. Normally these functions return arrays, but the matlib versions return matrix objects.
+&lt;:( Element-wise multiplication requires calling a function, multipy(A,B).
+&lt;:( The use of operator overloading is a bit illogical: * does not work elementwise but / does.
+The array is thus much more advisable to use.</p>
+<h4>Facilities for Matrix Users</h4>
+<p>Numpy has some features that facilitate the use of the matrix type, which hopefully make things easier for Matlab converts.</p>
+<p>A matlib module has been added that contains matrix versions of common array constructors like ones(), zeros(), empty(), eye(), rand(), repmat(), etc. Normally these functions return arrays, but the matlib versions return matrix objects.
 mat has been changed to be a synonym for asmatrix, rather than matrix, thus making it concise way to convert an array to a matrix without copying the data.
 Some top-level functions have been removed. For example numpy.rand() now needs to be accessed as numpy.random.rand(). Or use the rand() from the matlib module. But the “numpythonic” way is to use numpy.random.random(), which takes a tuple for the shape, like other numpy functions.
 Table of Rough MATLAB-NumPy Equivalents
-The table below gives rough equivalents for some common MATLAB® expressions. These are not exact equivalents, but rather should be taken as hints to get you going in the right direction. For more detail read the built-in documentation on the NumPy functions.
-
-Some care is necessary when writing functions that take arrays or matrices as arguments — if you are expecting an array and are given a matrix, or vice versa, then ‘*’ (multiplication) will give you unexpected results. You can convert back and forth between arrays and matrices using
-
-asarray: always returns an object of type array
+The table below gives rough equivalents for some common MATLAB® expressions. These are not exact equivalents, but rather should be taken as hints to get you going in the right direction. For more detail read the built-in documentation on the NumPy functions.</p>
+<p>Some care is necessary when writing functions that take arrays or matrices as arguments — if you are expecting an array and are given a matrix, or vice versa, then ‘*’ (multiplication) will give you unexpected results. You can convert back and forth between arrays and matrices using</p>
+<p>asarray: always returns an object of type array
 asmatrix or mat: always return an object of type matrix
 asanyarray: always returns an array object or a subclass derived from it, depending on the input. For instance if you pass in a matrix it returns a matrix.
-These functions all accept both arrays and matrices (among other things like Python lists), and thus are useful when writing functions that should accept any array-like object.
-
-In the table below, it is assumed that you have executed the following commands in Python:
-
-from numpy import *
+These functions all accept both arrays and matrices (among other things like Python lists), and thus are useful when writing functions that should accept any array-like object.</p>
+<p>In the table below, it is assumed that you have executed the following commands in Python:</p>
+<p>from numpy import *
 import scipy.linalg
-Also assume below that if the Notes talk about “matrix” that the arguments are rank 2 entities.
-
-General Purpose Equivalents
-
-MATLAB  numpy   Notes
+Also assume below that if the Notes talk about “matrix” that the arguments are rank 2 entities.</p>
+<p>General Purpose Equivalents</p>
+<p>MATLAB  numpy   Notes
 help func   info(func) or help(func) or func? (in Ipython)  get help on the function func
 which func  see note HELP   find out where func is defined
 type func   source(func) or func?? (in Ipython) print source for func (if not a native function)
-a && b  a and b short-circuiting logical AND operator (Python native operator); scalar arguments only
+a &amp;&amp; b  a and b short-circuiting logical AND operator (Python native operator); scalar arguments only
 a || b  a or b  short-circuiting logical OR operator (Python native operator); scalar arguments only
-1*i, 1*j, 1i, 1j    1j  complex numbers
+1<em>i, 1</em>j, 1i, 1j    1j  complex numbers
 eps np.spacing(1)   Distance between 1 and the nearest floating point number
 ode45   scipy.integrate.ode(f).set_integrator('dopri5') integrate an ODE with Runge-Kutta 4,5
 ode15s  scipy.integrate.ode(f).set_integrator('vode', method='bdf', order=15)   integrate an ODE with BDF method
-Linear Algebra Equivalents
-
-MATLAB  NumPy   Notes
+Linear Algebra Equivalents</p>
+<p>MATLAB  NumPy   Notes
 ndims(a)    ndim(a) or a.ndim   get the number of dimensions of a (tensor rank)
 numel(a)    size(a) or a.size   get the number of elements of an array
 size(a) shape(a) or a.shape get the “size” of the matrix
@@ -337,15 +339,15 @@ a([1:end 1],:)  a[r_[:len(a),0]]    a with copy of the first row appended to the
 a.' a.transpose() or a.T    transpose of a
 a'  a.conj().transpose() or a.conj().T  conjugate transpose of a
 a * b   a.dot(b)    matrix multiply
-a .* b  a * b   element-wise multiply
+a .<em> b  a * b   element-wise multiply
 a./b    a/b element-wise divide
-a.^3    a**3    element-wise exponentiation
-(a>0.5) (a>0.5) matrix whose i,jth element is (a_ij > 0.5)
-find(a>0.5) nonzero(a>0.5)  find the indices where (a > 0.5)
-a(:,find(v>0.5))    a[:,nonzero(v>0.5)[0]]  extract the columms of a where vector v > 0.5
-a(:,find(v>0.5))    a[:,v.T>0.5]    extract the columms of a where column vector v > 0.5
-a(a<0.5)=0  a[a<0.5]=0  a with elements less than 0.5 zeroed out
-a .* (a>0.5)    a * (a>0.5) a with elements less than 0.5 zeroed out
+a.^3    a</em><em>3    element-wise exponentiation
+(a&gt;0.5) (a&gt;0.5) matrix whose i,jth element is (a_ij &gt; 0.5)
+find(a&gt;0.5) nonzero(a&gt;0.5)  find the indices where (a &gt; 0.5)
+a(:,find(v&gt;0.5))    a[:,nonzero(v&gt;0.5)[0]]  extract the columms of a where vector v &gt; 0.5
+a(:,find(v&gt;0.5))    a[:,v.T&gt;0.5]    extract the columms of a where column vector v &gt; 0.5
+a(a&lt;0.5)=0  a[a&lt;0.5]=0  a with elements less than 0.5 zeroed out
+a .</em> (a&gt;0.5)    a * (a&gt;0.5) a with elements less than 0.5 zeroed out
 a(:) = 3    a[:] = 3    set all values to the same scalar value
 y=x y = x.copy()    numpy assigns by reference
 y=x(2,:)    y = x[1,:].copy()   numpy slices are by reference
@@ -363,19 +365,19 @@ rand(3,4)   random.rand(3,4)    random 3x4 matrix
 linspace(1,3,4) linspace(1,3,4) 4 equally spaced samples between 1 and 3, inclusive
 [x,y]=meshgrid(0:8,0:5) mgrid[0:9.,0:6.] or meshgrid(r_[0:9.],r_[0:6.]  two 2D arrays: one of x values, the other of y values
     ogrid[0:9.,0:6.] or ix_(r_[0:9.],r_[0:6.]   the best way to eval functions on a grid
-[x,y]=meshgrid([1,2,4],[2,4,5]) meshgrid([1,2,4],[2,4,5])
+[x,y]=meshgrid([1,2,4],[2,4,5]) meshgrid([1,2,4],[2,4,5])  <br>
     ix_([1,2,4],[2,4,5])    the best way to eval functions on a grid
 repmat(a, m, n) tile(a, (m, n)) create m by n copies of a
 [a b]   concatenate((a,b),1) or hstack((a,b)) or column_stack((a,b)) or c_[a,b] concatenate columns of a and b
 [a; b]  concatenate((a,b)) or vstack((a,b)) or r_[a,b]  concatenate rows of a and b
-max(max(a)) a.max() maximum element of a (with ndims(a)<=2 for matlab)
+max(max(a)) a.max() maximum element of a (with ndims(a)&lt;=2 for matlab)
 max(a)  a.max(0)    maximum element of each column of matrix a
 max(a,[],2) a.max(1)    maximum element of each row of matrix a
 max(a,b)    maximum(a, b)   compares a and b element-wise, and returns the maximum value from each pair
 norm(v) sqrt(dot(v,v)) or np.linalg.norm(v) L2 norm of vector v
-a & b   logical_and(a,b)    element-by-element AND operator (Numpy ufunc) See note LOGICOPS
+a &amp; b   logical_and(a,b)    element-by-element AND operator (Numpy ufunc) See note LOGICOPS
 a | b   logical_or(a,b) element-by-element OR operator (Numpy ufunc) See note LOGICOPS
-bitand(a,b) a & b   bitwise AND operator (Python native and Numpy ufunc)
+bitand(a,b) a &amp; b   bitwise AND operator (Python native and Numpy ufunc)
 bitor(a,b)  a | b   bitwise OR operator (Python native and Numpy ufunc)
 inv(a)  linalg.inv(a)   inverse of square matrix a
 pinv(a) linalg.pinv(a)  pseudo-inverse of matrix a
@@ -396,58 +398,43 @@ sort(a) sort(a) or a.sort() sort the matrix
 [b,I] = sortrows(a,i)   I = argsort(a[:,i]), b=a[I,:]   sort the rows of the matrix
 regress(y,X)    linalg.lstsq(X,y)   multilinear regression
 decimate(x, q)  scipy.signal.resample(x, len(x)/q)  downsample with low-pass filtering
-unique(a)   unique(a)
-squeeze(a)  a.squeeze()
+unique(a)   unique(a)  <br>
+squeeze(a)  a.squeeze()<br>
 Notes
-Submatrix: Assignment to a submatrix can be done with lists of indexes using the ix_ command. E.g., for 2d array a, one might do: ind=[1,3]; a[np.ix_(ind,ind)]+=100.
-
-HELP: There is no direct equivalent of MATLAB’s which command, but the commands help and source will usually list the filename where the function is located. Python also has an inspect module (do import inspect) which provides a getfile that often works.
-
-INDEXING: MATLAB® uses one based indexing, so the initial element of a sequence has index 1. Python uses zero based indexing, so the initial element of a sequence has index 0. Confusion and flamewars arise because each has advantages and disadvantages. One based indexing is consistent with common human language usage, where the “first” element of a sequence has index 1. Zero based indexing simplifies indexing. See also a text by prof.dr. Edsger W. Dijkstra.
-
-RANGES: In MATLAB®, 0:5 can be used as both a range literal and a ‘slice’ index (inside parentheses); however, in Python, constructs like 0:5 can only be used as a slice index (inside square brackets). Thus the somewhat quirky r_ object was created to allow numpy to have a similarly terse range construction mechanism. Note that r_ is not called like a function or a constructor, but rather indexed using square brackets, which allows the use of Python’s slice syntax in the arguments.
-
-LOGICOPS: & or | in Numpy is bitwise AND/OR, while in Matlab & and | are logical AND/OR. The difference should be clear to anyone with significant programming experience. The two can appear to work the same, but there are important differences. If you would have used Matlab’s & or | operators, you should use the Numpy ufuncs logical_and/logical_or. The notable differences between Matlab’s and Numpy’s & and | operators are:
-
-Non-logical {0,1} inputs: Numpy’s output is the bitwise AND of the inputs. Matlab treats any non-zero value as 1 and returns the logical AND. For example (3 & 4) in Numpy is 0, while in Matlab both 3 and 4 are considered logical true and (3 & 4) returns 1.
-Precedence: Numpy’s & operator is higher precedence than logical operators like < and >; Matlab’s is the reverse.
-If you know you have boolean arguments, you can get away with using Numpy’s bitwise operators, but be careful with parentheses, like this: z = (x > 1) & (x < 2). The absence of Numpy operator forms of logical_and and logical_or is an unfortunate consequence of Python’s design.
-
-RESHAPE and LINEAR INDEXING: Matlab always allows multi-dimensional arrays to be accessed using scalar or linear indices, Numpy does not. Linear indices are common in Matlab programs, e.g. find() on a matrix returns them, whereas Numpy’s find behaves differently. When converting Matlab code it might be necessary to first reshape a matrix to a linear sequence, perform some indexing operations and then reshape back. As reshape (usually) produces views onto the same storage, it should be possible to do this fairly efficiently. Note that the scan order used by reshape in Numpy defaults to the ‘C’ order, whereas Matlab uses the Fortran order. If you are simply converting to a linear sequence and back this doesn’t matter. But if you are converting reshapes from Matlab code which relies on the scan order, then this Matlab code: z = reshape(x,3,4); should become z = x.reshape(3,4,order=’F’).copy() in Numpy.
-
-Customizing Your Environment
-In MATLAB® the main tool available to you for customizing the environment is to modify the search path with the locations of your favorite functions. You can put such customizations into a startup script that MATLAB will run on startup.
-
-NumPy, or rather Python, has similar facilities.
-
-To modify your Python search path to include the locations of your own modules, define the PYTHONPATH environment variable.
+Submatrix: Assignment to a submatrix can be done with lists of indexes using the ix_ command. E.g., for 2d array a, one might do: ind=[1,3]; a[np.ix_(ind,ind)]+=100.</p>
+<p>HELP: There is no direct equivalent of MATLAB’s which command, but the commands help and source will usually list the filename where the function is located. Python also has an inspect module (do import inspect) which provides a getfile that often works.</p>
+<p>INDEXING: MATLAB® uses one based indexing, so the initial element of a sequence has index 1. Python uses zero based indexing, so the initial element of a sequence has index 0. Confusion and flamewars arise because each has advantages and disadvantages. One based indexing is consistent with common human language usage, where the “first” element of a sequence has index 1. Zero based indexing simplifies indexing. See also a text by prof.dr. Edsger W. Dijkstra.</p>
+<p>RANGES: In MATLAB®, 0:5 can be used as both a range literal and a ‘slice’ index (inside parentheses); however, in Python, constructs like 0:5 can only be used as a slice index (inside square brackets). Thus the somewhat quirky r_ object was created to allow numpy to have a similarly terse range construction mechanism. Note that r_ is not called like a function or a constructor, but rather indexed using square brackets, which allows the use of Python’s slice syntax in the arguments.</p>
+<p>LOGICOPS: &amp; or | in Numpy is bitwise AND/OR, while in Matlab &amp; and | are logical AND/OR. The difference should be clear to anyone with significant programming experience. The two can appear to work the same, but there are important differences. If you would have used Matlab’s &amp; or | operators, you should use the Numpy ufuncs logical_and/logical_or. The notable differences between Matlab’s and Numpy’s &amp; and | operators are:</p>
+<p>Non-logical {0,1} inputs: Numpy’s output is the bitwise AND of the inputs. Matlab treats any non-zero value as 1 and returns the logical AND. For example (3 &amp; 4) in Numpy is 0, while in Matlab both 3 and 4 are considered logical true and (3 &amp; 4) returns 1.
+Precedence: Numpy’s &amp; operator is higher precedence than logical operators like &lt; and &gt;; Matlab’s is the reverse.
+If you know you have boolean arguments, you can get away with using Numpy’s bitwise operators, but be careful with parentheses, like this: z = (x &gt; 1) &amp; (x &lt; 2). The absence of Numpy operator forms of logical_and and logical_or is an unfortunate consequence of Python’s design.</p>
+<p>RESHAPE and LINEAR INDEXING: Matlab always allows multi-dimensional arrays to be accessed using scalar or linear indices, Numpy does not. Linear indices are common in Matlab programs, e.g. find() on a matrix returns them, whereas Numpy’s find behaves differently. When converting Matlab code it might be necessary to first reshape a matrix to a linear sequence, perform some indexing operations and then reshape back. As reshape (usually) produces views onto the same storage, it should be possible to do this fairly efficiently. Note that the scan order used by reshape in Numpy defaults to the ‘C’ order, whereas Matlab uses the Fortran order. If you are simply converting to a linear sequence and back this doesn’t matter. But if you are converting reshapes from Matlab code which relies on the scan order, then this Matlab code: z = reshape(x,3,4); should become z = x.reshape(3,4,order=’F’).copy() in Numpy.</p>
+<p>Customizing Your Environment
+In MATLAB® the main tool available to you for customizing the environment is to modify the search path with the locations of your favorite functions. You can put such customizations into a startup script that MATLAB will run on startup.</p>
+<p>NumPy, or rather Python, has similar facilities.</p>
+<p>To modify your Python search path to include the locations of your own modules, define the PYTHONPATH environment variable.
 To have a particular script file executed when the interactive Python interpreter is started, define the PYTHONSTARTUP environment variable to contain the name of your startup script.
-Unlike MATLAB®, where anything on your path can be called immediately, with Python you need to first do an ‘import’ statement to make functions in a particular file accessible.
-
-For example you might make a startup script that looks like this (Note: this is just an example, not a statement of “best practices”):
-
-# Make all numpy available via shorter 'num' prefix
-import numpy as num
-# Make all matlib functions accessible at the top level via M.func()
-import numpy.matlib as M
-# Make some matlib functions accessible directly at the top level via, e.g. rand(3,3)
-from numpy.matlib import rand,zeros,ones,empty,eye
-# Define a Hermitian function
-def hermitian(A, **kwargs):
-    return num.transpose(A,**kwargs).conj()
-# Make some shorcuts for transpose,hermitian:
-#    num.transpose(A) - -> T(A)
-#    hermitian(A) - -> H(A)
-T = num.transpose
+Unlike MATLAB®, where anything on your path can be called immediately, with Python you need to first do an ‘import’ statement to make functions in a particular file accessible.</p>
+<p>For example you might make a startup script that looks like this (Note: this is just an example, not a statement of “best practices”):</p>
+<h2>Make all numpy available via shorter 'num' prefix</h2>
+<p>import numpy as num</p>
+<h2>Make all matlib functions accessible at the top level via M.func()</h2>
+<p>import numpy.matlib as M</p>
+<h2>Make some matlib functions accessible directly at the top level via, e.g. rand(3,3)</h2>
+<p>from numpy.matlib import rand,zeros,ones,empty,eye</p>
+<h2>Define a Hermitian function</h2>
+<p>def hermitian(A, <strong>kwargs):
+    return num.transpose(A,</strong>kwargs).conj()</p>
+<h2>Make some shorcuts for transpose,hermitian:</h2>
+<h2>num.transpose(A) --&gt; T(A)</h2>
+<h2>hermitian(A) --&gt; H(A)</h2>
+<p>T = num.transpose
 H = hermitian
 Links
-See http://mathesaurus.sf.net/ for another MATLAB®/NumPy cross-reference.
-
-An extensive list of tools for scientific work with python can be found in the topical software page.
-
-MATLAB® and SimuLink® are registered trademarks of The MathWorks. -->
-</div>
-</div>
+See http://mathesaurus.sf.net/ for another MATLAB®/NumPy cross-reference.</p>
+<p>An extensive list of tools for scientific work with python can be found in the topical software page.</p>
+<p>MATLAB® and SimuLink® are registered trademarks of The MathWorks.</p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/" class="u-url">SymPy, calculando la ecuación de un plano dados tres puntos</a></h1>
