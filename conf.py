@@ -174,6 +174,7 @@ THEME_COLOR = '#33642A'
 
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
 )

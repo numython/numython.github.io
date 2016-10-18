@@ -1,0 +1,65 @@
+<p>Las integrales son uno de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
+operación inversa de la derivación. Pero, además del concepto puramente matemático, las integrales tienen múltiples 
+interpretaciones geométricas y físicas.</p>
+<p>En un curso ordinario de cálculo se nos enseñan métodos para resolver de forma analítica funciones que sean integrables. 
+Por ejemplo todos sabemos que la integral de una función constante será:</p>
+<p>$$ \int a\,dx = ax + C $$</p>
+<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
+de función. Actualmente existen paquetes de álgebra simbólica que son capaces de realizar esta tarea: identificar 
+el caso que se tiene y aplicar métodos computacionales, hasta cierto grado complejos, para determinar la solución.</p>
+<p>Y claro, SymPy es uno de esos sistemas de álgebra computacional (CAS), en el que solo necesitamos escribir 
+nuestra función a integrar, utilizar por ahí alguna rutina y obtener un resultado rápidamente. Pero claro, 
+para ello debemos aprender mínimamente la sintaxis y eso es justo lo que veremos enseguida.</p>
+<h3>Integrales simples</h3>
+<p>Vamos a ver cómo resolver integrales simples indefinidas, si, de esas que vemos en un primer curso. Para resolverlas 
+tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene la siguiente función \(f(x)=x^2-3x+2 \).</p>
+<p>Como primer paso debemos importar lo que necesitaremos del paquete SymPy:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
+</pre>
+
+
+<p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
+<em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+</pre>
+
+
+<p>En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
+si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;pyshell#14&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Python27\lib\site-packages\sympy\utilities\decorator.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">35</span><span class="p">,</span> <span class="ow">in</span> <span class="n">threaded_func</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Python27\lib\site-packages\sympy\integrals\integrals.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1228</span><span class="p">,</span> <span class="ow">in</span> <span class="n">integrate</span>
+    <span class="n">integral</span> <span class="o">=</span> <span class="n">Integral</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Python27\lib\site-packages\sympy\integrals\integrals.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">79</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">AddWithLimits</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">symbols</span><span class="p">,</span> <span class="o">**</span><span class="n">assumptions</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Python27\lib\site-packages\sympy\concrete\expr_with_limits.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">362</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
+    <span class="o">%</span> <span class="n">function</span><span class="p">)</span>
+<span class="ne">ValueError</span><span class="p">:</span>  <span class="n">specify</span> <span class="n">dummy</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">integrand</span> <span class="n">contains</span> <span class="n">more</span> <span class="n">than</span> 
+<span class="n">one</span> <span class="n">free</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">an</span> <span class="n">integration</span> <span class="n">variable</span> <span class="n">should</span> <span class="n">be</span> <span class="n">supplied</span> <span class="n">explicitly</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre>
+
+
+<p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un 
+error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span>
+</pre>
+
+
+<h3>Integrales definidas</h3>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="n">integrate</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
+<span class="mi">1</span>
+</pre>

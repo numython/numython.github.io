@@ -10,7 +10,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/numpy-para-usuarios-de-matlab/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/integrales-con-sympy/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -72,7 +72,89 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/numpy-para-usuarios-de-matlab/" class="u-url">NumPy para usuarios de MATLAB</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Integrales con SymPy</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/integrales-con-sympy/" rel="bookmark"><time class="published dt-published" datetime="2016-10-18T11:30:03-05:00" title="2016-10-18 11:30">2016-10-18 11:30</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/integrales-con-sympy/#disqus_thread" data-disqus-identifier="cache/posts/integrales-con-sympy.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Las integrales son uno de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
+operación inversa de la derivación. Pero, además del concepto puramente matemático, las integrales tienen múltiples 
+interpretaciones geométricas y físicas.</p>
+<p>En un curso ordinario de cálculo se nos enseñan métodos para resolver de forma analítica funciones que sean integrables. 
+Por ejemplo todos sabemos que la integral de una función constante será:</p>
+<p>$$ \int a\,dx = ax + C $$</p>
+<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
+de función. Actualmente existen paquetes de álgebra simbólica que son capaces de realizar esta tarea: identificar 
+el caso que se tiene y aplicar métodos computacionales, hasta cierto grado complejos, para determinar la solución.</p>
+<p>Y claro, SymPy es uno de esos sistemas de álgebra computacional (CAS), en el que solo necesitamos escribir 
+nuestra función a integrar, utilizar por ahí alguna rutina y obtener un resultado rápidamente. Pero claro, 
+para ello debemos aprender mínimamente la sintaxis y eso es justo lo que veremos enseguida.</p>
+<h4>Integrales simples</h4>
+<p>Vamos a ver cómo resolver integrales simples indefinidas, si, de esas que vemos en un primer curso. Para resolverlas 
+tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene la siguiente función \(f(x)=x^2-3x+2 \).</p>
+<p>Como primer paso debemos importar lo que necesitaremos del paquete SymPy:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
+</pre>
+
+
+<p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
+<em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+</pre>
+
+
+<p>En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
+si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">"&lt;pyshell#14&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\utilities\decorator.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">35</span><span class="p">,</span> <span class="ow">in</span> <span class="n">threaded_func</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\integrals\integrals.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1228</span><span class="p">,</span> <span class="ow">in</span> <span class="n">integrate</span>
+    <span class="n">integral</span> <span class="o">=</span> <span class="n">Integral</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\integrals\integrals.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">79</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">AddWithLimits</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">symbols</span><span class="p">,</span> <span class="o">**</span><span class="n">assumptions</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\concrete\expr_with_limits.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">362</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
+    <span class="o">%</span> <span class="n">function</span><span class="p">)</span>
+<span class="ne">ValueError</span><span class="p">:</span>  <span class="n">specify</span> <span class="n">dummy</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">integrand</span> <span class="n">contains</span> <span class="n">more</span> <span class="n">than</span> 
+<span class="n">one</span> <span class="n">free</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">an</span> <span class="n">integration</span> <span class="n">variable</span> <span class="n">should</span> <span class="n">be</span> <span class="n">supplied</span> <span class="n">explicitly</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre>
+
+
+<p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un 
+error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span>
+</pre>
+
+
+<h4>Integrales definidas</h4>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="n">integrate</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
+<span class="mi">1</span>
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/numpy-para-usuarios-de-matlab/" class="u-url">NumPy para usuarios de MATLAB</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -622,30 +704,6 @@ MATLAB® and SimuLink® are registered trademarks of The MathWorks. -->
 <h4 id="expandir-una-expresión-algebraica">Expandir una expresión algebraica</h4>
 <br>Enseguida se muestra un ejemplo de cómo "expandir" o multiplicar dos expresiones algebraicas.<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol,expand<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> expand((x<span class="dv" style="color: #40a070;">+2</span>)<span class="op" style="color: #666666;">*</span>(x<span class="dv" style="color: #40a070;">-3</span>))<br>x<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">-</span> x <span class="op" style="color: #666666;">-</span> <span class="dv" style="color: #40a070;">6</span></code></pre></div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" class="u-url">Gráficas de contorno en Matplotlib</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T07:27:00-06:00" title="2016-02-24 07:27">2016-02-24 07:27</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/02/graficas-de-contorno-en-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/graficas-de-contorno-en-matplotlib.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <p>Una manera de visualizar una función de dos variables es usar un campo escalar, en el que el escalar \(z = f(x,y)\) se asigna al punto \((x,y)\). Un campo escalar puede caracterizarse por sus curvas de nivel (o líneas de contorno) a lo largo de las cuales el valor de \(f(x,y)\) es constante.<br><br></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s1600/surface.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s320/surface.png" width="320"></a></div>
-<br><br>El trazo de gráficas de lineas de contorno o curvas de nivel puede hacerse en Matplotlib utilizando la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X,Y,Z)<br>plt.show()</code></pre></div>
-<a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_01.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s320/img_01.png" width="320"></a></div>
-<br><br>Podemos aumentar el número de niveles si agregamos un argumento de entrada a la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">20</span>)</code></pre></div>
-<br>Con lo anterior tendríamos representados 20 niveles o 20 <em>planos</em> de valores constantes <span class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)=<em>C</em></span>.<br><a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_02.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s1600/img_02.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s320/img_02.png" width="320"></a></div>
-<br><br>Se pueden agregar etiquetas a cada curva de nivel si utilizamos el método <code style="white-space: pre;">clabel</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">15</span>)<br>ax.clabel(cs, fontsize<span class="op" style="color: #666666;">=</span><span class="dv" style="color: #40a070;">8</span>)<br><br>plt.show()</code></pre></div>
-<br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s1600/img_03.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s320/img_03.png" width="320"></a></div>
-<br>
-</div>
     </article>
 </div>
 
