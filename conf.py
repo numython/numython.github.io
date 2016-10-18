@@ -140,7 +140,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "numython"
+THEME = "base"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -867,12 +867,12 @@ CONTENT_FOOTER_FORMATS = {
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
 # You can leave this option blank to disable comments.
-COMMENT_SYSTEM = ""
+COMMENT_SYSTEM = "disqus"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = ""
+COMMENT_SYSTEM_ID = "jorge-de-los-santos"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
@@ -1078,19 +1078,19 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 # """ % SITE_URL
 #
 # If you prefer a Google search form, here's an example that should just work:
-# SEARCH_FORM = """
-# <!-- Google custom search -->
-# <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-# <div class="form-group">
-# <input type="text" name="q" class="form-control" placeholder="Search">
-# </div>
-# <button type="submit" class="btn btn-primary">
-# 	<span class="glyphicon glyphicon-search"></span>
-# </button>
-# <input type="hidden" name="sitesearch" value="%s">
-# </form>
-# <!-- End of custom search -->
-# """ % SITE_URL
+SEARCH_FORM = """
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" name="q" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-primary">
+	<span class="glyphicon glyphicon-search"></span>
+</button>
+<input type="hidden" name="sitesearch" value="%s">
+</form>
+<!-- End of custom search -->
+""" % SITE_URL
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
