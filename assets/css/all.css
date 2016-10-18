@@ -444,7 +444,8 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
         #cboxClose:hover{background-position:bottom center;}
 
 #container {
-    width: 960px;
+    /*width: 960px;*/
+	width: 500px;
     margin: 0 auto;
 }
 
