@@ -1,7 +1,7 @@
 .. title: Análisis estructural con Python I
 .. slug: analisis-estructural-con-python-i
 .. date: 2016-10-18 10:19:56 UTC-05:00
-.. tags: NumPy, structural analysis, fea, mathjax, draft
+.. tags: numpy, structural analysis, fea, mathjax, draft
 .. category: 
 .. link: 
 .. description: 

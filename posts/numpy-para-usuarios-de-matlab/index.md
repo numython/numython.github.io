@@ -1,7 +1,7 @@
 .. title: NumPy para usuarios de MATLAB
 .. slug: numpy-para-usuarios-de-matlab
 .. date: 2016-10-18 10:58:03 UTC-05:00
-.. tags: mathjax, NumPy, python, MATLAB
+.. tags: mathjax, numpy, python, MATLAB
 .. category: 
 .. link: 
 .. description: 
