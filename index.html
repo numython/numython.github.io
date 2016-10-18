@@ -10,7 +10,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/hola-mundo/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/analisis-estructural-con-python-i/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -72,7 +72,117 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hola-mundo/" class="u-url">Hola mundo</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/analisis-estructural-con-python-i/" rel="bookmark"><time class="published dt-published" datetime="2016-10-18T10:19:56-05:00" title="2016-10-18 10:19">2016-10-18 10:19</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/analisis-estructural-con-python-i/#disqus_thread" data-disqus-identifier="cache/posts/analisis-estructural-con-python-i.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>El análisis estructural es uno de los aspectos elementales para aquellos
+que nos dedicamos al diseño mecánico o cuestiones similares. En los cursos
+universitarios de resistencia de materiales se enseñan algunos métodos
+analíticos que permiten obtener soluciones rápidas para componentes mecánicos
+simples. No obstante, cuando las geometrías se complican se hace necesario
+utilizar el enfoque numérico e implementar una metodología de solución utilizando
+el método de los elementos finitos, el cual proporciona una solución aproximada
+que será adecuada en medida de ciertos criterios, tales como el tamaño y tipo de
+elementos, la física del problema, entre otros.</p>
+<p>El propósito del presente minicurso es introducir al lector en el uso de las
+herramientas numéricas que proporciona Python para la solución de problemas de
+análisis estructural utilizando el MEF.</p>
+<p>Como pequeño recordatorio, sabemos que el método de los elementos finitos consiste
+en la discretización de un continuo en pequeños elementos, con la finalidad de
+establecer un sistema de ecuaciones que describa de manera aproximada el comportamiento
+individual y global del sistema, pasando por la inclusión de las condiciones de frontera y todas
+las consideraciones físicas que deriven en la simplificación del problema.</p>
+<p>En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume
+que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver
+una ecuación algebraica del tipo:</p>
+<p>$$ F = K U $$</p>
+<p>Donde F es el vector de fuerzas nodales, K la matriz global de rigidez y U el vector
+de desplazamientos nodales.</p>
+<p>Dado que normalmente los desplazamientos son las incógnitas, se tiene que:</p>
+<p>\[ U = K^{-1} F \]</p>
+<p>### Un caso muy simple: elementos resorte</p>
+<p>Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la
+figura siguiente.</p>
+<p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad: en dirección axial.
+La matriz de rigidez para un elemento viene dada por:</p>
+<p>$$
+k^{(e)} =
+begin{matrix}
+k_e &amp; - k_e \
+- k_e &amp; k_e \
+end{matrix}
+$$</p>
+<p><a href="posts/analisis-estructural-con-python-i/#id1"><span class="problematic" id="id2">``</span></a><a href="posts/analisis-estructural-con-python-i/#id3"><span class="problematic" id="id4">`</span></a>python
+# -<em>- coding: utf8 -</em>-
+import numpy as np
+import numpy.linalg as la</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 51); <em><a href="posts/analisis-estructural-con-python-i/#id2">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 51); <em><a href="posts/analisis-estructural-con-python-i/#id4">backlink</a></em></p>
+Inline interpreted text or phrase reference start-string without end-string.</div>
+<p># Datos iniciales
+k1 = 1000.0
+k2 = 2000.0
+k3 = 3000.0
+P = 5000.0</p>
+<p># Matrices por elemento
+K1 = np.array([[k1,-k1],[-k1,k1]])
+K2 = np.array([[k2,-k2],[-k2,k2]])
+K3 = np.array([[k3,-k3],[-k3,k3]])</p>
+<p># Matriz global
+K = np.array([[  K1[0,0],        0,           K1[0,1],                0],</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 69)</p>
+Unexpected indentation.</div>
+<blockquote>
+[      0 ,  K3[0,0],                 0,          K3[0,1]],
+[ K1[1,0],        0,   K1[1,1]+K2[0,0],          K2[0,1]],
+[       0,  K3[1,0],           K2[1,0],  K2[1,1]+K3[1,1]]])</blockquote>
+<p>F = np.array([0, 0, 0, P])</p>
+<p># Condiciones de frontera
+# Nodos 1 y 2 conocidos -&gt; UX = 0
+KS = K[2:,2:]
+FS = F[2:]</p>
+<p># Resolviendo
+USOL = la.solve(KS, FS)</p>
+<p># Vector de desplazamientos
+USOL = np.concatenate(([0,0],USOL))</p>
+<p># Obteniendo las fuerzas nodales
+NF = np.dot(K,USOL)</p>
+<p># Presentando los resultados
+for nodo in range(4):</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 91)</p>
+Unexpected indentation.</div>
+<blockquote>
+print("%g  UX = %-8.4f    FX = %-8.4f"%(nodo+1, USOL[nodo], NF[nodo]))</blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92)</p>
+Block quote ends without a blank line; unexpected unindent.</div>
+<p><a href="posts/analisis-estructural-con-python-i/#id5"><span class="problematic" id="id6">``</span></a><a href="posts/analisis-estructural-con-python-i/#id7"><span class="problematic" id="id8">`</span></a></p>
+<div class="system-message" id="id5">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92); <em><a href="posts/analisis-estructural-con-python-i/#id6">backlink</a></em></p>
+Inline literal start-string without end-string.</div>
+<div class="system-message" id="id7">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92); <em><a href="posts/analisis-estructural-con-python-i/#id8">backlink</a></em></p>
+Inline interpreted text or phrase reference start-string without end-string.</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hola-mundo/" class="u-url">Hola mundo</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -347,30 +457,6 @@
 <h4 id="expandir-una-expresión-algebraica">Expandir una expresión algebraica</h4>
 <br>Enseguida se muestra un ejemplo de cómo "expandir" o multiplicar dos expresiones algebraicas.<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol,expand<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> expand((x<span class="dv" style="color: #40a070;">+2</span>)<span class="op" style="color: #666666;">*</span>(x<span class="dv" style="color: #40a070;">-3</span>))<br>x<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">-</span> x <span class="op" style="color: #666666;">-</span> <span class="dv" style="color: #40a070;">6</span></code></pre></div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" class="u-url">Gráficas de contorno en Matplotlib</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T07:27:00-06:00" title="2016-02-24 07:27">2016-02-24 07:27</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/02/graficas-de-contorno-en-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/graficas-de-contorno-en-matplotlib.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <p>Una manera de visualizar una función de dos variables es usar un campo escalar, en el que el escalar \(z = f(x,y)\) se asigna al punto \((x,y)\). Un campo escalar puede caracterizarse por sus curvas de nivel (o líneas de contorno) a lo largo de las cuales el valor de \(f(x,y)\) es constante.<br><br></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s1600/surface.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s320/surface.png" width="320"></a></div>
-<br><br>El trazo de gráficas de lineas de contorno o curvas de nivel puede hacerse en Matplotlib utilizando la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X,Y,Z)<br>plt.show()</code></pre></div>
-<a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_01.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s320/img_01.png" width="320"></a></div>
-<br><br>Podemos aumentar el número de niveles si agregamos un argumento de entrada a la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">20</span>)</code></pre></div>
-<br>Con lo anterior tendríamos representados 20 niveles o 20 <em>planos</em> de valores constantes <span class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)=<em>C</em></span>.<br><a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_02.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s1600/img_02.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s320/img_02.png" width="320"></a></div>
-<br><br>Se pueden agregar etiquetas a cada curva de nivel si utilizamos el método <code style="white-space: pre;">clabel</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">15</span>)<br>ax.clabel(cs, fontsize<span class="op" style="color: #666666;">=</span><span class="dv" style="color: #40a070;">8</span>)<br><br>plt.show()</code></pre></div>
-<br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s1600/img_03.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s320/img_03.png" width="320"></a></div>
-<br>
-</div>
     </article>
 </div>
 

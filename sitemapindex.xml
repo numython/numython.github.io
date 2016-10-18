@@ -10,6 +10,10 @@
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://numython.github.io/categories/fea.xml</loc>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://numython.github.io/categories/graficas.xml</loc>
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
@@ -27,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
@@ -46,6 +50,10 @@
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://numython.github.io/categories/structural-analysis.xml</loc>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://numython.github.io/categories/sympy.xml</loc>
   <lastmod>2016-10-18T02:19:00Z</lastmod>
  </sitemap>
@@ -59,10 +67,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-10-18T03:17:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-10-18T03:52:00Z</lastmod>
+  <lastmod>2016-10-18T15:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
