@@ -38,9 +38,11 @@ de desplazamientos nodales.
 
 Dado que normalmente los desplazamientos son las incógnitas, se tiene que:
 
-\\[ U = K^{-1} F \\]
+$$ U = K^{-1} F $$
 
-### Un caso muy simple: elementos resorte
+
+Un caso muy simple: elementos resorte
+-------------------------------------
 
 Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
 figura siguiente. 
@@ -48,55 +50,54 @@ figura siguiente.
 El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad: en dirección axial. 
 La matriz de rigidez para un elemento viene dada por:
 
-$$ 
-k^{(e)} = 
-\begin{matrix}
-k_e & - k_e \\
-- k_e & k_e \\
-\end{matrix}
-$$ 
+.. math::
 
+    k^{(e)} = 
+    \begin{matrix}
+    k_e & - k_e \\
+    - k_e & k_e \\
+    \end{matrix}
 
-```python
-# -*- coding: utf8 -*-
-import numpy as np
-import numpy.linalg as la
+.. code:: python
 
-# Datos iniciales
-k1 = 1000.0
-k2 = 2000.0
-k3 = 3000.0
-P = 5000.0
+    # -*- coding: utf8 -*-
+    import numpy as np
+    import numpy.linalg as la
 
-# Matrices por elemento
-K1 = np.array([[k1,-k1],[-k1,k1]])
-K2 = np.array([[k2,-k2],[-k2,k2]])
-K3 = np.array([[k3,-k3],[-k3,k3]])
+    # Datos iniciales
+    k1 = 1000.0
+    k2 = 2000.0
+    k3 = 3000.0
+    P = 5000.0
 
-# Matriz global 
-K = np.array([[  K1[0,0],        0,           K1[0,1],                0],
-               [      0 ,  K3[0,0],                 0,          K3[0,1]],
-               [ K1[1,0],        0,   K1[1,1]+K2[0,0],          K2[0,1]],
-               [       0,  K3[1,0],           K2[1,0],  K2[1,1]+K3[1,1]]])
-               
-F = np.array([0, 0, 0, P])
+    # Matrices por elemento
+    K1 = np.array([[k1,-k1],[-k1,k1]])
+    K2 = np.array([[k2,-k2],[-k2,k2]])
+    K3 = np.array([[k3,-k3],[-k3,k3]])
 
-# Condiciones de frontera
-# Nodos 1 y 2 conocidos -> UX = 0
-KS = K[2:,2:]
-FS = F[2:]
+    # Matriz global 
+    K = np.array([[  K1[0,0],        0,           K1[0,1],                0],
+                   [      0 ,  K3[0,0],                 0,          K3[0,1]],
+                   [ K1[1,0],        0,   K1[1,1]+K2[0,0],          K2[0,1]],
+                   [       0,  K3[1,0],           K2[1,0],  K2[1,1]+K3[1,1]]])
+                   
+    F = np.array([0, 0, 0, P])
 
-# Resolviendo
-USOL = la.solve(KS, FS)
+    # Condiciones de frontera
+    # Nodos 1 y 2 conocidos -> UX = 0
+    KS = K[2:,2:]
+    FS = F[2:]
 
-# Vector de desplazamientos
-USOL = np.concatenate(([0,0],USOL))
+    # Resolviendo
+    USOL = la.solve(KS, FS)
 
-# Obteniendo las fuerzas nodales
-NF = np.dot(K,USOL)
+    # Vector de desplazamientos
+    USOL = np.concatenate(([0,0],USOL))
 
-# Presentando los resultados
-for nodo in range(4):
-    print("%g  UX = %-8.4f    FX = %-8.4f"%(nodo+1, USOL[nodo], NF[nodo]))
-```
+    # Obteniendo las fuerzas nodales
+    NF = np.dot(K,USOL)
+
+    # Presentando los resultados
+    for nodo in range(4):
+        print("%g  UX = %-8.4f    FX = %-8.4f"%(nodo+1, USOL[nodo], NF[nodo]))
 
