@@ -1,6 +1,5 @@
 #container {
-    /*width: 960px;*/
-	width: 500px;
+    width: 960px;
     margin: 0 auto;
 }
 
@@ -193,7 +192,7 @@ article.post-micro {
     }
 
     body {
-        font-size: 12pt;
+        font-size: 18pt;
     }
 
     article .entry-title a[href]:after,
