@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graficar en Python con Matplotlib y NumPy | Numython</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+<link rel="canonical" href="https://numython.github.io/posts/2016/02/graficar-en-python-con-matplotlib-y/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
+<link rel="prev" href="../graficas-de-barras-en-matplotlib/" title="Gráficas de barras en Matplotlib" type="text/html">
+<link rel="next" href="../utilizando-estilos-en-matplotlib/" title="Utilizando estilos en Matplotlib" type="text/html">
+<meta property="og:site_name" content="Numython">
+<meta property="og:title" content="Graficar en Python con Matplotlib y NumPy">
+<meta property="og:url" content="https://numython.github.io/posts/2016/02/graficar-en-python-con-matplotlib-y/">
+<meta property="og:description" content="Trazar gráficas en Python es muy sencillo, para ello necesita tener instaladas las librerías matplotlib y numpy, las cuales pueden encontrarse y descargar de la red sin mayores obstáculos. Debe asegur">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-02-24T16:52:00-06:00">
+<meta property="article:tag" content="Matplotlib">
+<meta property="article:tag" content="NumPy">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://numython.github.io/">
+
+                <span id="blog-title">Numython</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../archive.html">Archivo</a>
+                </li>
+<li>
+<a href="../../../../categories/">Etiquetas</a>
+                </li>
+<li>
+<a href="../../../../rss.xml">Canal RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.src.html" id="sourcelink">Código fuente</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Graficar en Python con Matplotlib y NumPy</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-02-24T16:52:00-06:00" itemprop="datePublished" title="2016-02-24 16:52">2016-02-24 16:52</time></a></p>
+            
+        <p class="sourceline"><a href="index.src.html" id="sourcelink">Código fuente</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div style="text-align: justify;">Trazar gráficas en Python es muy sencillo, para ello necesita tener instaladas las librerías matplotlib y numpy, las cuales pueden encontrarse y descargar de la red sin mayores obstáculos. Debe asegurarse que la versión de las librerías sea compatible con la versión de Python.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Si alguna vez ha utilizado MATLAB para estos mismos fines, las instrucciones le parecerán demasiado familiar.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Enseguida os adjunto un código sencillo y el resultado que produce:</div>
+<br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.1)<br>y = x*np.cos(x)<br><br>plt.plot(x,y)<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-F1Qzh-W-7Gw/UxvtzNBs2VI/AAAAAAAABEk/wYX758jaymM/s1600/graph1.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="271" src="https://2.bp.blogspot.com/-F1Qzh-W-7Gw/UxvtzNBs2VI/AAAAAAAABEk/wYX758jaymM/s1600/graph1.PNG" width="320"></a></div>
+<br><br><div style="text-align: justify;">Las primeras dos líneas sirven para importar las librerías que se utilizarán. Recuerde que en Python pueden utilizarse seudónimos al cargar una librería (en este caso plt para matplotlib.pyplot y np para numpy).</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">En la línea se 4 se define el vector de la variable independiente utilizando la instrucción arange de la librería numpy, el cual crea un vector especificando el valor inicial, el valor final y el incremento como argumentos. La linea 5 crea simplemente un vector dependiente del primero.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">La instrucción plot gráfica los vectores creados con anterioridad, teniendo como primer argumento el vector de la variable independiente. Con xlabel, ylabel y title se muestran las etiquetas correspondientes a los ejes horizontal, vertical y el título en la parte superior respectivamente. Finalmente, la instrucción show() sirve para mostrar la ventana gráfica creada y poder visualizar lo que se ha trazado.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">
+<br><b><span style="font-size: large;">Modificando la presentación...</span></b>
+</div>
+<br><i>Grosor de línea</i><br><br><div style="text-align: justify;">Para modificar el grosor de línea basta con incluir como argumento adicional en plot la propiedad linewidth, tal como se muestra enseguida:</div>
+<br><pre class="brush: python">plt.plot(x,y,linewidth=4)<br></pre>
+<br><i>Color de línea</i><br><br>El siguiente ejemplo configura el color de la línea, en este caso rojo.<br><br><pre class="brush: python">plt.plot(x,y,color='r')<br></pre>
+<br><div style="text-align: justify;">También puede especificar el color utilizando una tupla de 3 elementos (R,G,B) en el intervalo [0 1], por ejemplo:</div>
+<br><pre class="brush: python">plt.plot(x,y,color=(0.8,0.9,0))</pre>
+<br><i>Agregando rejilla</i><br><br>Para agregar una rejilla debe incluirse la instrucción grid() como se muestra:<br><br><pre class="brush: python">plt.grid()<br></pre>
+<br><br><b><span style="font-size: large;">Mostrar más de una gráfica</span></b><br><br>Para mostrar más de una gráfica en la misma ventana, utilice hold(True) después de haber creado la primer gráfica o bien antes de ella, tal como se muestra en el código siguiente:<br><br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.2)<br>y1 = np.cos(x)<br>y2 = np.sin(x)<br><br>plt.plot(x,y1,'o',linewidth=3,color=(0.2,0.1,0.4))<br>plt.hold(True)<br>plt.plot(x,y2,'-',linewidth=2,color='g')<br>plt.grid()<br>plt.axis('equal')<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="https://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" width="320"></a></div>
+<br><br><br>
+</div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/matplotlib/" rel="tag">Matplotlib</a></li>
+            <li><a class="tag p-category" href="../../../../categories/numpy/" rel="tag">NumPy</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../graficas-de-barras-en-matplotlib/" rel="prev" title="Gráficas de barras en Matplotlib">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../utilizando-estilos-en-matplotlib/" rel="next" title="Utilizando estilos en Matplotlib">Siguiente publicación</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2016         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../../../assets/js/all-nocdn.js"></script><script src="../../../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("es");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
