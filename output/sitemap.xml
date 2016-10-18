@@ -19,7 +19,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2016-10-18T16:00:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/calculo/</loc>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/cas/</loc>
@@ -79,7 +83,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-1.html</loc>
-  <lastmod>2016-10-18T16:37:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -151,6 +155,6 @@
  </url>
  <url>
   <loc>https://numython.github.io/posts/numpy-para-usuarios-de-matlab/</loc>
-  <lastmod>2016-10-18T16:55:00Z</lastmod>
+  <lastmod>2016-10-18T16:56:00Z</lastmod>
  </url>
 </urlset>

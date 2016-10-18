@@ -1,7 +1,7 @@
 .. title: Integrales con SymPy
 .. slug: integrales-con-sympy
 .. date: 2016-10-18 11:30:03 UTC-05:00
-.. tags: mathjax, NumPy, python,
+.. tags: mathjax, sympy, cálculo,
 .. category: 
 .. link: 
 .. description: 

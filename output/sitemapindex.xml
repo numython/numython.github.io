@@ -6,56 +6,60 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://numython.github.io/categories/calculo.xml</loc>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://numython.github.io/categories/cas.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/graficas.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/mathjax.xml</loc>
-  <lastmod>2016-10-18T16:55:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matlab.xml</loc>
-  <lastmod>2016-10-18T16:56:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matplotlib-mathjax.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matplotlib.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
-  <lastmod>2016-10-18T16:56:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pylab.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/python.xml</loc>
-  <lastmod>2016-10-18T16:56:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/scikit-image.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/sympy.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxpython.xml</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/galleries/rss.xml</loc>
@@ -63,10 +67,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-10-18T16:56:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-10-18T16:56:00Z</lastmod>
+  <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
 </sitemapindex>
