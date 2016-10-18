@@ -9,7 +9,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://numython.github.io/posts/analisis-estructural-con-python-i/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
-<link rel="prev" href="../hola-mundo/" title="Hola mundo" type="text/html">
+<meta name="robots" content="noindex">
 <meta property="og:site_name" content="Numython">
 <meta property="og:title" content="Análisis estructural con Python I">
 <meta property="og:url" content="https://numython.github.io/posts/analisis-estructural-con-python-i/">
@@ -136,57 +136,57 @@ de desplazamientos nodales.</p>
 <h2>Un caso muy simple: elementos resorte</h2>
 <p>Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la
 figura siguiente.</p>
-<img alt="/structural-analysis/spring_01.png" src="../../structural-analysis/spring_01.png"><p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad: en dirección axial.
-La matriz de rigidez para un elemento viene dada por:</p>
+<img alt="/structural-analysis/spring_01.png" src="../../structural-analysis/spring_01.png"><p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en
+dirección axial. La matriz de rigidez para un elemento viene dada por:</p>
 <div class="math">
 \begin{equation*}
 k^{(e)} =
-\begin{matrix}
+\begin{bmatrix}
 k_e &amp; - k_e \\
 - k_e &amp; k_e \\
-\end{matrix}
+\end{bmatrix}
 \end{equation*}
 </div>
-<pre class="code python"><a name="rest_code_0e0004fbe55e4425a384359f4caf6894-1"></a><span class="c1"># -*- coding: utf8 -*-</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-3"></a><span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-4"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-5"></a><span class="c1"># Datos iniciales</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-6"></a><span class="n">k1</span> <span class="o">=</span> <span class="mf">1000.0</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-7"></a><span class="n">k2</span> <span class="o">=</span> <span class="mf">2000.0</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-8"></a><span class="n">k3</span> <span class="o">=</span> <span class="mf">3000.0</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-9"></a><span class="n">P</span> <span class="o">=</span> <span class="mf">5000.0</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-10"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-11"></a><span class="c1"># Matrices por elemento</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-12"></a><span class="n">K1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k1</span><span class="p">,</span><span class="o">-</span><span class="n">k1</span><span class="p">],[</span><span class="o">-</span><span class="n">k1</span><span class="p">,</span><span class="n">k1</span><span class="p">]])</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-13"></a><span class="n">K2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k2</span><span class="p">,</span><span class="o">-</span><span class="n">k2</span><span class="p">],[</span><span class="o">-</span><span class="n">k2</span><span class="p">,</span><span class="n">k2</span><span class="p">]])</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-14"></a><span class="n">K3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k3</span><span class="p">,</span><span class="o">-</span><span class="n">k3</span><span class="p">],[</span><span class="o">-</span><span class="n">k3</span><span class="p">,</span><span class="n">k3</span><span class="p">]])</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-15"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-16"></a><span class="c1"># Matriz global</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-17"></a><span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span>  <span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>        <span class="mi">0</span><span class="p">,</span>           <span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>                <span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-18"></a>               <span class="p">[</span>      <span class="mi">0</span> <span class="p">,</span>  <span class="n">K3</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>                 <span class="mi">0</span><span class="p">,</span>          <span class="n">K3</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-19"></a>               <span class="p">[</span> <span class="n">K1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>        <span class="mi">0</span><span class="p">,</span>   <span class="n">K1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">K2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>          <span class="n">K2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-20"></a>               <span class="p">[</span>       <span class="mi">0</span><span class="p">,</span>  <span class="n">K3</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>           <span class="n">K2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>  <span class="n">K2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">K3</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]])</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-21"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-22"></a><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">P</span><span class="p">])</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-23"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-24"></a><span class="c1"># Condiciones de frontera</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-25"></a><span class="c1"># Nodos 1 y 2 conocidos -&gt; UX = 0</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-26"></a><span class="n">KS</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span><span class="mi">2</span><span class="p">:]</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-27"></a><span class="n">FS</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-28"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-29"></a><span class="c1"># Resolviendo</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-30"></a><span class="n">USOL</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">KS</span><span class="p">,</span> <span class="n">FS</span><span class="p">)</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-31"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-32"></a><span class="c1"># Vector de desplazamientos</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-33"></a><span class="n">USOL</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">USOL</span><span class="p">))</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-34"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-35"></a><span class="c1"># Obteniendo las fuerzas nodales</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-36"></a><span class="n">NF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">USOL</span><span class="p">)</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-37"></a>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-38"></a><span class="c1"># Presentando los resultados</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-39"></a><span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<a name="rest_code_0e0004fbe55e4425a384359f4caf6894-40"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">"</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
+<pre class="code python"><a name="rest_code_5ce6d0678b47434086023727e9c276e7-1"></a><span class="c1"># -*- coding: utf8 -*-</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-3"></a><span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-4"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-5"></a><span class="c1"># Datos iniciales</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-6"></a><span class="n">k1</span> <span class="o">=</span> <span class="mf">1000.0</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-7"></a><span class="n">k2</span> <span class="o">=</span> <span class="mf">2000.0</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-8"></a><span class="n">k3</span> <span class="o">=</span> <span class="mf">3000.0</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-9"></a><span class="n">P</span> <span class="o">=</span> <span class="mf">5000.0</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-10"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-11"></a><span class="c1"># Matrices por elemento</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-12"></a><span class="n">K1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k1</span><span class="p">,</span><span class="o">-</span><span class="n">k1</span><span class="p">],[</span><span class="o">-</span><span class="n">k1</span><span class="p">,</span><span class="n">k1</span><span class="p">]])</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-13"></a><span class="n">K2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k2</span><span class="p">,</span><span class="o">-</span><span class="n">k2</span><span class="p">],[</span><span class="o">-</span><span class="n">k2</span><span class="p">,</span><span class="n">k2</span><span class="p">]])</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-14"></a><span class="n">K3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">k3</span><span class="p">,</span><span class="o">-</span><span class="n">k3</span><span class="p">],[</span><span class="o">-</span><span class="n">k3</span><span class="p">,</span><span class="n">k3</span><span class="p">]])</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-15"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-16"></a><span class="c1"># Matriz global</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-17"></a><span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span>  <span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>        <span class="mi">0</span><span class="p">,</span>           <span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>                <span class="mi">0</span><span class="p">],</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-18"></a>               <span class="p">[</span>      <span class="mi">0</span> <span class="p">,</span>  <span class="n">K3</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>                 <span class="mi">0</span><span class="p">,</span>          <span class="n">K3</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-19"></a>               <span class="p">[</span> <span class="n">K1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>        <span class="mi">0</span><span class="p">,</span>   <span class="n">K1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">K2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>          <span class="n">K2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-20"></a>               <span class="p">[</span>       <span class="mi">0</span><span class="p">,</span>  <span class="n">K3</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>           <span class="n">K2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>  <span class="n">K2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">K3</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]])</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-21"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-22"></a><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">P</span><span class="p">])</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-23"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-24"></a><span class="c1"># Condiciones de frontera</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-25"></a><span class="c1"># Nodos 1 y 2 conocidos -&gt; UX = 0</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-26"></a><span class="n">KS</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span><span class="mi">2</span><span class="p">:]</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-27"></a><span class="n">FS</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-28"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-29"></a><span class="c1"># Resolviendo</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-30"></a><span class="n">USOL</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">KS</span><span class="p">,</span> <span class="n">FS</span><span class="p">)</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-31"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-32"></a><span class="c1"># Vector de desplazamientos</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-33"></a><span class="n">USOL</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">USOL</span><span class="p">))</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-34"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-35"></a><span class="c1"># Obteniendo las fuerzas nodales</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-36"></a><span class="n">NF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">USOL</span><span class="p">)</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-37"></a>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-38"></a><span class="c1"># Presentando los resultados</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-39"></a><span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<a name="rest_code_5ce6d0678b47434086023727e9c276e7-40"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">"</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
 </pre>
 </div>
 </div>
@@ -195,11 +195,6 @@ k_e &amp; - k_e \\
 <li><a class="tag p-category" href="../../categories/fea/" rel="tag">fea</a></li>
             <li><a class="tag p-category" href="../../categories/numpy/" rel="tag">NumPy</a></li>
             <li><a class="tag p-category" href="../../categories/structural-analysis/" rel="tag">structural analysis</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
-                <a href="../hola-mundo/" rel="prev" title="Hola mundo">Publicación anterior</a>
-            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
         

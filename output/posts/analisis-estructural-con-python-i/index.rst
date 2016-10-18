@@ -1,7 +1,7 @@
 .. title: Análisis estructural con Python I
 .. slug: analisis-estructural-con-python-i
 .. date: 2016-10-18 10:19:56 UTC-05:00
-.. tags: NumPy, structural analysis, fea, mathjax
+.. tags: NumPy, structural analysis, fea, mathjax, draft
 .. category: 
 .. link: 
 .. description: 
@@ -50,16 +50,17 @@ figura siguiente.
 .. image:: /structural-analysis/spring_01.png
 
 
-El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad: en dirección axial. 
-La matriz de rigidez para un elemento viene dada por:
+El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
+dirección axial. La matriz de rigidez para un elemento viene dada por:
 
 .. math::
 
     k^{(e)} = 
-    \begin{matrix}
+    \begin{bmatrix}
     k_e & - k_e \\
     - k_e & k_e \\
-    \end{matrix}
+    \end{bmatrix}
+
 
 .. code:: python
 
