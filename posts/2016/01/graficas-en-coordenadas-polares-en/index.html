@@ -1,33 +1,110 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gráficas en coordenadas polares en Matplotlib | Numython</title>
 <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta content="#33642A" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
 <link rel="canonical" href="https://numython.github.io/posts/2016/01/graficas-en-coordenadas-polares-en/">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
+<link rel="prev" href="../una-introduccion-pylab/" title="Una introducción a Pylab" type="text/html">
+<link rel="next" href="../introduccion-scikit-image-procesamiento/" title="Introducción a scikit-image, procesamiento de imágenes en Python" type="text/html">
+<meta property="og:site_name" content="Numython">
+<meta property="og:title" content="Gráficas en coordenadas polares en Matplotlib">
+<meta property="og:url" content="https://numython.github.io/posts/2016/01/graficas-en-coordenadas-polares-en/">
+<meta property="og:description" content="Trazar gráficas en coordenadas polares mediante el módulo pyplot es muy sencillo, y se procede de manera similar que con las funciones en coordenadas rectangulares. Lo único que debemos cambiar es el ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-01-29T02:40:00-06:00">
+<meta property="article:tag" content="Gráficas">
+<meta property="article:tag" content="mathjax">
+<meta property="article:tag" content="Matplotlib">
 </head>
 <body>
-<div id="wrapper">
-    <div id="container">
-        <div id="content">
-            <div id="header">
-                <h1 id="blog-title">
-                    <a href="https://numython.github.io/" title="Numython">Numython</a>
-                </h1>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://numython.github.io/">
+
+                <span id="blog-title">Numython</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../archive.html">Archivo</a>
+                </li>
+<li>
+<a href="../../../../categories/">Etiquetas</a>
+                </li>
+<li>
+<a href="../../../../rss.xml">Canal RSS</a>
+
                 
+            </li>
+</ul>
+<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" name="q" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-primary">
+	<span class="glyphicon glyphicon-search"></span>
+</button>
+<input type="hidden" name="sitesearch" value="https://numython.github.io/">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.src.html" id="sourcelink">Código fuente</a>
+    </li>
+
                 
-            </div>
-        <div class="hfeed">
-            <!--Body content-->
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-    <div id="post-graficas-en-coordenadas-polares-en" class="post hfeed">
-        <h2 class="entry-title"><a href=".">Gráficas en coordenadas polares en Matplotlib</a></h2>
-        <div class="entry-content">
-            <div style="text-align: justify;">Trazar gráficas en coordenadas polares mediante el módulo <code style="white-space: pre;">pyplot</code> es muy sencillo, y se procede de manera similar que con las funciones en coordenadas rectangulares. Lo único que debemos cambiar es el tipo de proyección de el axes en el que vamos a <em>plotear</em> nuestras funciones polares.</div>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Gráficas en coordenadas polares en Matplotlib</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-01-29T02:40:00-06:00" itemprop="datePublished" title="2016-01-29 02:40">2016-01-29 02:40</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2016/01/graficas-en-coordenadas-polares-en.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.src.html" id="sourcelink">Código fuente</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div style="text-align: justify;">Trazar gráficas en coordenadas polares mediante el módulo <code style="white-space: pre;">pyplot</code> es muy sencillo, y se procede de manera similar que con las funciones en coordenadas rectangulares. Lo único que debemos cambiar es el tipo de proyección de el axes en el que vamos a <em>plotear</em> nuestras funciones polares.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Por ejemplo si queremos graficar una espiral de Arquímedes:</div>
 <br><span class="math display"><em>r</em>(<em>θ</em>)=<em>a</em> + <em>b</em><em>θ</em></span><br><span class="math display"><em><br></em></span><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><br>theta <span class="op" style="color: #666666;">=</span> np.linspace(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">2</span><span class="op" style="color: #666666;">*</span>np.pi)<br>r <span class="op" style="color: #666666;">=</span> <span class="dv" style="color: #40a070;">5</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">50</span><span class="op" style="color: #666666;">*</span>theta<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>, projection<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"polar"</span>)<br>ax.plot(theta,r)<br><br>plt.show()</code></pre></div>
@@ -37,38 +114,27 @@
 <br><br><div style="text-align: justify;">Note que se pueden pasar argumentos de estilo y color a la función <code style="white-space: pre;">plot</code> tal y como se hace con las gráficas en coordenadas rectangulares.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Como se observa en los ejemplos anteriores lo único que debemos hacer es adicionar el <em>keyword argument</em> <code style="white-space: pre;">projection='polar'</code> al momento de crear el axes en el cual graficaremos nuestra función en coordenadas polares.</div>
-        </div>
-        <div class="archive-meta">
-            Publicado: <time class="published" datetime="2016-01-29T02:40:00-06:00">2016-01-29 02:40</time><span class="meta-sep">|</span>
-            
-
-            
-                <a href="index.src.html" id="sourcelink">Código fuente</a>
-            
-                
-        <ul itemprop="keywords" class="tags">
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../categories/graficas/" rel="tag">Gráficas</a></li>
             <li><a class="tag p-category" href="../../../../categories/matplotlib/" rel="tag">Matplotlib</a></li>
         </ul>
-<span class="entry-tags">
-            </span>
-        </div>
-    </div>
-    
-        <ul class="pager hidden-print">
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../una-introduccion-pylab/" rel="prev" title="Una introducción a Pylab">Publicación anterior</a>
             </li>
             <li class="next">
                 <a href="../introduccion-scikit-image-procesamiento/" rel="next" title="Introducción a scikit-image, procesamiento de imágenes en Python">Siguiente publicación</a>
             </li>
-        </ul>
-<div id="disqus_thread"></div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="jorge-de-los-santos",
             disqus_url="https://numython.github.io/posts/2016/01/graficas-en-coordenadas-polares-en/",
         disqus_title="Gr\u00e1ficas en coordenadas polares en Matplotlib",
-        disqus_identifier="cache\posts\2016\01\graficas-en-coordenadas-polares-en.html",
+        disqus_identifier="cache/posts/2016/01/graficas-en-coordenadas-polares-en.html",
         disqus_config = function () {
             this.language = "es_ES";
         };
@@ -82,71 +148,23 @@
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-    
-            <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-            </script>
+            </script></article><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2016         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
 </div>
 
-            <!--End of body content-->
-        </div>
-<!-- .hfeed -->
-    </div>
-<!-- #content -->
-</div>
-<!-- #container -->
 
-<div id="primary" class="theme_sidebar">
-    <ul>
-<li>
-<h3><a href="../../../../archive.html">Archivo</a></h3>
-            
-            
-            </li>
-<li>
-<h3><a href="../../../../categories/">Etiquetas</a></h3>
-            
-            
-            </li>
-<li>
-<h3><a href="../../../../rss.xml">Canal RSS</a></h3>
-            
-            
-        </li>
-<li>
-        </li>
-<li>
-<!-- Google custom search -->
-<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-<div class="form-group">
-<input type="text" name="q" class="form-control" placeholder="Search">
-</div>
-<button type="submit" class="btn btn-primary">
-	<span class="glyphicon glyphicon-search"></span>
-</button>
-<input type="hidden" name="sitesearch" value="https://numython.github.io/">
-</form>
-<!-- End of custom search -->
-
-    </li>
-</ul>
-</div>
-<!-- #primary .theme_sidebar -->
-
-<div id="footer">
-    <span id="theme-link"><a href="http://www.plaintxt.org/themes/blogtxt/" title="blog.txt theme for WordPress" rel="follow designer">blog.txt</a> 'theme by <span class="vcard"><a class="url fn n" href="http://scottwallick.com/" title="scottwallick.com" rel="follow designer"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span></span>
-    <small>Contents © 2016         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-            
- </small><p>
-</p>
-</div>
-<!-- #footer -->
-
-<!-- #wrapper -->
-    
-    
-    
-    
-
+            <script src="../../../../assets/js/all-nocdn.js"></script><script src="../../../../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("es");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
 </body>
 </html>
