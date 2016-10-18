@@ -7358,10 +7358,10 @@ article.post-micro {
 }
 
 .post-text {
-    margin-top: 1em;
+    margin-top: 2em;
     /* user mod */
-    margin-left: 10em;
-    margin-right: 10em;
+    margin-left: auto;
+    margin-right: auto;
     /* user mod */
 }
 

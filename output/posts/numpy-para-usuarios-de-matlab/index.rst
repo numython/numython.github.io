@@ -18,6 +18,7 @@ MATLAB y NumPy/SciPy tienen mucho en común. Pero hay muchas diferencias. NumPy 
 *hacer* computación científica y numérica de manera más natural con Python, no como un clon de MATLAB. 
 
 .. Some Key Differences
+
 Algunas diferencias fundamentales
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
