@@ -1,7 +1,7 @@
 .. title: Análisis estructural con Python I
 .. slug: analisis-estructural-con-python-i
 .. date: 2016-10-18 10:19:56 UTC-05:00
-.. tags: NumPy, structural analysis, fea
+.. tags: NumPy, structural analysis, fea, mathjax
 .. category: 
 .. link: 
 .. description: 
@@ -42,10 +42,13 @@ $$ U = K^{-1} F $$
 
 
 Un caso muy simple: elementos resorte
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
 figura siguiente. 
+
+.. image:: /structural-analysis/spring_01.png
+
 
 El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad: en dirección axial. 
 La matriz de rigidez para un elemento viene dada por:
