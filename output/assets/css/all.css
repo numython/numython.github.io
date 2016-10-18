@@ -587,6 +587,7 @@ article.post-micro {
 
 .entry-content {
     margin-top: 1em;
+    font-size: 18px;
     /* user mod */
 /*
     margin-left: 20em;
@@ -651,7 +652,7 @@ article.post-micro {
     }
 
     body {
-        font-size: 18pt;
+        font-size: 12pt;
     }
 
     article .entry-title a[href]:after,
