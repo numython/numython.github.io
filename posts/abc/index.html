@@ -15,20 +15,34 @@
 <meta property="og:site_name" content="Numython">
 <meta property="og:title" content="Calculando derivadas">
 <meta property="og:url" content="https://numython.github.io/posts/abc/">
-<meta property="og:description" content=".. title: Testeando Jupyter + Nikola
-.. slug: testeando-jupyter
-.. date: 2016-10-18 19:05:03 UTC-05:00
-.. tags: mathjax, sympy
-.. category: 
-.. link: 
-.. description: 
-.. type: text
+<meta property="og:description" content="Testeando Jupyter + Nikola
+$$ \int_a^b f(x) dx = F(b) - F(a)  $$
 
 
 
 
 
-Testeando Jup">
+In [1]:
+
+    
+from sympy import *
+init_printing(use_latex=&quot;mathjax&quot;)
+
+x = Symbol('x')
+
+integrate(x*cos(x**2),x)
+
+
+
+
+
+
+
+
+
+
+Out[1]:
+">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-10-18T19:43:05-05:00">
 <meta property="article:tag" content="mathjax">
@@ -119,14 +133,7 @@ Testeando Jup">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-.. title: Testeando Jupyter + Nikola
-.. slug: testeando-jupyter
-.. date: 2016-10-18 19:05:03 UTC-05:00
-.. tags: mathjax, sympy
-.. category: 
-.. link: 
-.. description: 
-.. type: text
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
