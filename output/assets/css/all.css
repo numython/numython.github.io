@@ -459,10 +459,6 @@ img {
     max-width: 90%;
 }
 
-.input-prompt{
-    color: #FF0000;
-}
-
 .postbox {
     border-bottom: 2px solid darkgrey;
     margin-bottom: 12px;
@@ -591,6 +587,10 @@ article.post-micro {
 
 .entry-content {
     margin-top: 1em;
+}
+
+.input-prompt {
+    color: #ff00ff;
 }
 
 .navbar-brand {
