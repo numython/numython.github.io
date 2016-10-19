@@ -14,6 +14,10 @@ img {
     max-width: 90%;
 }
 
+.prompt{
+    color: #FF0000;
+}
+
 .postbox {
     border-bottom: 2px solid darkgrey;
     margin-bottom: 12px;
