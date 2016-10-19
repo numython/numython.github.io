@@ -6,10 +6,6 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://numython.github.io/categories/calculo.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://numython.github.io/categories/cas.xml</loc>
   <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
@@ -19,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/mathjax.xml</loc>
-  <lastmod>2016-10-19T01:44:00Z</lastmod>
+  <lastmod>2016-10-19T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matlab.xml</loc>
@@ -31,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-19T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
@@ -63,10 +59,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-10-19T01:44:00Z</lastmod>
+  <lastmod>2016-10-19T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-10-19T01:44:00Z</lastmod>
+  <lastmod>2016-10-19T02:24:00Z</lastmod>
  </sitemap>
 </sitemapindex>
