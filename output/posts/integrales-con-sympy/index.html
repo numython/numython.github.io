@@ -12,17 +12,13 @@
 <link rel="canonical" href="https://numython.github.io/posts/integrales-con-sympy/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
 <link rel="prev" href="../numpy-para-usuarios-de-matlab/" title="NumPy para usuarios de MATLAB" type="text/html">
-<link rel="next" href="../abc/" title="ABC" type="text/html">
 <meta property="og:site_name" content="Numython">
 <meta property="og:title" content="Integrales con SymPy">
 <meta property="og:url" content="https://numython.github.io/posts/integrales-con-sympy/">
-<meta property="og:description" content="Las integrales son uno de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
-operación inversa de la derivación. Pero, además del concepto puramente matemátic">
+<meta property="og:description" content="Las integrales son unos de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
+operación inversa de la derivación. Pero, además del concepto puramente matemáti">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-10-18T11:30:03-05:00">
-<meta property="article:tag" content="cálculo">
-<meta property="article:tag" content="mathjax">
-<meta property="article:tag" content="sympy">
+<meta property="article:published_time" content="2016-10-18T20:31:20-05:00">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -72,7 +68,7 @@ operación inversa de la derivación. Pero, además del concepto puramente matem
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="index.md" id="sourcelink">Código fuente</a>
+    <a href="index.ipynb" id="sourcelink">Código fuente</a>
     </li>
 
                 
@@ -93,7 +89,7 @@ operación inversa de la derivación. Pero, además del concepto puramente matem
             <p class="byline author vcard"><span class="byline-name fn">
                     Pedro Jorge De Los Santos
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-10-18T11:30:03-05:00" itemprop="datePublished" title="2016-10-18 11:30">2016-10-18 11:30</time></a></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-10-18T20:31:20-05:00" itemprop="datePublished" title="2016-10-18 20:31">2016-10-18 20:31</time></a></p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/integrales-con-sympy.html">Comments</a>
@@ -101,90 +97,268 @@ operación inversa de la derivación. Pero, además del concepto puramente matem
 
             
         </p>
-<p class="sourceline"><a href="index.md" id="sourcelink">Código fuente</a></p>
+<p class="sourceline"><a href="index.ipynb" id="sourcelink">Código fuente</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Las integrales son uno de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Las integrales son unos de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
 operación inversa de la derivación. Pero, además del concepto puramente matemático, las integrales tienen múltiples 
 interpretaciones geométricas y físicas.</p>
 <p>En un curso ordinario de cálculo se nos enseñan métodos para resolver de forma analítica funciones que sean integrables. 
 Por ejemplo todos sabemos que la integral de una función constante será:</p>
-<p>$$ \int a\,dx = ax + C $$</p>
-<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
+$$ \int a\,dx = ax + C $$<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
 de función. Actualmente existen paquetes de álgebra simbólica que son capaces de realizar esta tarea: identificar 
 el caso que se tiene y aplicar métodos computacionales, hasta cierto grado complejos, para determinar la solución.</p>
 <p>Y claro, SymPy es uno de esos sistemas de álgebra computacional (CAS), en el que solo necesitamos escribir 
 nuestra función a integrar, utilizar por ahí alguna rutina y obtener un resultado rápidamente. Pero claro, 
 para ello debemos aprender mínimamente la sintaxis y eso es justo lo que veremos enseguida.</p>
-<h4>Integrales simples</h4>
+<h4 id="Integrales-simples">Integrales simples<a class="anchor-link" href="#Integrales-simples">¶</a>
+</h4>
 <p>Vamos a ver cómo resolver integrales simples indefinidas, si, de esas que vemos en un primer curso. Para resolverlas 
 tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene la siguiente función \(f(x)=x^2-3x+2 \).</p>
-<p>Como primer paso debemos importar lo que necesitaremos del paquete SymPy:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
-</pre>
+<p>Como primer paso debemos importar lo que necesitaremos del paquete <a href="http://www.sympy.org/en/index.html">SymPy</a>:</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">"mathjax"</span><span class="p">)</span>
+</pre></div>
 
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
 <em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
-<pre class="code literal-block"><span></span>&gt;&gt;&gt; f=x**2-3*x+2
-&gt;&gt;&gt; integrate(f)
-x**3/3 - 3*x**2/2 + 2*x
-</pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{x^{3}}{3} - \frac{3 x^{2}}{2} + 2 x$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
 si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">"&lt;pyshell#14&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\utilities\decorator.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">35</span><span class="p">,</span> <span class="ow">in</span> <span class="n">threaded_func</span>
-    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\integrals\integrals.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1228</span><span class="p">,</span> <span class="ow">in</span> <span class="n">integrate</span>
-    <span class="n">integral</span> <span class="o">=</span> <span class="n">Integral</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\integrals\integrals.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">79</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
-    <span class="n">obj</span> <span class="o">=</span> <span class="n">AddWithLimits</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">symbols</span><span class="p">,</span> <span class="o">**</span><span class="n">assumptions</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">"C:\Python27\lib\site-packages\sympy\concrete\expr_with_limits.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">362</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__new__</span>
-    <span class="o">%</span> <span class="n">function</span><span class="p">)</span>
-<span class="ne">ValueError</span><span class="p">:</span>  <span class="n">specify</span> <span class="n">dummy</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">integrand</span> <span class="n">contains</span> <span class="n">more</span> <span class="n">than</span> 
-<span class="n">one</span> <span class="n">free</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">an</span> <span class="n">integration</span> <span class="n">variable</span> <span class="n">should</span> <span class="n">be</span> <span class="n">supplied</span> <span class="n">explicitly</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
-</pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
 
+<span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
 
-<p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un 
-error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
-<pre class="code literal-block"><span></span>&gt;&gt;&gt; integrate(f,x)
-a*x**3/3 + b*x**2/2 + c*x
-</pre>
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-<h4>Integrales definidas</h4>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="n">integrate</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
-<span class="mi">1</span>
-</pre>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-9-35d395f10fae&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-intense-fg ansi-bold">      3</span> f <span class="ansi-yellow-intense-fg ansi-bold">=</span> a<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">**</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">+</span>b<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">+</span>c
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>integrate<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">integrate</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1274</span>     risch <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'risch'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1275</span>     manual <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'manual'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">-&gt; 1276</span><span class="ansi-red-fg">     </span>integral <span class="ansi-yellow-intense-fg ansi-bold">=</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1277</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1278</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>integral<span class="ansi-yellow-intense-fg ansi-bold">,</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
+<span class="ansi-green-intense-fg ansi-bold">     73</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> function<span class="ansi-yellow-intense-fg ansi-bold">.</span>_eval_Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     74</span> 
+<span class="ansi-green-fg">---&gt; 75</span><span class="ansi-red-fg">         </span>obj <span class="ansi-yellow-intense-fg ansi-bold">=</span> AddWithLimits<span class="ansi-yellow-intense-fg ansi-bold">.</span>__new__<span class="ansi-yellow-intense-fg ansi-bold">(</span>cls<span class="ansi-yellow-intense-fg ansi-bold">,</span> function<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> obj
+<span class="ansi-green-intense-fg ansi-bold">     77</span> 
+
+<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\concrete\expr_with_limits.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
+<span class="ansi-green-intense-fg ansi-bold">    375</span>                     <span class="ansi-blue-intense-fg ansi-bold">" more than one free symbol, an integration variable should"</span>
+<span class="ansi-green-intense-fg ansi-bold">    376</span>                     <span class="ansi-blue-intense-fg ansi-bold">" be supplied explicitly e.g., integrate(f(x, y), x)"</span>
+<span class="ansi-green-fg">--&gt; 377</span><span class="ansi-red-fg">                     % function)
+</span><span class="ansi-green-intense-fg ansi-bold">    378</span>             limits<span class="ansi-yellow-intense-fg ansi-bold">,</span> orientation <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>Tuple<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">for</span> s <span class="ansi-green-intense-fg ansi-bold">in</span> free<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span>
+<span class="ansi-green-intense-fg ansi-bold">    379</span> 
+
+<span class="ansi-red-fg">ValueError</span>:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Integrales-definidas">Integrales definidas<a class="anchor-link" href="#Integrales-definidas">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$1$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/calculo/" rel="tag">cálculo</a></li>
-            <li><a class="tag p-category" href="../../categories/sympy/" rel="tag">sympy</a></li>
-        </ul>
-<ul class="pager hidden-print">
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../numpy-para-usuarios-de-matlab/" rel="prev" title="NumPy para usuarios de MATLAB">Publicación anterior</a>
-            </li>
-            <li class="next">
-                <a href="../abc/" rel="next" title="ABC">Siguiente publicación</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
