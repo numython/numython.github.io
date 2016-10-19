@@ -12,7 +12,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/integrales-con-sympy/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -74,557 +74,7 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Integrales con SymPy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/integrales-con-sympy/" rel="bookmark"><time class="published dt-published" datetime="2016-10-18T20:31:20-05:00" title="2016-10-18 20:31">2016-10-18 20:31</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/integrales-con-sympy/#disqus_thread" data-disqus-identifier="cache/posts/integrales-con-sympy.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Las integrales son unos de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
-operación inversa de la derivación. Pero, además del concepto puramente matemático, las integrales tienen múltiples 
-interpretaciones geométricas y físicas.</p>
-<p>En un curso ordinario de cálculo se nos enseñan métodos para resolver de forma analítica funciones que sean integrables. 
-Por ejemplo todos sabemos que la integral de una función constante será:</p>
-$$ \int a\,dx = ax + C $$<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
-de función. Actualmente existen paquetes de álgebra simbólica que son capaces de realizar esta tarea: identificar 
-el caso que se tiene y aplicar métodos computacionales, hasta cierto grado complejos, para determinar la solución.</p>
-<p>Y claro, SymPy es uno de esos sistemas de álgebra computacional (CAS), en el que solo necesitamos escribir 
-nuestra función a integrar, utilizar por ahí alguna rutina y obtener un resultado rápidamente. Pero claro, 
-para ello debemos aprender mínimamente la sintaxis y eso es justo lo que veremos enseguida.</p>
-<h4 id="Integrales-simples">Integrales simples<a class="anchor-link" href="posts/integrales-con-sympy/#Integrales-simples">¶</a>
-</h4>
-<p>Vamos a ver cómo resolver integrales simples indefinidas, si, de esas que vemos en un primer curso. Para resolverlas 
-tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene la siguiente función \(f(x)=x^2-3x+2 \).</p>
-<p>Como primer paso debemos importar lo que necesitaremos del paquete <a href="http://www.sympy.org/en/index.html">SymPy</a>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">"mathjax"</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>ìntegrate</code> para resolver nuestra integral. Ahora, podemos 
-<em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\frac{x^{3}}{3} - \frac{3 x^{2}}{2} + 2 x$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
-si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-35d395f10fae&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> f <span class="ansi-yellow-intense-fg ansi-bold">=</span> a<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">**</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">+</span>b<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">+</span>c
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>integrate<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">integrate</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1274</span>     risch <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'risch'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1275</span>     manual <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'manual'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">-&gt; 1276</span><span class="ansi-red-fg">     </span>integral <span class="ansi-yellow-intense-fg ansi-bold">=</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1277</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1278</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>integral<span class="ansi-yellow-intense-fg ansi-bold">,</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
-<span class="ansi-green-intense-fg ansi-bold">     73</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> function<span class="ansi-yellow-intense-fg ansi-bold">.</span>_eval_Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span> 
-<span class="ansi-green-fg">---&gt; 75</span><span class="ansi-red-fg">         </span>obj <span class="ansi-yellow-intense-fg ansi-bold">=</span> AddWithLimits<span class="ansi-yellow-intense-fg ansi-bold">.</span>__new__<span class="ansi-yellow-intense-fg ansi-bold">(</span>cls<span class="ansi-yellow-intense-fg ansi-bold">,</span> function<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     76</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> obj
-<span class="ansi-green-intense-fg ansi-bold">     77</span> 
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\concrete\expr_with_limits.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
-<span class="ansi-green-intense-fg ansi-bold">    375</span>                     <span class="ansi-blue-intense-fg ansi-bold">" more than one free symbol, an integration variable should"</span>
-<span class="ansi-green-intense-fg ansi-bold">    376</span>                     <span class="ansi-blue-intense-fg ansi-bold">" be supplied explicitly e.g., integrate(f(x, y), x)"</span>
-<span class="ansi-green-fg">--&gt; 377</span><span class="ansi-red-fg">                     % function)
-</span><span class="ansi-green-intense-fg ansi-bold">    378</span>             limits<span class="ansi-yellow-intense-fg ansi-bold">,</span> orientation <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>Tuple<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">for</span> s <span class="ansi-green-intense-fg ansi-bold">in</span> free<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span>
-<span class="ansi-green-intense-fg ansi-bold">    379</span> 
-
-<span class="ansi-red-fg">ValueError</span>:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Pues eso, si intentamos integrar la función \(f(x)=ax^2+bx+c\) sin especificar la variable de integración, Python nos mandará un error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Integrales-definidas">Integrales definidas<a class="anchor-link" href="posts/integrales-con-sympy/#Integrales-definidas">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
-
-
-<div class="output_latex output_subarea output_execute_result">
-$$1$$
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-    </div>
-  </div>
-
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/numpy-para-usuarios-de-matlab/" class="u-url">NumPy para usuarios de MATLAB</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/numpy-para-usuarios-de-matlab/" rel="bookmark"><time class="published dt-published" datetime="2016-10-18T10:58:03-05:00" title="2016-10-18 10:58">2016-10-18 10:58</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/numpy-para-usuarios-de-matlab/#disqus_thread" data-disqus-identifier="cache/posts/numpy-para-usuarios-de-matlab.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>Esta es una traducción/adaptación de <a href="https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html">Numpy for Matlab users</a>.</p>
-<h4>Introducción</h4>
-<!-- MATLAB® and NumPy/SciPy have a lot in common. But there are many differences. NumPy and SciPy were created to do numerical and scientific computing in the most natural way with Python, not to be MATLAB® clones. This page is intended to be a place to collect wisdom about the differences, mostly for the purpose of helping proficient MATLAB® users become proficient NumPy and SciPy users. -->
-
-<p>MATLAB y NumPy/SciPy tienen mucho en común. Pero hay muchas diferencias. NumPy y SciPy fueron creados para 
-<em>hacer</em> computación científica y numérica de manera más natural con Python, no como un clon de MATLAB. </p>
-<!-- ### Some Key Differences -->
-
-<h4>Algunas diferencias fundamentales</h4>
-<!-- In MATLAB®, the basic data type is a multidimensional array of double precision floating point numbers. Most expressions take such arrays and return such arrays. Operations on the 2-D instances of these arrays are designed to act more or less like matrix operations in linear algebra. -->
-
-<p>En MATLAB, el tipo de dato básico es un array multidimensional de precisión doble. La mayoría de las expresiones 
-toman un array y devuelven justamente el mismo tipo de dato. Las operaciones de arrays bidimensionales están 
-diseñadas para actuar más o menos como las operaciones matriciales del álgebra lineal.</p>
-<!-- In NumPy the basic type is a multidimensional array. Operations on these arrays in all dimensionalities including 2D are elementwise operations. However, there is a special matrix type for doing linear algebra, which is just a subclass of the array class. Operations on matrix-class arrays are linear algebra operations. -->
-
-<p>En NumPy el tipo básico es un array multidimensional. Las operaciones en estos arrays en todas sus dimensiones, 
-incluyendo 2D, son operaciones elemento a elemento. Sin embargo, hay un tipo <code>matrix</code> especial para hacer 
-operaciones de álgebra lineal, el cual es justamente una subclase de la clase <code>array</code>. Las operaciones 
-en la clase <code>matrix</code> son operaciones de álgebra lineal.</p>
-<!-- MATLAB® uses 1 (one) based indexing. The initial element of a sequence is found using a(1). See note INDEXING   -->
-
-<p>MATLAB utiliza indexación basada en 1 (uno). El elemento inicial de la secuencia A se obtiene usando A(1).</p>
-<!-- Python uses 0 (zero) based indexing. The initial element of a sequence is found using a[0]. -->
-
-<p>Python utiliza indexación basada en 0 (cero). El elemento inicial de la secuencia A se obtiene usando A[0].</p>
-<!-- MATLAB®’s scripting language was created for doing linear algebra. The syntax for basic matrix operations is nice and clean, but the API for adding GUIs and making full-fledged applications is more or less an afterthought.  -->
-
-<p>El lenguaje de scripting MATLAB fue creado para <em>hacer</em> algebra lineal. La sintaxis para la mayoría de las operaciones 
-matriciales básicas es buena y clara, pero la API para agregar una interfaz gráfica y hacer <em>aplicaciones de verdad</em> 
-es más o menos una idea adicionada posteriormente y cuya integración es poco fluida.</p>
-<!-- NumPy is based on Python, which was designed from the outset to be an excellent general-purpose programming language. While Matlab’s syntax for some array manipulations is more compact than NumPy’s, NumPy (by virtue of being an add-on to Python) can do many things that Matlab just cannot, for instance subclassing the main array type to do both array and matrix math cleanly. -->
-
-<p>NumPy está basado en Python, el cuál fue diseñado desde un inicio para ser un excelente lenguaje de programación 
-de propósito general. Mientras la sintaxis de MATLAB para algunas manipulaciones de arrays es más compacta 
-que la de NumPy, NumPy puede hacer muchas cosas que en MATLAB son imposibles, por ejemplo heredar desde el 
-principal tipo de array (clase <code>np.ndarray</code>) para hacer un tipo <code>matrix</code> que sea más claro para realizar 
-operaciones de álgebra lineal.</p>
-<!-- In MATLAB®, arrays have pass-by-value semantics, with a lazy copy-on-write scheme to prevent actually creating copies until they are actually needed. Slice operations copy parts of the array.     -->
-
-<p>En MATLAB, los arrays tiene </p>
-<!-- In NumPy arrays have pass-by-reference semantics. Slice operations are views into an array. -->
-
-<p>En NumPy, los arrays </p>
-<!-- ### ‘array’ or ‘matrix’? Which should I use? -->
-
-<h4>¿<code>array</code> o <code>matrix</code>? ¿Cuál debería utilizar?</h4>
-<!-- Numpy provides, in addition to np.ndarray` an additional matrix type that you may see used in some existing code. Which one to use? -->
-
-<p>NumPy proporciona adicionalmente a <code>np.ndarray</code> un tipo <code>matrix</code>, que puede utilizarse en algunas situaciones 
-¿Cuál debo usar?</p>
-<!-- #### Short answer -->
-
-<h5>Respuesta corta</h5>
-<!-- **Use arrays** -->
-
-<p><strong>Usar el tipo <code>array</code></strong></p>
-<!-- They are the standard vector/matrix/tensor type of numpy. Many numpy function return arrays, not matrices.
-There is a clear distinction between element-wise operations and linear algebra operations.
-You can have standard vectors or row/column vectors if you like. -->
-
-<!-- The only disadvantage of using the array type is that you will have to use dot instead of * to multiply (reduce) two tensors (scalar product, matrix vector multiplication etc.). -->
-
-<ul>
-<li>Es el tipo de matriz/vector estándar de NumPy. Muchas funciones de NumPy devuelven un array, no matrices.</li>
-<li>Hay una distinción clara entre las operaciones elemento a elemento y las de álgebra lineal.</li>
-<li>Puede tener vectores estándar o vectores filas/columnas si lo requiere.</li>
-</ul>
-<p>La única desventaja de usar el tipo array es que tendrás que utilizar la función/método <code>dot</code> en lugar de <code>*</code> para 
-multiplicar dos tensores (producto escalar, multiplicación matricial,...)</p>
-<!-- #### Long answer -->
-
-<h5>Respuesta larga</h5>
-<!-- Numpy contains both an array class and a matrix class. The array class is intended to be a general-purpose n-dimensional array for many kinds of numerical computing, while matrix is intended to facilitate linear algebra computations specifically. In practice there are only a handful of key differences between the two. -->
-
-<p>NumPy contiene una clase <code>array</code> y una clase <code>matrix</code>. La clase <code>array</code> tiene la finalidad de ser un 
-array n-dimensional de propósito general para muchos tipos de computación numérica, mientras la 
-clase <code>matrix</code> tiene la finalidad de facilitar especificamente cuestiones relacionadas con la 
-computación del álgebra lineal. En la práctica, sólo hay un puñado de diferencias claves 
-entre ambas:</p>
-<!-- Operator *, dot(), and multiply():
-For array, ‘``*``’ means element-wise multiplication, and the dot() function is used for matrix multiplication.
-For matrix, ‘``*``’ means matrix multiplication, and the multiply() function is used for element-wise multiplication. -->
-
-<ul>
-<li>Operator <code>*</code>, <code>dot()</code>, and <code>multiply()</code>:<ul>
-<li>Para array ---</li>
-<li>Para matrix</li>
-</ul>
-</li>
-</ul>
-<p>Handling of vectors (rank-1 arrays)
-For array, the vector shapes 1xN, Nx1, and N are all different things. Operations like A[:,1] return a rank-1 array of shape N, not a rank-2 of shape Nx1. Transpose on a rank-1 array does nothing.
-For matrix, rank-1 arrays are always upconverted to 1xN or Nx1 matrices (row or column vectors). A[:,1] returns a rank-2 matrix of shape Nx1.
-Handling of higher-rank arrays (rank &gt; 2)
-array objects can have rank &gt; 2.
-matrix objects always have exactly rank 2.
-Convenience attributes
-array has a .T attribute, which returns the transpose of the data.
-matrix also has .H, .I, and .A attributes, which return the conjugate transpose, inverse, and asarray() of the matrix, respectively.
-Convenience constructor
-The array constructor takes (nested) Python sequences as initializers. As in, array([[1,2,3],[4,5,6]]).
-The matrix constructor additionally takes a convenient string initializer. As in matrix("[1 2 3; 4 5 6]").
-There are pros and cons to using both:</p>
-<p>array
-:) You can treat rank-1 arrays as either row or column vectors. dot(A,v) treats v as a column vector, while dot(v,A) treats v as a row vector. This can save you having to type a lot of transposes.
-&lt;:( Having to use the dot() function for matrix-multiply is messy – dot(dot(A,B),C) vs. A<em>B</em>C.
-:) Element-wise multiplication is easy: A<em>B.
-:) array is the “default” NumPy type, so it gets the most testing, and is the type most likely to be returned by 3rd party code that uses NumPy.
-:) Is quite at home handling data of any rank.
-:) Closer in semantics to tensor algebra, if you are familiar with that.
-:) All operations (</em>, /, +, ```` etc.) are elementwise
-matrix
-:\ Behavior is more like that of MATLAB® matrices.
-&lt;:( Maximum of rank-2. To hold rank-3 data you need array or perhaps a Python list of matrix.
-&lt;:( Minimum of rank-2. You cannot have vectors. They must be cast as single-column or single-row matrices.
-&lt;:( Since array is the default in NumPy, some functions may return an array even if you give them a matrix as an argument. This shouldn’t happen with NumPy functions (if it does it’s a bug), but 3rd party code based on NumPy may not honor type preservation like NumPy does.
-:) A*B is matrix multiplication, so more convenient for linear algebra.
-&lt;:( Element-wise multiplication requires calling a function, multipy(A,B).
-&lt;:( The use of operator overloading is a bit illogical: * does not work elementwise but / does.
-The array is thus much more advisable to use.</p>
-<h4>Facilities for Matrix Users</h4>
-<p>Numpy has some features that facilitate the use of the matrix type, which hopefully make things easier for Matlab converts.</p>
-<p>A matlib module has been added that contains matrix versions of common array constructors like ones(), zeros(), empty(), eye(), rand(), repmat(), etc. Normally these functions return arrays, but the matlib versions return matrix objects.
-mat has been changed to be a synonym for asmatrix, rather than matrix, thus making it concise way to convert an array to a matrix without copying the data.
-Some top-level functions have been removed. For example numpy.rand() now needs to be accessed as numpy.random.rand(). Or use the rand() from the matlib module. But the “numpythonic” way is to use numpy.random.random(), which takes a tuple for the shape, like other numpy functions.
-Table of Rough MATLAB-NumPy Equivalents
-The table below gives rough equivalents for some common MATLAB® expressions. These are not exact equivalents, but rather should be taken as hints to get you going in the right direction. For more detail read the built-in documentation on the NumPy functions.</p>
-<p>Some care is necessary when writing functions that take arrays or matrices as arguments — if you are expecting an array and are given a matrix, or vice versa, then ‘*’ (multiplication) will give you unexpected results. You can convert back and forth between arrays and matrices using</p>
-<p>asarray: always returns an object of type array
-asmatrix or mat: always return an object of type matrix
-asanyarray: always returns an array object or a subclass derived from it, depending on the input. For instance if you pass in a matrix it returns a matrix.
-These functions all accept both arrays and matrices (among other things like Python lists), and thus are useful when writing functions that should accept any array-like object.</p>
-<p>In the table below, it is assumed that you have executed the following commands in Python:</p>
-<p>from numpy import *
-import scipy.linalg
-Also assume below that if the Notes talk about “matrix” that the arguments are rank 2 entities.</p>
-<p>General Purpose Equivalents</p>
-<p>MATLAB  numpy   Notes
-help func   info(func) or help(func) or func? (in Ipython)  get help on the function func
-which func  see note HELP   find out where func is defined
-type func   source(func) or func?? (in Ipython) print source for func (if not a native function)
-a &amp;&amp; b  a and b short-circuiting logical AND operator (Python native operator); scalar arguments only
-a || b  a or b  short-circuiting logical OR operator (Python native operator); scalar arguments only
-1<em>i, 1</em>j, 1i, 1j    1j  complex numbers
-eps np.spacing(1)   Distance between 1 and the nearest floating point number
-ode45   scipy.integrate.ode(f).set_integrator('dopri5') integrate an ODE with Runge-Kutta 4,5
-ode15s  scipy.integrate.ode(f).set_integrator('vode', method='bdf', order=15)   integrate an ODE with BDF method
-Linear Algebra Equivalents</p>
-<p>MATLAB  NumPy   Notes
-ndims(a)    ndim(a) or a.ndim   get the number of dimensions of a (tensor rank)
-numel(a)    size(a) or a.size   get the number of elements of an array
-size(a) shape(a) or a.shape get the “size” of the matrix
-size(a,n)   a.shape[n-1]    get the number of elements of the n-th dimension of array a. (Note that MATLAB® uses 1 based indexing while Python uses 0 based indexing, See note INDEXING)
-[ 1 2 3; 4 5 6 ]    array([[1.,2.,3.], [4.,5.,6.]]) 2x3 matrix literal
-[ a b; c d ]    vstack([hstack([a,b]), hstack([c,d])]) or bmat('a b; c d').A    construct a matrix from blocks a,b,c, and d
-a(end)  a[-1]   access last element in the 1xn matrix a
-a(2,5)  a[1,4]  access element in second row, fifth column
-a(2,:)  a[1] or a[1,:]  entire second row of a
-a(1:5,:)    a[0:5] or a[:5] or a[0:5,:] the first five rows of a
-a(end-4:end,:)  a[-5:]  the last five rows of a
-a(1:3,5:9)  a[0:3][:,4:9]   rows one to three and columns five to nine of a. This gives read-only access.
-a([2,4,5],[1,3])    a[ix_([1,3,4],[0,2])]   rows 2,4 and 5 and columns 1 and 3. This allows the matrix to be modified, and doesn’t require a regular slice.
-a(3:2:21,:) a[ 2:21:2,:]    every other row of a, starting with the third and going to the twenty-first
-a(1:2:end,:)    a[ ::2,:]   every other row of a, starting with the first
-a(end:-1:1,:) or flipud(a)  a[ ::-1,:]  a with rows in reverse order
-a([1:end 1],:)  a[r_[:len(a),0]]    a with copy of the first row appended to the end
-a.' a.transpose() or a.T    transpose of a
-a'  a.conj().transpose() or a.conj().T  conjugate transpose of a
-a * b   a.dot(b)    matrix multiply
-a .<em> b  a * b   element-wise multiply
-a./b    a/b element-wise divide
-a.^3    a</em><em>3    element-wise exponentiation
-(a&gt;0.5) (a&gt;0.5) matrix whose i,jth element is (a_ij &gt; 0.5)
-find(a&gt;0.5) nonzero(a&gt;0.5)  find the indices where (a &gt; 0.5)
-a(:,find(v&gt;0.5))    a[:,nonzero(v&gt;0.5)[0]]  extract the columms of a where vector v &gt; 0.5
-a(:,find(v&gt;0.5))    a[:,v.T&gt;0.5]    extract the columms of a where column vector v &gt; 0.5
-a(a&lt;0.5)=0  a[a&lt;0.5]=0  a with elements less than 0.5 zeroed out
-a .</em> (a&gt;0.5)    a * (a&gt;0.5) a with elements less than 0.5 zeroed out
-a(:) = 3    a[:] = 3    set all values to the same scalar value
-y=x y = x.copy()    numpy assigns by reference
-y=x(2,:)    y = x[1,:].copy()   numpy slices are by reference
-y=x(:)  y = x.flatten(1)    turn array into vector (note that this forces a copy)
-1:10    arange(1.,11.) or r_[1.:11.] or r_[1:10:10j]    create an increasing vector (see note RANGES)
-0:9 arange(10.) or r_[:10.] or r_[:9:10j]   create an increasing vector (see note RANGES)
-[1:10]' arange(1.,11.)[:, newaxis]  create a column vector
-zeros(3,4)  zeros((3,4))    3x4 rank-2 array full of 64-bit floating point zeros
-zeros(3,4,5)    zeros((3,4,5))  3x4x5 rank-3 array full of 64-bit floating point zeros
-ones(3,4)   ones((3,4)) 3x4 rank-2 array full of 64-bit floating point ones
-eye(3)  eye(3)  3x3 identity matrix
-diag(a) diag(a) vector of diagonal elements of a
-diag(a,0)   diag(a,0)   square diagonal matrix whose nonzero values are the elements of a
-rand(3,4)   random.rand(3,4)    random 3x4 matrix
-linspace(1,3,4) linspace(1,3,4) 4 equally spaced samples between 1 and 3, inclusive
-[x,y]=meshgrid(0:8,0:5) mgrid[0:9.,0:6.] or meshgrid(r_[0:9.],r_[0:6.]  two 2D arrays: one of x values, the other of y values
-    ogrid[0:9.,0:6.] or ix_(r_[0:9.],r_[0:6.]   the best way to eval functions on a grid
-[x,y]=meshgrid([1,2,4],[2,4,5]) meshgrid([1,2,4],[2,4,5])  <br>
-    ix_([1,2,4],[2,4,5])    the best way to eval functions on a grid
-repmat(a, m, n) tile(a, (m, n)) create m by n copies of a
-[a b]   concatenate((a,b),1) or hstack((a,b)) or column_stack((a,b)) or c_[a,b] concatenate columns of a and b
-[a; b]  concatenate((a,b)) or vstack((a,b)) or r_[a,b]  concatenate rows of a and b
-max(max(a)) a.max() maximum element of a (with ndims(a)&lt;=2 for matlab)
-max(a)  a.max(0)    maximum element of each column of matrix a
-max(a,[],2) a.max(1)    maximum element of each row of matrix a
-max(a,b)    maximum(a, b)   compares a and b element-wise, and returns the maximum value from each pair
-norm(v) sqrt(dot(v,v)) or np.linalg.norm(v) L2 norm of vector v
-a &amp; b   logical_and(a,b)    element-by-element AND operator (Numpy ufunc) See note LOGICOPS
-a | b   logical_or(a,b) element-by-element OR operator (Numpy ufunc) See note LOGICOPS
-bitand(a,b) a &amp; b   bitwise AND operator (Python native and Numpy ufunc)
-bitor(a,b)  a | b   bitwise OR operator (Python native and Numpy ufunc)
-inv(a)  linalg.inv(a)   inverse of square matrix a
-pinv(a) linalg.pinv(a)  pseudo-inverse of matrix a
-rank(a) linalg.matrix_rank(a)   rank of a matrix a
-a\b linalg.solve(a,b) if a is square; linalg.lstsq(a,b) otherwise   solution of a x = b for x
-b/a Solve a.T x.T = b.T instead solution of x a = b for x
-[U,S,V]=svd(a)  U, S, Vh = linalg.svd(a), V = Vh.T  singular value decomposition of a
-chol(a) linalg.cholesky(a).T    cholesky factorization of a matrix (chol(a) in matlab returns an upper triangular matrix, but linalg.cholesky(a) returns a lower triangular matrix)
-[V,D]=eig(a)    D,V = linalg.eig(a) eigenvalues and eigenvectors of a
-[V,D]=eig(a,b)  V,D = np.linalg.eig(a,b)    eigenvalues and eigenvectors of a,b
-[V,D]=eigs(a,k)     find the k largest eigenvalues and eigenvectors of a
-[Q,R,P]=qr(a,0) Q,R = scipy.linalg.qr(a)    QR decomposition
-[L,U,P]=lu(a)   L,U = scipy.linalg.lu(a) or LU,P=scipy.linalg.lu_factor(a)  LU decomposition (note: P(Matlab) == transpose(P(numpy)) )
-conjgrad    scipy.sparse.linalg.cg  Conjugate gradients solver
-fft(a)  fft(a)  Fourier transform of a
-ifft(a) ifft(a) inverse Fourier transform of a
-sort(a) sort(a) or a.sort() sort the matrix
-[b,I] = sortrows(a,i)   I = argsort(a[:,i]), b=a[I,:]   sort the rows of the matrix
-regress(y,X)    linalg.lstsq(X,y)   multilinear regression
-decimate(x, q)  scipy.signal.resample(x, len(x)/q)  downsample with low-pass filtering
-unique(a)   unique(a)  <br>
-squeeze(a)  a.squeeze()<br>
-Notes
-Submatrix: Assignment to a submatrix can be done with lists of indexes using the ix_ command. E.g., for 2d array a, one might do: ind=[1,3]; a[np.ix_(ind,ind)]+=100.</p>
-<p>HELP: There is no direct equivalent of MATLAB’s which command, but the commands help and source will usually list the filename where the function is located. Python also has an inspect module (do import inspect) which provides a getfile that often works.</p>
-<p>INDEXING: MATLAB® uses one based indexing, so the initial element of a sequence has index 1. Python uses zero based indexing, so the initial element of a sequence has index 0. Confusion and flamewars arise because each has advantages and disadvantages. One based indexing is consistent with common human language usage, where the “first” element of a sequence has index 1. Zero based indexing simplifies indexing. See also a text by prof.dr. Edsger W. Dijkstra.</p>
-<p>RANGES: In MATLAB®, 0:5 can be used as both a range literal and a ‘slice’ index (inside parentheses); however, in Python, constructs like 0:5 can only be used as a slice index (inside square brackets). Thus the somewhat quirky r_ object was created to allow numpy to have a similarly terse range construction mechanism. Note that r_ is not called like a function or a constructor, but rather indexed using square brackets, which allows the use of Python’s slice syntax in the arguments.</p>
-<p>LOGICOPS: &amp; or | in Numpy is bitwise AND/OR, while in Matlab &amp; and | are logical AND/OR. The difference should be clear to anyone with significant programming experience. The two can appear to work the same, but there are important differences. If you would have used Matlab’s &amp; or | operators, you should use the Numpy ufuncs logical_and/logical_or. The notable differences between Matlab’s and Numpy’s &amp; and | operators are:</p>
-<p>Non-logical {0,1} inputs: Numpy’s output is the bitwise AND of the inputs. Matlab treats any non-zero value as 1 and returns the logical AND. For example (3 &amp; 4) in Numpy is 0, while in Matlab both 3 and 4 are considered logical true and (3 &amp; 4) returns 1.
-Precedence: Numpy’s &amp; operator is higher precedence than logical operators like &lt; and &gt;; Matlab’s is the reverse.
-If you know you have boolean arguments, you can get away with using Numpy’s bitwise operators, but be careful with parentheses, like this: z = (x &gt; 1) &amp; (x &lt; 2). The absence of Numpy operator forms of logical_and and logical_or is an unfortunate consequence of Python’s design.</p>
-<p>RESHAPE and LINEAR INDEXING: Matlab always allows multi-dimensional arrays to be accessed using scalar or linear indices, Numpy does not. Linear indices are common in Matlab programs, e.g. find() on a matrix returns them, whereas Numpy’s find behaves differently. When converting Matlab code it might be necessary to first reshape a matrix to a linear sequence, perform some indexing operations and then reshape back. As reshape (usually) produces views onto the same storage, it should be possible to do this fairly efficiently. Note that the scan order used by reshape in Numpy defaults to the ‘C’ order, whereas Matlab uses the Fortran order. If you are simply converting to a linear sequence and back this doesn’t matter. But if you are converting reshapes from Matlab code which relies on the scan order, then this Matlab code: z = reshape(x,3,4); should become z = x.reshape(3,4,order=’F’).copy() in Numpy.</p>
-<p>Customizing Your Environment
-In MATLAB® the main tool available to you for customizing the environment is to modify the search path with the locations of your favorite functions. You can put such customizations into a startup script that MATLAB will run on startup.</p>
-<p>NumPy, or rather Python, has similar facilities.</p>
-<p>To modify your Python search path to include the locations of your own modules, define the PYTHONPATH environment variable.
-To have a particular script file executed when the interactive Python interpreter is started, define the PYTHONSTARTUP environment variable to contain the name of your startup script.
-Unlike MATLAB®, where anything on your path can be called immediately, with Python you need to first do an ‘import’ statement to make functions in a particular file accessible.</p>
-<p>For example you might make a startup script that looks like this (Note: this is just an example, not a statement of “best practices”):</p>
-<h2>Make all numpy available via shorter 'num' prefix</h2>
-<p>import numpy as num</p>
-<h2>Make all matlib functions accessible at the top level via M.func()</h2>
-<p>import numpy.matlib as M</p>
-<h2>Make some matlib functions accessible directly at the top level via, e.g. rand(3,3)</h2>
-<p>from numpy.matlib import rand,zeros,ones,empty,eye</p>
-<h2>Define a Hermitian function</h2>
-<p>def hermitian(A, <strong>kwargs):
-    return num.transpose(A,</strong>kwargs).conj()</p>
-<h2>Make some shorcuts for transpose,hermitian:</h2>
-<h2>num.transpose(A) --&gt; T(A)</h2>
-<h2>hermitian(A) --&gt; H(A)</h2>
-<p>T = num.transpose
-H = hermitian
-Links
-See http://mathesaurus.sf.net/ for another MATLAB®/NumPy cross-reference.</p>
-<p>An extensive list of tools for scientific work with python can be found in the topical software page.</p>
-<p>MATLAB® and SimuLink® are registered trademarks of The MathWorks.</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/" class="u-url">SymPy, calculando la ecuación de un plano dados tres puntos</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/" class="u-url">SymPy, calculando la ecuación de un plano dados tres puntos</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -877,6 +327,82 @@ See http://mathesaurus.sf.net/ for another MATLAB®/NumPy cross-reference.</p>
 <h4 id="expandir-una-expresión-algebraica"><br></h4>
 <h4 id="expandir-una-expresión-algebraica">Expandir una expresión algebraica</h4>
 <br>Enseguida se muestra un ejemplo de cómo "expandir" o multiplicar dos expresiones algebraicas.<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol,expand<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> expand((x<span class="dv" style="color: #40a070;">+2</span>)<span class="op" style="color: #666666;">*</span>(x<span class="dv" style="color: #40a070;">-3</span>))<br>x<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">-</span> x <span class="op" style="color: #666666;">-</span> <span class="dv" style="color: #40a070;">6</span></code></pre></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" class="u-url">Gráficas de contorno en Matplotlib</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/2016/02/graficas-de-contorno-en-matplotlib/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T07:27:00-06:00" title="2016-02-24 07:27">2016-02-24 07:27</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2016/02/graficas-de-contorno-en-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/graficas-de-contorno-en-matplotlib.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>Una manera de visualizar una función de dos variables es usar un campo escalar, en el que el escalar \(z = f(x,y)\) se asigna al punto \((x,y)\). Un campo escalar puede caracterizarse por sus curvas de nivel (o líneas de contorno) a lo largo de las cuales el valor de \(f(x,y)\) es constante.<br><br></p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s1600/surface.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://3.bp.blogspot.com/-gGA-OfOTy4o/Vs1bGZd--FI/AAAAAAAABw8/AH84hgg1CdE/s320/surface.png" width="320"></a></div>
+<br><br>El trazo de gráficas de lineas de contorno o curvas de nivel puede hacerse en Matplotlib utilizando la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X,Y,Z)<br>plt.show()</code></pre></div>
+<a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_01.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://1.bp.blogspot.com/-kbkYiQIYMo0/Vs1bFMkTiiI/AAAAAAAABww/DmM8liftudo/s320/img_01.png" width="320"></a></div>
+<br><br>Podemos aumentar el número de niveles si agregamos un argumento de entrada a la función <code style="white-space: pre;">contour</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">20</span>)</code></pre></div>
+<br>Con lo anterior tendríamos representados 20 niveles o 20 <em>planos</em> de valores constantes <span class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)=<em>C</em></span>.<br><a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Gr%C3%A1ficas%20de%20contorno%20en%20Matplotlib/img/img_02.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s1600/img_02.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-0deFz5SjWV4/Vs1bFiqGfBI/AAAAAAAABw4/ahJye76QOgQ/s320/img_02.png" width="320"></a></div>
+<br><br>Se pueden agregar etiquetas a cada curva de nivel si utilizamos el método <code style="white-space: pre;">clabel</code>, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><span class="im">import</span> numpy <span class="im">as</span> np<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>x <span class="op" style="color: #666666;">=</span> y <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">100</span>)<br>X,Y <span class="op" style="color: #666666;">=</span> np.meshgrid(x,y)<br>Z <span class="op" style="color: #666666;">=</span> (<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>X)<span class="op" style="color: #666666;">/</span>(X<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> Y<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<br><br>cs <span class="op" style="color: #666666;">=</span> ax.contour(X, Y, Z, <span class="dv" style="color: #40a070;">15</span>)<br>ax.clabel(cs, fontsize<span class="op" style="color: #666666;">=</span><span class="dv" style="color: #40a070;">8</span>)<br><br>plt.show()</code></pre></div>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s1600/img_03.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://4.bp.blogspot.com/-Bn_XDTuP_MA/Vs1bFpZDLVI/AAAAAAAABw0/jXFruvBtz-w/s320/img_03.png" width="320"></a></div>
+<br>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/introduccion-scikit-image-procesamiento/" class="u-url">Introducción a scikit-image, procesamiento de imágenes en Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/2016/01/introduccion-scikit-image-procesamiento/" rel="bookmark"><time class="published dt-published" datetime="2016-01-29T04:06:00-06:00" title="2016-01-29 04:06">2016-01-29 04:06</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2016/01/introduccion-scikit-image-procesamiento/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/introduccion-scikit-image-procesamiento.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div style="text-align: justify;">En este post vamos a hacer una pequeña introducción a la librería scikit-image, la cual básicamente es una colección de algoritmos para el procesamiento de imágenes en Python.<br><br>
+</div>
+<h2 id="para-comenzar">Para comenzar</h2>
+<div style="text-align: justify;">
+<br>Todas las instrucciones referente a descarga e instalación, así como algunos códigos de ejemplos pueden encontrarse en la página oficial: <a class="uri" href="http://scikit-image.org/">http://scikit-image.org/</a>.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">A manera de referencia rápida, puede instalar scikit-image utilizando pip:</div>
+<br><pre><code>&gt;&gt; pip install -U scikit-image</code></pre>
+<br><div style="text-align: justify;">En general, scikit-image o skimage, trabaja con arrays de numpy, así como también hace uso de algunas utilidades gráficas de Matplotlib para la visualización, por ello también es necesario tener instaladas las librerías SciPy, Matplotlib, NetWorkX, y PIL/pillow.<br><br>
+</div>
+<h2 id="lo-muy-básico-cómo-leer-y-mostrar-imágenes">Lo muy básico: cómo leer y mostrar imágenes</h2>
+<div style="text-align: justify;">
+<br>Bueno, aquí un primer ejemplo de cómo leer y mostrar una imagen desde un archivo. Tenemos una imagen llamada "lenna.png" en el mismo directorio de nuestro código, luego, podemos utilizar el módulo <code style="white-space: pre;">io</code>de <code style="white-space: pre;">scikit-image</code> para leer y mostrar esta imagen. Básicamente se procede como sigue:</div>
+<br>Primero importamos el modulo correspondiente:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> skimage <span class="im">import</span> io</code></pre></div>
+<br><div style="text-align: justify;">Ahora utilizamos la función <code style="white-space: pre;">imread</code> del módulo <code style="white-space: pre;">io</code> para leer la imagen, y guardamos esto en una variable, en la cual se almacenará un array de NumPy con la información de los colores que componen la imagen.</div>
+<br><code style="white-space: pre;">img = io.imread('lenna.png')</code><br><br><div style="text-align: justify;">Enseguida utilizamos la función <code style="white-space: pre;">imshow</code> para mostrar la imagen que pasemos como argumento y la función <code style="white-space: pre;">show</code> para mostrar toda la ventana o <code style="white-space: pre;">figure</code> que contiene la(s) imágenes a desplegar en la pantalla.</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">io.imshow(img)<br>io.show()</code></pre></div>
+<br>Juntando este mini código nos quedaría algo como lo siguiente:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> skimage <span class="im">import</span> io<br><br>img <span class="op" style="color: #666666;">=</span> io.imread(<span class="st" style="color: #4070a0;">"lenna.png"</span>)<br>io.imshow(img)<br>io.show()</code></pre></div>
+<br><div style="text-align: justify;">Si ejecutamos lo anterior nos mostrará la imagen leída en una ventana o <code style="white-space: pre;">figure</code> de Matplotlib, tal como se aprecia en la siguiente imagen:</div>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-vD0rh5vdTFE/VqrkeT3ulNI/AAAAAAAABt4/XIukKAVpSYM/s1600/img_01.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="268" src="https://4.bp.blogspot.com/-vD0rh5vdTFE/VqrkeT3ulNI/AAAAAAAABt4/XIukKAVpSYM/s320/img_01.PNG" width="320"></a></div>
+<br><div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Podemos <em>averiguar</em> la forma o cantidad de elementos del array <code style="white-space: pre;">img</code> utilizando el método <code style="white-space: pre;">shape</code>, por ejemplo en el script anterior se puede añadir:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span> img.shape</code></pre></div>
+<br><div style="text-align: justify;">Y con ello nos mostrará en consola una tupla de 3 elementos (para el caso de esta imagen) con la información del número de filas, columnas y <em>capas</em> de la matriz. En nuestro ejemplo nos muestra:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(512L, 512L, 3L)</code></pre></div>
+<br><div style="text-align: justify;">Lo cual implica que tenemos una imagen de 512x512 pixeles. El tercer número indica que tenemos tres capas o <em>canales</em> del módelo de color RGB, en el cual la primer capa representa el rojo, la segunda el verde y la tercera el azul. Así, toda la gama de colores para un pixel en específico se puede obtener mediante la combinación de estos tres colores primarios.<br><br>
+</div>
+<h2 id="un-poco-de-gris...">Un poco de gris...</h2>
+<div style="text-align: justify;">
+<br>Ahora, ya sabemos leer y mostrar imágenes. Vamos a operar un poco y a convertir nuestra matriz RGB de entrada en una matriz de intensidades en escala de grises, o en pocas palabras vamos a transformar una matriz de color en una en tono de grises. Para ello vamos a importar el módulo <code style="white-space: pre;">color</code> y a utilizar la función <code style="white-space: pre;">rgb2gray</code>:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> skimage <span class="im">import</span> io,color<br><br>img <span class="op" style="color: #666666;">=</span> io.imread(<span class="st" style="color: #4070a0;">"lenna.png"</span>)<br>img_gris <span class="op" style="color: #666666;">=</span> color.rgb2gray(img)<br>io.imshow(img_gris)<br>io.show()</code></pre></div>
+<br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-cpnYBa8KrD4/VqrkUmxJiII/AAAAAAAABtw/5_KMtcD6rb0/s1600/img_02.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="268" src="https://2.bp.blogspot.com/-cpnYBa8KrD4/VqrkUmxJiII/AAAAAAAABtw/5_KMtcD6rb0/s320/img_02.PNG" width="320"></a></div>
+<br><div style="text-align: justify;">¿Y qué pasa si queremos mostrar ambas imágenes en una misma ventana?, bueno, para ello podemos hacer uso de la función <code style="white-space: pre;">subplot</code> de Matplotlib:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><span class="im">from</span> skimage <span class="im">import</span> io,color<br><br>img <span class="op" style="color: #666666;">=</span> io.imread(<span class="st" style="color: #4070a0;">"lenna.png"</span>)<br>img_gris <span class="op" style="color: #666666;">=</span> color.rgb2gray(img)<br>plt.subplot(<span class="dv" style="color: #40a070;">211</span>)<br>io.imshow(img)<br>plt.subplot(<span class="dv" style="color: #40a070;">212</span>)<br>io.imshow(img_gris)<br>io.show()</code></pre></div>
+<div class="separator" style="clear: both; text-align: center;"></div>
+<br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-i_MssU0Z33c/VqrkRjic1tI/AAAAAAAABto/z0fBVZR3Uis/s1600/img_03.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="268" src="https://2.bp.blogspot.com/-i_MssU0Z33c/VqrkRjic1tI/AAAAAAAABto/z0fBVZR3Uis/s320/img_03.PNG" width="320"></a></div>
+<br><br><div style="text-align: justify;">Hasta aquí esta breve introducción a scikit-image, una librería que sin duda vale la pena revisar y que proporciona una cantidad razonable de algoritmos que pueden ser muy útiles en el procesamiento digital de imágenes. Posteriormente se hablará de algunos tópicos básicos adicionales, como la binarización, segmentación, y otras operaciones típicas.</div>
     </div>
     </article>
 </div>
