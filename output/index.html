@@ -6,11 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Numython</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#33642A" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/integrales-con-sympy/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/abc/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -72,7 +74,51 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Integrales con SymPy</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/abc/" class="u-url">ABC</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/abc/" rel="bookmark"><time class="published dt-published" datetime="2016-10-18T19:43:05-05:00" title="2016-10-18 19:43">2016-10-18 19:43</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/abc/#disqus_thread" data-disqus-identifier="cache/posts/abc.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Testeando Jupyter + Nikola</p>
+$$ \int_a^b f(x) dx = F(b) - F(a)  $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Integrales con SymPy</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -657,39 +703,6 @@ See http://mathesaurus.sf.net/ for another MATLAB®/NumPy cross-reference.</p>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf-8 -*-</span><br><span class="im">import</span> wx<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><span class="im">import</span> numpy <span class="im">as</span> np<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> OnSelect(event):<br>    klw <span class="op" style="color: #666666;">=</span> <span class="dv" style="color: #40a070;">2</span><br>    event.artist.set_lw(event.artist.get_lw() <span class="op" style="color: #666666;">+</span> klw)<br>    fig.canvas.draw()<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    dlg <span class="op" style="color: #666666;">=</span> wx.MessageDialog(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Desea borrar"</span>,<br><span class="co" style="color: #60a0b0; font-style: italic;">'Matplotlib Demo'</span>, wx.YES_NO<span class="op" style="color: #666666;">|</span>wx.ICON_QUESTION)<br><span class="cf" style="color: #007020; font-weight: bold;">if</span> dlg.ShowModal() <span class="op" style="color: #666666;">==</span> wx.ID_YES:<br>        event.artist.remove()<br><span class="cf" style="color: #007020; font-weight: bold;">else</span>:<br>        event.artist.set_lw(event.artist.get_lw() <span class="op" style="color: #666666;">-</span> klw)<br>    dlg.Destroy()<br>    app.MainLoop()<br>    fig.canvas.draw()<br><br><span class="co" style="color: #60a0b0; font-style: italic;"># Definir datos a plotear</span><br>X <span class="op" style="color: #666666;">=</span> np.random.random((<span class="dv" style="color: #40a070;">10</span>,<span class="dv" style="color: #40a070;">5</span>))<br><span class="co" style="color: #60a0b0; font-style: italic;"># Crear figure y axes</span><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Graficar datos</span><br>ax.plot(X, picker<span class="op" style="color: #666666;">=</span><span class="va" style="color: #19177c;">True</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Conectar evento "pick_event"</span><br>pick <span class="op" style="color: #666666;">=</span> fig.canvas.mpl_connect(<span class="st" style="color: #4070a0;">"pick_event"</span>, OnSelect)<br>plt.show()</code></pre></div>
 <a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Borrar%20lineas%20en%20Matplotlib%20de%20manera%20interactiva/img/img_02.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-yqflea3-OII/Vs12TDN5p0I/AAAAAAAABxY/Q6NiQ0rhYms/s1600/img_02.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="267" src="https://1.bp.blogspot.com/-yqflea3-OII/Vs12TDN5p0I/AAAAAAAABxY/Q6NiQ0rhYms/s320/img_02.png" width="320"></a></div>
 <br><br><div style="text-align: justify;">Y bueno, con esto finalizamos esta pequeña introducción a las formas interactivas de Matplotlib, desde luego existen muchas posibilidades para implementar, de tal modo que nos quede algo más <em>chulo</em>.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/una-introduccion-sympy/" class="u-url">Una introducción a SymPy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/una-introduccion-sympy/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T07:58:00-06:00" title="2016-02-24 07:58">2016-02-24 07:58</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/02/una-introduccion-sympy/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/una-introduccion-sympy.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <p>SymPy es una librería de Python desarrollada para resolver problemas de matemáticas simbólicas. Existen diversos software comerciales que realizan estas tareas: Maple, Mathematica, MATLAB, entre otros, pero requieren una licencia de uso que puede resultar poco accesible en algunos casos. En cambio, SymPy se distribuye bajo licencia BSD, que en resumen permite el uso libre de la misma.<br><br></p>
-<h3 id="importando-sympy">Importando SymPy</h3>Para importar SymPy y disponer de todos los módulos y funciones que le componen puede hacerse de diversas formas:<br><ol><li>Forma tradicional</li></ol>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">import</span> sympy</code></pre></div>
-<br>Es la manera más habitual, se carga toda la librería y se accede a cada una de las funciones mediante la sintaxis:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> r<span class="op" style="color: #666666;">=</span>sympy.funcion(args)</code></pre></div>
-<ol start="2"><li>Importando funciones seleccionadas</li></ol>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol,integrate,sin,cos</code></pre></div>
-<br>De este modo se importan solamente las funciones que vayan a utilizarse, es recomendable cuando se utilizará un número reducido de las mismas. Proporciona cierta ventaja dado que para acceder a una función no es necesario anteponer el nombre de la librería (sympy), aunque esto mismo represente una desventaja en aquellos casos en los que existen funciones de diferentes librerías con el mismo nombre.<br><ol start="3"><li>Utilizando un alias o seudónimo</li></ol>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">import</span> sympy <span class="im">as</span> sp</code></pre></div>
-<br>Funciona del mismo modo que para el primer caso, con la diferencia que el usuario puede asignarle un nombre más corto o bien más representativo para hacer las llamadas a funciones.<br>Para los ejemplos que se mostrarán en esta entrada se utilizará la segunda forma.<br><br><h3 id="declarando-una-variable-simbólica">Declarando una variable simbólica</h3>
-<br>Para declarar una variable simbólica podemos utilizar la función Symbol, para ello primero importamos la función y posteriormente declaramos una variable simbólica "x":<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<br>x<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="dv" style="color: #40a070;">+2</span><br>x <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">2</span></code></pre></div>
-<br>Como puede verse, una vez se ha declarado la variable simbólica podemos utilizarle para formar expresiones algebraicas de todo tipo. Existe una forma más "simple" de declarar una variable simbólica, para ello habrá de importarse del módulo "abc" la letra correspondiente, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy.abc <span class="im">import</span> x</code></pre></div>
-<br>O bien:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy.abc <span class="im">import</span> x,y,z</code></pre></div>
-<br>Lo anterior en el caso de que se requieran múltiples variables simbólicas.<br><br><h3 id="manipulaciones-algebraicas">Manipulaciones algebraicas</h3>
-<h4 id="factorizar-una-expresión-algebraica."><br></h4>
-<h4 id="factorizar-una-expresión-algebraica.">Factorizar una expresión algebraica.</h4>Para factorizar una expresión algebraica podemos utilizar la función factor, por ejemplo suponga que se quiere factorizar la expresión (x^2+2x+1):<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> factor,Symbol<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> factor(x<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2+2</span><span class="op" style="color: #666666;">*</span>x<span class="dv" style="color: #40a070;">+1</span>)<br>(x <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">1</span>)<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span></code></pre></div>
-<h4 id="expandir-una-expresión-algebraica"><br></h4>
-<h4 id="expandir-una-expresión-algebraica">Expandir una expresión algebraica</h4>
-<br>Enseguida se muestra un ejemplo de cómo "expandir" o multiplicar dos expresiones algebraicas.<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">from</span> sympy <span class="im">import</span> Symbol,expand<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>Symbol(<span class="st" style="color: #4070a0;">'x'</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> expand((x<span class="dv" style="color: #40a070;">+2</span>)<span class="op" style="color: #666666;">*</span>(x<span class="dv" style="color: #40a070;">-3</span>))<br>x<span class="op" style="color: #666666;">**</span><span class="dv" style="color: #40a070;">2</span> <span class="op" style="color: #666666;">-</span> x <span class="op" style="color: #666666;">-</span> <span class="dv" style="color: #40a070;">6</span></code></pre></div>
     </div>
     </article>
 </div>

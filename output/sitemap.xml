@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2016-10-18T16:37:00Z</lastmod>
+  <lastmod>2016-10-19T00:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-18T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/calculo/</loc>
@@ -40,10 +40,6 @@
  <url>
   <loc>https://numython.github.io/categories/matlab/</loc>
   <lastmod>2016-10-18T16:00:00Z</lastmod>
- </url>
- <url>
-  <loc>https://numython.github.io/categories/matplotlib-mathjax/</loc>
-  <lastmod>2016-10-18T02:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/matplotlib/</loc>
@@ -83,7 +79,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-1.html</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-19T00:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -144,6 +140,10 @@
  <url>
   <loc>https://numython.github.io/posts/2016/03/sympy-es-una-de-esas-librerias-que-lo/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/abc/</loc>
+  <lastmod>2016-10-19T00:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/analisis-estructural-con-python-i/</loc>
