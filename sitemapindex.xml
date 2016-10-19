@@ -19,19 +19,15 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/mathjax.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-18T18:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matlab.xml</loc>
   <lastmod>2016-10-18T17:04:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://numython.github.io/categories/matplotlib-mathjax.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://numython.github.io/categories/matplotlib.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-18T18:32:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
@@ -63,14 +59,14 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/galleries/rss.xml</loc>
-  <lastmod>2016-10-18T16:31:00Z</lastmod>
+  <lastmod>2016-10-19T00:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-19T00:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2016-10-19T00:45:00Z</lastmod>
  </sitemap>
 </sitemapindex>
