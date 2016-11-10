@@ -11771,7 +11771,7 @@ tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
@@ -11797,10 +11797,10 @@ tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 
@@ -11812,7 +11812,7 @@ tendremos que utilizar la función <code>ìntegrate</code>. Por ejemplo se tiene
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -11838,58 +11838,16 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="c1"># f = a*x**2+b*x+c</span>
+<span class="c1">#integrate(f)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-35d395f10fae&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> f <span class="ansi-yellow-intense-fg ansi-bold">=</span> a<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">**</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">+</span>b<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">+</span>c
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>integrate<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">integrate</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1274</span>     risch <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;risch&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1275</span>     manual <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;manual&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> None<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">-&gt; 1276</span><span class="ansi-red-fg">     </span>integral <span class="ansi-yellow-intense-fg ansi-bold">=</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1277</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1278</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>integral<span class="ansi-yellow-intense-fg ansi-bold">,</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\integrals\integrals.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
-<span class="ansi-green-intense-fg ansi-bold">     73</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> function<span class="ansi-yellow-intense-fg ansi-bold">.</span>_eval_Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span> 
-<span class="ansi-green-fg">---&gt; 75</span><span class="ansi-red-fg">         </span>obj <span class="ansi-yellow-intense-fg ansi-bold">=</span> AddWithLimits<span class="ansi-yellow-intense-fg ansi-bold">.</span>__new__<span class="ansi-yellow-intense-fg ansi-bold">(</span>cls<span class="ansi-yellow-intense-fg ansi-bold">,</span> function<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     76</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> obj
-<span class="ansi-green-intense-fg ansi-bold">     77</span> 
-
-<span class="ansi-green-fg">c:\python27\lib\site-packages\sympy\concrete\expr_with_limits.pyc</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, function, *symbols, **assumptions)</span>
-<span class="ansi-green-intense-fg ansi-bold">    375</span>                     <span class="ansi-blue-intense-fg ansi-bold">&#34; more than one free symbol, an integration variable should&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    376</span>                     <span class="ansi-blue-intense-fg ansi-bold">&#34; be supplied explicitly e.g., integrate(f(x, y), x)&#34;</span>
-<span class="ansi-green-fg">--&gt; 377</span><span class="ansi-red-fg">                     % function)
-</span><span class="ansi-green-intense-fg ansi-bold">    378</span>             limits<span class="ansi-yellow-intense-fg ansi-bold">,</span> orientation <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>Tuple<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">for</span> s <span class="ansi-green-intense-fg ansi-bold">in</span> free<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span>
-<span class="ansi-green-intense-fg ansi-bold">    379</span> 
-
-<span class="ansi-red-fg">ValueError</span>:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -11906,7 +11864,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
@@ -11920,11 +11878,11 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_latex output_subarea output_execute_result">
-$$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
+$$\frac{x^{3}}{3} - \frac{3 x^{2}}{2} + 2 x$$
 </div>
 
 </div>
@@ -11944,7 +11902,7 @@ $$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
@@ -11959,7 +11917,7 @@ $$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_latex output_subarea output_execute_result">
