@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Pedro Jorge De Los Santos"  # (translatable)
-BLOG_TITLE = "Numython: Python para ingenieros"  # (translatable)
+BLOG_TITLE = "Numython"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://numython.github.io/"
@@ -35,7 +35,7 @@ BLOG_DESCRIPTION = "Python para ingenieros"  # (translatable)
 # en        English
 # ar        Arabic
 # az        Azerbaijani
-# bg        Bulgarian
+# bg        Bulgarian 
 # bs        Bosnian
 # ca        Catalan
 # cs        Czech [ALTERNATIVELY cz]
@@ -1086,7 +1086,7 @@ SEARCH_FORM = """
 <input type="text" name="q" class="form-control" placeholder="Search">
 </div>
 <button type="submit" class="btn btn-primary">
-	<span class="glyphicon glyphicon-search"></span>
+    <span class="glyphicon glyphicon-search"></span>
 </button>
 <input type="hidden" name="sitesearch" value="%s">
 </form>
