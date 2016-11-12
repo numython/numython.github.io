@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (numpy)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/numpy.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 12 Nov 2016 19:29:43 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (numpy)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/numpy.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 12 Nov 2016 19:46:25 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -32,7 +32,7 @@ de desplazamientos nodales.&lt;/p&gt;
 &lt;p&gt;Dado que normalmente los desplazamientos son las incógnitas, se tiene que:&lt;/p&gt;
 $$ U = K^{-1} F $$&lt;h4 id="Un-caso-muy-simple:-elementos-resorte"&gt;Un caso muy simple: elementos resorte&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
 figura siguiente.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://numython.github.io/posts/analisis-estructural-con-python-i/structural-analysis/spring_01.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_01.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
 dirección axial. La matriz de rigidez para un elemento viene dada por:&lt;/p&gt;
 $$ k^{(e)} = 
