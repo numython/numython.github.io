@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2016-11-10T14:19:00Z</lastmod>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/avanzado/</loc>
@@ -32,6 +32,10 @@
  <url>
   <loc>https://numython.github.io/categories/eventos/</loc>
   <lastmod>2016-11-10T13:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/fea/</loc>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/graficas/</loc>
@@ -68,6 +72,10 @@
  <url>
   <loc>https://numython.github.io/categories/scikit-image/</loc>
   <lastmod>2016-10-18T02:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/structural-analysis/</loc>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/sympy/</loc>
@@ -123,7 +131,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-2.html</loc>
-  <lastmod>2016-11-10T14:19:00Z</lastmod>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -227,7 +235,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/posts/analisis-estructural-con-python-i/</loc>
-  <lastmod>2016-10-18T15:22:00Z</lastmod>
+  <lastmod>2016-11-12T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/integrales-con-sympy/</loc>
