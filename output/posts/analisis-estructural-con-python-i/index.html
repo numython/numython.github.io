@@ -41,7 +41,7 @@ universitarios de resistencia de materiales se ens">
             <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="https://numython.github.io/">
-                <img src="numython_logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
+                <img src="logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
             </a>
         </div>
 <!-- /.navbar-header -->
@@ -128,7 +128,7 @@ elementos, la física del problema, entre otros.</p>
 <p>El propósito del presente minicurso es introducir al lector en el uso de las 
 herramientas numéricas que proporciona Python para la solución de problemas de 
 análisis estructural utilizando el MEF.</p>
-<p>Como pequeño recordatorio, sabemos que el método de los elementos finitos consiste 
+<p>El método de los elementos finitos consiste 
 en la discretización de un continuo en pequeños elementos, con la finalidad de 
 establecer un sistema de ecuaciones que describa de manera aproximada el comportamiento 
 individual y global del sistema, pasando por la inclusión de las condiciones de frontera y todas 
@@ -136,10 +136,13 @@ las consideraciones físicas que deriven en la simplificación del problema.</p>
 <p>En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:</p>
-$$ F = K U $$<p>Donde F es el vector de fuerzas nodales, K la matriz global de rigidez y U el vector 
+$$ F = K U $$<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.</p>
 <p>Dado que normalmente los desplazamientos son las incógnitas, se tiene que:</p>
-$$ U = K^{-1} F $$<h2 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">¶</a>
+$$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
+<p>La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
+sus nodos.</p>
+<h2 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">¶</a>
 </h2>
 <p>Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
 figura siguiente.</p>
@@ -223,6 +226,33 @@ k_e &amp; - k_e \\
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Referencias">Referencias<a class="anchor-link" href="#Referencias">¶</a>
+</h3>
+<ul>
+<li>[1] Logan, D. L. (1986). A first course in the finite element method. Boston: PWS Engineering.</li>
+<li>[2] Zienkiewicz, O. C., Taylor, R. L., Zhu, J. Z., Zienkiewicz, O. C., &amp; Zienkiewicz, O. C. (2005). The finite element method: Its basis and fundamentals. Oxford: Elsevier Butterworth-Heinemann.</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 12 Nov 2016 19:49:29 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 13 Nov 2016 14:19:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -19,7 +19,7 @@ elementos, la física del problema, entre otros.&lt;/p&gt;
 &lt;p&gt;El propósito del presente minicurso es introducir al lector en el uso de las 
 herramientas numéricas que proporciona Python para la solución de problemas de 
 análisis estructural utilizando el MEF.&lt;/p&gt;
-&lt;p&gt;Como pequeño recordatorio, sabemos que el método de los elementos finitos consiste 
+&lt;p&gt;El método de los elementos finitos consiste 
 en la discretización de un continuo en pequeños elementos, con la finalidad de 
 establecer un sistema de ecuaciones que describa de manera aproximada el comportamiento 
 individual y global del sistema, pasando por la inclusión de las condiciones de frontera y todas 
@@ -27,10 +27,13 @@ las consideraciones físicas que deriven en la simplificación del problema.&lt;
 &lt;p&gt;En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:&lt;/p&gt;
-$$ F = K U $$&lt;p&gt;Donde F es el vector de fuerzas nodales, K la matriz global de rigidez y U el vector 
+$$ F = K U $$&lt;p&gt;Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.&lt;/p&gt;
 &lt;p&gt;Dado que normalmente los desplazamientos son las incógnitas, se tiene que:&lt;/p&gt;
-$$ U = K^{-1} F $$&lt;h2 id="Un-caso-muy-simple:-elementos-resorte"&gt;Un caso muy simple: elementos resorte&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
+$$ U = K^{-1} F $$&lt;p&gt;En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.&lt;/p&gt;
+&lt;p&gt;La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
+sus nodos.&lt;/p&gt;
+&lt;h2 id="Un-caso-muy-simple:-elementos-resorte"&gt;Un caso muy simple: elementos resorte&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
 figura siguiente.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_01.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
@@ -111,6 +114,32 @@ k_e &amp;amp; - k_e \\
 &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Referencias"&gt;Referencias&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Referencias"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;[1] Logan, D. L. (1986). A first course in the finite element method. Boston: PWS Engineering.&lt;/li&gt;
+&lt;li&gt;[2] Zienkiewicz, O. C., Taylor, R. L., Zhu, J. Z., Zienkiewicz, O. C., &amp;amp; Zienkiewicz, O. C. (2005). The finite element method: Its basis and fundamentals. Oxford: Elsevier Butterworth-Heinemann.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
