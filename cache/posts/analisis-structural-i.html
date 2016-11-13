@@ -11777,10 +11777,7 @@ de desplazamientos nodales.</p>
 $$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
 <p>La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
 sus nodos.</p>
-<h1 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">&#182;</a></h1><p>Vamos a comenzar con un ejemplo muy simple del sistema de resortes que se muestra en la 
-figura siguiente.</p>
-<p><img src="/structural-analysis/spring_01.png" alt=""></p>
-<p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
+<h1 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">&#182;</a></h1><p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
 dirección axial. La matriz de rigidez para un elemento viene dada por:</p>
 $$ k^{(e)} = 
 \begin{bmatrix}
@@ -11792,11 +11789,40 @@ k_e & - k_e \\
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># -*- coding: utf8 -*-</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
+
+<span class="c1"># Datos iniciales</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1000.0</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mf">5000.0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ahora vamos con un ejemplo más elaborado que se muestra en la figura siguiente.</p>
+<p><img src="/structural-analysis/spring_01.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
 
 <span class="c1"># Datos iniciales</span>
@@ -11859,6 +11885,150 @@ k_e & - k_e \\
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Utilizando-NuSA:-una-librer&#237;a-para-an&#225;lisis-estructural">Utilizando <a href="https://github.com/JorgeDeLosSantos/nusa">NuSA</a>: una librer&#237;a para an&#225;lisis estructural<a class="anchor-link" href="#Utilizando-NuSA:-una-librer&#237;a-para-an&#225;lisis-estructural">&#182;</a></h1><p><strong>NuSA</strong> es una librería Python para el análisis estructural, que facilita el planteamiento y la solución de este tipo de análisis mediante una colección de clases que reciben como dato de entrada las características elementales de un modelo: coordenadas modales, propiedades del material, condiciones de frontera, etc., y retorna valores de salida básicos como desplazamientos y fuerzas.</p>
+<p>Para testear las capacidades de <strong>NuSA</strong> vamos a resolver el ejemplo del elemento resorte. Lo primero es importar las clases que usaremos: <code>Node</code>, <code>Spring</code> y <code>SpringModel</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">nusa.element</span> <span class="kn">import</span> <span class="n">Spring</span>
+<span class="kn">from</span> <span class="nn">nusa.model</span> <span class="kn">import</span> <span class="n">SpringModel</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Luego creamos un modelo de tipo Spring utilizando la clase SpringModel:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">m1</span> <span class="o">=</span> <span class="n">SpringModel</span><span class="p">(</span><span class="s2">&quot;Modelo 01&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Model: Modelo 01
+Nodes: 0
+Elements: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ahora creamos los nodos que conformarán el elemento resorte:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(&lt;nusa.core.Node object at 0x064C5F90&gt;, &lt;nusa.core.Node object at 0x064C5F70&gt;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este caso no es necesario especificar las coordenadas nodales dado que un elemento resorte sólo necesita la rigidez para la formulación, así que se pueden dejar ambos nodos con coordenadas (0,0).</p>
+<p>Enseguida se define un elemento de tipo <code>SpringElement</code>, cuyos datos de entrada son una tupla con los nodos que le conforman y la rigidez del elemento.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;nusa.element.Spring&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -11868,6 +12038,43 @@ k_e & - k_e \\
 </pre></div>
 
 </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">m1</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+
+<span class="n">m1</span><span class="o">.</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">ux</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">addForce</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,))</span>
+
+<span class="n">m1</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">n2</span><span class="o">.</span><span class="n">ux</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[67]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$5.0$$
+</div>
+
+</div>
+
 </div>
 </div>
 
