@@ -133,6 +133,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archivo"),
+        ("/stories/nusa.html", "NuSA"),
         ("/categories/", "Etiquetas"),
         ("/rss.xml", "Canal RSS"),
     ),
@@ -181,6 +182,7 @@ POSTS = (
 )
 PAGES = (
     ("stories/*.rst", "stories", "story.tmpl"),
+    ("stories/*.md", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
     ("stories/*.html", "stories", "story.tmpl"),
 )
