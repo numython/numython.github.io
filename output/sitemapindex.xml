@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matplotlib.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2016-11-19T05:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/miniapps.xml</loc>
@@ -44,6 +44,10 @@
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
   <lastmod>2016-11-13T15:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://numython.github.io/categories/optimizacion.xml</loc>
+  <lastmod>2016-11-19T05:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
@@ -56,6 +60,10 @@
  <sitemap>
   <loc>https://numython.github.io/categories/scikit-image.xml</loc>
   <lastmod>2016-10-18T17:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://numython.github.io/categories/scipy.xml</loc>
+  <lastmod>2016-11-19T05:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/structural-analysis.xml</loc>
@@ -111,10 +119,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2016-11-19T03:46:00Z</lastmod>
+  <lastmod>2016-11-19T05:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2016-11-19T03:48:00Z</lastmod>
+  <lastmod>2016-11-19T05:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>
