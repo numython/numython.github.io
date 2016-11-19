@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <link rel="next" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/analisis-estructural-con-python-i/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/resolviendo-problemas-de-optimizacion-con-python/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -80,7 +80,57 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" rel="bookmark"><time class="published dt-published" datetime="2016-11-18T23:34:55-06:00" title="2016-11-18 23:34">2016-11-18 23:34</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/resolviendo-problemas-de-optimizacion-con-python/#disqus_thread" data-disqus-identifier="cache/posts/resolviendo-problemas-de-optimizacion-con-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Se requiere diseñar un contenedor de desechos, cuya forma será la de un prisma rectangular de
+dimensiones x, y, z como se muestra en la figura. El volumen del contenedor deberá ser de
+0.08 $m^3$. Por requerimientos, la altura debe estar en el rango 0.6-0.65 m; además la diferencia
+absoluta de las dimensiones de la base no debe ser mayor al 10% de la suma de los mismos. Luego,
+la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible.
+Nota: <em>El contenedor está abierto en la parte superior</em>.</p>
+<p><img src="posts/resolviendo-problemas-de-optimizacion-con-python/img/p1.jpg" alt=""></p>
+$$ A(x,y,z) = 2xy + 2yz + xy $$$$ V = xyz = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, z = \frac{V}{xy} $$$$ A(x,y) = 2\frac{V}{y} + 2\frac{V}{x} + xy $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -737,25 +787,6 @@ $$5.0$$
 <br><br><b><span style="font-size: large;">Mostrar más de una gráfica</span></b><br><br>Para mostrar más de una gráfica en la misma ventana, utilice hold(True) después de haber creado la primer gráfica o bien antes de ella, tal como se muestra en el código siguiente:<br><br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.2)<br>y1 = np.cos(x)<br>y2 = np.sin(x)<br><br>plt.plot(x,y1,'o',linewidth=3,color=(0.2,0.1,0.4))<br>plt.hold(True)<br>plt.plot(x,y2,'-',linewidth=2,color='g')<br>plt.grid()<br>plt.axis('equal')<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
 <br><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="https://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" width="320"></a></div>
 <br><br><br>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficas-de-barras-en-matplotlib/" class="u-url">Gráficas de barras en Matplotlib</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/graficas-de-barras-en-matplotlib/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T16:47:00-06:00" title="2016-02-24 16:47">2016-02-24 16:47</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/02/graficas-de-barras-en-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/graficas-de-barras-en-matplotlib.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <p>Esta entrada tiene como objetivo mostrar el uso de Matplotlib/Python como herramienta para generar una gráfica de barras.<br><br>Bien, para nuestro ejemplo vamos a suponer que se tienen como datos las calificaciones de 5 alumnos guardadas en una lista, y que tenemos también otra lista con los nombres correspondientes a cada uno, evidentemente en el mismo orden. Os adjunto el script y enseguida la explicación de cada linea:<br><br><br></p>
-<pre class="brush: python">#-*- coding: utf-8 -*-<br>import matplotlib.pyplot as plt<br><br>fig = plt.figure(u'Gráfica de barras') # Figure<br>ax = fig.add_subplot(111) # Axes<br><br>nombres = ['Juan','Ana','Pablo','Ximena','Jorge']<br>datos = [90,88,78,94,93]<br>xx = range(len(datos))<br><br>ax.bar(xx, datos, width=0.8, align='center')<br>ax.set_xticks(xx)<br>ax.set_xticklabels(nombres)<br><br>plt.show()<br></pre>
-<br><br>La primera linea sirve para especificar la codificación utilizada en el fichero y con ello evitar todo tipo de "sorpresas" debido a la peculiaridad de nuestro idioma, de modo que es necesaria. La segunda linea importa el módulo pyplot de la librería Matplotlib utilizando el alias plt.<br><br>Luego, creamos una nueva ventana mediante el uso de figure, y añadimos enseguida un axes mediante la instrucción add_subplot(111), donde el 111 indica que solamente se tendrá un eje coordenado dentro de la ventana.<br><br>Posteriormente se definen las listas que servirán como entrada para trazar la gráfica de barras. En la lista nombre se guarda un arreglo de strings con los nombres de cada alumno, en datos se guardan las calificaciones correspondientes y xx es una lista de enteros desde 0 a N-1, donde N es el número de elementos que contiene la lista datos, xx servirá para especificar los puntos ubicados en el eje horizontal en los cuales se trazarán las barras.<br><br>Una vez se han creado las listas, se procede a trazar la gráfica de barras mediante la función bar, cuyos parámetros de entrada son la lista xx y la lista de datos y/o calificaciones. Además de lo anterior, pueden utilizarse keywords arguments como width o align que sirven para especificar el ancho y la alineación de las barras trazadas. Luego, la función set_xticks define las marcas utilizadas para etiquetar al eje horizontal, y set_xticklabels permite colocar una lista de strings como etiquetas personalizadas, que en este caso corresponde a la lista de nombres.<br><br>Finalmente se utiliza la función show para mostrar todo lo que se ha trazado. Se adjunta la salida gráfica del script en cuestión.<br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-x2jFDeLSido/VKTKUfDsciI/AAAAAAAABY8/K_dbQk01FFg/s1600/Captura.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="267" src="https://4.bp.blogspot.com/-x2jFDeLSido/VKTKUfDsciI/AAAAAAAABY8/K_dbQk01FFg/s1600/Captura.PNG" width="320"></a></div>
-<br>
 </div>
     </article>
 </div>
