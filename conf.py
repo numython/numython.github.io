@@ -133,7 +133,8 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archivo"),
-        ("/stories/nusa.html", "NuSA"),
+        ("/stories/nusa/", "NuSA"),
+        ("/stories/about/", "Acerca de..."),
         ("/categories/", "Etiquetas"),
         ("/rss.xml", "Canal RSS"),
     ),
