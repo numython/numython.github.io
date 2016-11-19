@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (matplotlib)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/matplotlib.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 19 Nov 2016 06:15:01 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (matplotlib)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/matplotlib.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 19 Nov 2016 06:17:02 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -13,7 +13,7 @@ dimensiones x, y, z como se muestra en la figura. El volumen del contenedor debe
 absoluta de las dimensiones de la base no debe ser mayor al 10% de la suma de los mismos. Luego,
 la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible.
 Nota: &lt;em&gt;El contenedor está abierto en la parte superior&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://numython.github.io/img/p1.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://numython.github.io/img/p1.jpg" width="150px"&gt;&lt;/p&gt;
 $$ A(x,y,z) = 2xy + 2yz + xy $$$$ V = xyz = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, z = \frac{V}{xy} $$$$ A(x,y) = 2\frac{V}{y} + 2\frac{V}{x} + xy $$
 &lt;/div&gt;
 &lt;/div&gt;
