@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (matplotlib)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/matplotlib.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 20 Nov 2016 19:50:17 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (matplotlib)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/matplotlib.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 20 Nov 2016 19:59:20 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -23,7 +23,7 @@ $$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Óptimo-no-restringido"&gt;Óptimo no restringido&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:&lt;/p&gt;
+&lt;h2 id="Óptimo-no-restringido"&gt;Óptimo no restringido&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:&lt;/p&gt;
 $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones &lt;code&gt;hessian&lt;/code&gt; y &lt;code&gt;zeros&lt;/code&gt; del módulo &lt;code&gt;matrices&lt;/code&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -306,8 +306,8 @@ $$0.271441761659491$$
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Óptimización-con-restricciones"&gt;Óptimización con restricciones&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimizaci%C3%B3n-con-restricciones"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.&lt;/p&gt;
-&lt;h5 id="Usando-el-método-gráfico"&gt;Usando el método gráfico&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Usando-el-m%C3%A9todo-gr%C3%A1fico"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.&lt;/p&gt;
+&lt;h2 id="Óptimización-con-restricciones"&gt;Óptimización con restricciones&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimizaci%C3%B3n-con-restricciones"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.&lt;/p&gt;
+&lt;h3 id="Usando-el-método-gráfico"&gt;Usando el método gráfico&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Usando-el-m%C3%A9todo-gr%C3%A1fico"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.&lt;/p&gt;
 &lt;p&gt;Lo primero que haremos es importar las librerías a utilizar: NumPy y Matplotlib.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -674,22 +674,22 @@ $$0.884167559673693$$
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Utilizando-SciPy"&gt;Utilizando SciPy&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Utilizando-SciPy"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h3 id="Utilizando-SciPy"&gt;Utilizando SciPy&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Utilizando-SciPy"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [147]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [153]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.optimize&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;minimize&lt;/span&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;rosen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.08&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fdiff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;dxA&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.08&lt;/span&gt;
     &lt;span class="n"&gt;dfdx0&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="n"&gt;dfdx1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -717,8 +717,8 @@ $$0.884167559673693$$
         &lt;span class="c1"&gt;#~ 'fun' : lambda x: np.array([0.08/(x[0]*x[1]) - 0.6])}&lt;/span&gt;
         &lt;span class="c1"&gt;#~ )&lt;/span&gt;
     
-&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;minimize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rosen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'SLSQP'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;jac&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fdiff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-               &lt;span class="n"&gt;constraints&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cons&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'disp'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;minimize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'SLSQP'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;jac&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dxA&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+               &lt;span class="n"&gt;constraints&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cons&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;res&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -730,18 +730,7 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Optimization terminated successfully.    (Exit mode 0)
-            Current function value: 1.0096894255
-            Iterations: 5
-            Function evaluations: 5
-            Gradient evaluations: 5
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[147]:&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[153]:&lt;/div&gt;
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
@@ -767,7 +756,7 @@ $$0.884167559673693$$
 &lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="mf"&gt;0.31&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
