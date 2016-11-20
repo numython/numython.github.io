@@ -147,8 +147,8 @@ $$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Óptimo-no-restringido">Óptimo no restringido<a class="anchor-link" href="#%C3%93ptimo-no-restringido">¶</a>
-</h3>
+<h2 id="Óptimo-no-restringido">Óptimo no restringido<a class="anchor-link" href="#%C3%93ptimo-no-restringido">¶</a>
+</h2>
 <p>Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:</p>
 $$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
 
@@ -438,11 +438,11 @@ $$0.271441761659491$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Óptimización-con-restricciones">Óptimización con restricciones<a class="anchor-link" href="#%C3%93ptimizaci%C3%B3n-con-restricciones">¶</a>
-</h3>
+<h2 id="Óptimización-con-restricciones">Óptimización con restricciones<a class="anchor-link" href="#%C3%93ptimizaci%C3%B3n-con-restricciones">¶</a>
+</h2>
 <p>La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.</p>
-<h5 id="Usando-el-método-gráfico">Usando el método gráfico<a class="anchor-link" href="#Usando-el-m%C3%A9todo-gr%C3%A1fico">¶</a>
-</h5>
+<h3 id="Usando-el-método-gráfico">Usando el método gráfico<a class="anchor-link" href="#Usando-el-m%C3%A9todo-gr%C3%A1fico">¶</a>
+</h3>
 <p>Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.</p>
 <p>Lo primero que haremos es importar las librerías a utilizar: NumPy y Matplotlib.</p>
 
@@ -818,23 +818,23 @@ $$0.884167559673693$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Utilizando-SciPy">Utilizando SciPy<a class="anchor-link" href="#Utilizando-SciPy">¶</a>
-</h5>
+<h3 id="Utilizando-SciPy">Utilizando SciPy<a class="anchor-link" href="#Utilizando-SciPy">¶</a>
+</h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [147]:</div>
+<div class="prompt input_prompt">In [153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
 
-<span class="k">def</span> <span class="nf">rosen</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">v</span> <span class="o">=</span> <span class="mf">0.08</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     
-<span class="k">def</span> <span class="nf">fdiff</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">dxA</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">v</span> <span class="o">=</span> <span class="mf">0.08</span>
     <span class="n">dfdx0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">dfdx1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -862,8 +862,8 @@ $$0.884167559673693$$
         <span class="c1">#~ 'fun' : lambda x: np.array([0.08/(x[0]*x[1]) - 0.6])}</span>
         <span class="c1">#~ )</span>
     
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">rosen</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'SLSQP'</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span> <span class="n">fdiff</span><span class="p">,</span> 
-               <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">'disp'</span><span class="p">:</span> <span class="bp">True</span><span class="p">});</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'SLSQP'</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span> <span class="n">dxA</span><span class="p">,</span> 
+               <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">)</span>
 <span class="n">res</span>
 </pre></div>
 
@@ -876,19 +876,7 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Optimization terminated successfully.    (Exit mode 0)
-            Current function value: 1.0096894255
-            Iterations: 5
-            Function evaluations: 5
-            Gradient evaluations: 5
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[147]:</div>
+<div class="prompt output_prompt">Out[153]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -914,7 +902,7 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="mf">0.31</span>
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
 </div>
