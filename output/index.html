@@ -25,7 +25,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/resolviendo-problemas-de-optimizacion-con-python/" type="text/html">
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/wxdx-una-gui-para-calculo-elemental/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -92,7 +92,366 @@ MathJax.Hub.Config({
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/wxdx-una-gui-para-calculo-elemental/" class="u-url">wxdx, una GUI para cálculo elemental</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/wxdx-una-gui-para-calculo-elemental/" rel="bookmark"><time class="published dt-published" datetime="2016-12-12T16:25:00-06:00" title="2016-12-12 16:25">2016-12-12 16:25</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/wxdx-una-gui-para-calculo-elemental/#disqus_thread" data-disqus-identifier="cache/posts/wxdx-una-gui-para-calculo-elemental.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Bla bla bla</p>
+<p>
+</p>
+<div class="gist">
+<script src="https://gist.github.com/a6962f0bf47aded8280642ff85b42da8.js"></script><noscript>
+<pre># -*- coding: utf-8 -*-
+# 
+# Author:   Pedro Jorge De Los Santos 
+# E-mail:   delossantosmfq@gmail.com
+# Version:  0.1.0
+# License: MIT
+# 
+import wx 
+import wx.html
+import webbrowser
+import sympy
+import matplotlib
+matplotlib.use('WXAgg')
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+from matplotlib.figure import Figure
+from sympy import (sin,cos,tan,sec,csc,cot,ln,log,exp,asin,acos,atan) # Algunas funciones
+
+
+class wxdx(wx.Frame):
+    def __init__(self,parent):
+        __version__ = "0.1.0"
+        title = u"wxdx %s"%(__version__,)
+        wx.Frame.__init__(self,parent=None,title=title,size=(400,250))
+        
+        self.nb = wx.Notebook(self)
+        
+        # NoteBook Pages
+        self.derivada = Derivada(self.nb)
+        self.integral = Integral(self.nb)
+        self.limite = Limite(self.nb)
+        self.ayuda = Ayuda(self.nb)
+        
+        self.nb.AddPage(self.limite, u"Límite")        
+        self.nb.AddPage(self.derivada, "Derivada")
+        self.nb.AddPage(self.integral, "Integral indefinida")
+        self.nb.AddPage(self.ayuda, "Ayuda")
+        
+        self.SetMinSize(self.GetSize()) # Actual -&gt; Tamaño mínimo
+        self.Centre(True)
+        self.Show()
+
+
+class Derivada(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+   
+    def initCtrls(self):
+        """
+        Inicializa todos los componentes
+        """
+        # Sizers
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        # Fonts
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        font1.SetPointSize(12)
+        self.funlabel.SetFont(font1)
+        self.fun.SetFont(font1)
+        self.fun.SetForegroundColour((0,0,255))
+        
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.derivar, self.boton)
+        
+    def initCanvas(self):
+        """
+        Inicializa el Canvas
+        """
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1)) # ...
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def derivar(self,event):
+        x = sympy.Symbol("x")
+        fx = self.fun.GetValue() # Función original
+        if "^" in fx: fx = fx.replace("^","**") # Convertir ^ a notación Python (**)
+        Fx = sympy.diff(eval(fx)) # Función derivada
+        str_Fx = "$\\frac{d}{dx} \\left(%s \\right)\, = \,%s$"%(sympy.latex(eval(fx)), sympy.latex(Fx))
+        print(str_Fx)
+        self.string.set_text(str_Fx)
+        self.canvas.draw() # "Redibujar"
+
+
+class Integral(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+
+        
+    def initCtrls(self):
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        # Fonts
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        font1.SetPointSize(12)
+        self.funlabel.SetFont(font1)
+        self.fun.SetFont(font1)
+        self.fun.SetForegroundColour((0,0,255))
+        
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 6, wx.EXPAND|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.integrar, self.boton)
+        
+    def initCanvas(self):
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1))
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def integrar(self,event):
+        x = sympy.Symbol("x")
+        fx = self.fun.GetValue() # Función original
+        if "^" in fx: fx = fx.replace("^","**")
+        Fx = sympy.integrate(eval(fx)) # Función integrada
+        str_Fx = "$\int \, (%s) \,dx \,= \,%s + C$"%(sympy.latex(eval(fx)), sympy.latex(Fx))
+        self.string.set_text(str_Fx)
+        self.canvas.draw()
+        
+
+class Limite(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+
+    def initCtrls(self):
+        """
+        Inicializa todos los controles y sizers necesarios
+        """
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        self.valsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        dir_opts = "None|+|-".split("|")
+        self.x0label = wx.StaticText(self, wx.ID_ANY, "a", style=wx.ALIGN_CENTER)
+        self.x0 = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.limitdirlabel = wx.StaticText(self, wx.ID_ANY, u"Lím. Lat.")
+        self.limitdir = wx.ComboBox(self, wx.ID_ANY, choices=dir_opts)
+        
+        # Configurando el tamaño/color de fuente 
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        _all_ctrls = [self.x0label, self.limitdirlabel, self.x0, self.limitdir, 
+                      self.fun, self.funlabel]
+        for ctrl in _all_ctrls: 
+            ctrl.SetFont(font1)
+            if ctrl in [self.x0, self.fun, self.limitdir]:
+                ctrl.SetForegroundColour((0,0,255))
+        
+        # Agregando controles a los sizers
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.valsz.Add(self.x0label, 1, wx.EXPAND|wx.ALL, 2)     
+        self.valsz.Add(self.x0, 3, wx.EXPAND|wx.ALL, 2) 
+        self.valsz.AddSpacer(30)    
+        self.valsz.Add(self.limitdirlabel, 1, wx.EXPAND|wx.ALL, 2)     
+        self.valsz.Add(self.limitdir, 2, wx.EXPAND|wx.ALL, 2)     
+           
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.valsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 6, wx.EXPAND|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.calcular, self.boton)
+        
+    def initCanvas(self):
+        """
+        Inicializa el Canvas que muestra los resultados estilizados
+        mediante el TeX render de Matplotlib.
+        """
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1))
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def calcular(self,event):
+        """
+        Calcula el límite y muestra el resultado en el canvas
+        destinado para tal propósito
+        """
+        x = sympy.Symbol("x")
+        try:
+            fx = self.fun.GetValue() # Función original
+            x0 = float(self.x0.GetValue())
+            limdir = self.limitdir.GetStringSelection()
+        except:
+            title = "WXDX"
+            msg = "Valores incorrectos"
+            style = wx.ICON_EXCLAMATION
+            dlg = wx.MessageDialog(None, message=msg, 
+                               caption=title, style=style)
+            dlg.ShowModal()
+            dlg.Destroy()
+            return False
+        if "^" in fx: fx = fx.replace("^","**")
+        if limdir=="+" or limdir=="-":
+            Fx = sympy.limit(eval(fx), x, x0, dir=limdir) # Calculando el límite
+        else:
+            Fx = sympy.limit(eval(fx), x, x0) # Calculando el límite
+        str_Fx = "$\lim_{x &gt; %s} (%s) \,= \,%s$"%(x0, sympy.latex(eval(fx)), sympy.latex(Fx))
+        self.string.set_text(str_Fx)
+        self.canvas.draw()
+
+
+
+class Ayuda(wx.html.HtmlWindow):
+    """
+    Para mostrar la ayuda utilizando la sintaxis HTML
+    """
+    def __init__(self,parent):
+        wx.html.HtmlWindow.__init__(self,parent)
+        self.SetPage(AYUDA_STRING)
+    
+    def OnLinkClicked(self, link):
+        """
+        Permite abrir los links en el explorador por default del 
+        usuario, en lugar de abrirlos en este mismo control.
+        """
+        webbrowser.open(link.GetHref())
+        
+
+
+AYUDA_STRING = u"""
+&lt;h3&gt;Ayuda&lt;/h3&gt;
+
+&lt;div align="justify"&gt;
+&lt;p&gt;
+En el caso de integrales y derivadas simplemente ingrese 
+una función f(x) en el campo correspondiente y presione 
+el botón calcular para ejecutar la operación.
+&lt;/p&gt;
+
+&lt;p&gt;
+Para calcular límites, debe especificar adicionalmente el 
+valor al que "tiende" la variable. Y en caso necesario 
+puede especificar si va a calcular un límite lateral, escogiendo 
+una opción del menú, (+) para límites por la derecha y (-) para 
+límites por la izquierda.
+&lt;/p&gt;
+
+&lt;h3&gt;¿Cómo insertar funciones?&lt;/h3&gt;
+
+&lt;p&gt;
+Para insertar las expresiones de una función f(x), debe 
+utilizar los operadores aritméticos adecuados, por ejemplo, para 
+una función lineal:
+&lt;br&gt;
+&lt;br&gt;
+&lt;tt&gt;f(x) = 2*x + 1&lt;/tt&gt;
+&lt;br&gt;
+&lt;br&gt;
+Deberá colocar el operador de multiplicación entre la constante y 
+la variable x.
+&lt;br&gt;
+&lt;br&gt;
+Para funciones que involucren operaciones de potenciación, puede 
+indicarlas utilizando la notación de doble asterisco (**) de Python o 
+bien el acento circunflejo (^), más característico en software 
+de ingeniería, por ejemplo, para f(x)=2x&lt;sup&gt;2&lt;/sup&gt; + 2:
+&lt;br&gt;
+&lt;br&gt;
+&lt;tt&gt;f(x) = 2*x^2 + 2&lt;/tt&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;Acerca de...&lt;/h3&gt;
+
+&lt;p&gt;
+Esta es una pequeña aplicación desarrollada en wxPython, con 
+fines didácticos, para mostrar las posibilidades de integración 
+con otras librerías del entorno Python.
+&lt;/p&gt;
+
+&lt;p&gt;
+Más información en 
+&lt;a href="http://numython.github.io"&gt;Numython&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+"""
+
+
+class App(wx.App):
+    def OnInit(self):
+        frame = wxdx(None)
+        return True
+
+def run():
+    REDIRECT = False
+    app = App(REDIRECT)
+    app.MainLoop()
+
+
+if __name__=='__main__':
+    run()
+</pre>
+</noscript>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -1515,46 +1874,6 @@ $$5.0$$
 <br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-TO-t98vwWHg/Vs30RaVRT5I/AAAAAAAABxs/kfO0If0Xo4g/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="266" src="https://3.bp.blogspot.com/-TO-t98vwWHg/Vs30RaVRT5I/AAAAAAAABxs/kfO0If0Xo4g/s400/img_01.png" width="400"></a></div>
 <br><br><div style="text-align: justify;">Muy interesantes, pero claro, siempre hará falta un poco de personalización que añada ese toque final. Por ello en entradas posteriores hablaremos de cómo crear una hoja de estilos Matplotlib.</div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficar-en-python-con-matplotlib-y/" class="u-url">Graficar en Python con Matplotlib y NumPy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/graficar-en-python-con-matplotlib-y/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T16:52:00-06:00" title="2016-02-24 16:52">2016-02-24 16:52</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/02/graficar-en-python-con-matplotlib-y/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/graficar-en-python-con-matplotlib-y.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Trazar gráficas en Python es muy sencillo, para ello necesita tener instaladas las librerías matplotlib y numpy, las cuales pueden encontrarse y descargar de la red sin mayores obstáculos. Debe asegurarse que la versión de las librerías sea compatible con la versión de Python.</div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">Si alguna vez ha utilizado MATLAB para estos mismos fines, las instrucciones le parecerán demasiado familiar.</div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">Enseguida os adjunto un código sencillo y el resultado que produce:</div>
-<br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.1)<br>y = x*np.cos(x)<br><br>plt.plot(x,y)<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
-<br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-F1Qzh-W-7Gw/UxvtzNBs2VI/AAAAAAAABEk/wYX758jaymM/s1600/graph1.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="271" src="https://2.bp.blogspot.com/-F1Qzh-W-7Gw/UxvtzNBs2VI/AAAAAAAABEk/wYX758jaymM/s1600/graph1.PNG" width="320"></a></div>
-<br><br><div style="text-align: justify;">Las primeras dos líneas sirven para importar las librerías que se utilizarán. Recuerde que en Python pueden utilizarse seudónimos al cargar una librería (en este caso plt para matplotlib.pyplot y np para numpy).</div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">En la línea se 4 se define el vector de la variable independiente utilizando la instrucción arange de la librería numpy, el cual crea un vector especificando el valor inicial, el valor final y el incremento como argumentos. La linea 5 crea simplemente un vector dependiente del primero.</div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">La instrucción plot gráfica los vectores creados con anterioridad, teniendo como primer argumento el vector de la variable independiente. Con xlabel, ylabel y title se muestran las etiquetas correspondientes a los ejes horizontal, vertical y el título en la parte superior respectivamente. Finalmente, la instrucción show() sirve para mostrar la ventana gráfica creada y poder visualizar lo que se ha trazado.</div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">
-<br><b><span style="font-size: large;">Modificando la presentación...</span></b>
-</div>
-<br><i>Grosor de línea</i><br><br><div style="text-align: justify;">Para modificar el grosor de línea basta con incluir como argumento adicional en plot la propiedad linewidth, tal como se muestra enseguida:</div>
-<br><pre class="brush: python">plt.plot(x,y,linewidth=4)<br></pre>
-<br><i>Color de línea</i><br><br>El siguiente ejemplo configura el color de la línea, en este caso rojo.<br><br><pre class="brush: python">plt.plot(x,y,color='r')<br></pre>
-<br><div style="text-align: justify;">También puede especificar el color utilizando una tupla de 3 elementos (R,G,B) en el intervalo [0 1], por ejemplo:</div>
-<br><pre class="brush: python">plt.plot(x,y,color=(0.8,0.9,0))</pre>
-<br><i>Agregando rejilla</i><br><br>Para agregar una rejilla debe incluirse la instrucción grid() como se muestra:<br><br><pre class="brush: python">plt.grid()<br></pre>
-<br><br><b><span style="font-size: large;">Mostrar más de una gráfica</span></b><br><br>Para mostrar más de una gráfica en la misma ventana, utilice hold(True) después de haber creado la primer gráfica o bien antes de ella, tal como se muestra en el código siguiente:<br><br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.2)<br>y1 = np.cos(x)<br>y2 = np.sin(x)<br><br>plt.plot(x,y1,'o',linewidth=3,color=(0.2,0.1,0.4))<br>plt.hold(True)<br>plt.plot(x,y2,'-',linewidth=2,color='g')<br>plt.grid()<br>plt.axis('equal')<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
-<br><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="https://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" width="320"></a></div>
-<br><br><br>
-</div>
     </article>
 </div>
 

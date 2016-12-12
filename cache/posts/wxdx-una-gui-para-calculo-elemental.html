@@ -1,0 +1,343 @@
+<p>Bla bla bla</p>
+<p>
+<div class="gist">
+<script src="https://gist.github.com/a6962f0bf47aded8280642ff85b42da8.js"></script>
+<noscript>
+<pre># -*- coding: utf-8 -*-
+# 
+# Author:   Pedro Jorge De Los Santos 
+# E-mail:   delossantosmfq@gmail.com
+# Version:  0.1.0
+# License: MIT
+# 
+import wx 
+import wx.html
+import webbrowser
+import sympy
+import matplotlib
+matplotlib.use('WXAgg')
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+from matplotlib.figure import Figure
+from sympy import (sin,cos,tan,sec,csc,cot,ln,log,exp,asin,acos,atan) # Algunas funciones
+
+
+class wxdx(wx.Frame):
+    def __init__(self,parent):
+        __version__ = "0.1.0"
+        title = u"wxdx %s"%(__version__,)
+        wx.Frame.__init__(self,parent=None,title=title,size=(400,250))
+        
+        self.nb = wx.Notebook(self)
+        
+        # NoteBook Pages
+        self.derivada = Derivada(self.nb)
+        self.integral = Integral(self.nb)
+        self.limite = Limite(self.nb)
+        self.ayuda = Ayuda(self.nb)
+        
+        self.nb.AddPage(self.limite, u"Límite")        
+        self.nb.AddPage(self.derivada, "Derivada")
+        self.nb.AddPage(self.integral, "Integral indefinida")
+        self.nb.AddPage(self.ayuda, "Ayuda")
+        
+        self.SetMinSize(self.GetSize()) # Actual -&gt; Tamaño mínimo
+        self.Centre(True)
+        self.Show()
+
+
+class Derivada(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+   
+    def initCtrls(self):
+        """
+        Inicializa todos los componentes
+        """
+        # Sizers
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        # Fonts
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        font1.SetPointSize(12)
+        self.funlabel.SetFont(font1)
+        self.fun.SetFont(font1)
+        self.fun.SetForegroundColour((0,0,255))
+        
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 1, wx.ALIGN_CENTRE|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.derivar, self.boton)
+        
+    def initCanvas(self):
+        """
+        Inicializa el Canvas
+        """
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1)) # ...
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def derivar(self,event):
+        x = sympy.Symbol("x")
+        fx = self.fun.GetValue() # Función original
+        if "^" in fx: fx = fx.replace("^","**") # Convertir ^ a notación Python (**)
+        Fx = sympy.diff(eval(fx)) # Función derivada
+        str_Fx = "$\\frac{d}{dx} \\left(%s \\right)\, = \,%s$"%(sympy.latex(eval(fx)), sympy.latex(Fx))
+        print(str_Fx)
+        self.string.set_text(str_Fx)
+        self.canvas.draw() # "Redibujar"
+
+
+class Integral(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+
+        
+    def initCtrls(self):
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        # Fonts
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        font1.SetPointSize(12)
+        self.funlabel.SetFont(font1)
+        self.fun.SetFont(font1)
+        self.fun.SetForegroundColour((0,0,255))
+        
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 6, wx.EXPAND|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.integrar, self.boton)
+        
+    def initCanvas(self):
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1))
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def integrar(self,event):
+        x = sympy.Symbol("x")
+        fx = self.fun.GetValue() # Función original
+        if "^" in fx: fx = fx.replace("^","**")
+        Fx = sympy.integrate(eval(fx)) # Función integrada
+        str_Fx = "$\int \, (%s) \,dx \,= \,%s + C$"%(sympy.latex(eval(fx)), sympy.latex(Fx))
+        self.string.set_text(str_Fx)
+        self.canvas.draw()
+        
+
+class Limite(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self,parent,wx.ID_ANY)
+        self.initCanvas()
+        self.initCtrls()
+        self.SetSizer(self.mainsz)
+
+    def initCtrls(self):
+        """
+        Inicializa todos los controles y sizers necesarios
+        """
+        self.mainsz = wx.BoxSizer(wx.VERTICAL)
+        self.funsz = wx.BoxSizer(wx.HORIZONTAL)
+        self.valsz = wx.BoxSizer(wx.HORIZONTAL)
+        
+        self.funlabel = wx.StaticText(self, wx.ID_ANY, " f(x) ")
+        self.fun = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.boton = wx.Button(self, wx.ID_ANY, "Calcular")
+        
+        dir_opts = "None|+|-".split("|")
+        self.x0label = wx.StaticText(self, wx.ID_ANY, "a", style=wx.ALIGN_CENTER)
+        self.x0 = wx.TextCtrl(self, wx.ID_ANY, "")
+        self.limitdirlabel = wx.StaticText(self, wx.ID_ANY, u"Lím. Lat.")
+        self.limitdir = wx.ComboBox(self, wx.ID_ANY, choices=dir_opts)
+        
+        # Configurando el tamaño/color de fuente 
+        font1 = wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL)
+        _all_ctrls = [self.x0label, self.limitdirlabel, self.x0, self.limitdir, 
+                      self.fun, self.funlabel]
+        for ctrl in _all_ctrls: 
+            ctrl.SetFont(font1)
+            if ctrl in [self.x0, self.fun, self.limitdir]:
+                ctrl.SetForegroundColour((0,0,255))
+        
+        # Agregando controles a los sizers
+        self.funsz.Add(self.funlabel, 1, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.fun, 8, wx.EXPAND|wx.ALL, 2)
+        self.funsz.Add(self.boton, 2, wx.EXPAND|wx.ALL, 2)
+        
+        self.valsz.Add(self.x0label, 1, wx.EXPAND|wx.ALL, 2)     
+        self.valsz.Add(self.x0, 3, wx.EXPAND|wx.ALL, 2) 
+        self.valsz.AddSpacer(30)    
+        self.valsz.Add(self.limitdirlabel, 1, wx.EXPAND|wx.ALL, 2)     
+        self.valsz.Add(self.limitdir, 2, wx.EXPAND|wx.ALL, 2)     
+           
+        self.mainsz.Add(self.funsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.valsz, 1, wx.EXPAND|wx.ALL, 5)
+        self.mainsz.Add(self.canvas, 6, wx.EXPAND|wx.ALL, 5)
+        
+        self.Bind(wx.EVT_BUTTON, self.calcular, self.boton)
+        
+    def initCanvas(self):
+        """
+        Inicializa el Canvas que muestra los resultados estilizados
+        mediante el TeX render de Matplotlib.
+        """
+        self.figure = Figure()
+        
+        # FigureCanvas
+        self.canvas = FigureCanvas(self, wx.ID_ANY, self.figure)
+        self.figure.set_facecolor((1,1,1))
+        self.string = self.figure.text(0.05, 0.5, "")
+        self.string.set_fontsize(18)
+        
+    def calcular(self,event):
+        """
+        Calcula el límite y muestra el resultado en el canvas
+        destinado para tal propósito
+        """
+        x = sympy.Symbol("x")
+        try:
+            fx = self.fun.GetValue() # Función original
+            x0 = float(self.x0.GetValue())
+            limdir = self.limitdir.GetStringSelection()
+        except:
+            title = "WXDX"
+            msg = "Valores incorrectos"
+            style = wx.ICON_EXCLAMATION
+            dlg = wx.MessageDialog(None, message=msg, 
+                               caption=title, style=style)
+            dlg.ShowModal()
+            dlg.Destroy()
+            return False
+        if "^" in fx: fx = fx.replace("^","**")
+        if limdir=="+" or limdir=="-":
+            Fx = sympy.limit(eval(fx), x, x0, dir=limdir) # Calculando el límite
+        else:
+            Fx = sympy.limit(eval(fx), x, x0) # Calculando el límite
+        str_Fx = "$\lim_{x &gt; %s} (%s) \,= \,%s$"%(x0, sympy.latex(eval(fx)), sympy.latex(Fx))
+        self.string.set_text(str_Fx)
+        self.canvas.draw()
+
+
+
+class Ayuda(wx.html.HtmlWindow):
+    """
+    Para mostrar la ayuda utilizando la sintaxis HTML
+    """
+    def __init__(self,parent):
+        wx.html.HtmlWindow.__init__(self,parent)
+        self.SetPage(AYUDA_STRING)
+    
+    def OnLinkClicked(self, link):
+        """
+        Permite abrir los links en el explorador por default del 
+        usuario, en lugar de abrirlos en este mismo control.
+        """
+        webbrowser.open(link.GetHref())
+        
+
+
+AYUDA_STRING = u"""
+&lt;h3&gt;Ayuda&lt;/h3&gt;
+
+&lt;div align="justify"&gt;
+&lt;p&gt;
+En el caso de integrales y derivadas simplemente ingrese 
+una función f(x) en el campo correspondiente y presione 
+el botón calcular para ejecutar la operación.
+&lt;/p&gt;
+
+&lt;p&gt;
+Para calcular límites, debe especificar adicionalmente el 
+valor al que "tiende" la variable. Y en caso necesario 
+puede especificar si va a calcular un límite lateral, escogiendo 
+una opción del menú, (+) para límites por la derecha y (-) para 
+límites por la izquierda.
+&lt;/p&gt;
+
+&lt;h3&gt;¿Cómo insertar funciones?&lt;/h3&gt;
+
+&lt;p&gt;
+Para insertar las expresiones de una función f(x), debe 
+utilizar los operadores aritméticos adecuados, por ejemplo, para 
+una función lineal:
+&lt;br&gt;
+&lt;br&gt;
+&lt;tt&gt;f(x) = 2*x + 1&lt;/tt&gt;
+&lt;br&gt;
+&lt;br&gt;
+Deberá colocar el operador de multiplicación entre la constante y 
+la variable x.
+&lt;br&gt;
+&lt;br&gt;
+Para funciones que involucren operaciones de potenciación, puede 
+indicarlas utilizando la notación de doble asterisco (**) de Python o 
+bien el acento circunflejo (^), más característico en software 
+de ingeniería, por ejemplo, para f(x)=2x&lt;sup&gt;2&lt;/sup&gt; + 2:
+&lt;br&gt;
+&lt;br&gt;
+&lt;tt&gt;f(x) = 2*x^2 + 2&lt;/tt&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;Acerca de...&lt;/h3&gt;
+
+&lt;p&gt;
+Esta es una pequeña aplicación desarrollada en wxPython, con 
+fines didácticos, para mostrar las posibilidades de integración 
+con otras librerías del entorno Python.
+&lt;/p&gt;
+
+&lt;p&gt;
+Más información en 
+&lt;a href="http://numython.github.io"&gt;Numython&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+"""
+
+
+class App(wx.App):
+    def OnInit(self):
+        frame = wxdx(None)
+        return True
+
+def run():
+    REDIRECT = False
+    app = App(REDIRECT)
+    app.MainLoop()
+
+
+if __name__=='__main__':
+    run()
+</pre>
+</noscript>
+</div>
+</p>
