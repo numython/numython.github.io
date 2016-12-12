@@ -14,6 +14,6 @@ En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráfic
 desarrollo de una mini-aplicación que calcula límites, derivadas e integrales utilizando SymPy como 
 motor de cálculo simbólico.
 
-![](/img/wxdx.png) 
+![](/img/wxdx.PNG) 
 
 .. gist:: a6962f0bf47aded8280642ff85b42da8
