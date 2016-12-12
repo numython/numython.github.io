@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Mon, 12 Dec 2016 22:40:18 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>wxdx, una GUI para cálculo elemental</title><link>https://numython.github.io/posts/wxdx-una-gui-para-calculo-elemental/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;p&gt;En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Mon, 12 Dec 2016 22:53:21 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>wxdx, una GUI para cálculo elemental</title><link>https://numython.github.io/posts/wxdx-una-gui-para-calculo-elemental/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;p&gt;En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
 (véase &lt;a href="https://numython.github.io/categories/wxpython/"&gt;aquí&lt;/a&gt;). En este post vamos a presentar el 
 desarrollo de una mini-aplicación que calcula límites, derivadas e integrales utilizando SymPy como 
 motor de cálculo simbólico.&lt;/p&gt;
+&lt;p&gt;En la siguiente imagen se muestra la interfaz gráfica resultante:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://numython.github.io/img/wxdx.PNG"&gt; &lt;/p&gt;
+&lt;p&gt;Ahora vamos a describir un poco el diseño y funcionamiento de la aplicación. Como puede notarse 
+la aplicación está basada en la clase &lt;a href="http://docs.wxwidgets.org/3.1/classwx_notebook.html"&gt;&lt;code&gt;wxNotebook&lt;/code&gt;&lt;/a&gt;, 
+teniéndose cuatro páginas: Límites, Derivadas, Integrales indefinidas y Ayuda. Cada página del 
+Notebook contiene un instancia heredada de &lt;code&gt;wxPanel&lt;/code&gt;, misma que contiene todos los controles 
+necesarios en cada uno de los casos.&lt;/p&gt;
+&lt;p&gt;El proceso de cálculo es básicamente como sigue: se lee una función $f(x)$ introducida en los 
+&lt;code&gt;wxTextCtrl&lt;/code&gt; correspondientes y se hace un preprocesamiento mínimo, enseguida se transforma 
+el string leído en una expresión de SymPy, para luego llevar a cabo la operación 
+requerida. El resultado de la operación dado por SymPy se muestra en un canvas de Matplotlib, 
+en el cual se renderiza la expresión LaTeX del resultado obtenido.&lt;/p&gt;
+&lt;p&gt;El código de la aplicación completa se adjunta a continuación.&lt;/p&gt;
 &lt;p&gt;
 &lt;/p&gt;&lt;div class="gist"&gt;
 &lt;script src="https://gist.github.com/a6962f0bf47aded8280642ff85b42da8.js"&gt;&lt;/script&gt;
