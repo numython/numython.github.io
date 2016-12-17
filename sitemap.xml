@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2016-12-12T22:27:00Z</lastmod>
+  <lastmod>2016-12-17T17:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
@@ -139,7 +139,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-2.html</loc>
-  <lastmod>2016-12-12T22:27:00Z</lastmod>
+  <lastmod>2016-12-17T17:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -252,6 +252,10 @@
  <url>
   <loc>https://numython.github.io/posts/matematicas-con-pythonsympy-i-una-introduccion/</loc>
   <lastmod>2016-11-10T13:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</loc>
+  <lastmod>2016-12-17T17:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/numpy-para-usuarios-de-matlab/</loc>

@@ -93,7 +93,39 @@ MathJax.Hub.Config({
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficar-en-python-con-matplotlib-y/" class="u-url">Graficar en Python con Matplotlib y NumPy</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/utilizando-estilos-en-matplotlib/" class="u-url">Utilizando estilos en Matplotlib</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/2016/02/utilizando-estilos-en-matplotlib/" rel="bookmark"><time class="published dt-published" datetime="2016-02-24T18:20:00-06:00" title="2016-02-24 18:20">2016-02-24 18:20</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2016/02/utilizando-estilos-en-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/utilizando-estilos-en-matplotlib.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div style="text-align: justify;">Por defecto Matplotlib tiene un estilo definido, un aspecto muy característico y facilmente reconocible. Pero también permite personalizar los estilos de gráficas de una forma muy sencilla, utilizando hojas de estilos predefinidas y que vienen incluidas con Matplotlib, aunque también existe la posibilidad de crearlas, pero de eso hablaremos luego.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Para ver los estilos que tenemos disponibles podemos importar pyplot y posteriormente teclear lo siguiente:</div>
+<div style="text-align: justify;"><br></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="bu">print</span> plt.style.available<br>[<span class="st" style="color: #4070a0;">u'labdls-dark'</span>,<span class="st" style="color: #4070a0;">u'grayscale'</span>, <span class="st" style="color: #4070a0;">u'bmh'</span>, <span class="st" style="color: #4070a0;">u'dark_background'</span>, <span class="st" style="color: #4070a0;">u'ggplot'</span>, <span class="st" style="color: #4070a0;">u'fivethirtyeight'</span>]</code></pre></div>
+<br><div style="text-align: justify;">Como puede observar lo anterior nos devuelve una lista con los estilos disponibles. El primer elemento de la lista es un estilo personalizada, así que seguro no estará en los estilos que le devuelva su consola.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Para utilizar un determinado estilo debe anteponer al código Matplotlib (justo después de las líneas de importación de módulos) lo siguiente:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.style.use(estilo)</code></pre></div>
+<br>Donde estilo es un string con el nombre del estilo a utilizar, por ejemplo:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br>plt.style.use(<span class="st" style="color: #4070a0;">'ggplot'</span>)<br><br>x <span class="op" style="color: #666666;">=</span> np.linspace(<span class="dv" style="color: #40a070;">0</span>, <span class="dv" style="color: #40a070;">4</span><span class="op" style="color: #666666;">*</span>np.pi, <span class="dv" style="color: #40a070;">100</span>)<br>y1 <span class="op" style="color: #666666;">=</span> x<span class="op" style="color: #666666;">*</span>np.cos(x)<br>y2 <span class="op" style="color: #666666;">=</span> x<span class="op" style="color: #666666;">*</span>np.sin(x)<br>y3 <span class="op" style="color: #666666;">=</span> np.sin(x)<span class="op" style="color: #666666;">+</span>np.cos(x)<br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>)<br><br>ax.plot(x, y1, label<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"$x\,cos(x)$"</span>)<br>ax.plot(x, y2, label<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"$x\,sin(x)$"</span>)<br>ax.plot(x, y3, label<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"$sin(x)+cos(x)$"</span>)<br>ax.legend()<br>ax.set_xlabel(<span class="st" style="color: #4070a0;">"Tiempo (s)"</span>)<br>ax.set_ylabel(<span class="st" style="color: #4070a0;">"Amplitud (mm)"</span>)<br><br>plt.show()</code></pre></div>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-vDcGLp7f9Ek/Vs30SoF2w0I/AAAAAAAABxw/rzvZ3vWifak/s1600/img_02.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="https://1.bp.blogspot.com/-vDcGLp7f9Ek/Vs30SoF2w0I/AAAAAAAABxw/rzvZ3vWifak/s400/img_02.png" width="400"></a></div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Ahora nuestra gráfica luce un tanto distinta a lo que normalmente estamos acostumbrados en Matplotlib. Para dar un vistazo general a cómo se ven los demás estilos puede implementar el siguiente script:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><br>X <span class="op" style="color: #666666;">=</span> np.random.random((<span class="dv" style="color: #40a070;">10</span>,<span class="dv" style="color: #40a070;">3</span>))<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure(figsize<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">12</span>,<span class="dv" style="color: #40a070;">8</span>))<br>styles <span class="op" style="color: #666666;">=</span> plt.style.available<br><br><span class="cf" style="color: #007020; font-weight: bold;">for</span> k,style <span class="op" style="color: #666666;">in</span> <span class="bu">enumerate</span>(styles):<br>    plt.style.use(style)<br>    cax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">2</span>,<span class="dv" style="color: #40a070;">3</span>,k)<br>    cax.set_title(style)<br>    cax.plot(X)<br><br>plt.show()</code></pre></div>
+<br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-TO-t98vwWHg/Vs30RaVRT5I/AAAAAAAABxs/kfO0If0Xo4g/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="266" src="https://3.bp.blogspot.com/-TO-t98vwWHg/Vs30RaVRT5I/AAAAAAAABxs/kfO0If0Xo4g/s400/img_01.png" width="400"></a></div>
+<br><br><div style="text-align: justify;">Muy interesantes, pero claro, siempre hará falta un poco de personalización que añada ese toque final. Por ello en entradas posteriores hablaremos de cómo crear una hoja de estilos Matplotlib.</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/graficar-en-python-con-matplotlib-y/" class="u-url">Graficar en Python con Matplotlib y NumPy</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
