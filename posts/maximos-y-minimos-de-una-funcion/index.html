@@ -383,21 +383,34 @@ $$2 \sqrt{3}$$
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Podemos <em>automatizar</em> un poco este proceso definiendo una función que realice el procedimiento descrito.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [40]:</div>
+<div class="prompt input_prompt">In [84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">maxminf</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">d2f</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">pcs</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="sd">""" Calcula los máximos y mínimos de una función f(x) """</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># 1era. derivada</span>
+    <span class="n">d2f</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 2da. derivada</span>
+    <span class="n">pcs</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># puntos críticos</span>
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pcs</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="s2">"Min"</span> <span class="k">if</span> <span class="n">d2f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">"Max"</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">%f</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">d2f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span> 
+            <span class="n">tipo</span><span class="o">=</span><span class="s2">"Min"</span>
+        <span class="k">elif</span> <span class="n">d2f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span> 
+            <span class="n">tipo</span><span class="o">=</span><span class="s2">"Max"</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">tipo</span><span class="o">=</span><span class="s2">"Indefinido"</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">%f</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">tipo</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -407,10 +420,10 @@ $$2 \sqrt{3}$$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [45]:</div>
+<div class="prompt input_prompt">In [85]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">maxminf</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">maxminf</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -424,11 +437,35 @@ $$2 \sqrt{3}$$
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0.000000 (Max)
+<pre>x = -0.577350 (Max)
+x = 0.577350 (Min)
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>La función anterior puede arrojar errores cuando se tienen raíces complejas, lo cual podría considerarse mediante una estructura try-except o bien verificando si el punto crítico es un valor real.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
 </div>
 </div>
 
