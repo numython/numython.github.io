@@ -93,7 +93,45 @@ MathJax.Hub.Config({
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/utilizando-estilos-en-matplotlib/" class="u-url">Utilizando estilos en Matplotlib</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/funciones-definidas-trozos-piecewise/" class="u-url">Funciones definidas a trozos (piecewise) con NumPy</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/2016/02/funciones-definidas-trozos-piecewise/" rel="bookmark"><time class="published dt-published" datetime="2016-02-29T21:15:00-06:00" title="2016-02-29 21:15">2016-02-29 21:15</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2016/02/funciones-definidas-trozos-piecewise/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/funciones-definidas-trozos-piecewise.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div style="text-align: justify;">Una función definida a trozos es una función real \(f\) de una variable real \(x\), cuya definición está dada por varios conjuntos disjuntos de su dominio. <sup>[1]</sup>
+</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">El ejemplo clásico de una función definida por secciones es la función valor absoluto \(abs(x)\), habitualmente definida por:</div>
+<br><span class="math display">$$ f(x)= |x| = \left\{ \begin{matrix} -x &amp; si \,\, x &lt; 0 \\ x &amp; si \,\, x \geq 0 \\ \end{matrix}\right. $$</span><br><br><div style="text-align: justify;">De manera ordinaria, en NumPy, para definir una función en un intervalo tendríamos que crear un vector de \(n\) cantidad de puntos en ese intervalo, y posteriormente crear la expresión que define la función, por ejemplo, definiendo a \(f(x)=x\,\,cos(x)\)</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> x<span class="op" style="color: #666666;">=</span>np.linspace(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">10</span>)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> y<span class="op" style="color: #666666;">=</span>x<span class="op" style="color: #666666;">*</span>np.cos(x)</code></pre></div>
+<br><div style="text-align: justify;">Ahora, dada la naturaleza de las funciones por tramos, estás no pueden definirse como en las líneas anteriores, puesto que la expresión que las define depende del intervalo. Una opción para crear una función a trozos sería definiendo un intervalo para cada expresión y posteriormente concatenar todo en un mismo arreglo, tanto para los intervalos como las expresiones.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Por ejemplo, definiendo la función valor absoluto en el intervalo \((-10,10)\):</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><br>x1 <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">10</span>,<span class="dv" style="color: #40a070;">0</span>)<br>x2 <span class="op" style="color: #666666;">=</span> np.linspace(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">10</span>)<br>y1 <span class="op" style="color: #666666;">=</span> <span class="op" style="color: #666666;">-</span>x1<br>y2 <span class="op" style="color: #666666;">=</span> x2<br>x <span class="op" style="color: #666666;">=</span> np.concatenate((x1,x2))<br>y <span class="op" style="color: #666666;">=</span> np.concatenate((y1,y2))</code></pre></div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Si, lo anterior puede parecer un poco <em>tedioso</em>, así que NumPy también dispone de una función que nos ahorra el estar escribiendo mucho código: <code style="white-space: pre;">piecewise</code>, la cual nos permite crear un arreglo a partir de otro (intervalo), seccionando este acorde a las expresiones/funciones pasadas como argumentos y a las condiciones lógicas para definir los subintervalos. En términos simples la sintaxis de <code style="white-space: pre;">piecewise</code> es:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">np.piecewise(x, logls, funls)</code></pre></div>
+<br><div style="text-align: justify;">Donde <code style="white-space: pre;">x</code> es un arreglo que define la variable independiente, <code style="white-space: pre;">logls</code> una lista de condiciones lógicas para seccionar y definir los subintervalos, y <code style="white-space: pre;">funls</code> una lista de funciones o constantes que definen el valor de la función para el subintervalo correspondiente.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Siguiendo con nuestro ejemplo de la función valor absoluto, haríamos algo como lo siguiente:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><br>x <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>)<br>y <span class="op" style="color: #666666;">=</span> np.piecewise(x, [x<span class="op" style="color: #666666;">&lt;</span><span class="dv" style="color: #40a070;">0</span>, x<span class="op" style="color: #666666;">&gt;=</span><span class="dv" style="color: #40a070;">0</span>], [<span class="kw" style="color: #007020; font-weight: bold;">lambda</span> x: <span class="op" style="color: #666666;">-</span>x, <span class="kw" style="color: #007020; font-weight: bold;">lambda</span> x: x])</code></pre></div>
+<br><div style="text-align: justify;">Desde luego también se pueden usar funciones ordinarias en lugar de lambdas.</div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">Para hacer esto un poco más <em>ilustrativo</em> vamos a utilizar Matplotlib para trazar la gráfica correspondiente:</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <br><br>x <span class="op" style="color: #666666;">=</span> np.linspace(<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>, <span class="dv" style="color: #40a070;">5</span>)<br>y <span class="op" style="color: #666666;">=</span> np.piecewise(x, [x<span class="op" style="color: #666666;">&lt;</span><span class="dv" style="color: #40a070;">0</span>, x<span class="op" style="color: #666666;">&gt;=</span><span class="dv" style="color: #40a070;">0</span>], [<span class="kw" style="color: #007020; font-weight: bold;">lambda</span> x: <span class="op" style="color: #666666;">-</span>x, <span class="kw" style="color: #007020; font-weight: bold;">lambda</span> x: x])<br><br>plt.plot(x, y)<br><br>plt.show()</code></pre></div>
+<a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/Python%20para%20Ingenieros/Posts/Funciones%20definidas%20a%20trozos%20(piecewise)%20con%20Numpy/img/img_01.png"></a><br><strong><br></strong><br><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-Wrz9la4Vedg/VtS0t9Vt9AI/AAAAAAAAByE/abcTdoAzXEU/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="https://2.bp.blogspot.com/-Wrz9la4Vedg/VtS0t9Vt9AI/AAAAAAAAByE/abcTdoAzXEU/s400/img_01.png" width="400"></a></div>
+<strong><br></strong><strong><br></strong><strong>Referencias:</strong><br>[1]. <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_definida_a_trozos">https://es.wikipedia.org/wiki/Funci%C3%B3n_definida_a_trozos</a>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/utilizando-estilos-en-matplotlib/" class="u-url">Utilizando estilos en Matplotlib</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Pedro Jorge De Los Santos
@@ -385,7 +423,7 @@ MathJax.Hub.Config({
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2016         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2017         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
