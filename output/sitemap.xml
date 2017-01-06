@@ -7,15 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://numython.github.io/</loc>
-  <lastmod>2016-11-19T05:57:00Z</lastmod>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/2016/</loc>
   <lastmod>2016-10-18T02:06:00Z</lastmod>
  </url>
  <url>
+  <loc>https://numython.github.io/2017/</loc>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2016-12-17T17:06:00Z</lastmod>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
@@ -135,11 +139,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-1.html</loc>
-  <lastmod>2016-11-19T20:42:00Z</lastmod>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/index-2.html</loc>
-  <lastmod>2016-12-17T17:06:00Z</lastmod>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/listings/</loc>
@@ -240,6 +244,10 @@
  <url>
   <loc>https://numython.github.io/posts/2016/04/almacenando-imagenes-como-codigo/</loc>
   <lastmod>2016-11-10T13:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/analisis-de-placas-utilizando-python/</loc>
+  <lastmod>2017-01-06T15:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/analisis-estructural-con-python-i/</loc>
