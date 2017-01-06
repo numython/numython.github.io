@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Análisis estructural con Python I | Numython</title>
+<title>Análisis estructural con Python I. Una introducción | Numython</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -27,7 +27,7 @@ MathJax.Hub.Config({
 <link rel="prev" href="../2016/04/almacenando-imagenes-como-codigo/" title="Almacenando imágenes como código utilizando img2py" type="text/html">
 <link rel="next" href="../resolviendo-problemas-de-optimizacion-con-python/" title="Resolviendo problemas de optimización con Python" type="text/html">
 <meta property="og:site_name" content="Numython">
-<meta property="og:title" content="Análisis estructural con Python I">
+<meta property="og:title" content="Análisis estructural con Python I. Una introducción">
 <meta property="og:url" content="https://numython.github.io/posts/analisis-estructural-con-python-i/">
 <meta property="og:description" content="El análisis estructural es uno de los aspectos elementales para aquellos 
 que nos dedicamos al diseño mecánico o cuestiones similares. En los cursos 
@@ -107,7 +107,7 @@ universitarios de resistencia de materiales se ens">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Análisis estructural con Python I</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
@@ -146,7 +146,7 @@ que será adecuada en medida de ciertos criterios, tales como el tamaño y tipo 
 elementos, la física del problema, entre otros.</p>
 <p>El propósito del presente minicurso es introducir al lector en el uso de las 
 herramientas numéricas que proporciona Python para la solución de problemas de 
-análisis estructural utilizando el MEF.</p>
+análisis estructural utilizando el método de los elementos finitos.</p>
 <p>El método de los elementos finitos consiste 
 en la discretización de un continuo en pequeños elementos, con la finalidad de 
 establecer un sistema de ecuaciones que describa de manera aproximada el comportamiento 
@@ -155,7 +155,7 @@ las consideraciones físicas que deriven en la simplificación del problema.</p>
 <p>En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:</p>
-$$ F = K U $$<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
+$$ K U = F $$<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.</p>
 <p>Dado que normalmente los desplazamientos son las incógnitas, se tiene que:</p>
 $$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
@@ -163,8 +163,9 @@ $$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación 
 sus nodos.</p>
 <h2 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">¶</a>
 </h2>
-<p>El elemento resorte es el elemento más sencillo, sólo tiene un grado de libertad (por cada nodo): en 
+<p>El elemento resorte es el elemento finito más simple, tiene un grado de libertad (por cada nodo): en 
 dirección axial. La matriz de rigidez para un elemento viene dada por:</p>
+<p><img src="../../structural-analysis/spring_element.png" alt=""></p>
 $$ k^{(e)} = 
 \begin{bmatrix}
 k_e &amp; - k_e \\
@@ -205,7 +206,7 @@ k_e &amp; - k_e \\
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [46]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -522,7 +523,7 @@ $$5.0$$
         <script>
         var disqus_shortname ="jorge-de-los-santos",
             disqus_url="https://numython.github.io/posts/analisis-estructural-con-python-i/",
-        disqus_title="An\u00e1lisis estructural con Python I",
+        disqus_title="An\u00e1lisis estructural con Python I. Una introducci\u00f3n",
         disqus_identifier="cache/posts/analisis-structural-i.html",
         disqus_config = function () {
             this.language = "es_ES";
