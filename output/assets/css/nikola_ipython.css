@@ -8,13 +8,13 @@
   border-radius: 3px;
 }*/
 
-prompt .input_prompt {
+div.prompt.input_prompt {
   /* 5px right shift to account for margin in parent container */
   background-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-prompt .output_prompt {
+div.prompt.output_prompt {
   /* 5px right shift to account for margin in parent container */
   background-color: #DE5252;
 }
