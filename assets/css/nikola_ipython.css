@@ -16,7 +16,8 @@ div.prompt.input_prompt {
 
 div.prompt.output_prompt {
   /* 5px right shift to account for margin in parent container */
-  background-color: #DE5252;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 div.output_prompt {
@@ -34,6 +35,10 @@ div.text_cell_render {
 }
 
 .input {
+    color: #FFFFFF;
+}
+
+.output {
     color: #FFFFFF;
 }
 
