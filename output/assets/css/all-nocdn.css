@@ -7345,6 +7345,7 @@ article.post-micro {
 
 .entry-content {
     margin-top: 1em;
+    max-width: 600px;
 }
 
 /*
