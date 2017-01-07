@@ -10,7 +10,7 @@
 
 prompt .input_prompt {
   /* 5px right shift to account for margin in parent container */
-  background-color: #DE5252;
+  background-color: #FFFFFF;
   color: #FFFFFF;
 }
 
