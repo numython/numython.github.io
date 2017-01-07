@@ -1,12 +1,16 @@
 div.prompt {
   padding: 0.6em;
   font-size: 13px;
-  color: #FFFFFF;
   background-color: #FFFFFF;
   margin-right: 1em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+div.input_prompt {
+  /* 5px right shift to account for margin in parent container */
+  color: #FF00FF;
 }
 
 div.output_prompt {
