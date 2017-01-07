@@ -8,9 +8,9 @@ div .prompt {
   border-radius: 3px;
 }
 
-div .input_prompt {
+prompt .input_prompt {
   /* 5px right shift to account for margin in parent container */
-  color: #FF00FF;
+  background-color: #DE5252;
 }
 
 div.output_prompt {
