@@ -7213,6 +7213,10 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
     width: 150px;
 }
 
+.container {
+    max-width: 800px;
+}
+
 img {
     max-width: 90%;
 }
@@ -7345,7 +7349,6 @@ article.post-micro {
 
 .entry-content {
     margin-top: 1em;
-    max-width: 600px;
 }
 
 /*
