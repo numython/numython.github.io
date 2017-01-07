@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1483757129.294
+_modified_time = 1483757803.592
 _enable_loop = True
-_template_filename = u'c:/users/adminis/documents/blog/nikolab/lib/site-packages/nikola/data/themes/numython/templates/base.tmpl'
+_template_filename = u'c:/users/adminis/documents/blog/nikolab/lib/site-packages/nikola/data/themes/bootstrap3/templates/base.tmpl'
 _template_uri = u'base.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content', u'extra_head', u'sourcelink', u'extra_js', u'belowtitle']
@@ -242,6 +242,6 @@ def render_belowtitle(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 66, "129": 71, "130": 71, "131": 72, "132": 72, "133": 77, "134": 77, "135": 81, "136": 81, "137": 82, "138": 82, "139": 82, "140": 82, "233": 46, "145": 85, "146": 86, "147": 87, "148": 87, "149": 87, "150": 88, "23": 3, "152": 89, "153": 89, "26": 2, "155": 91, "156": 92, "29": 0, "163": 66, "220": 45, "154": 91, "157": 92, "177": 6, "186": 6, "151": 89, "232": 45, "192": 51, "69": 2, "70": 3, "71": 4, "72": 4, "73": 5, "74": 5, "206": 85, "79": 8, "80": 9, "81": 9, "82": 12, "83": 12, "84": 25, "85": 25, "86": 26, "87": 27, "88": 27, "89": 27, "90": 27, "91": 27, "92": 29, "93": 30, "94": 31, "95": 31, "96": 31, "97": 33, "98": 37, "99": 37, "100": 38, "101": 38, "102": 40, "103": 41, "104": 41, "105": 41, "106": 43, "235": 47, "236": 47, "237": 49, "111": 49, "112": 50, "113": 51, "243": 237, "118": 51, "119": 53, "120": 53, "121": 53, "122": 65, "123": 65, "234": 47}, "uri": "base.tmpl", "filename": "c:/users/adminis/documents/blog/nikolab/lib/site-packages/nikola/data/themes/numython/templates/base.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 66, "129": 71, "130": 71, "131": 72, "132": 72, "133": 77, "134": 77, "135": 81, "136": 81, "137": 82, "138": 82, "139": 82, "140": 82, "233": 46, "145": 85, "146": 86, "147": 87, "148": 87, "149": 87, "150": 88, "23": 3, "152": 89, "153": 89, "26": 2, "155": 91, "156": 92, "29": 0, "163": 66, "220": 45, "154": 91, "157": 92, "177": 6, "186": 6, "151": 89, "232": 45, "192": 51, "69": 2, "70": 3, "71": 4, "72": 4, "73": 5, "74": 5, "206": 85, "79": 8, "80": 9, "81": 9, "82": 12, "83": 12, "84": 25, "85": 25, "86": 26, "87": 27, "88": 27, "89": 27, "90": 27, "91": 27, "92": 29, "93": 30, "94": 31, "95": 31, "96": 31, "97": 33, "98": 37, "99": 37, "100": 38, "101": 38, "102": 40, "103": 41, "104": 41, "105": 41, "106": 43, "235": 47, "236": 47, "237": 49, "111": 49, "112": 50, "113": 51, "243": 237, "118": 51, "119": 53, "120": 53, "121": 53, "122": 65, "123": 65, "234": 47}, "uri": "base.tmpl", "filename": "c:/users/adminis/documents/blog/nikolab/lib/site-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
 __M_END_METADATA
 """
