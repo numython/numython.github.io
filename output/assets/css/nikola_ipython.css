@@ -1,4 +1,4 @@
-div .prompt {
+/*div .prompt {
   padding: 0.6em;
   font-size: 13px;
   background-color: #FFFFFF;
@@ -6,9 +6,15 @@ div .prompt {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
+}*/
 
 prompt .input_prompt {
+  /* 5px right shift to account for margin in parent container */
+  background-color: #DE5252;
+  color: #FFFFFF;
+}
+
+prompt .output_prompt {
   /* 5px right shift to account for margin in parent container */
   background-color: #DE5252;
 }
