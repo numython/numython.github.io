@@ -33,6 +33,10 @@ div.text_cell_render {
   color: #333333;
 }
 
+.input {
+    color: #FFFFFF;
+}
+
 .rendered_html p {
   text-align: left;
 }
