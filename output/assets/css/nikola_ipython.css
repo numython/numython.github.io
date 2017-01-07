@@ -59,11 +59,6 @@ div.text_cell_render {
   text-decoration: none;
 }
 
-blockquote {
-    font-size: 14px;
-    font-family: monospace;
-}
-
 .rendered_html pre, .rendered_html code {
   background-color: #DDDDDD;
   padding-left: 0.5em;
