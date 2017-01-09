@@ -11839,19 +11839,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Por-g&#233;nero">Por g&#233;nero<a class="anchor-link" href="#Por-g&#233;nero">&#182;</a></h2>
+<h2 id="Por-niveles">Por niveles<a class="anchor-link" href="#Por-niveles">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[200]:</div>
+<div class="prompt input_prompt">In&nbsp;[223]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">genero</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GENERO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">nm</span><span class="p">,</span> <span class="n">nh</span> <span class="o">=</span> <span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">),</span> <span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mujeres: {0} ({1:0.1f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">nm</span><span class="o">/</span><span class="p">(</span><span class="n">nm</span><span class="o">+</span><span class="n">nh</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hombres: {0} ({1:0.1f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nh</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">nh</span><span class="o">/</span><span class="p">(</span><span class="n">nm</span><span class="o">+</span><span class="n">nh</span><span class="p">)))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">niveles</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NIVEL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="n">niveles</span>
 </pre></div>
 
 </div>
@@ -11862,12 +11860,100 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Mujeres: 8347 (35.8%)
-Hombres: 14969 (64.2%)
-</pre>
+<div class="output_area"><div class="prompt output_prompt">Out[223]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIVEL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>12775</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>4575</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3964</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2002</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Por-g&#233;nero">Por g&#233;nero<a class="anchor-link" href="#Por-g&#233;nero">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">genero</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GENERO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;INVESTIGADORES&quot;</span><span class="p">)</span>
+<span class="n">genero</span><span class="p">[</span><span class="s2">&quot;PORCENTAJE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">genero</span><span class="p">[</span><span class="s2">&quot;INVESTIGADORES&quot;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">NUM_INV</span><span class="p">)</span>
+<span class="n">genero</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[220]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>INVESTIGADORES</th>
+      <th>PORCENTAJE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>H</th>
+      <td>14969</td>
+      <td>64.200549</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <td>8347</td>
+      <td>35.799451</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -12309,12 +12395,12 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[202]:</div>
+<div class="prompt input_prompt">In&nbsp;[221]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">ninv</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">estados</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># No. total de investigadores</span>
-<span class="n">prc_df</span> <span class="o">=</span> <span class="n">estados</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;No. de Inv.&quot;</span><span class="p">)</span>
-<span class="n">prc_df</span><span class="p">[</span><span class="s2">&quot;Porcentaje&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">prc_df</span><span class="p">[</span><span class="s1">&#39;No. de Inv.&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">ninv</span>
+<span class="n">prc_df</span> <span class="o">=</span> <span class="n">estados</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;INVESTIGADORES&quot;</span><span class="p">)</span>
+<span class="n">prc_df</span><span class="p">[</span><span class="s2">&quot;Porcentaje&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">prc_df</span><span class="p">[</span><span class="s1">&#39;INVESTIGADORES&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">ninv</span>
 <span class="n">prc_df</span>
 </pre></div>
 
@@ -12326,7 +12412,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[202]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[221]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12334,7 +12420,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>No. de Inv.</th>
+      <th>INVESTIGADORES</th>
       <th>Porcentaje</th>
     </tr>
   </thead>
@@ -12526,7 +12612,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[203]:</div>
+<div class="prompt input_prompt">In&nbsp;[222]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">inst</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;INSTITUCION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -13327,10 +13413,10 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[210]:</div>
+<div class="prompt input_prompt">In&nbsp;[224]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)][:</span><span class="mi">10</span><span class="p">])</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)][:</span><span class="mi">10</span><span class="p">])</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;No. de Investigadores&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13341,7 +13427,7 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[210]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[224]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -13349,7 +13435,7 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>INSTITUCION</th>
+      <th>No. de Investigadores</th>
     </tr>
   </thead>
   <tbody>
