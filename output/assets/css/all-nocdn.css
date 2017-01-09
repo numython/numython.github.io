@@ -7214,12 +7214,23 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
     width: 150px;
 }
 
-.container {
-    max-width: 900px;
+.h-entry.post-text {
+    max-width: 1000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.p-name.entry-title{
+    font-size: 30px;
+    color: #009999;
 }
 
 img {
     max-width: 90%;
+}
+
+p {
+    text-align: justify;
 }
 
 .postbox {
@@ -7263,7 +7274,8 @@ blockquote p, blockquote {
   font-size: 14px;
   line-height: 1.25;
   color: #009999 ;
-  background-color: #f0f0f0;
+  background-color: #FAFAFA;
+  border-radius: 5px;
 }
 
 ul.bricks > li {
