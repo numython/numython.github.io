@@ -11748,10 +11748,11 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;ggplot&quot;</span><span class="p">)</span>
@@ -11761,7 +11762,8 @@ div#notebook {
 
 <span class="c1"># Datos tomados de: http://datosabiertos.conacyt.gob.mx/publico/default.aspx</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/inv_sni.csv&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1"># leyendo datos</span>
+<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">17</span><span class="p">)],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Limpiando datos</span>
 </pre></div>
 
 </div>
@@ -11780,12 +11782,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">genero</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GENERO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mujeres: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hombres: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)))</span>
+<span class="n">nm</span><span class="p">,</span> <span class="n">nh</span> <span class="o">=</span> <span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">),</span> <span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mujeres: {0} ({1:0.1f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">nm</span><span class="o">/</span><span class="p">(</span><span class="n">nm</span><span class="o">+</span><span class="n">nh</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hombres: {0} ({1:0.1f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nh</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">nh</span><span class="o">/</span><span class="p">(</span><span class="n">nm</span><span class="o">+</span><span class="n">nh</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -11798,8 +11801,8 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Mujeres: 8347
-Hombres: 14969
+<pre>Mujeres: 8347 (35.8%)
+Hombres: 14969 (64.2%)
 </pre>
 </div>
 </div>
@@ -12233,6 +12236,214 @@ uLmVpbQ6uVOQUkrTkwPbUqvlTkFKKaWUgEw0TCmllFKRQUFKKaWUgAwKUkoppVRkUJBSSiklIIOC
 lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 "
 >
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ninv</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">estados</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># No. total de investigadores</span>
+<span class="n">prc_df</span> <span class="o">=</span> <span class="n">estados</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;No. de Inv.&quot;</span><span class="p">)</span>
+<span class="n">prc_df</span><span class="p">[</span><span class="s2">&quot;Porcentaje&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">prc_df</span><span class="p">[</span><span class="s1">&#39;No. de Inv.&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">ninv</span>
+<span class="n">prc_df</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No. de Inv.</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>DISTRITO FEDERAL</th>
+      <td>7831</td>
+      <td>33.587819</td>
+    </tr>
+    <tr>
+      <th>M?XICO, EDO. DE</th>
+      <td>1361</td>
+      <td>5.837444</td>
+    </tr>
+    <tr>
+      <th>JALISCO</th>
+      <td>1197</td>
+      <td>5.134034</td>
+    </tr>
+    <tr>
+      <th>NO DISPONIBLE</th>
+      <td>1013</td>
+      <td>4.344842</td>
+    </tr>
+    <tr>
+      <th>MORELOS</th>
+      <td>1008</td>
+      <td>4.323397</td>
+    </tr>
+    <tr>
+      <th>NUEVO LEON</th>
+      <td>962</td>
+      <td>4.126099</td>
+    </tr>
+    <tr>
+      <th>PUEBLA</th>
+      <td>881</td>
+      <td>3.778683</td>
+    </tr>
+    <tr>
+      <th>GUANAJUATO</th>
+      <td>801</td>
+      <td>3.435557</td>
+    </tr>
+    <tr>
+      <th>BAJA CALIFORNIA</th>
+      <td>715</td>
+      <td>3.066695</td>
+    </tr>
+    <tr>
+      <th>VERACRUZ</th>
+      <td>701</td>
+      <td>3.006648</td>
+    </tr>
+    <tr>
+      <th>MICHOACAN</th>
+      <td>687</td>
+      <td>2.946601</td>
+    </tr>
+    <tr>
+      <th>QUERETARO</th>
+      <td>617</td>
+      <td>2.646365</td>
+    </tr>
+    <tr>
+      <th>SAN LUIS POTOSI</th>
+      <td>573</td>
+      <td>2.457645</td>
+    </tr>
+    <tr>
+      <th>YUCATAN</th>
+      <td>552</td>
+      <td>2.367575</td>
+    </tr>
+    <tr>
+      <th>SONORA</th>
+      <td>475</td>
+      <td>2.037315</td>
+    </tr>
+    <tr>
+      <th>SINALOA</th>
+      <td>401</td>
+      <td>1.719923</td>
+    </tr>
+    <tr>
+      <th>CHIHUAHUA</th>
+      <td>381</td>
+      <td>1.634141</td>
+    </tr>
+    <tr>
+      <th>COAHUILA</th>
+      <td>340</td>
+      <td>1.458289</td>
+    </tr>
+    <tr>
+      <th>HIDALGO</th>
+      <td>323</td>
+      <td>1.385374</td>
+    </tr>
+    <tr>
+      <th>CHIAPAS</th>
+      <td>278</td>
+      <td>1.192365</td>
+    </tr>
+    <tr>
+      <th>OAXACA</th>
+      <td>270</td>
+      <td>1.158053</td>
+    </tr>
+    <tr>
+      <th>BAJA CALIFORNIA SUR</th>
+      <td>250</td>
+      <td>1.072271</td>
+    </tr>
+    <tr>
+      <th>ZACATECAS</th>
+      <td>201</td>
+      <td>0.862106</td>
+    </tr>
+    <tr>
+      <th>TAMAULIPAS</th>
+      <td>196</td>
+      <td>0.840661</td>
+    </tr>
+    <tr>
+      <th>COLIMA</th>
+      <td>192</td>
+      <td>0.823504</td>
+    </tr>
+    <tr>
+      <th>AGUASCALIENTES</th>
+      <td>173</td>
+      <td>0.742012</td>
+    </tr>
+    <tr>
+      <th>TABASCO</th>
+      <td>158</td>
+      <td>0.677675</td>
+    </tr>
+    <tr>
+      <th>DURANGO</th>
+      <td>155</td>
+      <td>0.664808</td>
+    </tr>
+    <tr>
+      <th>TLAXCALA</th>
+      <td>145</td>
+      <td>0.621917</td>
+    </tr>
+    <tr>
+      <th>CAMPECHE</th>
+      <td>131</td>
+      <td>0.561870</td>
+    </tr>
+    <tr>
+      <th>QUINTANA ROO</th>
+      <td>129</td>
+      <td>0.553292</td>
+    </tr>
+    <tr>
+      <th>NAYARIT</th>
+      <td>116</td>
+      <td>0.497534</td>
+    </tr>
+    <tr>
+      <th>GUERRERO</th>
+      <td>102</td>
+      <td>0.437487</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -12955,6 +13166,59 @@ UunP3qO+gEpl2NT2QaVSqVQqFaDKHFcqlUqlUknUpKBSqVQqlQpQk4JKpVKpVCqJmhRUKpVKpVIB
 alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 "
 >
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="T&#237;tulo">T&#237;tulo<a class="anchor-link" href="#T&#237;tulo">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">TECNOLOGICOS</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)])</span>
+<span class="n">CENIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;CENTRO NACIONAL DE INV*&quot;</span><span class="p">)])</span>
+<span class="n">CIIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INTERDISCIPLINARIO [\w*\s*\.]* EDUCACION&quot;</span><span class="p">)])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">TECNOLOGICOS</span> <span class="o">+</span> <span class="n">CENIDET</span> <span class="o">+</span> <span class="n">CIIDET</span><span class="p">)</span><span class="o">/</span><span class="n">ninv</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[167]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.534848809779112</pre>
 </div>
 
 </div>
