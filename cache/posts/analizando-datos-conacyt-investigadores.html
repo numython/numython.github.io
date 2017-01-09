@@ -11748,7 +11748,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[197]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
@@ -11776,13 +11776,76 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Generalidades">Generalidades<a class="anchor-link" href="#Generalidades">&#182;</a></h2><p>El número de total de investigadores</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[198]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">NUM_INV</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Investigadores eméritos</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[199]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">emeritos</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EMERITO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">E</span>
+<span class="n">emeritos</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[199]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>108</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Por-g&#233;nero">Por g&#233;nero<a class="anchor-link" href="#Por-g&#233;nero">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[200]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">genero</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GENERO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -11822,7 +11885,7 @@ Hombres: 14969 (64.2%)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[201]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">estados</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ESTADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -12246,7 +12309,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[202]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">ninv</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">estados</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># No. total de investigadores</span>
@@ -12263,7 +12326,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[202]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12463,7 +12526,7 @@ lFJKKRUZFKSUUkoJyKAgpZRSSsX/A4dZ8izP/T+mAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[203]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">inst</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;INSTITUCION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -13179,18 +13242,16 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="T&#237;tulo">T&#237;tulo<a class="anchor-link" href="#T&#237;tulo">&#182;</a></h1>
+<h2 id="T&#237;tulo">T&#237;tulo<a class="anchor-link" href="#T&#237;tulo">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">TECNOLOGICOS</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)])</span>
-<span class="n">CENIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;CENTRO NACIONAL DE INV*&quot;</span><span class="p">)])</span>
-<span class="n">CIIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INTERDISCIPLINARIO [\w*\s*\.]* EDUCACION&quot;</span><span class="p">)])</span>
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -13198,12 +13259,26 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Sobre-las-instituciones-del-Tecnol&#243;gico-Nacional-de-M&#233;xico-(TECNM)">Sobre las instituciones del Tecnol&#243;gico Nacional de M&#233;xico (TECNM)<a class="anchor-link" href="#Sobre-las-instituciones-del-Tecnol&#243;gico-Nacional-de-M&#233;xico-(TECNM)">&#182;</a></h2><p>Lo subsiguiente presenta el porcentaje de representación de las instituciones correspondientes al Tecnológico Nacional de México: es decir, todos los institutos tecnológicos centralizados y descentralizados, más el CENIDET y CIIDET.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[207]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">TECNOLOGICOS</span> <span class="o">+</span> <span class="n">CENIDET</span> <span class="o">+</span> <span class="n">CIIDET</span><span class="p">)</span><span class="o">/</span><span class="n">ninv</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">TECNOLOGICOS</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)])</span>
+<span class="n">CENIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;CENTRO NACIONAL DE INV*&quot;</span><span class="p">)])</span>
+<span class="n">CIIDET</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INTERDISCIPLINARIO [\w*\s*\.]* EDUCACION&quot;</span><span class="p">)])</span>
+<span class="n">porcentaje_tecnm</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">TECNOLOGICOS</span> <span class="o">+</span> <span class="n">CENIDET</span> <span class="o">+</span> <span class="n">CIIDET</span><span class="p">)</span><span class="o">/</span><span class="n">NUM_INV</span>
+<span class="n">porcentaje_tecnm</span>
 </pre></div>
 
 </div>
@@ -13214,11 +13289,113 @@ alJQqVQqlUolUZOCSqVSqVQqQE0KKpVKpVKpJP5/9Bwg0m604twAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[167]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[207]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2.534848809779112</pre>
+<pre>2.5347400926402472</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[206]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Los tecnológicos con mayor cantidad de investigadores son:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[210]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">inst</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;INSTITUTO TECNOLOGICO (SUP|DE)&quot;</span><span class="p">)][:</span><span class="mi">10</span><span class="p">])</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[210]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>INSTITUCION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE CELAYA</th>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE SONORA</th>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE TIJUANA</th>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE CIUDAD MADERO</th>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE MORELIA</th>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE VERACRUZ</th>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE TOLUCA</th>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE AGUASCALIENTES</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE CONKAL</th>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>INSTITUTO TECNOLOGICO DE DURANGO</th>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
