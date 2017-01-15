@@ -11769,7 +11769,7 @@ div#notebook {
 <span class="n">ll</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">add_line_loop</span><span class="p">((</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">l3</span><span class="p">,</span><span class="n">l4</span><span class="p">))</span>
 <span class="n">geom</span><span class="o">.</span><span class="n">add_plane_surface</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
 
-<span class="n">p</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">generate_mesh</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span>
+<span class="n">nc</span><span class="p">,</span> <span class="n">ec</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">generate_mesh</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">triplot</span><span class="p">(</span><span class="n">p</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;triangle&quot;</span><span class="p">])</span>
 </pre></div>
 
