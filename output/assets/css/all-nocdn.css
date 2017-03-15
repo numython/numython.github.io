@@ -7244,6 +7244,23 @@ p {
     text-align: right;
 }
 
+h2,h3,h4{
+    color:#33AAAA;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table {
+    border: 2px solid #dadada;
+}
+
+tr:nth-child(even) {
+    background-color: #dadada;
+}
+
 #addthisbox {margin-bottom: 12px;}
 
 td.label {
