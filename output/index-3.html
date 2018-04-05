@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Python para ingenieros">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numython (publicaciones antiguas, página 3) | Numython</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#33642A">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://numython.github.io/index-3.html">
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<link rel="prev" href="." type="text/html">
+<link rel="next" href="index-2.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Mostrar navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://numython.github.io/">
+                <img src="logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="archive.html">Archivo</a>
+                </li>
+<li>
+<a href="stories/nusa/">NuSA</a>
+                </li>
+<li>
+<a href="stories/about/">Acerca de...</a>
+                </li>
+<li>
+<a href="categories/">Etiquetas</a>
+                </li>
+<li>
+<a href="rss.xml">Canal RSS</a>
+
+                
+            </li>
+</ul>
+<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" name="q" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-primary">
+    <span class="glyphicon glyphicon-search"></span>
+</button>
+<input type="hidden" name="sitesearch" value="https://numython.github.io/">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" class="u-url">Imágenes en menús de wxPython</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-03-22T04:24:00-06:00" title="2016-03-22 04:24">2016-03-22 04:24</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/2016/03/imagenes-en-menus-de-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/imagenes-en-menus-de-wxpython.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div style="text-align: justify;">Los menús en wxPython se definen de manera muy sencilla creando primeramente la barra de menú principal, derivada de la clase <span>wx.MenuBar</span>, enseguida se definen los menús principales que compondrán la barra de menú, derivando estos de la clase<span> wx.Menu</span>, finalmente se agregan los sub-menús que tienen cómo base la clase <span>wx.MenuItem</span>. En el siguiente esquema se muestra la jerarquía de menús en wxPython.</div>
+<div class="separator" style="clear: both; text-align: center;"></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="http://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png"></a>
+</div>
+<br><br><div class="figure"></div>Un ejemplo muy básico:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar() <span class="co" style="color: #60a0b0; font-style: italic;"># Creamos barra de menú</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos el menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos los MenuItem (Guardar, Abrir)</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>,<span class="st" style="color: #4070a0;">""</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando el menú "Archivo" a la barra</span><br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando a "mb" como la barra de menú del Frame</span><br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)</code></pre></div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">En lo anterior se supone que todo ese código está inmerso dentro de una clase heredada de <code style="white-space: pre;">wx.Frame</code>. Así, se crea una barra de menú similar a lo mostrado en la siguiente imagen:</div>
+<div class="figure">
+<br><div class="caption"><br></div>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png"></a></div>
+<div class="caption"><br></div>
+<div class="caption"><br></div>
+</div>
+<div style="text-align: justify;">Para agregar una imagen al menú, se debe utilizar el método <code style="white-space: pre;">SetBitmap</code> de la clase <code style="white-space: pre;">wx.MenuItem</code>, pasando como parámetro un objeto de la clase <code style="white-space: pre;">wx.Bitmap</code>, el cual deberá contener la información necesaria de la imagen o icono a utilizar, debe tomarse en cuenta que el método <code style="white-space: pre;">SetBitmap</code> deberá "llamarse" antes de agregar el sub-menú al menú padre, de lo contrario no se verá reflejado dicho método.</div>
+<br><div style="text-align: justify;">Enseguida se adjunta el código completo de una aplicación wxPython que incluye imágenes en menús.</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> MiAplicacion(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>    wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">300</span>,<span class="dv" style="color: #40a070;">200</span>))<br><span class="va" style="color: #19177c;">self</span>.createMenu() <span class="co" style="color: #60a0b0; font-style: italic;"># Llamamos al método que inicializa el menú</span><br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> createMenu(<span class="va" style="color: #19177c;">self</span>):<br><span class="co" style="color: #60a0b0; font-style: italic;">"""</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    Crea el menú de la aplicación</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    """</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Guardar</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.guardar.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_save.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Abrir</span><br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>)<br><span class="va" style="color: #19177c;">self</span>.abrir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_open.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Imprimir</span><br><span class="va" style="color: #19177c;">self</span>.imprimir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Imprimir"</span>)<br><span class="va" style="color: #19177c;">self</span>.imprimir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_print.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.imprimir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Salir</span><br><span class="va" style="color: #19177c;">self</span>.salir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Salir"</span>)<br><span class="va" style="color: #19177c;">self</span>.salir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_exit.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.salir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos la barra de menú principal y la configuramos</span><br><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar()<br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>  app <span class="op" style="color: #666666;">=</span> wx.App()<br>  frame <span class="op" style="color: #666666;">=</span> MiAplicacion(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">u"Imágenes Menú"</span>)<br>  app.MainLoop()</code></pre></div>
+<div class="figure">
+<br><div class="caption"><br></div>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png"></a></div>
+<div class="caption"><br></div>
+<div class="caption">Note que la clase <span>wx.Bitmap</span> necesita como parámetro de entrada la ruta donde se encuentra la imagen y una constante <span>wx.BITMAP_TYPE_ANY</span>, que simplemente especifica el tipo de imagen leída. Puede consultar más en la documentación de <span><a href="http://www.wxpython.org/docs/api/wx.Bitmap-class.html">wx.Bitmap</a>.</span>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="." rel="prev">Publicaciones posteriores</a>
+            </li>
+            <li class="next">
+                <a href="index-2.html" rel="next">Publicaciones anteriores</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("es");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+    
+"
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11220435; 
+var sc_invisible=0; 
+var sc_security="c4c7f846"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11220435/0/c4c7f846/0/" alt="web
+analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+<a href="http://statcounter.com/p11220435/?guest=1">View My
+Stats</a>
+
+
+</body>
+</html>

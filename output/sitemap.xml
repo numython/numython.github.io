@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://numython.github.io/</loc>
-  <lastmod>2018-04-05T01:16:00Z</lastmod>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/2016/</loc>
@@ -18,12 +18,16 @@
   <lastmod>2018-04-05T01:16:00Z</lastmod>
  </url>
  <url>
+  <loc>https://numython.github.io/2018/</loc>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2018-04-05T01:23:00Z</lastmod>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2018-04-05T01:16:00Z</lastmod>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/avanzado/</loc>
@@ -52,6 +56,10 @@
  <url>
   <loc>https://numython.github.io/categories/imagenes/</loc>
   <lastmod>2018-04-05T01:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/kinematics/</loc>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/mathjax/</loc>
@@ -88,6 +96,10 @@
  <url>
   <loc>https://numython.github.io/categories/python/</loc>
   <lastmod>2018-04-05T01:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/categories/robotics/</loc>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/scikit-image/</loc>
@@ -151,7 +163,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-2.html</loc>
-  <lastmod>2018-04-05T01:23:00Z</lastmod>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/index-3.html</loc>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/2016/01/bienvenidos/</loc>
@@ -264,6 +280,10 @@
  <url>
   <loc>https://numython.github.io/posts/analizando-datos-conacyt/</loc>
   <lastmod>2018-04-05T01:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/</loc>
+  <lastmod>2018-04-05T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/integrales-con-sympy/</loc>
