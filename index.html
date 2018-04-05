@@ -13,8 +13,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
-<link rel="next" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/analizando-datos-conacyt-investigadores/" type="text/html">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/cinematica-inversa-de-un-manipulador-rr/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -84,7 +84,39 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" class="u-url">Cinemática inversa de un manipulador RR</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" rel="bookmark"><time class="published dt-published" datetime="2018-04-04T20:32:54-05:00" title="2018-04-04 20:32">2018-04-04 20:32</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/cinematica-inversa-de-un-manipulador-rr/#disqus_thread" data-disqus-identifier="cache/posts/cinematica-inversa-de-un-manipulador-rr.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>La cinemática inversa de un manipulador consiste en calcular los valores articulares requeridos para <em>alcanzar</em> una determinada posición y orientación en el espacio. Existen diversos métodos para el cálculo de la cinemática inversa, desde la obtención de soluciones en forma cerrada (deseable) hasta la implementación de técnicas numéricas.</p>
+<p><img src="img/rr_robot.png" alt=""></p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Pedro Jorge De Los Santos
@@ -2819,8 +2851,8 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="kn">as</span> <span class="nn">la</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
 
 <span class="c1"># Datos iniciales</span>
 <span class="n">k1</span> <span class="o">=</span> <span class="mf">1000.0</span>
@@ -2857,7 +2889,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 <span class="c1"># Presentando los resultados</span>
 <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">"</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">"</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -2904,9 +2936,9 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">nusa.element</span> <span class="kn">import</span> <span class="n">Spring</span>
-<span class="kn">from</span> <span class="nn">nusa.model</span> <span class="kn">import</span> <span class="n">SpringModel</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="k">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">nusa.element</span> <span class="k">import</span> <span class="n">Spring</span>
+<span class="kn">from</span> <span class="nn">nusa.model</span> <span class="k">import</span> <span class="n">SpringModel</span>
 </pre></div>
 
 </div>
@@ -2929,8 +2961,8 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">m1</span> <span class="o">=</span> <span class="n">SpringModel</span><span class="p">(</span><span class="s2">"Modelo 01"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m1</span> <span class="o">=</span> <span class="n">SpringModel</span><span class="p">(</span><span class="s2">"Modelo 01"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2973,9 +3005,9 @@ Elements: 0
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">n2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="k">print</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -3017,8 +3049,8 @@ Elements: 0
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3049,7 +3081,7 @@ Elements: 0
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">m1</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m1</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
 <span class="n">m1</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
 <span class="n">m1</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
 
@@ -3192,51 +3224,12 @@ Elements: 0
 <br><br>Como puede observarse, en el código sólo se añade una línea, en la cual se instancia un objeto de la clase wx.TextCtrl, pasándole como parent el Frame principal, y el argumento style especificando que se permita el uso de líneas múltiples dentro de ese control.<br><br>¿Y si quiero añadir más controles?, bueno aquí la cuestión se complica un poco, pero vamos, nada que no se pueda resolver. Aunque para ello ha de introducirse otro concepto básico en el desarrollo de aplicaciones en wxPython: los Sizers, que son clases que permiten alinear y organizar los objetos dentro de una ventana o contenedores, mediante algoritmos de posicionamiento. Evidentemente esto lo estaremos tratando en otro post, para no alargarnos demasiado.<br><br>Para tener una referencia más sólida respecto al desarrollo de aplicaciones en wxPython es recomendable que revisen el siguiente libro:<br><br><a href="http://serv.yanchick.org/Books/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/python/Manning.Publications.wxPython.in.Action.Mar.2006.pdf">wxPython in Action  [Noel Rappin and Robin Dunn]</a>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" class="u-url">Imágenes en menús de wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-03-22T04:24:00-06:00" title="2016-03-22 04:24">2016-03-22 04:24</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/2016/03/imagenes-en-menus-de-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/imagenes-en-menus-de-wxpython.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Los menús en wxPython se definen de manera muy sencilla creando primeramente la barra de menú principal, derivada de la clase <span>wx.MenuBar</span>, enseguida se definen los menús principales que compondrán la barra de menú, derivando estos de la clase<span> wx.Menu</span>, finalmente se agregan los sub-menús que tienen cómo base la clase <span>wx.MenuItem</span>. En el siguiente esquema se muestra la jerarquía de menús en wxPython.</div>
-<div class="separator" style="clear: both; text-align: center;"></div>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="http://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png"></a>
-</div>
-<br><br><div class="figure"></div>Un ejemplo muy básico:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar() <span class="co" style="color: #60a0b0; font-style: italic;"># Creamos barra de menú</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos el menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos los MenuItem (Guardar, Abrir)</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>,<span class="st" style="color: #4070a0;">""</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando el menú "Archivo" a la barra</span><br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando a "mb" como la barra de menú del Frame</span><br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)</code></pre></div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">En lo anterior se supone que todo ese código está inmerso dentro de una clase heredada de <code style="white-space: pre;">wx.Frame</code>. Así, se crea una barra de menú similar a lo mostrado en la siguiente imagen:</div>
-<div class="figure">
-<br><div class="caption"><br></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png"></a></div>
-<div class="caption"><br></div>
-<div class="caption"><br></div>
-</div>
-<div style="text-align: justify;">Para agregar una imagen al menú, se debe utilizar el método <code style="white-space: pre;">SetBitmap</code> de la clase <code style="white-space: pre;">wx.MenuItem</code>, pasando como parámetro un objeto de la clase <code style="white-space: pre;">wx.Bitmap</code>, el cual deberá contener la información necesaria de la imagen o icono a utilizar, debe tomarse en cuenta que el método <code style="white-space: pre;">SetBitmap</code> deberá "llamarse" antes de agregar el sub-menú al menú padre, de lo contrario no se verá reflejado dicho método.</div>
-<br><div style="text-align: justify;">Enseguida se adjunta el código completo de una aplicación wxPython que incluye imágenes en menús.</div>
-<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> MiAplicacion(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>    wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">300</span>,<span class="dv" style="color: #40a070;">200</span>))<br><span class="va" style="color: #19177c;">self</span>.createMenu() <span class="co" style="color: #60a0b0; font-style: italic;"># Llamamos al método que inicializa el menú</span><br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> createMenu(<span class="va" style="color: #19177c;">self</span>):<br><span class="co" style="color: #60a0b0; font-style: italic;">"""</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    Crea el menú de la aplicación</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    """</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Guardar</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.guardar.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_save.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Abrir</span><br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>)<br><span class="va" style="color: #19177c;">self</span>.abrir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_open.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Imprimir</span><br><span class="va" style="color: #19177c;">self</span>.imprimir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Imprimir"</span>)<br><span class="va" style="color: #19177c;">self</span>.imprimir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_print.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.imprimir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Salir</span><br><span class="va" style="color: #19177c;">self</span>.salir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Salir"</span>)<br><span class="va" style="color: #19177c;">self</span>.salir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_exit.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.salir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos la barra de menú principal y la configuramos</span><br><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar()<br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>  app <span class="op" style="color: #666666;">=</span> wx.App()<br>  frame <span class="op" style="color: #666666;">=</span> MiAplicacion(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">u"Imágenes Menú"</span>)<br>  app.MainLoop()</code></pre></div>
-<div class="figure">
-<br><div class="caption"><br></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png"></a></div>
-<div class="caption"><br></div>
-<div class="caption">Note que la clase <span>wx.Bitmap</span> necesita como parámetro de entrada la ruta donde se encuentra la imagen y una constante <span>wx.BITMAP_TYPE_ANY</span>, que simplemente especifica el tipo de imagen leída. Puede consultar más en la documentación de <span><a href="http://www.wxpython.org/docs/api/wx.Bitmap-class.html">wx.Bitmap</a>.</span>
-</div>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-2.html" rel="next">Publicaciones anteriores</a>
+                <a href="index-3.html" rel="next">Publicaciones anteriores</a>
             </li>
         </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
