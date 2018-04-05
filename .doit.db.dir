@@ -92,7 +92,7 @@
 'copy_assets:output\\assets\\css\\bootstrap.css.map', (233984, 465)
 'render_posts:cache\\posts\\2016\\02\\test-wxpython.html', (234496, 546)
 'create_bundles:output\\assets\\css\\all.css', (235520, 816)
-'sitemap:output\\sitemap.xml', (704512, 17763)
+'sitemap:output\\sitemap.xml', (704512, 17765)
 'copy_assets:output\\assets\\js\\fancydates.js', (253440, 440)
 'render_sources:output\\posts\\wxdx-una-gui-para-calculo-elemental\\index.md', (253952, 297)
 'render_posts:cache\\posts\\2016\\02\\eventos-en-un-boton-wxbutton.html', (254464, 623)
