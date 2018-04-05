@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Apr 2018 02:01:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cinemática inversa de un manipulador RR</title><link>https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Apr 2018 02:18:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cinemática inversa de un manipulador RR</title><link>https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -15,8 +15,12 @@
 &lt;li&gt;Utilizando la Pseudoinversa del Jacobiano &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="Método-geométrico"&gt;Método geométrico&lt;a class="anchor-link" href="https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/#M%C3%A9todo-geom%C3%A9trico"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El método geométrico, de manera general, consiste en establecer una serie de construcciones geométricas (típicamente triángulos) y mediante relaciones trigonométricas calcular los valores de interés.&lt;/p&gt;
-&lt;p&gt;De la figura podemos ver que&lt;/p&gt;
-&lt;p&gt;$$ \theta_2 = cos^{-1} $$&lt;/p&gt;
+&lt;p&gt;De la figura se observa que la distancia $r$ se puede calcular como:&lt;/p&gt;
+&lt;p&gt;$$ r = \sqrt{x^2+y^2} $$&lt;/p&gt;
+&lt;p&gt;Además, por ley de cosenos se tiene:&lt;/p&gt;
+&lt;p&gt;$$ r^2 = L_1^2 + L_2^2 + 2 L_1 L_2 \cos\theta_2 $$&lt;/p&gt;
+&lt;p&gt;De tal modo que:&lt;/p&gt;
+&lt;p&gt;$$ \cos\theta_2 = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2} $$&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
