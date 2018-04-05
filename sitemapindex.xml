@@ -7,134 +7,130 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://numython.github.io/categories/avanzado.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/cas.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/conacyt.xml</loc>
-  <lastmod>2017-01-09T20:22:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/eventos.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/fea.xml</loc>
-  <lastmod>2017-01-06T17:27:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/graficas.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/imagenes.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/mathjax.xml</loc>
-  <lastmod>2017-01-06T17:27:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matplotlib.xml</loc>
-  <lastmod>2016-11-20T19:59:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/miniapps.xml</loc>
-  <lastmod>2016-12-12T22:53:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
-  <lastmod>2017-01-06T17:27:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/optimizacion.xml</loc>
-  <lastmod>2016-11-20T19:59:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pandas.xml</loc>
-  <lastmod>2017-01-09T20:22:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pylab.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/python.xml</loc>
-  <lastmod>2017-01-09T20:22:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/scikit-image.xml</loc>
-  <lastmod>2016-10-18T17:04:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/scipy.xml</loc>
-  <lastmod>2016-11-20T19:59:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/structural-analysis.xml</loc>
-  <lastmod>2017-01-06T17:27:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/sympy.xml</loc>
-  <lastmod>2016-11-10T13:26:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxbutton.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxcombobox.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxframe.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxgrid.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxicon.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxmenu.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxmenubar.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxmenuitem.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxpython.xml</loc>
-  <lastmod>2016-12-12T22:53:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxtextctrl.xml</loc>
-  <lastmod>2016-11-10T13:39:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://numython.github.io/galleries/rss.xml</loc>
-  <lastmod>2017-01-15T04:00:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2017-01-09T20:22:00Z</lastmod>
+  <lastmod>2018-04-05T01:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-15T04:00:00Z</lastmod>
+  <lastmod>2018-04-05T01:26:00Z</lastmod>
  </sitemap>
 </sitemapindex>

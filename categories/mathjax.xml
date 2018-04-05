@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Fri, 06 Jan 2017 17:27:35 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre mathjax)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/mathjax.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Apr 2018 01:23:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -27,33 +26,37 @@ las consideraciones físicas que deriven en la simplificación del problema.&lt;
 &lt;p&gt;En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:&lt;/p&gt;
-$$ K U = F $$&lt;p&gt;Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
+&lt;p&gt;$$ K U = F $$&lt;/p&gt;
+&lt;p&gt;Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.&lt;/p&gt;
 &lt;p&gt;Dado que normalmente los desplazamientos son las incógnitas, se tiene que:&lt;/p&gt;
-$$ U = K^{-1} F $$&lt;p&gt;En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.&lt;/p&gt;
+&lt;p&gt;$$ U = K^{-1} F $$&lt;/p&gt;
+&lt;p&gt;En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.&lt;/p&gt;
 &lt;p&gt;La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
 sus nodos.&lt;/p&gt;
 &lt;h3 id="Un-caso-muy-simple:-elementos-resorte"&gt;Un caso muy simple: elementos resorte&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El elemento resorte es el elemento finito más simple, tiene un grado de libertad (por cada nodo): traslación en dirección axial.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_element.PNG" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;La matriz de rigidez para un elemento resorte viene dada por:&lt;/p&gt;
-$$ k^{(e)} = 
+&lt;p&gt;$$ k^{(e)} = 
 \begin{bmatrix}
-k_e &amp;amp; - k_e \\
-- k_e &amp;amp; k_e \\
-\end{bmatrix} $$&lt;p&gt;La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.&lt;/p&gt;
+k_e &amp;amp; - k_e \&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;k_e &amp;amp; k_e \
+\end{bmatrix} $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Para ejemplificar cómo funciona el método de los elementos finitos en elementos de este tipo vamos a resolver el siguiente ejemplo.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_01.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Primero, las matrices de rigidez por elemento vienen dadas por:&lt;/p&gt;
-$$ 
+&lt;p&gt;$$ 
 k^{(1)} = 
 \begin{bmatrix}
 1000 &amp;amp; -1000 \\
@@ -71,9 +74,10 @@ k^{(3)} =
 3000 &amp;amp; -3000 \\
 -3000 &amp;amp; 3000 \\
 \end{bmatrix} 
-$$&lt;p&gt;La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y &lt;em&gt;rellenar&lt;/em&gt; sólo las posiciones correspondientes a los nodos que componen el elemento.&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y &lt;em&gt;rellenar&lt;/em&gt; sólo las posiciones correspondientes a los nodos que componen el elemento.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el elemento 1 está conformado por los nodos 1 y 3, entonces:&lt;/p&gt;
-$$
+&lt;p&gt;$$
 K^{(1)} = 
 \begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0\\
@@ -81,8 +85,9 @@ K^{(1)} =
 -1000 &amp;amp; 0 &amp;amp; 1000 &amp;amp; 0 \\
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
 \end{bmatrix} 
-$$&lt;p&gt;Mismo caso para los otros elementos:&lt;/p&gt;
-$$
+$$&lt;/p&gt;
+&lt;p&gt;Mismo caso para los otros elementos:&lt;/p&gt;
+&lt;p&gt;$$
 K^{(2)} = 
 \begin{bmatrix}
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
@@ -90,7 +95,8 @@ K^{(2)} =
 0 &amp;amp; 0 &amp;amp; 2000 &amp;amp; -2000 \\
 0 &amp;amp; 0 &amp;amp; -2000 &amp;amp; 2000 \\
 \end{bmatrix} 
-$$$$
+$$&lt;/p&gt;
+&lt;p&gt;$$
 K^{(3)} = 
 \begin{bmatrix}
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
@@ -98,8 +104,9 @@ K^{(3)} =
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
 0 &amp;amp; -3000 &amp;amp; 0 &amp;amp; 3000 \\
 \end{bmatrix} 
-$$&lt;p&gt;Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:&lt;/p&gt;
-$$
+$$&lt;/p&gt;
+&lt;p&gt;Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:&lt;/p&gt;
+&lt;p&gt;$$
 K = 
 \begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0 \\
@@ -107,8 +114,9 @@ K =
 -1000 &amp;amp; 0 &amp;amp; 3000 &amp;amp; -2000 \\
 0 &amp;amp; -3000 &amp;amp; -2000 &amp;amp; 5000 \\
 \end{bmatrix} 
-$$&lt;p&gt;Quedando el sistema de ecuaciones como:&lt;/p&gt;
-$$\begin{bmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;Quedando el sistema de ecuaciones como:&lt;/p&gt;
+&lt;p&gt;$$\begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0 \\
 0 &amp;amp; 3000 &amp;amp; 0 &amp;amp; -3000 \\
 -1000 &amp;amp; 0 &amp;amp; 3000 &amp;amp; -2000 \\
@@ -119,7 +127,8 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 \end{bmatrix} =
 \begin{bmatrix}
 0 \\ 0 \\ 0 \\ 5000
-\end{bmatrix} $$
+\end{bmatrix} $$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -177,7 +186,11 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;1  UX = 0.0000      FX = -909.0909
 2  UX = 0.0000      FX = -4090.9091
@@ -191,8 +204,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -217,8 +229,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -244,7 +255,11 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Model: Modelo 01
 Nodes: 0
@@ -257,8 +272,7 @@ Elements: 0
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -285,7 +299,11 @@ Elements: 0
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;(&amp;lt;nusa.core.Node object at 0x0325F550&amp;gt;, &amp;lt;nusa.core.Node object at 0x0325F530&amp;gt;)
 &lt;/pre&gt;
@@ -296,8 +314,7 @@ Elements: 0
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -324,26 +341,17 @@ Elements: 0
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&amp;lt;class 'nusa.element.Spring'&amp;gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -372,7 +380,11 @@ Elements: 0
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
@@ -385,8 +397,7 @@ Elements: 0
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -397,19 +408,6 @@ Elements: 0
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;

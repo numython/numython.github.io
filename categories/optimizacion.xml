@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Numython (optimización)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/optimizacion.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 20 Nov 2016 19:59:19 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre optimización)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/optimizacion.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Apr 2018 01:24:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;. Se requiere diseñar un contenedor de desechos, cuya forma será la de un prisma rectangular de dimensiones x, y, z como se muestra en la figura. El volumen del contenedor deberá ser de 0.08 $m^3$. Por requerimientos, la altura debe estar en el rango 0.6-0.8 m, y los lados de la base deben medir al menos 0.1 m. Luego, la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible. Nota: &lt;em&gt;El contenedor está abierto en la parte superior&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/img/p1.jpg" width="150px"&gt;&lt;/p&gt;
 &lt;p&gt;La cantidad de material utilizada para fabricar el contenedor está directamente relacionada con el área del prisma rectangular, donde esta corresponde a la suma de las áreas para cada una de las caras, luego, basándonos en el esquema de la figura anterior, se puede expresar el área en función de sus dimensiones como sigue:&lt;/p&gt;
-$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$&lt;p&gt;De la restricción de volumen se tiene que:&lt;/p&gt;
-$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$&lt;p&gt;Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:&lt;/p&gt;
-$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$&lt;p&gt;Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:&lt;/p&gt;
-$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$&lt;p&gt;Además, para los requirimientos dimensionales de la base se tiene:&lt;/p&gt;
-$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
+&lt;p&gt;$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$&lt;/p&gt;
+&lt;p&gt;De la restricción de volumen se tiene que:&lt;/p&gt;
+&lt;p&gt;$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$&lt;/p&gt;
+&lt;p&gt;Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:&lt;/p&gt;
+&lt;p&gt;$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$&lt;/p&gt;
+&lt;p&gt;Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:&lt;/p&gt;
+&lt;p&gt;$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$
+$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$&lt;/p&gt;
+&lt;p&gt;Además, para los requirimientos dimensionales de la base se tiene:&lt;/p&gt;
+&lt;p&gt;$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$
+$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Óptimo-no-restringido"&gt;Óptimo no restringido&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:&lt;/p&gt;
-$$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones &lt;code&gt;hessian&lt;/code&gt; y &lt;code&gt;zeros&lt;/code&gt; del módulo &lt;code&gt;matrices&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;$$ \left[ \vec{\nabla} f \right] = [0] $$&lt;/p&gt;
+&lt;p&gt;Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones &lt;code&gt;hessian&lt;/code&gt; y &lt;code&gt;zeros&lt;/code&gt; del módulo &lt;code&gt;matrices&lt;/code&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -53,8 +59,7 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utili
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -77,8 +82,7 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utili
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -104,7 +108,11 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utili
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -117,8 +125,7 @@ $$\left[\begin{matrix}x_{2} - \frac{0.16}{x_{1}^{2}}\\x_{1} - \frac{0.16}{x_{2}^
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -144,7 +151,11 @@ $$\left[\begin{matrix}x_{2} - \frac{0.16}{x_{1}^{2}}\\x_{1} - \frac{0.16}{x_{2}^
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -157,16 +168,17 @@ $$\left [ \left ( 0.542883523318981, \quad 0.542883523318981\right ), \quad \lef
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Se obtienen dos soluciones complejas y una real, además, la solución real presenta dos valores iguales.&lt;/p&gt;
 &lt;p&gt;Hasta ahora sabemos que la solución obtenida es un punto crítico, pero no podemos asegurar si es un máximo, un mínimo o un punto de silla. Luego, para comprobar si el punto calculado es un mínimo se puede utilizar el siguiente teorema:&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Teorema 1&lt;/strong&gt;. &lt;em&gt;Condición necesaria&lt;/em&gt;: si $f(x)$ tiene un mínimo local en $x^*$ entonces:&lt;/p&gt;
-$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$&lt;p&gt;&lt;em&gt;Condición necesaria de segundo orden&lt;/em&gt;: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana&lt;/p&gt;
-$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$&lt;p&gt;es positiva definida o semidefinida en el punto $x^*$.&lt;/p&gt;
+&lt;p&gt;$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Condición necesaria de segundo orden&lt;/em&gt;: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana&lt;/p&gt;
+&lt;p&gt;$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$&lt;/p&gt;
+&lt;p&gt;es positiva definida o semidefinida en el punto $x^*$.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Condición suficiente de segundo orden&lt;/em&gt;: si la matriz $H(x^*)$ es positiva definida en el punto estacionario $x^*$, 
 entonces $x^*$ es un mínimo local para la función $f(x)$.&lt;/p&gt;
 &lt;p&gt;Una matriz es positiva definida si sus eigenvalores son estrictamente positivos, es decir: $\lambda_i &amp;gt; 0$&lt;/p&gt;
@@ -197,7 +209,11 @@ entonces $x^*$ es un mínimo local para la función $f(x)$.&lt;/p&gt;
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -210,8 +226,7 @@ $$\left[\begin{matrix}2.0 &amp;amp; 1\\1 &amp;amp; 2.0\end{matrix}\right]$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -237,7 +252,11 @@ $$\left[\begin{matrix}2.0 &amp;amp; 1\\1 &amp;amp; 2.0\end{matrix}\right]$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -250,8 +269,7 @@ $$\left \{ 1 : 1, \quad 3 : 1\right \}$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -278,7 +296,11 @@ $$\left \{ 1 : 1, \quad 3 : 1\right \}$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[59]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[59]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -291,8 +313,7 @@ $$0.271441761659491$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -301,8 +322,7 @@ $$0.271441761659491$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -328,8 +348,7 @@ $$0.271441761659491$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -360,8 +379,7 @@ $$0.271441761659491$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -386,7 +404,11 @@ $$0.271441761659491$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[57]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[57]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
@@ -395,7 +417,11 @@ $$0.271441761659491$$
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -408,8 +434,7 @@ $$0.271441761659491$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -434,7 +459,11 @@ $$0.271441761659491$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[63]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[63]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_latex output_subarea output_execute_result"&gt;
@@ -447,8 +476,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -475,7 +503,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -488,8 +520,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -517,7 +548,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -530,8 +565,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -559,7 +593,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -572,8 +610,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -609,7 +646,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -622,8 +663,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -656,7 +696,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -669,8 +713,7 @@ $$0.884167559673693$$
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -730,7 +773,11 @@ $$0.884167559673693$$
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[153]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[153]:&lt;/div&gt;
+
+
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
@@ -747,19 +794,6 @@ $$0.884167559673693$$
 
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
