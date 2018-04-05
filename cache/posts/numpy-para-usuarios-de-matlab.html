@@ -194,7 +194,7 @@ rand(3,4)   random.rand(3,4)    random 3x4 matrix
 linspace(1,3,4) linspace(1,3,4) 4 equally spaced samples between 1 and 3, inclusive
 [x,y]=meshgrid(0:8,0:5) mgrid[0:9.,0:6.] or meshgrid(r_[0:9.],r_[0:6.]  two 2D arrays: one of x values, the other of y values
     ogrid[0:9.,0:6.] or ix_(r_[0:9.],r_[0:6.]   the best way to eval functions on a grid
-[x,y]=meshgrid([1,2,4],[2,4,5]) meshgrid([1,2,4],[2,4,5])  <br />
+[x,y]=meshgrid([1,2,4],[2,4,5]) meshgrid([1,2,4],[2,4,5])  <br>
     ix_([1,2,4],[2,4,5])    the best way to eval functions on a grid
 repmat(a, m, n) tile(a, (m, n)) create m by n copies of a
 [a b]   concatenate((a,b),1) or hstack((a,b)) or column_stack((a,b)) or c_[a,b] concatenate columns of a and b
@@ -227,8 +227,8 @@ sort(a) sort(a) or a.sort() sort the matrix
 [b,I] = sortrows(a,i)   I = argsort(a[:,i]), b=a[I,:]   sort the rows of the matrix
 regress(y,X)    linalg.lstsq(X,y)   multilinear regression
 decimate(x, q)  scipy.signal.resample(x, len(x)/q)  downsample with low-pass filtering
-unique(a)   unique(a)  <br />
-squeeze(a)  a.squeeze()<br />
+unique(a)   unique(a)  <br>
+squeeze(a)  a.squeeze()<br>
 Notes
 Submatrix: Assignment to a submatrix can be done with lists of indexes using the ix_ command. E.g., for 2d array a, one might do: ind=[1,3]; a[np.ix_(ind,ind)]+=100.</p>
 <p>HELP: There is no direct equivalent of MATLAB’s which command, but the commands help and source will usually list the filename where the function is located. Python also has an inspect module (do import inspect) which provides a getfile that often works.</p>

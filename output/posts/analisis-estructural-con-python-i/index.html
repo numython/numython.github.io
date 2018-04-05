@@ -7,23 +7,12 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#33642A" name="theme-color">
+<meta name="theme-color" content="#33642A">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://numython.github.io/posts/analisis-estructural-con-python-i/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'center' to center equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
 <link rel="prev" href="../2016/04/almacenando-imagenes-como-codigo/" title="Almacenando imágenes como código utilizando img2py" type="text/html">
 <link rel="next" href="../resolviendo-problemas-de-optimizacion-con-python/" title="Resolviendo problemas de optimización con Python" type="text/html">
 <meta property="og:site_name" content="Numython">
@@ -48,7 +37,7 @@ universitarios de resistencia de materiales se ens">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Mostrar navegación</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -110,7 +99,7 @@ universitarios de resistencia de materiales se ens">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Pedro Jorge De Los Santos
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-11-11T20:31:20-05:00" itemprop="datePublished" title="2016-11-11 20:31">2016-11-11 20:31</time></a></p>
@@ -121,7 +110,7 @@ universitarios de resistencia de materiales se ens">
 
             
         </p>
-<p class="sourceline"><a href="index.ipynb" id="sourcelink">Código fuente</a></p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Código fuente</a></p>
 
         </div>
         
@@ -155,10 +144,12 @@ las consideraciones físicas que deriven en la simplificación del problema.</p>
 <p>En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:</p>
-$$ K U = F $$<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
+<p>$$ K U = F $$</p>
+<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.</p>
 <p>Dado que normalmente los desplazamientos son las incógnitas, se tiene que:</p>
-$$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
+<p>$$ U = K^{-1} F $$</p>
+<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
 <p>La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
 sus nodos.</p>
 <h3 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="#Un-caso-muy-simple:-elementos-resorte">¶</a>
@@ -166,11 +157,14 @@ sus nodos.</p>
 <p>El elemento resorte es el elemento finito más simple, tiene un grado de libertad (por cada nodo): traslación en dirección axial.</p>
 <p><img src="../../structural-analysis/spring_element.PNG" alt=""></p>
 <p>La matriz de rigidez para un elemento resorte viene dada por:</p>
-$$ k^{(e)} = 
+<p>$$ k^{(e)} = 
 \begin{bmatrix}
-k_e &amp; - k_e \\
-- k_e &amp; k_e \\
-\end{bmatrix} $$<p>La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.</p>
+k_e &amp; - k_e \</p>
+<ul>
+<li>k_e &amp; k_e \
+\end{bmatrix} $$</li>
+</ul>
+<p>La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.</p>
 
 </div>
 </div>
@@ -183,7 +177,7 @@ k_e &amp; - k_e \\
 <p>Para ejemplificar cómo funciona el método de los elementos finitos en elementos de este tipo vamos a resolver el siguiente ejemplo.</p>
 <p><img src="../../structural-analysis/spring_01.png" alt=""></p>
 <p>Primero, las matrices de rigidez por elemento vienen dadas por:</p>
-$$ 
+<p>$$ 
 k^{(1)} = 
 \begin{bmatrix}
 1000 &amp; -1000 \\
@@ -201,9 +195,10 @@ k^{(3)} =
 3000 &amp; -3000 \\
 -3000 &amp; 3000 \\
 \end{bmatrix} 
-$$<p>La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y <em>rellenar</em> sólo las posiciones correspondientes a los nodos que componen el elemento.</p>
+$$</p>
+<p>La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y <em>rellenar</em> sólo las posiciones correspondientes a los nodos que componen el elemento.</p>
 <p>Por ejemplo, el elemento 1 está conformado por los nodos 1 y 3, entonces:</p>
-$$
+<p>$$
 K^{(1)} = 
 \begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0\\
@@ -211,8 +206,9 @@ K^{(1)} =
 -1000 &amp; 0 &amp; 1000 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 \end{bmatrix} 
-$$<p>Mismo caso para los otros elementos:</p>
-$$
+$$</p>
+<p>Mismo caso para los otros elementos:</p>
+<p>$$
 K^{(2)} = 
 \begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -220,7 +216,8 @@ K^{(2)} =
 0 &amp; 0 &amp; 2000 &amp; -2000 \\
 0 &amp; 0 &amp; -2000 &amp; 2000 \\
 \end{bmatrix} 
-$$$$
+$$</p>
+<p>$$
 K^{(3)} = 
 \begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -228,8 +225,9 @@ K^{(3)} =
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -3000 &amp; 0 &amp; 3000 \\
 \end{bmatrix} 
-$$<p>Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:</p>
-$$
+$$</p>
+<p>Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:</p>
+<p>$$
 K = 
 \begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0 \\
@@ -237,8 +235,9 @@ K =
 -1000 &amp; 0 &amp; 3000 &amp; -2000 \\
 0 &amp; -3000 &amp; -2000 &amp; 5000 \\
 \end{bmatrix} 
-$$<p>Quedando el sistema de ecuaciones como:</p>
-$$\begin{bmatrix}
+$$</p>
+<p>Quedando el sistema de ecuaciones como:</p>
+<p>$$\begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0 \\
 0 &amp; 3000 &amp; 0 &amp; -3000 \\
 -1000 &amp; 0 &amp; 3000 &amp; -2000 \\
@@ -249,7 +248,8 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 \end{bmatrix} =
 \begin{bmatrix}
 0 \\ 0 \\ 0 \\ 5000
-\end{bmatrix} $$
+\end{bmatrix} $$</p>
+
 </div>
 </div>
 </div>
@@ -308,7 +308,10 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1  UX = 0.0000      FX = -909.0909
 2  UX = 0.0000      FX = -4090.9091
@@ -378,7 +381,10 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Model: Modelo 01
 Nodes: 0
@@ -420,7 +426,10 @@ Elements: 0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(&lt;nusa.core.Node object at 0x0325F550&gt;, &lt;nusa.core.Node object at 0x0325F530&gt;)
 </pre>
@@ -460,26 +469,16 @@ Elements: 0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class 'nusa.element.Spring'&gt;
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
@@ -509,7 +508,10 @@ Elements: 0
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -535,19 +537,6 @@ Elements: 0
 </ul>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
@@ -587,7 +576,7 @@ Elements: 0
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -604,7 +593,7 @@ MathJax.Hub.Config({
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2017         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2018         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

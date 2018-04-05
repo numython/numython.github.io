@@ -7,23 +7,12 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#33642A" name="theme-color">
+<meta name="theme-color" content="#33642A">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'center' to center equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
 <link rel="prev" href="../analisis-estructural-con-python-i/" title="Análisis estructural con Python I. Una introducción" type="text/html">
 <link rel="next" href="../wxdx-una-gui-para-calculo-elemental/" title="wxdx, una GUI para cálculo elemental" type="text/html">
 <meta property="og:site_name" content="Numython">
@@ -45,7 +34,7 @@ MathJax.Hub.Config({
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Mostrar navegación</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -107,7 +96,7 @@ MathJax.Hub.Config({
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Resolviendo problemas de optimización con Python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Pedro Jorge De Los Santos
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-11-18T23:34:55-06:00" itemprop="datePublished" title="2016-11-18 23:34">2016-11-18 23:34</time></a></p>
@@ -118,7 +107,7 @@ MathJax.Hub.Config({
 
             
         </p>
-<p class="sourceline"><a href="index.ipynb" id="sourcelink">Código fuente</a></p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Código fuente</a></p>
 
         </div>
         
@@ -135,11 +124,18 @@ MathJax.Hub.Config({
 <p><strong>Ejemplo</strong>. Se requiere diseñar un contenedor de desechos, cuya forma será la de un prisma rectangular de dimensiones x, y, z como se muestra en la figura. El volumen del contenedor deberá ser de 0.08 $m^3$. Por requerimientos, la altura debe estar en el rango 0.6-0.8 m, y los lados de la base deben medir al menos 0.1 m. Luego, la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible. Nota: <em>El contenedor está abierto en la parte superior</em>.</p>
 <p><img src="../../img/p1.jpg" width="150px"></p>
 <p>La cantidad de material utilizada para fabricar el contenedor está directamente relacionada con el área del prisma rectangular, donde esta corresponde a la suma de las áreas para cada una de las caras, luego, basándonos en el esquema de la figura anterior, se puede expresar el área en función de sus dimensiones como sigue:</p>
-$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$<p>De la restricción de volumen se tiene que:</p>
-$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$<p>Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:</p>
-$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$<p>Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:</p>
-$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$<p>Además, para los requirimientos dimensionales de la base se tiene:</p>
-$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
+<p>$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$</p>
+<p>De la restricción de volumen se tiene que:</p>
+<p>$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$</p>
+<p>Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:</p>
+<p>$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$</p>
+<p>Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:</p>
+<p>$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$
+$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$</p>
+<p>Además, para los requirimientos dimensionales de la base se tiene:</p>
+<p>$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$
+$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
+
 </div>
 </div>
 </div>
@@ -151,7 +147,8 @@ $$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 <h2 id="Óptimo-no-restringido">Óptimo no restringido<a class="anchor-link" href="#%C3%93ptimo-no-restringido">¶</a>
 </h2>
 <p>Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:</p>
-$$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
+<p>$$ \left[ \vec{\nabla} f \right] = [0] $$</p>
+<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
 
 </div>
 </div>
@@ -232,7 +229,10 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando 
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[3]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -273,7 +273,10 @@ $$\left[\begin{matrix}x_{2} - \frac{0.16}{x_{1}^{2}}\\x_{1} - \frac{0.16}{x_{2}^
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[4]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -295,8 +298,10 @@ $$\left [ \left ( 0.542883523318981, \quad 0.542883523318981\right ), \quad \lef
 <p>Hasta ahora sabemos que la solución obtenida es un punto crítico, pero no podemos asegurar si es un máximo, un mínimo o un punto de silla. Luego, para comprobar si el punto calculado es un mínimo se puede utilizar el siguiente teorema:</p>
 <blockquote>
 <p><strong>Teorema 1</strong>. <em>Condición necesaria</em>: si $f(x)$ tiene un mínimo local en $x^*$ entonces:</p>
-$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$<p><em>Condición necesaria de segundo orden</em>: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana</p>
-$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$<p>es positiva definida o semidefinida en el punto $x^*$.</p>
+<p>$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$</p>
+<p><em>Condición necesaria de segundo orden</em>: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana</p>
+<p>$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$</p>
+<p>es positiva definida o semidefinida en el punto $x^*$.</p>
 <p><em>Condición suficiente de segundo orden</em>: si la matriz $H(x^*)$ es positiva definida en el punto estacionario $x^*$, 
 entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 <p>Una matriz es positiva definida si sus eigenvalores son estrictamente positivos, es decir: $\lambda_i &gt; 0$</p>
@@ -328,7 +333,10 @@ entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[5]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -369,7 +377,10 @@ $$\left[\begin{matrix}2.0 &amp; 1\\1 &amp; 2.0\end{matrix}\right]$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -411,7 +422,10 @@ $$\left \{ 1 : 1, \quad 3 : 1\right \}$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[59]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -524,7 +538,10 @@ $$0.271441761659491$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[57]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -534,7 +551,10 @@ $$0.271441761659491$$
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -574,7 +594,10 @@ $$0.271441761659491$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[63]:</div>
+
+
 
 
 <div class="output_latex output_subarea output_execute_result">
@@ -616,7 +639,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -659,7 +685,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -702,7 +731,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -753,7 +785,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -801,7 +836,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -877,7 +915,10 @@ $$0.884167559673693$$
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[153]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -894,19 +935,6 @@ $$0.884167559673693$$
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
@@ -949,7 +977,7 @@ $$0.884167559673693$$
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -966,7 +994,7 @@ MathJax.Hub.Config({
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2017         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2018         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
