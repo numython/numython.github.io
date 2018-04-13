@@ -84,12 +84,12 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" class="u-url">Cinemática inversa de un manipulador RR</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" class="u-url">Cinemática inversa de un manipulador rr</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Pedro Jorge De Los Santos
             </span></p>
-            <p class="dateline"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" rel="bookmark"><time class="published dt-published" datetime="2018-04-04T20:32:54-05:00" title="2018-04-04 20:32">2018-04-04 20:32</time></a></p>
+            <p class="dateline"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" rel="bookmark"><time class="published dt-published" datetime="2018-04-13T17:05:50-05:00" title="2018-04-13 17:05">2018-04-13 17:05</time></a></p>
                 <p class="commentline">
         
     <a href="posts/cinematica-inversa-de-un-manipulador-rr/#disqus_thread" data-disqus-identifier="cache/posts/cinematica-inversa-de-un-manipulador-rr.html">Comments</a>
@@ -123,6 +123,30 @@
 <p>$$ r^2 = L_1^2 + L_2^2 + 2 L_1 L_2 \cos\theta_2 $$</p>
 <p>De tal modo que:</p>
 <p>$$ \cos\theta_2 = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2} $$</p>
+<p>Reescribiendo en términos de la función tangente:</p>
+<p>$$ \theta_2 = \arctan\left(\frac{\sqrt{1-K^2}}{K}\right) \quad \text{donde} \quad K = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$$</p>
+<p>Para calcular $\theta_1$ se tiene:</p>
+<p>$$ \alpha = \arctan\left(\frac{y}{x}\right) ; \qquad y \qquad \cos\beta = \frac{L_1^2 + r^2 - L_2^2}{2 L_1 r} $$</p>
+<p>$$ \theta_1 = \alpha - \beta $$</p>
+<h3 id="Método-analítico">Método analítico<a class="anchor-link" href="posts/cinematica-inversa-de-un-manipulador-rr/#M%C3%A9todo-anal%C3%ADtico">¶</a>
+</h3>
+<p>De la cinemática directa del manipulador RR sabemos que:</p>
+<p>$$ x = l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 $$
+$$ y = l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 $$</p>
+<p>Elevando al cuadrado cada miembro de las ecuaciones anteriores y sumándolas, se tiene:</p>
+<p>$$ x^2 + y^2 = \left( l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 \right)^2 + 
+\left( l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 \right)^2 $$</p>
+<p>Simplificando términos:</p>
+<p>$$ x^2 + y^2 = l_1^2 + l_2^2 + 2 l_1 l_2 \cos\theta_2 $$</p>
+<p>$$ \cos\theta_2 = \frac{x^2 + y^2 - l_1^2 - l_2^2  }{2 l_1 l_2} = K $$</p>
+<p>Además, sabemos que:</p>
+<p>$$ u = \arctan\left(\frac{\sin u}{\cos u}\right) \qquad y \qquad \sin u = \pm \sqrt{1-\cos^2 u} $$</p>
+<p>De tal manera que podemos escribir $\theta_2$ en términos de la función arcotangente, como sigue:</p>
+<p>$$ \theta_2 = \arctan\left(\frac{\pm\sqrt{1-K^2}}{K}\right) $$</p>
+<p>Para calcular $\theta_1$, de las ecuaciones para $x$ e $y$ podemos expresar el cociente $y/x$ y trabajar con la expresión resultante:</p>
+<p>$$ \frac{y}{x} = \frac{l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 }{ l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 } $$</p>
+<p>Factorizando y simplificando los términos para $\cos\theta_1$ y $\sin\theta_1$, podemos escribir:</p>
+<p>$$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_2}{l_2 x \cos\theta_2 + l_1 x - l_2 y \sin\theta_2} \right) $$</p>
 
 </div>
 </div>
