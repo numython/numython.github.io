@@ -8,54 +8,41 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#33642A">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
-<link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/cinematica-inversa-de-un-manipulador-rr/" type="text/html">
+<link rel="next" href="index-2.html" type="text/html">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/analizando-datos-conacyt-investigadores/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Mostrar navegación</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="https://numython.github.io/">
-                <img src="logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="archive.html">Archivo</a>
-                </li>
-<li>
-<a href="stories/nusa/">NuSA</a>
-                </li>
-<li>
-<a href="stories/about/">Acerca de...</a>
-                </li>
-<li>
-<a href="categories/">Etiquetas</a>
-                </li>
-<li>
-<a href="rss.xml">Canal RSS</a>
-
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
                 
-            </li>
-</ul>
-<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
 <div class="form-group">
 <input type="text" name="q" class="form-control" placeholder="Search">
 </div>
@@ -66,110 +53,71 @@
 </form>
 <!-- End of custom search -->
 
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://numython.github.io/">
+            <img src="logo.png" alt="Numython" id="logo" class="d-inline-block align-top"><span id="blog-title">Numython</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="archive.html" class="nav-link">Archivo</a>
+                </li>
+<li class="nav-item">
+<a href="stories/nusa/" class="nav-link">NuSA</a>
+                </li>
+<li class="nav-item">
+<a href="stories/about/" class="nav-link">Acerca de...</a>
+                </li>
+<li class="nav-item">
+<a href="categories/" class="nav-link">Etiquetas</a>
+                </li>
+<li class="nav-item">
+<a href="rss.xml" class="nav-link">Canal RSS</a>
 
-            <ul class="nav navbar-nav navbar-right"></ul>
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-            
-            
-
-    
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" class="u-url">Cinemática inversa de un manipulador rr</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/cinematica-inversa-de-un-manipulador-rr/" rel="bookmark"><time class="published dt-published" datetime="2018-04-13T17:05:50-05:00" title="2018-04-13 17:05">2018-04-13 17:05</time></a></p>
-                <p class="commentline">
         
-    <a href="posts/cinematica-inversa-de-un-manipulador-rr/#disqus_thread" data-disqus-identifier="cache/posts/cinematica-inversa-de-un-manipulador-rr.html">Comments</a>
+        
+    
+        
 
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>La cinemática inversa de un manipulador consiste en calcular los valores articulares requeridos para <em>alcanzar</em> una determinada posición y orientación en el espacio. Existen diversos métodos para el cálculo de la cinemática inversa, desde la obtención de soluciones en forma cerrada (deseable) hasta la implementación de técnicas numéricas.</p>
-<p><img src="img/rr_robot.PNG" alt="RR"></p>
-<p>En este caso se obtendrá la cinemática inversa del manipulador planar RR de dos grados libertad utilizando tres métodos, a saber:</p>
-<ol>
-<li>Método geométrico</li>
-<li>Método analítico</li>
-<li>Utilizando la Pseudoinversa del Jacobiano </li>
-</ol>
-<h3 id="Método-geométrico">Método geométrico<a class="anchor-link" href="posts/cinematica-inversa-de-un-manipulador-rr/#M%C3%A9todo-geom%C3%A9trico">¶</a>
-</h3>
-<p>El método geométrico, de manera general, consiste en establecer una serie de construcciones geométricas (típicamente triángulos) y mediante relaciones trigonométricas calcular los valores de interés.</p>
-<p>De la figura se observa que la distancia $r$ se puede calcular como:</p>
-<p>$$ r = \sqrt{x^2+y^2} $$</p>
-<p>Además, por ley de cosenos se tiene:</p>
-<p>$$ r^2 = L_1^2 + L_2^2 + 2 L_1 L_2 \cos\theta_2 $$</p>
-<p>De tal modo que:</p>
-<p>$$ \cos\theta_2 = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2} $$</p>
-<p>Reescribiendo en términos de la función tangente:</p>
-<p>$$ \theta_2 = \arctan\left(\frac{\sqrt{1-K^2}}{K}\right) \quad \text{donde} \quad K = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$$</p>
-<p>Para calcular $\theta_1$ se tiene:</p>
-<p>$$ \alpha = \arctan\left(\frac{y}{x}\right) ; \qquad y \qquad \cos\beta = \frac{L_1^2 + r^2 - L_2^2}{2 L_1 r} $$</p>
-<p>$$ \theta_1 = \alpha - \beta $$</p>
-<h3 id="Método-analítico">Método analítico<a class="anchor-link" href="posts/cinematica-inversa-de-un-manipulador-rr/#M%C3%A9todo-anal%C3%ADtico">¶</a>
-</h3>
-<p>De la cinemática directa del manipulador RR sabemos que:</p>
-<p>$$ x = l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 $$
-$$ y = l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 $$</p>
-<p>Elevando al cuadrado cada miembro de las ecuaciones anteriores y sumándolas, se tiene:</p>
-<p>$$ x^2 + y^2 = \left( l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 \right)^2 + 
-\left( l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 \right)^2 $$</p>
-<p>Simplificando términos:</p>
-<p>$$ x^2 + y^2 = l_1^2 + l_2^2 + 2 l_1 l_2 \cos\theta_2 $$</p>
-<p>$$ \cos\theta_2 = \frac{x^2 + y^2 - l_1^2 - l_2^2  }{2 l_1 l_2} = K $$</p>
-<p>Además, sabemos que:</p>
-<p>$$ u = \arctan\left(\frac{\sin u}{\cos u}\right) \qquad y \qquad \sin u = \pm \sqrt{1-\cos^2 u} $$</p>
-<p>De tal manera que podemos escribir $\theta_2$ en términos de la función arcotangente, como sigue:</p>
-<p>$$ \theta_2 = \arctan\left(\frac{\pm\sqrt{1-K^2}}{K}\right) $$</p>
-<p>Para calcular $\theta_1$, de las ecuaciones para $x$ e $y$ podemos expresar el cociente $y/x$ y trabajar con la expresión resultante:</p>
-<p>$$ \frac{y}{x} = \frac{l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 }{ l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 } $$</p>
-<p>Factorizando y simplificando los términos para $\cos\theta_1$ y $\sin\theta_1$, podemos escribir:</p>
-<p>$$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_2}{l_2 x \cos\theta_2 + l_1 x - l_2 y \sin\theta_2} \right) $$</p>
-
-</div>
-</div>
-</div>
-    </div>
-  </div>
-
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/analizando-datos-conacyt-investigadores/" rel="bookmark"><time class="published dt-published" datetime="2017-01-02T20:31:20-05:00" title="2017-01-02 20:31">2017-01-02 20:31</time></a></p>
-                <p class="commentline">
+    
+        
+    <div class="postindex">
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/analizando-datos-conacyt-investigadores/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-01-02T20:31:20-05:00" itemprop="datePublished" title="2017-01-02 20:31">2017-01-02 20:31</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/analizando-datos-conacyt-investigadores/#disqus_thread" data-disqus-identifier="cache/posts/analizando-datos-conacyt-investigadores.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
+            </header><div class="e-content entry-content">
+                    <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing code_cell rendered">
@@ -856,22 +804,25 @@ $$ y = l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 $$</p>
     </div>
   </div>
 
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt/" class="u-url">Analizando datos del CONACYT: De los becarios nacionales</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/analizando-datos-conacyt/" rel="bookmark"><time class="published dt-published" datetime="2017-01-01T20:31:20-05:00" title="2017-01-01 20:31">2017-01-01 20:31</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt/" class="u-url">Analizando datos del CONACYT: De los becarios nacionales</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/analizando-datos-conacyt/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-01-01T20:31:20-05:00" itemprop="datePublished" title="2017-01-01 20:31">2017-01-01 20:31</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/analizando-datos-conacyt/#disqus_thread" data-disqus-identifier="cache/posts/analizando-datos-conacyt.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
+            </header><div class="e-content entry-content">
+                    <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -1138,22 +1089,25 @@ Name: Nivel, dtype: int64</pre>
     </div>
   </div>
 
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/maximos-y-minimos-de-una-funcion/" class="u-url">Máximos y mínimos de una función</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/maximos-y-minimos-de-una-funcion/" rel="bookmark"><time class="published dt-published" datetime="2016-12-17T10:38:20-06:00" title="2016-12-17 10:38">2016-12-17 10:38</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/maximos-y-minimos-de-una-funcion/" class="u-url">Máximos y mínimos de una función</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/maximos-y-minimos-de-una-funcion/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-12-17T10:38:20-06:00" itemprop="datePublished" title="2016-12-17 10:38">2016-12-17 10:38</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/maximos-y-minimos-de-una-funcion/#disqus_thread" data-disqus-identifier="cache/posts/maximos-y-minimos-de-una-funcion.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
+            </header><div class="e-content entry-content">
+                    <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -1514,22 +1468,25 @@ x = 0.577350 (Min)
     </div>
   </div>
 
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/wxdx-una-gui-para-calculo-elemental/" class="u-url">wxdx, una GUI para cálculo elemental</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/wxdx-una-gui-para-calculo-elemental/" rel="bookmark"><time class="published dt-published" datetime="2016-12-12T16:25:00-06:00" title="2016-12-12 16:25">2016-12-12 16:25</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/wxdx-una-gui-para-calculo-elemental/" class="u-url">wxdx, una GUI para cálculo elemental</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/wxdx-una-gui-para-calculo-elemental/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-12-12T16:25:00-06:00" itemprop="datePublished" title="2016-12-12 16:25">2016-12-12 16:25</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/wxdx-una-gui-para-calculo-elemental/#disqus_thread" data-disqus-identifier="cache/posts/wxdx-una-gui-para-calculo-elemental.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div>
+            </header><div class="e-content entry-content">
+                    <div>
 <p>En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
 (véase <a href="https://numython.github.io/categories/wxpython/">aquí</a>). En este post vamos a presentar el 
 desarrollo de una mini-aplicación que calcula límites, derivadas e integrales utilizando SymPy como 
@@ -1889,22 +1846,25 @@ if __name__=='__main__':
 </noscript>
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" rel="bookmark"><time class="published dt-published" datetime="2016-11-18T23:34:55-06:00" title="2016-11-18 23:34">2016-11-18 23:34</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/resolviendo-problemas-de-optimizacion-con-python/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-11-18T23:34:55-06:00" itemprop="datePublished" title="2016-11-18 23:34">2016-11-18 23:34</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/resolviendo-problemas-de-optimizacion-con-python/#disqus_thread" data-disqus-identifier="cache/posts/resolviendo-problemas-de-optimizacion-con-python.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
+            </header><div class="e-content entry-content">
+                    <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -2733,24 +2693,25 @@ $$0.884167559673693$$
     </div>
   </div>
 
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/analisis-estructural-con-python-i/" rel="bookmark"><time class="published dt-published" datetime="2016-11-11T20:31:20-05:00" title="2016-11-11 20:31">2016-11-11 20:31</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/analisis-estructural-con-python-i/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-11-11T20:31:20-05:00" itemprop="datePublished" title="2016-11-11 20:31">2016-11-11 20:31</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/analisis-estructural-con-python-i/#disqus_thread" data-disqus-identifier="cache/posts/analisis-structural-i.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
+            </header><div class="e-content entry-content">
+                    <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2776,12 +2737,10 @@ las consideraciones físicas que deriven en la simplificación del problema.</p>
 <p>En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:</p>
-<p>$$ K U = F $$</p>
-<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
+$$ K U = F $$<p>Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.</p>
 <p>Dado que normalmente los desplazamientos son las incógnitas, se tiene que:</p>
-<p>$$ U = K^{-1} F $$</p>
-<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
+$$ U = K^{-1} F $$<p>En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.</p>
 <p>La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
 sus nodos.</p>
 <h3 id="Un-caso-muy-simple:-elementos-resorte">Un caso muy simple: elementos resorte<a class="anchor-link" href="posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte">¶</a>
@@ -2789,14 +2748,11 @@ sus nodos.</p>
 <p>El elemento resorte es el elemento finito más simple, tiene un grado de libertad (por cada nodo): traslación en dirección axial.</p>
 <p><img src="structural-analysis/spring_element.PNG" alt=""></p>
 <p>La matriz de rigidez para un elemento resorte viene dada por:</p>
-<p>$$ k^{(e)} = 
+$$ k^{(e)} = 
 \begin{bmatrix}
-k_e &amp; - k_e \</p>
-<ul>
-<li>k_e &amp; k_e \
-\end{bmatrix} $$</li>
-</ul>
-<p>La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.</p>
+k_e &amp; - k_e \\
+- k_e &amp; k_e \\
+\end{bmatrix} $$<p>La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.</p>
 
 </div>
 </div>
@@ -2809,7 +2765,7 @@ k_e &amp; - k_e \</p>
 <p>Para ejemplificar cómo funciona el método de los elementos finitos en elementos de este tipo vamos a resolver el siguiente ejemplo.</p>
 <p><img src="structural-analysis/spring_01.png" alt=""></p>
 <p>Primero, las matrices de rigidez por elemento vienen dadas por:</p>
-<p>$$ 
+$$ 
 k^{(1)} = 
 \begin{bmatrix}
 1000 &amp; -1000 \\
@@ -2827,10 +2783,9 @@ k^{(3)} =
 3000 &amp; -3000 \\
 -3000 &amp; 3000 \\
 \end{bmatrix} 
-$$</p>
-<p>La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y <em>rellenar</em> sólo las posiciones correspondientes a los nodos que componen el elemento.</p>
+$$<p>La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y <em>rellenar</em> sólo las posiciones correspondientes a los nodos que componen el elemento.</p>
 <p>Por ejemplo, el elemento 1 está conformado por los nodos 1 y 3, entonces:</p>
-<p>$$
+$$
 K^{(1)} = 
 \begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0\\
@@ -2838,9 +2793,8 @@ K^{(1)} =
 -1000 &amp; 0 &amp; 1000 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 \end{bmatrix} 
-$$</p>
-<p>Mismo caso para los otros elementos:</p>
-<p>$$
+$$<p>Mismo caso para los otros elementos:</p>
+$$
 K^{(2)} = 
 \begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -2848,8 +2802,7 @@ K^{(2)} =
 0 &amp; 0 &amp; 2000 &amp; -2000 \\
 0 &amp; 0 &amp; -2000 &amp; 2000 \\
 \end{bmatrix} 
-$$</p>
-<p>$$
+$$$$
 K^{(3)} = 
 \begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -2857,9 +2810,8 @@ K^{(3)} =
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -3000 &amp; 0 &amp; 3000 \\
 \end{bmatrix} 
-$$</p>
-<p>Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:</p>
-<p>$$
+$$<p>Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:</p>
+$$
 K = 
 \begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0 \\
@@ -2867,9 +2819,8 @@ K =
 -1000 &amp; 0 &amp; 3000 &amp; -2000 \\
 0 &amp; -3000 &amp; -2000 &amp; 5000 \\
 \end{bmatrix} 
-$$</p>
-<p>Quedando el sistema de ecuaciones como:</p>
-<p>$$\begin{bmatrix}
+$$<p>Quedando el sistema de ecuaciones como:</p>
+$$\begin{bmatrix}
 1000 &amp; 0 &amp; -1000 &amp; 0 \\
 0 &amp; 3000 &amp; 0 &amp; -3000 \\
 -1000 &amp; 0 &amp; 3000 &amp; -2000 \\
@@ -2880,8 +2831,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 \end{bmatrix} =
 \begin{bmatrix}
 0 \\ 0 \\ 0 \\ 5000
-\end{bmatrix} $$</p>
-
+\end{bmatrix} $$
 </div>
 </div>
 </div>
@@ -2931,7 +2881,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%g</span><span class="s2">  UX = </span><span class="si">%-8.4f</span><span class="s2">    FX = </span><span class="si">%-8.4f</span><span class="s2">"</span><span class="o">%</span><span class="p">(</span><span class="n">nodo</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">USOL</span><span class="p">[</span><span class="n">nodo</span><span class="p">],</span> <span class="n">NF</span><span class="p">[</span><span class="n">nodo</span><span class="p">]))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2941,7 +2891,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2980,7 +2930,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <span class="kn">from</span> <span class="nn">nusa.model</span> <span class="k">import</span> <span class="n">SpringModel</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3004,7 +2954,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <span class="nb">print</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3014,7 +2964,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -3049,7 +2999,7 @@ Elements: 0
 <span class="nb">print</span><span class="p">((</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3059,7 +3009,7 @@ Elements: 0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -3092,7 +3042,7 @@ Elements: 0
 <span class="nb">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3102,7 +3052,7 @@ Elements: 0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -3111,6 +3061,19 @@ Elements: 0
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -3131,7 +3094,7 @@ Elements: 0
 <span class="n">n2</span><span class="o">.</span><span class="n">ux</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3141,7 +3104,7 @@ Elements: 0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -3170,25 +3133,39 @@ Elements: 0
 </div>
 </div>
 </div>
-    </div>
-  </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" class="u-url">Almacenando imágenes como código utilizando img2py</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" rel="bookmark"><time class="published dt-published" datetime="2016-04-01T08:15:00-06:00" title="2016-04-01 08:15">2016-04-01 08:15</time></a></p>
-                <p class="commentline">
+</div>
+</div>
+
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" class="u-url">Almacenando imágenes como código utilizando img2py</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/04/almacenando-imagenes-como-codigo/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-04-01T08:15:00-06:00" itemprop="datePublished" title="2016-04-01 08:15">2016-04-01 08:15</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/04/almacenando-imagenes-como-codigo/#disqus_thread" data-disqus-identifier="cache/posts/2016/04/almacenando-imagenes-como-codigo.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">En esta breve entrada vamos a hablar de cómo utilizar la función <code style="white-space: pre;">ìmg2py</code> de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con<code style="white-space: pre;">PyEmbeddedImage</code>.<br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"></a></div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">En esta breve entrada vamos a hablar de cómo utilizar la función <code style="white-space: pre;">ìmg2py</code> de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con<code style="white-space: pre;">PyEmbeddedImage</code>.<br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"></a></div>
 <br><br>
 </div>
 <div style="text-align: justify;">Lo primero que debemos hacer es importar la función del módulo <code style="white-space: pre;">wx.tools.img2py</code>:</div>
@@ -3202,22 +3179,25 @@ Elements: 0
 <strong><br></strong><strong>¿Y si necesito <em>embeber</em> varias imágenes en un mismo archivo Python?</strong><br><br><div style="text-align: justify;">Si, es bastante probable que necesite esto, hacer una colección de imagenes embebidas en un mismo archivo Python, la cuestión es muy parecida, sólo tenemos que agregar el <em>keyword argument</em><code style="white-space: pre;">append</code> a la función <code style="white-space: pre;">img2py</code> para evitar que borre lo que se ha colocado anteriormente, un pequeño ejemplo:</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob<br><span class="im">from</span> wx.tools.img2py <span class="im">import</span> img2py<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br><span class="cf" style="color: #007020; font-weight: bold;">for</span> img <span class="op" style="color: #666666;">in</span> glob.glob(<span class="st" style="color: #4070a0;">"img/*.png"</span>):<br>        img2py(img,<span class="st" style="color: #4070a0;">"iconos.py"</span>, append<span class="op" style="color: #666666;">=</span><span class="va" style="color: #19177c;">True</span>)</code></pre></div>
 <br><div style="text-align: justify;">Lo anterior <em>incrusta</em> el código correspondiente a todas las imágenes PNG contenidas en la carpeta <code style="white-space: pre;">img/</code>.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" class="u-url">Un mini editor de texto con wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-03-22T04:27:00-06:00" title="2016-03-22 04:27">2016-03-22 04:27</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" class="u-url">Un mini editor de texto con wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-03-22T04:27:00-06:00" itemprop="datePublished" title="2016-03-22 04:27">2016-03-22 04:27</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/un-mini-editor-de-texto-con-wxpython.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <p>En esta entrada vamos a explicar cómo desarrollar un editor de texto muy sencillo, que cumpla con algunas funciones muy básicas, tal como un bloc de notas de Windows.<br><br>El resultado final será más o menos el siguiente:<br><br></p>
+            </header><div class="e-content entry-content">
+                    <p>En esta entrada vamos a explicar cómo desarrollar un editor de texto muy sencillo, que cumpla con algunas funciones muy básicas, tal como un bloc de notas de Windows.<br><br>El resultado final será más o menos el siguiente:<br><br></p>
 <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="https://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" width="320"></a></div>
 <br>Primeramente vamos a importar los módulos a utilizar:<br><br><pre class="brush: python">import wx<br>import os<br>import os.path<br></pre>
 <br>El módulo wx para la librería gráfica (wxPython), y el módulo os para las operaciones con archivos de texto plano (guardar, abrir, etc...).<br><br>Una vez importados los módulos necesarios, habremos de definir una estructura base para la aplicación. Para ello extenderemos una clase de wx.Frame, tal cómo se muestra enseguida:<br><br><pre class="brush: python">class LABTxt(wx.Frame):<br>    def __init__(self,parent,title):<br>        wx.Frame.__init__(self,parent,title=title,size=(600,400))<br><br>    def configurarEditor(self):<br>        """ Configura las características iniciales del editor """<br><br>    def crearMenu(self):  <br>        """ Crea la barra de menú """<br><br>    def abrirArchivo(self, event):<br>        """ Abre un archivo de texto plano"""<br><br>    def guardarArchivoComo(self, event):<br>        """ Guarda el archivo actual abriendo un cuadro de dialogo """<br><br>    def guardarArchivo(self,event):<br>        """ Guarda el archivo actual """<br><br>    def copiar(self,event):<br>        """ Copia el texto seleccionado al portapapeles """<br><br>    def pegar(self,event):<br>        """ Pega el texto ubicado en el portapapeles """<br><br>    def configurarTema(self,event):<br>        """ Configura el tema a utilizar """<br><br>    def ayuda(self,event):<br>        """ Muestra la ayuda de la aplicacion """<br><br>    def acerca(self, event):<br>        """ Breve descripción del programa """<br><br>if __name__=='__main__':<br>    app = wx.App()<br>    fr = LABTxt(None, "LABTxt 0.0.1")<br>    app.MainLoop()<br></pre>
@@ -3226,21 +3206,24 @@ Elements: 0
 <br>Notará que cada ítem de los menús se "conecta" a un método de la propia clase que define la acción que se ejecutará en cada caso.<br><br><br><span style="font-size: large;"><b>El editor...</b></span><br>Finalmente os dejo el código completo del editor. Desde luego existen muchas mejoras que pueden hacerse.<br><br><pre class="brush: python"># -*- coding: utf-8 -*-<br># ================================<br># Por: Jorge De Los Santos  <br># E-mail: delossantosmfq@gmail.com<br># Licencia: BSD License<br># ================================<br><br>import wx<br>import os<br>import os.path<br><br>class LABTxt(wx.Frame):<br>    def __init__(self,parent,title):<br>        wx.Frame.__init__(self,parent,title=title,size=(600,400))<br>        if os.path.isfile("icono.png"):<br>            self.SetIcon(wx.Icon('icono.png'))<br>        self.archivo='untitled.txt'<br>        p=wx.Panel(self, -1)<br><br>        # Sizer<br>        sz=wx.BoxSizer(wx.VERTICAL)<br><br>        # Editor<br>        self.editor=wx.TextCtrl(p, -1, "", style=wx.TE_MULTILINE)<br>        self.configurarEditor()<br><br>        # Agregar al sizer<br>        sz.Add(self.editor, 1, wx.EXPAND)<br>        p.SetSizer(sz)<br><br>        # Crear barra de menu<br>        self.crearMenu()<br>        self.Show()<br><br>    def configurarEditor(self):<br>        """ Configura las características iniciales del editor """<br>        self.fuente=wx.Font(12, wx.MODERN, wx.NORMAL, wx.NORMAL)<br>        self.fuente.SetFaceName("Courier New")<br>        self.editor.SetFont(self.fuente)<br>        self.editor.SetBackgroundStyle(True)<br><br>    def crearMenu(self):  <br>        """ Crea la barra de menú """<br>        marchivo=wx.Menu()<br>        abrir=marchivo.Append(-1, "Abrir\tCtrl-O")<br>        guardar=marchivo.Append(-1, "Guardar\tCtrl-S")<br>        guardarComo=marchivo.Append(-1, "Guardar como")<br><br>        meditar=wx.Menu()<br>        copiar=meditar.Append(-1, "Copiar\tCtrl-C")<br>        pegar=meditar.Append(-1, "Pegar\tCtrl-V")<br><br>        self.mtema=wx.Menu()<br>        classic=self.mtema.Append(-1, "Classic")<br>        dark=self.mtema.Append(-1, "Dark")<br>        retro=self.mtema.Append(-1, "Retro")<br>        pink=self.mtema.Append(-1, "Pink")<br><br>        mayuda=wx.Menu()<br>        ayuda=mayuda.Append(-1, "Ayuda")<br>        acerca=mayuda.Append(-1, "Acerca de...")<br><br>        barraMenu=wx.MenuBar()<br>        barraMenu.Append(marchivo, "Archivo")<br>        barraMenu.Append(meditar, "Editar")<br>        barraMenu.Append(self.mtema, "Seleccionar tema")<br>        barraMenu.Append(mayuda, "Ayuda")<br>        self.SetMenuBar(barraMenu)<br><br>        # Definición de "eventos"<br>        self.Bind(wx.EVT_MENU, self.abrirArchivo, abrir)<br>        self.Bind(wx.EVT_MENU, self.guardarArchivoComo, guardarComo)<br>        self.Bind(wx.EVT_MENU, self.guardarArchivo, guardar)<br><br>        self.Bind(wx.EVT_MENU, self.copiar, copiar)<br>        self.Bind(wx.EVT_MENU, self.pegar, pegar)<br><br>        self.Bind(wx.EVT_MENU, self.configurarTema, classic)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, dark)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, retro)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, pink)<br><br>        self.Bind(wx.EVT_MENU, self.acerca, acerca)<br>        self.Bind(wx.EVT_MENU, self.ayuda, ayuda)<br><br>    def abrirArchivo(self, event):<br>        dlg=wx.FileDialog(self, "Abrir archivo", os.getcwd(), style=wx.OPEN)<br>        if dlg.ShowModal() == wx.ID_OK:<br>            try:<br>                fid=open(dlg.GetPath(),'r')<br>                texto=fid.readlines()<br>                self.texto="".join(texto)<br>                self.texto = self.texto.decode("utf8")<br>                fid.close()<br>                self.editor.SetValue(self.texto)<br>                self.archivo=dlg.GetPath()<br>                self.SetTitle("LABTxt "+self.archivo)<br>            except:<br>                wx.MessageBox(u"Archivo no válido","Error")<br>        dlg.Destroy()<br><br>    def guardarArchivoComo(self, event):<br>        """ Guarda el archivo actual abriendo un cuadro de dialogo """<br>        dlg=wx.FileDialog(self, "Guardar", os.getcwd(), style=wx.SAVE)<br>        if dlg.ShowModal() == wx.ID_OK:<br>            fid=open(dlg.GetPath(),'w')<br>            txt=str(self.editor.GetValue().encode('utf8'))<br>            fid.write(txt)<br>            fid.close()<br>            self.archivo=dlg.GetPath()<br>            self.SetTitle("LABTxt 0.0.1  "+self.archivo)<br>        dlg.Destroy()<br><br>    def guardarArchivo(self,event):<br>        """ Guarda el archivo actual """<br>        if hasattr(self, 'archivo'):<br>            fid=open(self.archivo,'w')<br>            txt=str(self.editor.GetValue().encode('utf8'))<br>            fid.write(txt)<br>            fid.close()<br>            wx.MessageBox("Hecho","LABTxt")<br>            self.SetTitle("LABTxt 0.0.1  "+self.archivo)<br>        else:<br>            self.guardarArchivoComo(None)<br><br>    def copiar(self,event):<br>        """ Copia el texto seleccionado al portapapeles """<br>        texto=wx.TextDataObject(self.editor.GetStringSelection())<br>        if wx.TheClipboard.Open():<br>            wx.TheClipboard.SetData(texto)<br>            wx.TheClipboard.Close()<br><br>    def pegar(self,event):<br>        """ Pega el texto ubicado en el portapapeles """<br>        txt=wx.TextDataObject()<br>        if wx.TheClipboard.Open():<br>            success=wx.TheClipboard.GetData(txt)<br>            wx.TheClipboard.Close()<br>        if success:<br>            self.editor.SetInsertionPoint(self.editor.GetInsertionPoint()) <br>            self.editor.write(txt.GetText())<br><br>    def configurarTema(self,event):<br>         tema_sel=self.mtema.FindItemById(event.GetId()).GetText()<br>         temas={'Classic':((0,0,255),(255,255,255)),<br>        'Dark':((200,200,200),(0,0,0)),<br>        'Retro':((0,255,0),(0,0,0)),<br>        'Pink':((20,50,50),(250,180,180))}<br>        self.editor.SetForegroundColour(temas[tema_sel][0])<br>        self.editor.SetBackgroundColour(temas[tema_sel][1])<br>        self.editor.Refresh()<br><br>    def ayuda(self,event):<br>        wx.MessageBox("No disponible","LABTxt")<br><br>    def acerca(self, event):<br>        descripcion=""" Editor de texto sin formato desarrollado en<br>        wxPython """<br>        info=wx.AboutDialogInfo()<br>        info.SetName('LABTxt')<br>        info.SetDescription(descripcion)<br>        info.SetVersion('0.0.1')<br>        info.SetLicense('BSD License')<br>        info.SetDevelopers(['Jorge De Los Santos'])<br>        info.SetWebSite(('labdls.blogspot.mx','LAB DLS'))<br>        info.SetCopyright('(c) 2014')<br>        wx.AboutBox(info)<br><br>if __name__=='__main__':<br>    app = wx.App()<br>    fr = LABTxt(None, "LABTxt 0.0.1")<br>    app.MainLoop()<br><br></pre>
 <br><br>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/03/primer-aplicacion-en-wxpython/" class="u-url">Primer aplicación en wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/03/primer-aplicacion-en-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-03-22T04:25:00-06:00" title="2016-03-22 04:25">2016-03-22 04:25</time></a></p>
-                <p class="commentline">
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/03/primer-aplicacion-en-wxpython/" class="u-url">Primer aplicación en wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/03/primer-aplicacion-en-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-03-22T04:25:00-06:00" itemprop="datePublished" title="2016-03-22 04:25">2016-03-22 04:25</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/03/primer-aplicacion-en-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/primer-aplicacion-en-wxpython.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">
 <a href="http://www.wxpython.org/">wxPython</a> es un binding de la biblioteca gráfica wxWidgets para el lenguaje de programación Python. La biblioteca wxWidgets se caracteriza por ser multiplataforma, por lo que su uso junto a Python permite el desarrollo rápido de aplicaciones gráficas multiplataforma.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Para desarrollar una aplicación en wxPython, normalmente primero debe crearse una clase heredada de wx.Frame:</div>
@@ -3262,15 +3245,56 @@ Elements: 0
 <br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ArthMktsvw8/VopRPVLJAqI/AAAAAAAABoQ/NGR3zNOI7Bc/s1600/img_02.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://2.bp.blogspot.com/-ArthMktsvw8/VopRPVLJAqI/AAAAAAAABoQ/NGR3zNOI7Bc/s320/img_02.PNG" width="320"></a></div>
 <br><br>Como puede observarse, en el código sólo se añade una línea, en la cual se instancia un objeto de la clase wx.TextCtrl, pasándole como parent el Frame principal, y el argumento style especificando que se permita el uso de líneas múltiples dentro de ese control.<br><br>¿Y si quiero añadir más controles?, bueno aquí la cuestión se complica un poco, pero vamos, nada que no se pueda resolver. Aunque para ello ha de introducirse otro concepto básico en el desarrollo de aplicaciones en wxPython: los Sizers, que son clases que permiten alinear y organizar los objetos dentro de una ventana o contenedores, mediante algoritmos de posicionamiento. Evidentemente esto lo estaremos tratando en otro post, para no alargarnos demasiado.<br><br>Para tener una referencia más sólida respecto al desarrollo de aplicaciones en wxPython es recomendable que revisen el siguiente libro:<br><br><a href="http://serv.yanchick.org/Books/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/python/Manning.Publications.wxPython.in.Action.Mar.2006.pdf">wxPython in Action  [Noel Rappin and Robin Dunn]</a>
 </div>
-    </div>
-    </article>
-</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" class="u-url">Imágenes en menús de wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/03/imagenes-en-menus-de-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-03-22T04:24:00-06:00" itemprop="datePublished" title="2016-03-22 04:24">2016-03-22 04:24</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="posts/2016/03/imagenes-en-menus-de-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/imagenes-en-menus-de-wxpython.html">Comments</a>
 
-        <nav class="postindexpager"><ul class="pager">
-<li class="next">
-                <a href="index-3.html" rel="next">Publicaciones anteriores</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+
+                </p>
+</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Los menús en wxPython se definen de manera muy sencilla creando primeramente la barra de menú principal, derivada de la clase <span>wx.MenuBar</span>, enseguida se definen los menús principales que compondrán la barra de menú, derivando estos de la clase<span> wx.Menu</span>, finalmente se agregan los sub-menús que tienen cómo base la clase <span>wx.MenuItem</span>. En el siguiente esquema se muestra la jerarquía de menús en wxPython.</div>
+<div class="separator" style="clear: both; text-align: center;"></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="http://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png"></a>
+</div>
+<br><br><div class="figure"></div>Un ejemplo muy básico:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar() <span class="co" style="color: #60a0b0; font-style: italic;"># Creamos barra de menú</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos el menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos los MenuItem (Guardar, Abrir)</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>,<span class="st" style="color: #4070a0;">""</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando el menú "Archivo" a la barra</span><br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando a "mb" como la barra de menú del Frame</span><br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)</code></pre></div>
+<div style="text-align: justify;"><br></div>
+<div style="text-align: justify;">En lo anterior se supone que todo ese código está inmerso dentro de una clase heredada de <code style="white-space: pre;">wx.Frame</code>. Así, se crea una barra de menú similar a lo mostrado en la siguiente imagen:</div>
+<div class="figure">
+<br><div class="caption"><br></div>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png"></a></div>
+<div class="caption"><br></div>
+<div class="caption"><br></div>
+</div>
+<div style="text-align: justify;">Para agregar una imagen al menú, se debe utilizar el método <code style="white-space: pre;">SetBitmap</code> de la clase <code style="white-space: pre;">wx.MenuItem</code>, pasando como parámetro un objeto de la clase <code style="white-space: pre;">wx.Bitmap</code>, el cual deberá contener la información necesaria de la imagen o icono a utilizar, debe tomarse en cuenta que el método <code style="white-space: pre;">SetBitmap</code> deberá "llamarse" antes de agregar el sub-menú al menú padre, de lo contrario no se verá reflejado dicho método.</div>
+<br><div style="text-align: justify;">Enseguida se adjunta el código completo de una aplicación wxPython que incluye imágenes en menús.</div>
+<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> MiAplicacion(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>    wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">300</span>,<span class="dv" style="color: #40a070;">200</span>))<br><span class="va" style="color: #19177c;">self</span>.createMenu() <span class="co" style="color: #60a0b0; font-style: italic;"># Llamamos al método que inicializa el menú</span><br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> createMenu(<span class="va" style="color: #19177c;">self</span>):<br><span class="co" style="color: #60a0b0; font-style: italic;">"""</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    Crea el menú de la aplicación</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    """</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Guardar</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.guardar.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_save.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Abrir</span><br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>)<br><span class="va" style="color: #19177c;">self</span>.abrir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_open.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Imprimir</span><br><span class="va" style="color: #19177c;">self</span>.imprimir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Imprimir"</span>)<br><span class="va" style="color: #19177c;">self</span>.imprimir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_print.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.imprimir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Salir</span><br><span class="va" style="color: #19177c;">self</span>.salir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Salir"</span>)<br><span class="va" style="color: #19177c;">self</span>.salir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_exit.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.salir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos la barra de menú principal y la configuramos</span><br><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar()<br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>  app <span class="op" style="color: #666666;">=</span> wx.App()<br>  frame <span class="op" style="color: #666666;">=</span> MiAplicacion(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">u"Imágenes Menú"</span>)<br>  app.MainLoop()</code></pre></div>
+<div class="figure">
+<br><div class="caption"><br></div>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png"></a></div>
+<div class="caption"><br></div>
+<div class="caption">Note que la clase <span>wx.Bitmap</span> necesita como parámetro de entrada la ruta donde se encuentra la imagen y una constante <span>wx.BITMAP_TYPE_ANY</span>, que simplemente especifica el tipo de imagen leída. Puede consultar más en la documentación de <span><a href="http://www.wxpython.org/docs/api/wx.Bitmap-class.html">wx.Bitmap</a>.</span>
+</div>
+</div>
+                </div>
+            </article>
+</div>
+    
+        <ul class="pager postindexpager clearfix">
+<li class="next"><a href="index-2.html" rel="next">Publicaciones anteriores</a></li>
+        </ul>
+<script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -3282,11 +3306,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer">
+</script><!--End of body content--><footer id="footer">
             Contents © 2018         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
@@ -3294,11 +3314,16 @@ MathJax.Hub.Config({
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+        <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("es");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
-    
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 "
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">

@@ -5,10 +5,10 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523657647.7496183
+_modified_time = 1536705025.94357
 _enable_loop = True
-_template_filename = 'c:/users/user/documents/blog/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl'
-_template_uri = 'comments_helper_googleplus.tmpl'
+_template_filename = 'c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl'
+_template_uri = 'comments_helper_commento.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['comment_form', 'comment_link', 'comment_link_script']
 
@@ -19,7 +19,7 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
         __M_writer('\n\n')
-        __M_writer('\n\n')
+        __M_writer('\n\n\n')
         __M_writer('\n')
         return ''
     finally:
@@ -30,9 +30,7 @@ def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer('\n<script src="https://apis.google.com/js/plusone.js"></script>\n<div class="g-comments"\n    data-href="')
-        __M_writer(str(url))
-        __M_writer('"\n    data-first_party_property="BLOGGER"\n    data-view_type="FILTERED_POSTMOD">\n</div>\n')
+        __M_writer('\n    <div id="commento"></div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -42,9 +40,7 @@ def render_comment_link(context,link,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer('\n<div class="g-commentcount" data-href="')
-        __M_writer(str(link))
-        __M_writer('"></div>\n<script src="https://apis.google.com/js/plusone.js"></script>\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -53,8 +49,13 @@ def render_comment_link(context,link,identifier):
 def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\n<script src="')
+        __M_writer(str(comment_system_id))
+        __M_writer('/assets/js/commento.min.js"></script>\n<script>\nwindow.onload = function() {\n    Commento.init({\n        serverUrl: "')
+        __M_writer(str(comment_system_id))
+        __M_writer('",\n    });\n}\n</script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -62,6 +63,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"filename": "c:/users/user/documents/blog/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "uri": "comments_helper_googleplus.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 9, "22": 14, "23": 17, "29": 2, "33": 2, "34": 5, "35": 5, "41": 11, "45": 11, "46": 12, "47": 12, "53": 16, "57": 16, "63": 57}}
+{"filename": "c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_commento.tmpl", "uri": "comments_helper_commento.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 4, "22": 7, "23": 19, "29": 2, "33": 2, "39": 6, "43": 6, "49": 10, "54": 10, "55": 11, "56": 11, "57": 15, "58": 15, "64": 58}}
 __M_END_METADATA
 """

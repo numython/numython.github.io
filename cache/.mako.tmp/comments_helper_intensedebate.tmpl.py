@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523657647.7356176
+_modified_time = 1536705025.9169884
 _enable_loop = True
-_template_filename = 'c:/users/user/documents/blog/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl'
+_template_filename = 'c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl'
 _template_uri = 'comments_helper_intensedebate.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['comment_form', 'comment_link', 'comment_link_script']
@@ -37,7 +37,7 @@ def render_comment_form(context,url,title,identifier):
         __M_writer(str(identifier))
         __M_writer('";\nvar idcomments_post_url = "')
         __M_writer(str(url))
-        __M_writer('";\n</script>\n<span id="IDCommentsPostTitle" style="display:none"></span>\n<script src=\'http://www.intensedebate.com/js/genericCommentWrapperV2.js\'></script>\n</script>\n')
+        __M_writer('";\n</script>\n<span id="IDCommentsPostTitle" style="display:none"></span>\n<script src="https://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>\n</script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -58,7 +58,7 @@ def render_comment_link(context,link,identifier):
         __M_writer(str(identifier))
         __M_writer('";\nvar idcomments_post_url = "')
         __M_writer(str(link))
-        __M_writer('";\n</script>\n<script src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>\n</a>\n')
+        __M_writer('";\n</script>\n<script src="https://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>\n</a>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -76,6 +76,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"filename": "c:/users/user/documents/blog/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl", "uri": "comments_helper_intensedebate.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 11, "22": 22, "23": 25, "29": 2, "34": 2, "35": 4, "36": 4, "37": 5, "38": 5, "39": 6, "40": 6, "46": 13, "51": 13, "52": 14, "53": 14, "54": 14, "55": 14, "56": 16, "57": 16, "58": 17, "59": 17, "60": 18, "61": 18, "67": 24, "71": 24, "77": 71}}
+{"filename": "c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl", "uri": "comments_helper_intensedebate.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 11, "22": 22, "23": 25, "29": 2, "34": 2, "35": 4, "36": 4, "37": 5, "38": 5, "39": 6, "40": 6, "46": 13, "51": 13, "52": 14, "53": 14, "54": 14, "55": 14, "56": 16, "57": 16, "58": 17, "59": 17, "60": 18, "61": 18, "67": 24, "71": 24, "77": 71}}
 __M_END_METADATA
 """
