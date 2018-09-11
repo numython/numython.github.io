@@ -8,54 +8,41 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#33642A">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/index-1.html">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <link rel="prev" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Mostrar navegación</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="https://numython.github.io/">
-                <img src="logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="archive.html">Archivo</a>
-                </li>
-<li>
-<a href="stories/nusa/">NuSA</a>
-                </li>
-<li>
-<a href="stories/about/">Acerca de...</a>
-                </li>
-<li>
-<a href="categories/">Etiquetas</a>
-                </li>
-<li>
-<a href="rss.xml">Canal RSS</a>
-
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
                 
-            </li>
-</ul>
-<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
 <div class="form-group">
 <input type="text" name="q" class="form-control" placeholder="Search">
 </div>
@@ -66,39 +53,71 @@
 </form>
 <!-- End of custom search -->
 
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://numython.github.io/">
+            <img src="logo.png" alt="Numython" id="logo" class="d-inline-block align-top"><span id="blog-title">Numython</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="archive.html" class="nav-link">Archivo</a>
+                </li>
+<li class="nav-item">
+<a href="stories/nusa/" class="nav-link">NuSA</a>
+                </li>
+<li class="nav-item">
+<a href="stories/about/" class="nav-link">Acerca de...</a>
+                </li>
+<li class="nav-item">
+<a href="categories/" class="nav-link">Etiquetas</a>
+                </li>
+<li class="nav-item">
+<a href="rss.xml" class="nav-link">Canal RSS</a>
 
-            <ul class="nav navbar-nav navbar-right"></ul>
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-            
-            
+        
+        
+    
+        
 
     
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/eventos-en-un-boton-wxbutton/" class="u-url">Eventos en un botón (wx.Button)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/eventos-en-un-boton-wxbutton/" rel="bookmark"><time class="published dt-published" datetime="2016-02-22T17:22:00-06:00" title="2016-02-22 17:22">2016-02-22 17:22</time></a></p>
-                <p class="commentline">
+        
+    <div class="postindex">
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/02/eventos-en-un-boton-wxbutton/" class="u-url">Eventos en un botón (wx.Button)</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/02/eventos-en-un-boton-wxbutton/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-02-22T17:22:00-06:00" itemprop="datePublished" title="2016-02-22 17:22">2016-02-22 17:22</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/02/eventos-en-un-boton-wxbutton/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/eventos-en-un-boton-wxbutton.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Los botones son componentes gráficos muy comunes que nos encontramos en cualquier interfaz de usuario y cuyo propósito es, generalmente, inicializar o confirmar un evento. En wxPython un botón ordinario se crea utilizando la clase <code style="white-space: pre;">wx.Button</code>, a la cual habrán de pasarse como argumentos de inicialización mínimos, el objeto padre, un ID, y una cadena indicando la etiqueta visible del botón. </div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Los botones son componentes gráficos muy comunes que nos encontramos en cualquier interfaz de usuario y cuyo propósito es, generalmente, inicializar o confirmar un evento. En wxPython un botón ordinario se crea utilizando la clase <code style="white-space: pre;">wx.Button</code>, a la cual habrán de pasarse como argumentos de inicialización mínimos, el objeto padre, un ID, y una cadena indicando la etiqueta visible del botón. </div>
 <div style="text-align: justify;">Por ejemplo:</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf-8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> TestFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent<span class="op" style="color: #666666;">=</span>parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">200</span>,<span class="dv" style="color: #40a070;">200</span>))<br><span class="va" style="color: #19177c;">self</span>.boton <span class="op" style="color: #666666;">=</span> wx.Button(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Botón"</span>)<br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> TestFrame(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Test wxButton"</span>)<br>    app.MainLoop()</code></pre></div>
 <a href="file:///C:/Users/User/Desktop/LABPro/_blogs_/wxPython/Posts/Eventos%20en%20un%20Bot%C3%B3n%20(wx.Button)/img/img_01.png"></a><br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-yPLZM6MEOS8/VstBHJ10aMI/AAAAAAAABv4/oIvw63A9cvY/s1600/img_01.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-yPLZM6MEOS8/VstBHJ10aMI/AAAAAAAABv4/oIvw63A9cvY/s1600/img_01.PNG"></a></div>
@@ -125,22 +144,25 @@
 <div style="text-align: justify;">Finalmente, la segunda forma consiste en utilizar el segundo parámetro del <em>handler</em> asignado para manejar un evento (normalmente y por <em>convención</em> llamado <code style="white-space: pre;">event</code>). ¿Pero qué es el parámetro <code style="white-space: pre;">event</code>?, en términos simples es un objeto de la clase <code style="white-space: pre;">wx.CommandEvent</code> que contiene información acerca del evento lanzado. Implementando esta manera para el ejemplo anterior se tiene:</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf-8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> TestFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent<span class="op" style="color: #666666;">=</span>parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">200</span>,<span class="dv" style="color: #40a070;">200</span>))<br><br><span class="va" style="color: #19177c;">self</span>.boton1 <span class="op" style="color: #666666;">=</span> wx.Button(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Uno"</span>, size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">100</span>,<span class="dv" style="color: #40a070;">20</span>),<br>                                pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">50</span>,<span class="dv" style="color: #40a070;">10</span>))<br><span class="va" style="color: #19177c;">self</span>.boton2 <span class="op" style="color: #666666;">=</span> wx.Button(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Dos"</span>, size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">100</span>,<span class="dv" style="color: #40a070;">20</span>),<br>                                pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">50</span>,<span class="dv" style="color: #40a070;">50</span>))<br><span class="va" style="color: #19177c;">self</span>.boton3 <span class="op" style="color: #666666;">=</span> wx.Button(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Tres"</span>, size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">100</span>,<span class="dv" style="color: #40a070;">20</span>),<br>                                pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">50</span>,<span class="dv" style="color: #40a070;">90</span>))<br><span class="co" style="color: #60a0b0; font-style: italic;"># Conectando eventos</span><br><span class="va" style="color: #19177c;">self</span>.Bind(wx.EVT_BUTTON, <span class="va" style="color: #19177c;">self</span>.OnClick)<br><br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> OnClick(<span class="va" style="color: #19177c;">self</span>,event):<br>        bt_label <span class="op" style="color: #666666;">=</span> event.GetEventObject().GetLabel()<br><span class="bu">print</span> <span class="st" style="color: #4070a0;">u"Has presionado el botón </span><span class="sc" style="color: #4070a0;">%s</span><span class="st" style="color: #4070a0;">"</span><span class="op" style="color: #666666;">%</span>(bt_label)<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> TestFrame(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Test wxButton"</span>)<br>    app.MainLoop()</code></pre></div>
 <br><div style="text-align: justify;">El método <code style="white-space: pre;">GetEventObject</code> del objeto <code style="white-space: pre;">event</code> devuelve la referencia al objeto del cual proviene el evento, y posteriormente con el método <code style="white-space: pre;">GetLabel()</code> se obtiene simplemente la etiqueta del botón correspondiente para imprimirla en pantalla.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/utilizando-un-combobox-en-wxpython/" class="u-url">Utilizando un ComboBox en wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/utilizando-un-combobox-en-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-02-09T05:55:00-06:00" title="2016-02-09 05:55">2016-02-09 05:55</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/02/utilizando-un-combobox-en-wxpython/" class="u-url">Utilizando un ComboBox en wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/02/utilizando-un-combobox-en-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-02-09T05:55:00-06:00" itemprop="datePublished" title="2016-02-09 05:55">2016-02-09 05:55</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/02/utilizando-un-combobox-en-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/utilizando-un-combobox-en-wxpython.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Un ComboBox es un control gráfico que despliega una lista de opciones cuando se interactúa con el, permitiendo desde luego la selección de sus ítems y consecuentemente el lanzamiento de un evento de tipo<code style="white-space: pre;">EVT_COMBOBOX</code>. Resulta lógico pensar que la utilidad de un ComboBox se hace notoria cuando se requiere disponer de una serie de opciones en un control que visualmente no ocupe mucho espacio.</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Un ComboBox es un control gráfico que despliega una lista de opciones cuando se interactúa con el, permitiendo desde luego la selección de sus ítems y consecuentemente el lanzamiento de un evento de tipo<code style="white-space: pre;">EVT_COMBOBOX</code>. Resulta lógico pensar que la utilidad de un ComboBox se hace notoria cuando se requiere disponer de una serie de opciones en un control que visualmente no ocupe mucho espacio.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">El ejemplo siguiente es una mini-aplicación wxPython que contiene dos ComboBox y un TextCtrl, que básicamente lo que hace es mostrar en el TextCtrl una concatenación de las opciones seleccionadas en ambos ComboBox:</div>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> TestFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,<span class="op" style="color: #666666;">*</span>args,<span class="op" style="color: #666666;">**</span>kwargs):<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,<span class="op" style="color: #666666;">*</span>args,<span class="op" style="color: #666666;">**</span>kwargs)<br>        sizer <span class="op" style="color: #666666;">=</span> wx.BoxSizer(wx.VERTICAL)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Datos para los ComboBox</span><br>        nombres <span class="op" style="color: #666666;">=</span>  <span class="st" style="color: #4070a0;">u"Ana|Pablo|Daniela|Jorge|David|Dulce"</span>.split(<span class="st" style="color: #4070a0;">"|"</span>)<br>        paises <span class="op" style="color: #666666;">=</span> <span class="st" style="color: #4070a0;">u"México|Colombia|Chile|Argentina|España|Uruguay"</span>.split(<span class="st" style="color: #4070a0;">"|"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Controles gráficos</span><br><span class="va" style="color: #19177c;">self</span>.cbbox_nombres <span class="op" style="color: #666666;">=</span> wx.ComboBox(<span class="va" style="color: #19177c;">self</span>,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,choices<span class="op" style="color: #666666;">=</span>nombres,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">120</span>,<span class="dv" style="color: #40a070;">25</span>))<br><span class="va" style="color: #19177c;">self</span>.cbbox_paises <span class="op" style="color: #666666;">=</span> wx.ComboBox(<span class="va" style="color: #19177c;">self</span>,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,choices<span class="op" style="color: #666666;">=</span>paises,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">120</span>,<span class="dv" style="color: #40a070;">25</span>))<br><span class="va" style="color: #19177c;">self</span>.txt <span class="op" style="color: #666666;">=</span> wx.TextCtrl(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">150</span>,<span class="dv" style="color: #40a070;">25</span>), style<span class="op" style="color: #666666;">=</span>wx.TE_CENTRE)<br><span class="va" style="color: #19177c;">self</span>.txt.SetBackgroundColour(<span class="st" style="color: #4070a0;">"#d0fefe"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando controles al sizer</span><br>        sizer.Add(<span class="va" style="color: #19177c;">self</span>.cbbox_nombres, <span class="dv" style="color: #40a070;">0</span>, wx.ALIGN_CENTRE<span class="op" style="color: #666666;">|</span>wx.ALL, <span class="dv" style="color: #40a070;">10</span>)<br>        sizer.Add(<span class="va" style="color: #19177c;">self</span>.cbbox_paises, <span class="dv" style="color: #40a070;">0</span>, wx.ALIGN_CENTRE<span class="op" style="color: #666666;">|</span>wx.ALL, <span class="dv" style="color: #40a070;">10</span>)<br>        sizer.Add(<span class="va" style="color: #19177c;">self</span>.txt, <span class="dv" style="color: #40a070;">0</span>, wx.ALIGN_CENTRE<span class="op" style="color: #666666;">|</span>wx.ALL, <span class="dv" style="color: #40a070;">10</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando sizer</span><br><span class="va" style="color: #19177c;">self</span>.SetSizer(sizer)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando eventos</span><br><span class="va" style="color: #19177c;">self</span>.Bind(wx.EVT_COMBOBOX, <span class="va" style="color: #19177c;">self</span>.OnSelect)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> OnSelect(<span class="va" style="color: #19177c;">self</span>,event):<br>        nombre <span class="op" style="color: #666666;">=</span> <span class="va" style="color: #19177c;">self</span>.cbbox_nombres.GetValue()<br>        pais <span class="op" style="color: #666666;">=</span> <span class="va" style="color: #19177c;">self</span>.cbbox_paises.GetValue()<br>        statxt <span class="op" style="color: #666666;">=</span> nombre <span class="op" style="color: #666666;">+</span> <span class="st" style="color: #4070a0;">" es de "</span> <span class="op" style="color: #666666;">+</span> pais<br><span class="va" style="color: #19177c;">self</span>.txt.SetLabel(statxt)<br><br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> TestFrame(<span class="va" style="color: #19177c;">None</span>, title<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"ComboBox Test"</span>, size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">250</span>,<span class="dv" style="color: #40a070;">200</span>))<br>    app.MainLoop()</code></pre>
@@ -158,22 +180,25 @@
 <div style="text-align: justify;">Una vez se han creado los controles, estos se deben agregarse al sizer de la aplicación para que sean organizados acorde a la distribución o algoritmo de posicionamiento seleccionado.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Finalmente, se programa la respuesta que tendrá la aplicación cuando los ComboBox sean manejados por el usuario, para ello se asigna el método <code style="white-space: pre;">OnSelect</code> como el handler de los eventos de tipo<code style="white-space: pre;">wx.EVT_COMBOBOX</code>. Note que el método <code style="white-space: pre;">OnSelect</code> contiene dos parámetros obligatorios por default, <code style="white-space: pre;">self</code> que hace referencia a la clase misma y <code style="white-space: pre;">event</code> que contiene información acerca del evento lanzado. En este caso el método <code style="white-space: pre;">OnSelect</code> lo único que hace es tomar los strings seleccionados en cada uno de los ComboBox, y concatenarlos utilizando un nexo cualesquiera, para finalmente asignar la cadena resultante al valor del TextCtrl.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/un-frame-ordinario-en-wxpython-se-puede/" class="u-url">Personalizando Frames en wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/un-frame-ordinario-en-wxpython-se-puede/" rel="bookmark"><time class="published dt-published" datetime="2016-02-06T17:36:00-06:00" title="2016-02-06 17:36">2016-02-06 17:36</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/02/un-frame-ordinario-en-wxpython-se-puede/" class="u-url">Personalizando Frames en wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/02/un-frame-ordinario-en-wxpython-se-puede/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-02-06T17:36:00-06:00" itemprop="datePublished" title="2016-02-06 17:36">2016-02-06 17:36</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/02/un-frame-ordinario-en-wxpython-se-puede/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/un-frame-ordinario-en-wxpython-se-puede.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <p>Un frame ordinario en wxPython se puede construir de manera muy sencilla, heredando simplemente de <code style="white-space: pre;">wx.Frame</code>.<br><br></p>
+            </header><div class="e-content entry-content">
+                    <p>Un frame ordinario en wxPython se puede construir de manera muy sencilla, heredando simplemente de <code style="white-space: pre;">wx.Frame</code>.<br><br></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> TestFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent<span class="op" style="color: #666666;">=</span>parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">400</span>,<span class="dv" style="color: #40a070;">300</span>))<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> TestFrame(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Mi Frame"</span>)<br>    app.MainLoop()</code></pre></div>
 <br><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-Kg-9fqJ4ldg/VrYuy37htlI/AAAAAAAABvA/W7sQo0iHBVE/s1600/img_01.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="239" src="https://4.bp.blogspot.com/-Kg-9fqJ4ldg/VrYuy37htlI/AAAAAAAABvA/W7sQo0iHBVE/s320/img_01.PNG" width="320"></a></div>
 <br><br>A continuación vamos a ver algunas cuestiones interesantes para crear frames personalizados.<br><br><h3 id="cambiando-el-color-de-fondo">Cambiando el color de fondo</h3>
@@ -193,22 +218,25 @@
 <br><strong><br></strong><strong>Ventana sin barra de título</strong><br><br>Si queremos una ventana sin barra de título, podemos <em>quitar</em> el estilo <code style="white-space: pre;">wx.CAPTION</code>:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> TestFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>        styles <span class="op" style="color: #666666;">=</span> wx.DEFAULT_FRAME_STYLE <span class="op" style="color: #666666;">&amp;</span> <span class="op" style="color: #666666;">~</span> (wx.CAPTION)<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent<span class="op" style="color: #666666;">=</span>parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">400</span>,<span class="dv" style="color: #40a070;">300</span>),<br>                          style<span class="op" style="color: #666666;">=</span>styles)<br><span class="va" style="color: #19177c;">self</span>.SetBackgroundColour(<span class="st" style="color: #4070a0;">"#ff00ff"</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> TestFrame(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Mi Frame"</span>)<br>    app.MainLoop()</code></pre></div>
 <br><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-2HrM9jDtvm0/VrYuzWP0UoI/AAAAAAAABvM/pi0_dYyapus/s1600/img_05.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="239" src="https://1.bp.blogspot.com/-2HrM9jDtvm0/VrYuzWP0UoI/AAAAAAAABvM/pi0_dYyapus/s320/img_05.PNG" width="320"></a></div>
 <br><br><div style="text-align: justify;">El estilo <code style="white-space: pre;">wx.DEFAULT_FRAME_STYLE &amp; ~ (wx.CAPTION)</code> toma todos los estilos incluidos en <code style="white-space: pre;">wx.DEFAULT_FRAME_STYLE</code>, exceptuando a <code style="white-space: pre;">wx.CAPTION</code>, un poco de combinación de operaciones lógicas AND-NOT.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/una-aplicacion-muy-basica-en-wxpython/" class="u-url">Una aplicación muy básica en wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/una-aplicacion-muy-basica-en-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-02-06T07:54:00-06:00" title="2016-02-06 07:54">2016-02-06 07:54</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/02/una-aplicacion-muy-basica-en-wxpython/" class="u-url">Una aplicación muy básica en wxPython</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/02/una-aplicacion-muy-basica-en-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-02-06T07:54:00-06:00" itemprop="datePublished" title="2016-02-06 07:54">2016-02-06 07:54</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/02/una-aplicacion-muy-basica-en-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/una-aplicacion-muy-basica-en-wxpython.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">La aplicación más elemental en wxPython puede lanzarse con apenas 5 líneas de código (incluyendo la instrucción de importar el módulo <code style="white-space: pre;">wx</code>).</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">La aplicación más elemental en wxPython puede lanzarse con apenas 5 líneas de código (incluyendo la instrucción de importar el módulo <code style="white-space: pre;">wx</code>).</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br>app <span class="op" style="color: #666666;">=</span> wx.App()<br>fr <span class="op" style="color: #666666;">=</span> wx.Frame(<span class="va" style="color: #19177c;">None</span>,title<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"Test 01"</span>,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">400</span>,<span class="dv" style="color: #40a070;">300</span>))<br>fr.Show()<br>app.MainLoop()</code></pre></div>
 <br><div style="text-align: justify;">Ahora vamos por pasos, a <em>despedazar</em> un poco el código anterior. Primero importamos el módulo <code style="white-space: pre;">wx</code>, el cual contiene todo (o casi todo, exceptuando controles más especializados y sus derivados) lo que podemos utilizar para construir una aplicación. Acto seguido, creamos un objeto de la clase <code style="white-space: pre;">wx.App</code>, que vendrá a ser la propia aplicación y se encargará de que el usuario pueda interactuar con los controles gráficos desplegados en pantalla. Luego, se crea un objeto de la clase <code style="white-space: pre;">wx.Frame</code> que es en términos simples una <em>ventana</em> de las que estamos acostumbrados a ver en todos lados; note que a <code style="white-space: pre;">wx.Frame</code> se le pasan como argumentos primeramente el valor <code style="white-space: pre;">None</code> que hace referencia al objeto padre (ninguno en este caso), y los <em>keyword arguments</em> <code style="white-space: pre;">title</code> y <code style="white-space: pre;">size</code> que definen el título y tamaño de la ventana, respectivamente. Finalmente se <code style="white-space: pre;">llama</code> al método <code style="white-space: pre;">MainLoop</code> de la clase <code style="white-space: pre;">wx.App</code> para inicializar la captura de eventos en nuestra aplicación.</div>
 <br>¿Y ahora cómo agregamos controles?<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br>app <span class="op" style="color: #666666;">=</span> wx.App()<br>fr <span class="op" style="color: #666666;">=</span> wx.Frame(<span class="va" style="color: #19177c;">None</span>,title<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"Test 01"</span>,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">400</span>,<span class="dv" style="color: #40a070;">300</span>))<br>bt <span class="op" style="color: #666666;">=</span> wx.Button(fr, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Botón 1"</span>, pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">0</span>))<br>txt <span class="op" style="color: #666666;">=</span> wx.TextCtrl(fr, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">100</span>,<span class="dv" style="color: #40a070;">0</span>))<br>fr.Show()<br>app.MainLoop()</code></pre></div>
@@ -232,41 +260,47 @@
 <li>Llamar al método <code style="white-space: pre;">MainLoop</code> de <code style="white-space: pre;">wx.App</code>.</li>
 </ol>Traducido a código puro y duro:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> MiFrame(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>        wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent<span class="op" style="color: #666666;">=</span>parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">400</span>,<span class="dv" style="color: #40a070;">300</span>))<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando los controles</span><br><span class="va" style="color: #19177c;">self</span>.bt <span class="op" style="color: #666666;">=</span> wx.Button(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">u"Botón 1"</span>, pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">0</span>))<br><span class="va" style="color: #19177c;">self</span>.txt <span class="op" style="color: #666666;">=</span> wx.TextCtrl(<span class="va" style="color: #19177c;">self</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="st" style="color: #4070a0;">""</span>,pos<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">100</span>,<span class="dv" style="color: #40a070;">0</span>))<br><span class="co" style="color: #60a0b0; font-style: italic;"># Eventos</span><br><span class="va" style="color: #19177c;">self</span>.Bind(wx.EVT_BUTTON, <span class="va" style="color: #19177c;">self</span>.OnClick)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Mostrar la ventana</span><br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> OnClick(<span class="va" style="color: #19177c;">self</span>,event):<br><span class="bu">print</span> <span class="st" style="color: #4070a0;">"Hola wxPython"</span><br><br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>    app <span class="op" style="color: #666666;">=</span> wx.App()<br>    fr <span class="op" style="color: #666666;">=</span> MiFrame(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">"Test 01"</span>)<br>    app.MainLoop()</code></pre></div>
 <br><div style="text-align: justify;">Por ahora ha sido todo respecto a cómo <em>construir</em> una aplicación muy básica, evidentemente hay muchas cosas por mejorar en esta aplicación que iremos viendo en entradas posteriores.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/02/test-wxpython/" class="u-url">Bienvenidos...</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/02/test-wxpython/" rel="bookmark"><time class="published dt-published" datetime="2016-02-06T06:30:00-06:00" title="2016-02-06 06:30">2016-02-06 06:30</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/02/test-wxpython/" class="u-url">Bienvenidos...</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/02/test-wxpython/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-02-06T06:30:00-06:00" itemprop="datePublished" title="2016-02-06 06:30">2016-02-06 06:30</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/02/test-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/02/test-wxpython.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Este blog se ha creado con la intención de compartir códigos básicos (y no tan básicos) para el desarrollo de interfaces gráficas en Python utilizando la librería wxPython. Lo anterior con la finalidad de mitigar un poco la falta de ejemplos en nuestra lengua acerca de esta librería.<br><br>Las dudas, sugerencias, comentarios o cualquier otro tipo de opinión siéntase libre de remitirlos al correo: <span style="font-family: Courier New, Courier, monospace;">delossantossantosmfq@gmail.com</span> o bien contactar a través de <a href="https://twitter.com/pjdlsl">Twitter</a> o <a href="https://github.com/JorgeDeLosSantos">GitHub</a>.<br><br>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Este blog se ha creado con la intención de compartir códigos básicos (y no tan básicos) para el desarrollo de interfaces gráficas en Python utilizando la librería wxPython. Lo anterior con la finalidad de mitigar un poco la falta de ejemplos en nuestra lengua acerca de esta librería.<br><br>Las dudas, sugerencias, comentarios o cualquier otro tipo de opinión siéntase libre de remitirlos al correo: <span style="font-family: Courier New, Courier, monospace;">delossantossantosmfq@gmail.com</span> o bien contactar a través de <a href="https://twitter.com/pjdlsl">Twitter</a> o <a href="https://github.com/JorgeDeLosSantos">GitHub</a>.<br><br>
 </div>
 <div style="text-align: justify;">Y bueno, aquí comenzamos.</div>
 <br>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/introduccion-scikit-image-procesamiento/" class="u-url">Introducción a scikit-image, procesamiento de imágenes en Python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/01/introduccion-scikit-image-procesamiento/" rel="bookmark"><time class="published dt-published" datetime="2016-01-29T04:06:00-06:00" title="2016-01-29 04:06">2016-01-29 04:06</time></a></p>
-                <p class="commentline">
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/01/introduccion-scikit-image-procesamiento/" class="u-url">Introducción a scikit-image, procesamiento de imágenes en Python</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/01/introduccion-scikit-image-procesamiento/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-29T04:06:00-06:00" itemprop="datePublished" title="2016-01-29 04:06">2016-01-29 04:06</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/01/introduccion-scikit-image-procesamiento/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/introduccion-scikit-image-procesamiento.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">En este post vamos a hacer una pequeña introducción a la librería scikit-image, la cual básicamente es una colección de algoritmos para el procesamiento de imágenes en Python.<br><br>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">En este post vamos a hacer una pequeña introducción a la librería scikit-image, la cual básicamente es una colección de algoritmos para el procesamiento de imágenes en Python.<br><br>
 </div>
 <h2 id="para-comenzar">Para comenzar</h2>
 <div style="text-align: justify;">
@@ -303,22 +337,25 @@
 <div class="separator" style="clear: both; text-align: center;"></div>
 <br><br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-i_MssU0Z33c/VqrkRjic1tI/AAAAAAAABto/z0fBVZR3Uis/s1600/img_03.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="268" src="https://2.bp.blogspot.com/-i_MssU0Z33c/VqrkRjic1tI/AAAAAAAABto/z0fBVZR3Uis/s320/img_03.PNG" width="320"></a></div>
 <br><br><div style="text-align: justify;">Hasta aquí esta breve introducción a scikit-image, una librería que sin duda vale la pena revisar y que proporciona una cantidad razonable de algoritmos que pueden ser muy útiles en el procesamiento digital de imágenes. Posteriormente se hablará de algunos tópicos básicos adicionales, como la binarización, segmentación, y otras operaciones típicas.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/graficas-en-coordenadas-polares-en/" class="u-url">Gráficas en coordenadas polares en Matplotlib</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/01/graficas-en-coordenadas-polares-en/" rel="bookmark"><time class="published dt-published" datetime="2016-01-29T02:40:00-06:00" title="2016-01-29 02:40">2016-01-29 02:40</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/01/graficas-en-coordenadas-polares-en/" class="u-url">Gráficas en coordenadas polares en Matplotlib</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/01/graficas-en-coordenadas-polares-en/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-29T02:40:00-06:00" itemprop="datePublished" title="2016-01-29 02:40">2016-01-29 02:40</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/01/graficas-en-coordenadas-polares-en/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/graficas-en-coordenadas-polares-en.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Trazar gráficas en coordenadas polares mediante el módulo <code style="white-space: pre;">pyplot</code> es muy sencillo, y se procede de manera similar que con las funciones en coordenadas rectangulares. Lo único que debemos cambiar es el tipo de proyección de el axes en el que vamos a <em>plotear</em> nuestras funciones polares.</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Trazar gráficas en coordenadas polares mediante el módulo <code style="white-space: pre;">pyplot</code> es muy sencillo, y se procede de manera similar que con las funciones en coordenadas rectangulares. Lo único que debemos cambiar es el tipo de proyección de el axes en el que vamos a <em>plotear</em> nuestras funciones polares.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Por ejemplo si queremos graficar una espiral de Arquímedes:</div>
 <br><span class="math display"><em>r</em>(<em>θ</em>)=<em>a</em> + <em>b</em><em>θ</em></span><br><span class="math display"><em><br></em></span><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np<br><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt<br><br>theta <span class="op" style="color: #666666;">=</span> np.linspace(<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">2</span><span class="op" style="color: #666666;">*</span>np.pi)<br>r <span class="op" style="color: #666666;">=</span> <span class="dv" style="color: #40a070;">5</span> <span class="op" style="color: #666666;">+</span> <span class="dv" style="color: #40a070;">50</span><span class="op" style="color: #666666;">*</span>theta<br><br>fig <span class="op" style="color: #666666;">=</span> plt.figure()<br>ax <span class="op" style="color: #666666;">=</span> fig.add_subplot(<span class="dv" style="color: #40a070;">111</span>, projection<span class="op" style="color: #666666;">=</span><span class="st" style="color: #4070a0;">"polar"</span>)<br>ax.plot(theta,r)<br><br>plt.show()</code></pre></div>
@@ -328,22 +365,25 @@
 <br><br><div style="text-align: justify;">Note que se pueden pasar argumentos de estilo y color a la función <code style="white-space: pre;">plot</code> tal y como se hace con las gráficas en coordenadas rectangulares.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Como se observa en los ejemplos anteriores lo único que debemos hacer es adicionar el <em>keyword argument</em> <code style="white-space: pre;">projection='polar'</code> al momento de crear el axes en el cual graficaremos nuestra función en coordenadas polares.</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/una-introduccion-pylab/" class="u-url">Una introducción a Pylab</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/01/una-introduccion-pylab/" rel="bookmark"><time class="published dt-published" datetime="2016-01-25T21:42:00-06:00" title="2016-01-25 21:42">2016-01-25 21:42</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/01/una-introduccion-pylab/" class="u-url">Una introducción a Pylab</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/01/una-introduccion-pylab/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-25T21:42:00-06:00" itemprop="datePublished" title="2016-01-25 21:42">2016-01-25 21:42</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/01/una-introduccion-pylab/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/una-introduccion-pylab.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <p>Pylab es un módulo de Matplotlib que, básicamente, integra en un mismo espacio de nombres utilidades gráficas del módulo pyplot y las numéricas de NumPy, resultando un entorno que se asemeja a MATLAB en el manejo de matrices/vectores y el trazo de gráficas.<br><br>Para importar todas las funciones de pylab podemos hacerlo como sigue:<br><br></p>
+            </header><div class="e-content entry-content">
+                    <p>Pylab es un módulo de Matplotlib que, básicamente, integra en un mismo espacio de nombres utilidades gráficas del módulo pyplot y las numéricas de NumPy, resultando un entorno que se asemeja a MATLAB en el manejo de matrices/vectores y el trazo de gráficas.<br><br>Para importar todas las funciones de pylab podemos hacerlo como sigue:<br><br></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> pylab <span class="im">import</span> <span class="op" style="color: #666666;">*</span></code></pre></div>
 <br>Con esto tendremos disponible todas las funciones y/o constantes en el espacio de trabajo actual.<br><h2 id="matrices-y-vectores">Matrices y vectores</h2>Algo básico que podemos hacer con Pylab es crear con vectores y matrices de una forma rápida:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> v<span class="op" style="color: #666666;">=</span>array([<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">2</span>,<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">1</span>,<span class="dv" style="color: #40a070;">5</span>,<span class="dv" style="color: #40a070;">3</span>]) <span class="co" style="color: #60a0b0; font-style: italic;">#Definiendo un vector</span><br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> v<br>array([<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">2</span>,  <span class="dv" style="color: #40a070;">0</span>,  <span class="dv" style="color: #40a070;">1</span>,  <span class="dv" style="color: #40a070;">5</span>,  <span class="dv" style="color: #40a070;">3</span>])<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<span class="op" style="color: #666666;">=</span>array([[<span class="dv" style="color: #40a070;">1</span>,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>],[<span class="dv" style="color: #40a070;">8</span>,<span class="dv" style="color: #40a070;">2</span>,<span class="dv" style="color: #40a070;">10</span>],[<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>,<span class="dv" style="color: #40a070;">2</span>,<span class="dv" style="color: #40a070;">3</span>]]) <span class="co" style="color: #60a0b0; font-style: italic;"># Definiendo una matriz</span><br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<br>array([[ <span class="dv" style="color: #40a070;">1</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>],<br>       [ <span class="dv" style="color: #40a070;">8</span>,  <span class="dv" style="color: #40a070;">2</span>, <span class="dv" style="color: #40a070;">10</span>],<br>       [<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>,  <span class="dv" style="color: #40a070;">2</span>,  <span class="dv" style="color: #40a070;">3</span>]])</code></pre></div>Realizar operaciones matriciales básicas:<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> B<span class="op" style="color: #666666;">=</span>array([[<span class="dv" style="color: #40a070;">1</span>,<span class="dv" style="color: #40a070;">5</span>,<span class="dv" style="color: #40a070;">0</span>],[<span class="dv" style="color: #40a070;">7</span>,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">9</span>,<span class="dv" style="color: #40a070;">2</span>],[<span class="dv" style="color: #40a070;">1</span>,<span class="dv" style="color: #40a070;">1</span>,<span class="dv" style="color: #40a070;">3</span>]])<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="co" style="color: #60a0b0; font-style: italic;"># Suma de matrices</span><br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<span class="op" style="color: #666666;">+</span>B<br>array([[ <span class="dv" style="color: #40a070;">2</span>,  <span class="dv" style="color: #40a070;">4</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>],<br>       [<span class="dv" style="color: #40a070;">15</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">7</span>, <span class="dv" style="color: #40a070;">12</span>],<br>       [<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">4</span>,  <span class="dv" style="color: #40a070;">3</span>,  <span class="dv" style="color: #40a070;">6</span>]])<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="co" style="color: #60a0b0; font-style: italic;"># Resta de matrices</span><br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<span class="op" style="color: #666666;">-</span>B<br>array([[ <span class="dv" style="color: #40a070;">0</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">6</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">5</span>],<br>       [ <span class="dv" style="color: #40a070;">1</span>, <span class="dv" style="color: #40a070;">11</span>,  <span class="dv" style="color: #40a070;">8</span>],<br>       [<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">6</span>,  <span class="dv" style="color: #40a070;">1</span>,  <span class="dv" style="color: #40a070;">0</span>]])<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="co" style="color: #60a0b0; font-style: italic;"># Multiplicación matricial</span><br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> dot(A,B)<br>array([[<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">11</span>,   <span class="dv" style="color: #40a070;">9</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">17</span>],<br>       [ <span class="dv" style="color: #40a070;">32</span>,  <span class="dv" style="color: #40a070;">32</span>,  <span class="dv" style="color: #40a070;">34</span>],<br>       [ <span class="dv" style="color: #40a070;">12</span>, <span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">40</span>,  <span class="dv" style="color: #40a070;">13</span>]])</code></pre></div>
 <br><div style="text-align: justify;">Note que la multiplicación matricial se debe realizar con la función <code style="white-space: pre;">dot</code>, si se efectúa la multiplicación con el operador <code style="white-space: pre;">*</code>, este dará el resultado de una multiplicación elemento por elemento.</div>
@@ -356,21 +396,24 @@
 <br><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-q9a1e8lJMJM/Vqae9KNX6TI/AAAAAAAABsw/_4DjbfMXJhg/s1600/img_03.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="https://2.bp.blogspot.com/-q9a1e8lJMJM/Vqae9KNX6TI/AAAAAAAABsw/_4DjbfMXJhg/s400/img_03.png" width="400"></a></div>
 <br>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/test-latex-and-code/" class="u-url">Vectores y matrices en NumPy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/01/test-latex-and-code/" rel="bookmark"><time class="published dt-published" datetime="2016-01-25T18:38:00-06:00" title="2016-01-25 18:38">2016-01-25 18:38</time></a></p>
-                <p class="commentline">
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/01/test-latex-and-code/" class="u-url">Vectores y matrices en NumPy</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/01/test-latex-and-code/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-25T18:38:00-06:00" itemprop="datePublished" title="2016-01-25 18:38">2016-01-25 18:38</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/01/test-latex-and-code/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/test-latex-and-code.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">NumPy es una librería muy útil y un <em>estándar</em> en Python para el manejo de matrices y/o arreglos que contienen datos de tipo numérico. La mayoría del ecosistema científico de Python está basado en los arreglos de NumPy para el manejo de datos.</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">NumPy es una librería muy útil y un <em>estándar</em> en Python para el manejo de matrices y/o arreglos que contienen datos de tipo numérico. La mayoría del ecosistema científico de Python está basado en los arreglos de NumPy para el manejo de datos.</div>
 <br>Normalmente se acostumbra importar el módulo NumPy utilizando el alias <strong>np</strong>:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <br><div style="text-align: justify;">Se puede crear un arreglo de NumPy a partir de una lista ordinaria de Python, utilizando la función <code style="white-space: pre;">np.array</code>.</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> lista<span class="op" style="color: #666666;">=</span>[<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="dv" style="color: #40a070;">0</span>,<span class="dv" style="color: #40a070;">2</span>,<span class="dv" style="color: #40a070;">5</span>,<span class="dv" style="color: #40a070;">8</span>]<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<span class="op" style="color: #666666;">=</span>np.array(lista)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A<br>array([<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,  <span class="dv" style="color: #40a070;">0</span>,  <span class="dv" style="color: #40a070;">2</span>,  <span class="dv" style="color: #40a070;">5</span>,  <span class="dv" style="color: #40a070;">8</span>])</code></pre></div>
@@ -380,35 +423,37 @@
 <br><div style="text-align: justify;">Se puede determinar la forma (número de filas y columnas) de una matriz o arreglo utilizando la propiedad <code style="white-space: pre;">shape</code> de la clase <code style="white-space: pre;">numpy.ndarray</code>.</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> A.shape<br>(5L,)<br><span class="op" style="color: #666666;">&gt;&gt;&gt;</span> M.shape<br>(3L, 3L)</code></pre></div>
 <br>En entradas posteriores veremos cómo realizar operaciones matriciales con matrices vectores.
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/2016/01/bienvenidos/" class="u-url">Bienvenidos...</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline"><a href="posts/2016/01/bienvenidos/" rel="bookmark"><time class="published dt-published" datetime="2016-01-25T18:18:00-06:00" title="2016-01-25 18:18">2016-01-25 18:18</time></a></p>
-                <p class="commentline">
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/01/bienvenidos/" class="u-url">Bienvenidos...</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/2016/01/bienvenidos/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-01-25T18:18:00-06:00" itemprop="datePublished" title="2016-01-25 18:18">2016-01-25 18:18</time></a>
+            </p>
+                        <p class="commentline">
         
     <a href="posts/2016/01/bienvenidos/#disqus_thread" data-disqus-identifier="cache/posts/2016/01/bienvenidos.html">Comments</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Bienvenidos a este blog de <strong>Python para Ingenieros</strong>, en el cual <em>hablaremos</em> un poco-mucho de varias cosas relacionadas con la programación en Python aplicada en la ingeniería.</div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">Bienvenidos a este blog de <strong>Python para Ingenieros</strong>, en el cual <em>hablaremos</em> un poco-mucho de varias cosas relacionadas con la programación en Python aplicada en la ingeniería.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Lo imprescindible: bueno, aquí usaremos NumPy, Scipy, Matplotlib y Sympy como librerías básicas y casi indispensables. Y de ahí paulatinamente exploraremos otras librerías útiles en el mundo del <em>Scientific Python</em>.</div>
 <div style="text-align: justify;"><br></div>
 <div style="text-align: justify;">Así pues, comencemos...</div>
-    </div>
-    </article>
+                </div>
+            </article>
 </div>
-
-        <nav class="postindexpager"><ul class="pager">
-<li class="previous">
-                <a href="index-2.html" rel="prev">Publicaciones posteriores</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+    
+        <ul class="pager postindexpager clearfix">
+<li class="previous"><a href="index-2.html" rel="prev">Publicaciones posteriores</a></li>
+        </ul>
+<script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -420,11 +465,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer">
+</script><!--End of body content--><footer id="footer">
             Contents © 2018         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
@@ -432,11 +473,16 @@ MathJax.Hub.Config({
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-es.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+        <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("es");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
-    
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 "
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">

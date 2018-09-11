@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre structural analysis)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/structural-analysis.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Apr 2018 01:40:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre structural analysis)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/structural-analysis.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Tue, 11 Sep 2018 22:30:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El análisis estructural es uno de los aspectos elementales para aquellos 
 que nos dedicamos al diseño mecánico o cuestiones similares. En los cursos 
@@ -26,37 +22,31 @@ las consideraciones físicas que deriven en la simplificación del problema.&lt;
 &lt;p&gt;En análisis numérico estructural el método de los desplazamientos o de la rigidez, asume 
 que los desplazamientos nodales son las variables desconocidas y comúnmente se debe resolver 
 una ecuación algebraica del tipo:&lt;/p&gt;
-&lt;p&gt;$$ K U = F $$&lt;/p&gt;
-&lt;p&gt;Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
+$$ K U = F $$&lt;p&gt;Donde $F$ es el vector de fuerzas nodales, $K$ la matriz global de rigidez y $U$ el vector 
 de desplazamientos nodales.&lt;/p&gt;
 &lt;p&gt;Dado que normalmente los desplazamientos son las incógnitas, se tiene que:&lt;/p&gt;
-&lt;p&gt;$$ U = K^{-1} F $$&lt;/p&gt;
-&lt;p&gt;En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.&lt;/p&gt;
+$$ U = K^{-1} F $$&lt;p&gt;En el caso de un análisis estático lineal esta ecuación se resuelve como se muestra: calculando la inversa de la matriz rigidez y multiplicando por el vector de fuerzas nodales, para el caso de un análisis no lineal se utilizan métodos iterativos.&lt;/p&gt;
 &lt;p&gt;La matriz global $K$ se obtiene de ensamblar todas las matrices de rigidez por elemento acorde a la numeración o posición de 
 sus nodos.&lt;/p&gt;
 &lt;h3 id="Un-caso-muy-simple:-elementos-resorte"&gt;Un caso muy simple: elementos resorte&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Un-caso-muy-simple:-elementos-resorte"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El elemento resorte es el elemento finito más simple, tiene un grado de libertad (por cada nodo): traslación en dirección axial.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_element.PNG" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;La matriz de rigidez para un elemento resorte viene dada por:&lt;/p&gt;
-&lt;p&gt;$$ k^{(e)} = 
+$$ k^{(e)} = 
 \begin{bmatrix}
-k_e &amp;amp; - k_e \&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;k_e &amp;amp; k_e \
-\end{bmatrix} $$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.&lt;/p&gt;
+k_e &amp;amp; - k_e \\
+- k_e &amp;amp; k_e \\
+\end{bmatrix} $$&lt;p&gt;La obtención de la matriz de rigidez puede consultarla en la mayoría de los libros introductorios de elementos finitos, por ejemplo en [1]. En lo anterior $k_e$ es la rigidez característica del resorte.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Para ejemplificar cómo funciona el método de los elementos finitos en elementos de este tipo vamos a resolver el siguiente ejemplo.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://numython.github.io/structural-analysis/spring_01.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Primero, las matrices de rigidez por elemento vienen dadas por:&lt;/p&gt;
-&lt;p&gt;$$ 
+$$ 
 k^{(1)} = 
 \begin{bmatrix}
 1000 &amp;amp; -1000 \\
@@ -74,10 +64,9 @@ k^{(3)} =
 3000 &amp;amp; -3000 \\
 -3000 &amp;amp; 3000 \\
 \end{bmatrix} 
-$$&lt;/p&gt;
-&lt;p&gt;La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y &lt;em&gt;rellenar&lt;/em&gt; sólo las posiciones correspondientes a los nodos que componen el elemento.&lt;/p&gt;
+$$&lt;p&gt;La matriz global se obtiene ensamblando las matrices elementales utilizando el principio de superposición, es decir, asumiendo que los efectos individuales de cada elemento a la matriz global pueden adicionarse de manera independiente. Para esto se debe expandir la matriz de rigidez elemental y &lt;em&gt;rellenar&lt;/em&gt; sólo las posiciones correspondientes a los nodos que componen el elemento.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, el elemento 1 está conformado por los nodos 1 y 3, entonces:&lt;/p&gt;
-&lt;p&gt;$$
+$$
 K^{(1)} = 
 \begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0\\
@@ -85,9 +74,8 @@ K^{(1)} =
 -1000 &amp;amp; 0 &amp;amp; 1000 &amp;amp; 0 \\
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
 \end{bmatrix} 
-$$&lt;/p&gt;
-&lt;p&gt;Mismo caso para los otros elementos:&lt;/p&gt;
-&lt;p&gt;$$
+$$&lt;p&gt;Mismo caso para los otros elementos:&lt;/p&gt;
+$$
 K^{(2)} = 
 \begin{bmatrix}
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
@@ -95,8 +83,7 @@ K^{(2)} =
 0 &amp;amp; 0 &amp;amp; 2000 &amp;amp; -2000 \\
 0 &amp;amp; 0 &amp;amp; -2000 &amp;amp; 2000 \\
 \end{bmatrix} 
-$$&lt;/p&gt;
-&lt;p&gt;$$
+$$$$
 K^{(3)} = 
 \begin{bmatrix}
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
@@ -104,9 +91,8 @@ K^{(3)} =
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
 0 &amp;amp; -3000 &amp;amp; 0 &amp;amp; 3000 \\
 \end{bmatrix} 
-$$&lt;/p&gt;
-&lt;p&gt;Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:&lt;/p&gt;
-&lt;p&gt;$$
+$$&lt;p&gt;Luego, la matriz global de rigidez se obtiene sumando las matrices elementales expandidas:&lt;/p&gt;
+$$
 K = 
 \begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0 \\
@@ -114,9 +100,8 @@ K =
 -1000 &amp;amp; 0 &amp;amp; 3000 &amp;amp; -2000 \\
 0 &amp;amp; -3000 &amp;amp; -2000 &amp;amp; 5000 \\
 \end{bmatrix} 
-$$&lt;/p&gt;
-&lt;p&gt;Quedando el sistema de ecuaciones como:&lt;/p&gt;
-&lt;p&gt;$$\begin{bmatrix}
+$$&lt;p&gt;Quedando el sistema de ecuaciones como:&lt;/p&gt;
+$$\begin{bmatrix}
 1000 &amp;amp; 0 &amp;amp; -1000 &amp;amp; 0 \\
 0 &amp;amp; 3000 &amp;amp; 0 &amp;amp; -3000 \\
 -1000 &amp;amp; 0 &amp;amp; 3000 &amp;amp; -2000 \\
@@ -127,8 +112,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 \end{bmatrix} =
 \begin{bmatrix}
 0 \\ 0 \\ 0 \\ 5000
-\end{bmatrix} $$&lt;/p&gt;
-
+\end{bmatrix} $$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -178,7 +162,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;%g&lt;/span&gt;&lt;span class="s2"&gt;  UX = &lt;/span&gt;&lt;span class="si"&gt;%-8.4f&lt;/span&gt;&lt;span class="s2"&gt;    FX = &lt;/span&gt;&lt;span class="si"&gt;%-8.4f&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nodo&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;USOL&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;nodo&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;NF&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;nodo&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -188,7 +172,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -205,8 +189,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Utilizando-NuSA:-una-librería-para-análisis-estructural"&gt;Utilizando &lt;a href="https://github.com/JorgeDeLosSantos/nusa"&gt;NuSA&lt;/a&gt;: una librería para análisis estructural&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NuSA&lt;/strong&gt; es una librería Python para el análisis estructural, que facilita el planteamiento y la solución de este tipo de análisis mediante una colección de clases que reciben como dato de entrada las características elementales de un modelo: coordenadas modales, propiedades del material, condiciones de frontera, etc., y retorna valores de salida básicos como desplazamientos y fuerzas.&lt;/p&gt;
 &lt;p&gt;Para testear las capacidades de &lt;strong&gt;NuSA&lt;/strong&gt; vamos a resolver el ejemplo del elemento resorte. Lo primero es importar las clases que usaremos: &lt;code&gt;Node&lt;/code&gt;, &lt;code&gt;Spring&lt;/code&gt; y &lt;code&gt;SpringModel&lt;/code&gt;.&lt;/p&gt;
@@ -224,14 +207,13 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.model&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SpringModel&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Luego creamos un modelo de tipo Spring utilizando la clase SpringModel:&lt;/p&gt;
 
@@ -247,7 +229,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -257,7 +239,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -273,8 +255,7 @@ Elements: 0
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Ahora creamos los nodos que conformarán el elemento resorte:&lt;/p&gt;
 
@@ -291,7 +272,7 @@ Elements: 0
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;n1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -301,7 +282,7 @@ Elements: 0
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -315,8 +296,7 @@ Elements: 0
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este caso no es necesario especificar las coordenadas nodales dado que un elemento resorte sólo necesita la rigidez para la formulación, así que se pueden dejar ambos nodos con coordenadas (0,0).&lt;/p&gt;
 &lt;p&gt;Enseguida se define un elemento de tipo &lt;code&gt;SpringElement&lt;/code&gt;, cuyos datos de entrada son una tupla con los nodos que le conforman y la rigidez del elemento.&lt;/p&gt;
@@ -333,7 +313,7 @@ Elements: 0
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -343,7 +323,7 @@ Elements: 0
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -352,6 +332,19 @@ Elements: 0
 &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -372,7 +365,7 @@ Elements: 0
 &lt;span class="n"&gt;n2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ux&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -382,7 +375,7 @@ Elements: 0
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
 
 
 
@@ -398,8 +391,7 @@ Elements: 0
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Referencias"&gt;Referencias&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Referencias"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;[1] Logan, D. L. (1986). A first course in the finite element method. Boston: PWS Engineering.&lt;/li&gt;
@@ -409,6 +401,16 @@ Elements: 0
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>fea</category><category>mathjax</category><category>numpy</category><category>structural analysis</category><guid>https://numython.github.io/posts/analisis-estructural-con-python-i/</guid><pubDate>Sat, 12 Nov 2016 01:31:20 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><category>fea</category><category>mathjax</category><category>numpy</category><category>structural analysis</category><guid>https://numython.github.io/posts/analisis-estructural-con-python-i/</guid><pubDate>Sat, 12 Nov 2016 01:31:20 GMT</pubDate></item></channel></rss>
