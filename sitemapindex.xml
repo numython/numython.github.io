@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/conacyt.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T14:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/eventos.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/fea.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/graficas.xml</loc>
@@ -39,11 +39,11 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/mathjax.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/matplotlib.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T15:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/miniapps.xml</loc>
@@ -51,15 +51,15 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/numpy.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/optimizacion.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T15:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pandas.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T14:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/pdi.xml</loc>
@@ -71,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/python.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T14:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/scikit-image.xml</loc>
@@ -79,15 +79,15 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/scipy.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T15:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/structural-analysis.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/sympy.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/categories/wxbutton.xml</loc>
@@ -131,10 +131,10 @@
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/rss.xml</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://numython.github.io/sitemap.xml</loc>
-  <lastmod>2018-12-12T06:20:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </sitemap>
 </sitemapindex>

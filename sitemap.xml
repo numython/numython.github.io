@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://numython.github.io/</loc>
-  <lastmod>2018-09-11T22:30:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/2016/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2018-12-12T06:20:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
@@ -155,7 +155,11 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-2.html</loc>
-  <lastmod>2018-12-12T06:20:00Z</lastmod>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/index-3.html</loc>
+  <lastmod>2018-12-12T17:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/2016/01/bienvenidos/</loc>
@@ -263,6 +267,10 @@
  </url>
  <url>
   <loc>https://numython.github.io/posts/analizando-datos-conacyt/</loc>
+  <lastmod>2018-09-11T22:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/integrales-con-sympy/</loc>
   <lastmod>2018-09-11T22:27:00Z</lastmod>
  </url>
  <url>
