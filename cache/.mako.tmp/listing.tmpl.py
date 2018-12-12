@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1544594831.5564775
+_modified_time = 1544594950.6325288
 _enable_loop = True
-_template_filename = 'c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/bootstrap4/templates/listing.tmpl'
+_template_filename = 'themes/bootstrap3/templates/listing.tmpl'
 _template_uri = 'listing.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['content', 'sourcelink']
@@ -20,7 +20,7 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    ns = runtime.TemplateNamespace('ui', context._clean_inheritance_tokens(), templateuri='ui_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    ns = runtime.TemplateNamespace('ui', context._clean_inheritance_tokens(), templateuri='crumbs.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'ui')] = ns
 
 def _mako_inherit(template, context):
@@ -30,19 +30,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        _import_ns = {}
+        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        code = _import_ns.get('code', context.get('code', UNDEFINED))
         def sourcelink():
             return render_sourcelink(context._locals(__M_locals))
-        ui = _mako_get_namespace(context, 'ui')
-        folders = context.get('folders', UNDEFINED)
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
-        files = context.get('files', UNDEFINED)
-        crumbs = context.get('crumbs', UNDEFINED)
-        code = context.get('code', UNDEFINED)
-        source_link = context.get('source_link', UNDEFINED)
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
-        title = context.get('title', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
+        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        ui = _mako_get_namespace(context, 'ui')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -64,32 +65,34 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        ui = _mako_get_namespace(context, 'ui')
-        folders = context.get('folders', UNDEFINED)
-        files = context.get('files', UNDEFINED)
-        crumbs = context.get('crumbs', UNDEFINED)
-        code = context.get('code', UNDEFINED)
-        source_link = context.get('source_link', UNDEFINED)
+        _import_ns = {}
+        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        code = _import_ns.get('code', context.get('code', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         def content():
             return render_content(context)
-        title = context.get('title', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
+        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        ui = _mako_get_namespace(context, 'ui')
         __M_writer = context.writer()
         __M_writer('\n')
-        __M_writer(str(ui.breadcrumbs(crumbs)))
+        __M_writer(str(ui.bar(crumbs)))
         __M_writer('\n')
         if folders or files:
             __M_writer('<ul>\n')
             for name in folders:
                 __M_writer('    <li><a href="')
                 __M_writer(filters.url_escape(str(name)))
-                __M_writer('">📂&nbsp;')
+                __M_writer('"><i class="glyphicon glyphicon-folder-open"></i> ')
                 __M_writer(filters.html_escape(str(name)))
                 __M_writer('</a>\n')
             for name in files:
                 __M_writer('    <li><a href="')
                 __M_writer(filters.url_escape(str(name)))
-                __M_writer('.html">📄&nbsp;')
+                __M_writer('.html"><i class="glyphicon glyphicon-file"></i> ')
                 __M_writer(filters.html_escape(str(name)))
                 __M_writer('</a>\n')
             __M_writer('</ul>\n')
@@ -114,17 +117,20 @@ def render_content(context,**pageargs):
 def render_sourcelink(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
         def sourcelink():
             return render_sourcelink(context)
-        ui = _mako_get_namespace(context, 'ui')
-        show_sourcelink = context.get('show_sourcelink', UNDEFINED)
-        source_link = context.get('source_link', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
-        if source_link and show_sourcelink:
-            __M_writer('    ')
-            __M_writer(str(ui.show_sourcelink(source_link)))
-            __M_writer('\n')
+        if source_link:
+            __M_writer('    <li>\n    <a href="')
+            __M_writer(str(source_link))
+            __M_writer('" id="sourcelink">')
+            __M_writer(str(messages("Source")))
+            __M_writer('</a>\n    </li>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -132,6 +138,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/bootstrap4/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "29": 0, "47": 2, "48": 3, "53": 24, "58": 30, "64": 4, "78": 4, "79": 5, "80": 5, "81": 6, "82": 7, "83": 8, "84": 9, "85": 9, "86": 9, "87": 9, "88": 9, "89": 11, "90": 12, "91": 12, "92": 12, "93": 12, "94": 12, "95": 14, "96": 16, "97": 17, "98": 17, "99": 17, "100": 18, "101": 19, "102": 19, "103": 19, "104": 19, "105": 19, "106": 21, "107": 22, "108": 22, "114": 26, "123": 26, "124": 27, "125": 28, "126": 28, "127": 28, "133": 127}}
+{"filename": "themes/bootstrap3/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "29": 0, "48": 2, "49": 3, "54": 24, "59": 32, "65": 4, "81": 4, "82": 5, "83": 5, "84": 6, "85": 7, "86": 8, "87": 9, "88": 9, "89": 9, "90": 9, "91": 9, "92": 11, "93": 12, "94": 12, "95": 12, "96": 12, "97": 12, "98": 14, "99": 16, "100": 17, "101": 17, "102": 17, "103": 18, "104": 19, "105": 19, "106": 19, "107": 19, "108": 19, "109": 21, "110": 22, "111": 22, "117": 26, "127": 26, "128": 27, "129": 28, "130": 29, "131": 29, "132": 29, "133": 29, "139": 133}}
 __M_END_METADATA
 """
