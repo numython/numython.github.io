@@ -800,11 +800,6 @@ article.post-micro {
 }
 
 
-div.prompt {
-    background-color: #fafafa;
-}
-
-
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
     *, *:before, *:after {
@@ -833,4 +828,15 @@ div.prompt {
         display: none;
     }
 }
+
+/*
+Other 
+*/
+
+div.prompt {
+    background-color: #fafafa;
+}
+
+
+
 
