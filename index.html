@@ -1952,9 +1952,7 @@ if __name__=='__main__':
         </p>
 </div>
     </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
+    <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1963,18 +1961,11 @@ if __name__=='__main__':
 <p><strong>Ejemplo</strong>. Se requiere diseñar un contenedor de desechos, cuya forma será la de un prisma rectangular de dimensiones x, y, z como se muestra en la figura. El volumen del contenedor deberá ser de 0.08 $m^3$. Por requerimientos, la altura debe estar en el rango 0.6-0.8 m, y los lados de la base deben medir al menos 0.1 m. Luego, la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible. Nota: <em>El contenedor está abierto en la parte superior</em>.</p>
 <p><img src="img/p1.jpg" width="150px"></p>
 <p>La cantidad de material utilizada para fabricar el contenedor está directamente relacionada con el área del prisma rectangular, donde esta corresponde a la suma de las áreas para cada una de las caras, luego, basándonos en el esquema de la figura anterior, se puede expresar el área en función de sus dimensiones como sigue:</p>
-<p>$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$</p>
-<p>De la restricción de volumen se tiene que:</p>
-<p>$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$</p>
-<p>Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:</p>
-<p>$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$</p>
-<p>Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:</p>
-<p>$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$
-$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$</p>
-<p>Además, para los requirimientos dimensionales de la base se tiene:</p>
-<p>$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$
-$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
-
+$$ A(x_1,x_2,x_3) = 2x_1x_3 + 2x_2x_3 + x_1x_2 $$<p>De la restricción de volumen se tiene que:</p>
+$$ V = x_1 x_2 x_3 = 0.08\,\, \text{m}^3  \,\,\,\,\,\, \rightarrow \,\,\,\,\,\, x_3 = \frac{V}{x_1 x_2} $$<p>Entonces, sustituyendo $x_3$ en la primera ecuación podemos reescribirla en términos de $x_1$ y $x_2$ , como sigue:</p>
+$$ A(x_1,x_2) = 2\frac{V}{x_2} + 2\frac{V}{x_1} + x_1x_2 $$<p>Se pide que $0.6 \leq x_3 \leq 0.8$, lo cual se puede expresar como dos ecuaciones de restricción:</p>
+$$ g_1(x_1,x_2) = \frac{V}{x_1x_2} - 0.6 \geq 0 $$$$ g_2(x_1,x_2) = \frac{V}{x_1x_2} - 0.8 \leq 0 $$<p>Además, para los requirimientos dimensionales de la base se tiene:</p>
+$$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 </div>
 </div>
 </div>
@@ -1986,8 +1977,7 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
 <h2 id="Óptimo-no-restringido">Óptimo no restringido<a class="anchor-link" href="posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido">¶</a>
 </h2>
 <p>Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:</p>
-<p>$$ \left[ \vec{\nabla} f \right] = [0] $$</p>
-<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
+$$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
 
 </div>
 </div>
@@ -1997,9 +1987,9 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="kn">as</span> <span class="nn">sym</span>
-<span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">hessian</span><span class="p">,</span> <span class="n">zeros</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="k">import</span> <span class="n">hessian</span><span class="p">,</span> <span class="n">zeros</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">"mathjax"</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">varls</span><span class="p">):</span>
@@ -2011,7 +2001,7 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
     <span class="k">return</span> <span class="n">G</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2031,11 +2021,11 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">V</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">"x_1,x_2,V"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">V</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">"x_1,x_2,V"</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">/</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2055,11 +2045,11 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="mf">0.08</span><span class="p">),</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="mf">0.08</span><span class="p">),</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2069,7 +2059,7 @@ $$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -2099,11 +2089,11 @@ $$\left[\begin{matrix}x_{2} - \frac{0.16}{x_{1}^{2}}\\x_{1} - \frac{0.16}{x_{2}^
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
 <span class="n">sol</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2113,7 +2103,7 @@ $$\left[\begin{matrix}x_{2} - \frac{0.16}{x_{1}^{2}}\\x_{1} - \frac{0.16}{x_{2}^
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -2137,10 +2127,8 @@ $$\left [ \left ( 0.542883523318981, \quad 0.542883523318981\right ), \quad \lef
 <p>Hasta ahora sabemos que la solución obtenida es un punto crítico, pero no podemos asegurar si es un máximo, un mínimo o un punto de silla. Luego, para comprobar si el punto calculado es un mínimo se puede utilizar el siguiente teorema:</p>
 <blockquote>
 <p><strong>Teorema 1</strong>. <em>Condición necesaria</em>: si $f(x)$ tiene un mínimo local en $x^*$ entonces:</p>
-<p>$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$</p>
-<p><em>Condición necesaria de segundo orden</em>: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana</p>
-<p>$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$</p>
-<p>es positiva definida o semidefinida en el punto $x^*$.</p>
+$$ \frac{\partial f(x^*)}{\partial x_i} = 0 ; \,\,\,\, i=1,2,...,n $$<p><em>Condición necesaria de segundo orden</em>: si $f(x)$ tiene un mínimo local en $x^*$, entonces la matriz Hessiana</p>
+$$ H(x^*) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{(nxn)} $$<p>es positiva definida o semidefinida en el punto $x^*$.</p>
 <p><em>Condición suficiente de segundo orden</em>: si la matriz $H(x^*)$ es positiva definida en el punto estacionario $x^*$, 
 entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 <p>Una matriz es positiva definida si sus eigenvalores son estrictamente positivos, es decir: $\lambda_i &gt; 0$</p>
@@ -2156,14 +2144,14 @@ entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">hessian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">hessian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
 <span class="c1"># evaluando en el punto calculado</span>
 <span class="n">_x1</span><span class="p">,</span> <span class="n">_x2</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x1</span><span class="p">:</span><span class="n">_x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span><span class="n">_x2</span><span class="p">,</span> <span class="n">V</span><span class="p">:</span><span class="mf">0.08</span><span class="p">})</span>
 <span class="n">H</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2173,7 +2161,7 @@ entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -2203,11 +2191,11 @@ $$\left[\begin{matrix}2.0 &amp; 1\\1 &amp; 2.0\end{matrix}\right]$$
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">egvals</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">egvals</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
 <span class="n">egvals</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2217,7 +2205,7 @@ $$\left[\begin{matrix}2.0 &amp; 1\\1 &amp; 2.0\end{matrix}\right]$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -2248,11 +2236,11 @@ $$\left \{ 1 : 1, \quad 3 : 1\right \}$$
 <div class="prompt input_prompt">In [59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">_x3</span> <span class="o">=</span> <span class="mf">0.08</span><span class="o">/</span><span class="p">(</span><span class="n">_x1</span><span class="o">*</span><span class="n">_x2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_x3</span> <span class="o">=</span> <span class="mf">0.08</span><span class="o">/</span><span class="p">(</span><span class="n">_x1</span><span class="o">*</span><span class="n">_x2</span><span class="p">)</span>
 <span class="n">_x3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2262,7 +2250,7 @@ $$\left \{ 1 : 1, \quad 3 : 1\right \}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -2308,12 +2296,12 @@ $$0.271441761659491$$
 <div class="prompt input_prompt">In [50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2333,7 +2321,7 @@ $$0.271441761659491$$
 <div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="mf">0.08</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="mf">0.08</span>
 <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
 <span class="n">xx1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
 <span class="n">xx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">)</span>
@@ -2345,7 +2333,7 @@ $$0.271441761659491$$
 <span class="n">g4</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="mf">0.1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2365,10 +2353,10 @@ $$0.271441761659491$$
 <div class="prompt input_prompt">In [57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2378,7 +2366,7 @@ $$0.271441761659491$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -2391,7 +2379,7 @@ $$0.271441761659491$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2421,10 +2409,10 @@ $$0.271441761659491$$
 <div class="prompt input_prompt">In [63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s2">"x_1"</span><span class="p">:</span><span class="n">_x1</span><span class="p">,</span><span class="s2">"x_2"</span><span class="p">:</span><span class="n">_x2</span><span class="p">,</span><span class="s2">"V"</span><span class="p">:</span><span class="mf">0.08</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s2">"x_1"</span><span class="p">:</span><span class="n">_x1</span><span class="p">,</span><span class="s2">"x_2"</span><span class="p">:</span><span class="n">_x2</span><span class="p">,</span><span class="s2">"V"</span><span class="p">:</span><span class="mf">0.08</span><span class="p">})</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2434,7 +2422,7 @@ $$0.271441761659491$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -2464,12 +2452,12 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
 <span class="n">cl</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">lvl</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cl</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2479,7 +2467,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2509,13 +2497,13 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [77]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"b"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"b"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g4</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">'k'</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2525,7 +2513,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2555,13 +2543,13 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [119]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"#808080"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"#808080"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"#808080"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"#808080"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g4</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"#808080"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2571,7 +2559,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2602,7 +2590,7 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [122]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
 <span class="n">cl</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">lvl</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"b"</span><span class="p">)</span>
@@ -2615,7 +2603,7 @@ $$0.884167559673693$$
 <span class="c1">#ax.set_ylim(ymin,ymax)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2625,7 +2613,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2655,7 +2643,7 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [137]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lvl</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.885</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
 <span class="n">cl</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">lvl</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"b"</span><span class="p">)</span>
@@ -2666,7 +2654,7 @@ $$0.884167559673693$$
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.365</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.365</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">"Q"</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2676,7 +2664,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2706,7 +2694,7 @@ $$0.884167559673693$$
 <div class="prompt input_prompt">In [153]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="k">import</span> <span class="n">minimize</span>
 
 <span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">v</span> <span class="o">=</span> <span class="mf">0.08</span>
@@ -2745,7 +2733,7 @@ $$0.884167559673693$$
 <span class="n">res</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2755,7 +2743,7 @@ $$0.884167559673693$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[153]:</div>
+    <div class="prompt output_prompt">Out[153]:</div>
 
 
 
@@ -2778,9 +2766,20 @@ $$0.884167559673693$$
 </div>
 
 </div>
-    </div>
-  </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
+    </div>
+</div>
+</div>
+
+</div>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
         <div class="metadata">
