@@ -799,6 +799,12 @@ article.post-micro {
     overflow-x: scroll;
 }
 
+
+.prompt input_prompt{
+    color: #fff;
+}
+
+
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
     *, *:before, *:after {
