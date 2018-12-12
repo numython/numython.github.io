@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1544635629.9038353
+_modified_time = 1544636235.779176
 _enable_loop = True
 _template_filename = 'c:/users/delos/documents/blogs/nikola/lib/site-packages/nikola/data/themes/base/templates/tag.tmpl'
 _template_uri = 'tag.tmpl'
@@ -32,18 +32,18 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
-        subcategories = _import_ns.get('subcategories', context.get('subcategories', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
         description = _import_ns.get('description', context.get('description', UNDEFINED))
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         def content():
             return render_content(context._locals(__M_locals))
         date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
+        subcategories = _import_ns.get('subcategories', context.get('subcategories', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         tag = _import_ns.get('tag', context.get('tag', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
@@ -71,8 +71,8 @@ def render_extra_head(context,**pageargs):
         kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
         def extra_head():
             return render_extra_head(context)
-        tag = _import_ns.get('tag', context.get('tag', UNDEFINED))
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        tag = _import_ns.get('tag', context.get('tag', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(feeds_translations.head(tag, kind, rss_override=False)))
@@ -87,16 +87,16 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        description = _import_ns.get('description', context.get('description', UNDEFINED))
         kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
-        subcategories = _import_ns.get('subcategories', context.get('subcategories', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        description = _import_ns.get('description', context.get('description', UNDEFINED))
         def content():
             return render_content(context)
         date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
+        subcategories = _import_ns.get('subcategories', context.get('subcategories', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         tag = _import_ns.get('tag', context.get('tag', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="tagpage">\n    <header>\n        <h1>')

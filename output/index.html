@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="es" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
-<link rel="next" href="index-2.html" type="text/html">
+<link rel="next" href="index-3.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/analizando-datos-conacyt-investigadores/" type="text/html">
 </head>
 <body>
@@ -3228,6 +3228,283 @@ Elements: 0
 </div>
 </div>
     </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Calculando integrales con Python y SymPy</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline">
+            <a href="posts/integrales-con-sympy/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-10-18T20:31:20-05:00" itemprop="datePublished" title="2016-10-18 20:31">2016-10-18 20:31</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/integrales-con-sympy/#disqus_thread" data-disqus-identifier="cache/posts/integrales-con-sympy.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Las integrales son unos de los conceptos básicos en la formación matemática de un ingeniero, es en términos básicos la 
+operación inversa de la derivación. Pero, además del concepto puramente matemático, las integrales tienen múltiples 
+interpretaciones geométricas y físicas.</p>
+<p>En un curso ordinario de cálculo se nos enseñan métodos para resolver de forma analítica funciones que sean integrables. 
+Por ejemplo todos sabemos que la integral de una función constante será:</p>
+$$ \int a\,dx = ax + C $$<p>Y lo sabemos porque nos hemos aprendido reglas básicas de integración y por supuesto a indentificar el tipo 
+de función. Actualmente existen paquetes de álgebra simbólica que son capaces de realizar esta tarea: identificar 
+el caso que se tiene y aplicar métodos computacionales, hasta cierto grado complejos, para determinar la solución.</p>
+<p>Y claro, SymPy es uno de esos sistemas de álgebra computacional (CAS), en el que solo necesitamos escribir 
+nuestra función a integrar, utilizar por ahí alguna rutina y obtener un resultado rápidamente. Pero claro, 
+para ello debemos aprender mínimamente la sintaxis y eso es justo lo que veremos enseguida.</p>
+<h4 id="Integrales-simples">Integrales simples<a class="anchor-link" href="posts/integrales-con-sympy/#Integrales-simples">¶</a>
+</h4>
+<p>Vamos a ver cómo resolver integrales simples indefinidas, si, de esas que vemos en un primer curso. Para resolverlas 
+tendremos que utilizar la función <code>integrate</code>. Por ejemplo se tiene la siguiente función $f(x)=x^2-3x+2 $.</p>
+<p>Como primer paso debemos importar lo que necesitaremos del paquete <a href="http://www.sympy.org/en/index.html">SymPy</a>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="k">import</span> <span class="n">x</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">"mathjax"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Del módulo <code>abc</code> importamos la variable simbólica <code>x</code> e <code>integrate</code> para resolver nuestra integral. Ahora, podemos 
+<em>guardar</em> la función a integrar en una variable o bien pasarla directamente como argumento:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{x^{3}}{3} - \frac{3 x^{2}}{2} + 2 x$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este caso no hemos tenido incovenientes, porque en la expresión a integrar sólo existe una variable simbólica, pero 
+si la expresión tuviese más de una, habría que especificar de manera explícita la variable respecto a la cual se integra, de lo contrario Python nos <em>mostrará</em> un error:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="k">import</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">c</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-8-476839d3c49d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sympy<span class="ansi-yellow-intense-fg ansi-bold">.</span>abc <span class="ansi-green-intense-fg ansi-bold">import</span> a<span class="ansi-yellow-intense-fg ansi-bold">,</span>b<span class="ansi-yellow-intense-fg ansi-bold">,</span>c
+<span class="ansi-green-fg">      2</span> f <span class="ansi-yellow-intense-fg ansi-bold">=</span> a<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">**</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">+</span>b<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">+</span>c
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>integrate<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\sympy\integrals\integrals.py</span> in <span class="ansi-cyan-fg">integrate</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
+<span class="ansi-green-fg">   1289</span>     risch <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'risch'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1290</span>     manual <span class="ansi-yellow-intense-fg ansi-bold">=</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">.</span>pop<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">'manual'</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1291</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>integral <span class="ansi-yellow-intense-fg ansi-bold">=</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">   1292</span> 
+<span class="ansi-green-fg">   1293</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>integral<span class="ansi-yellow-intense-fg ansi-bold">,</span> Integral<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\sympy\integrals\integrals.py</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-intense-fg ansi-bold">(cls, function, *symbols, **assumptions)</span>
+<span class="ansi-green-fg">     73</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> function<span class="ansi-yellow-intense-fg ansi-bold">.</span>_eval_Integral<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     74</span> 
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 75</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>obj <span class="ansi-yellow-intense-fg ansi-bold">=</span> AddWithLimits<span class="ansi-yellow-intense-fg ansi-bold">.</span>__new__<span class="ansi-yellow-intense-fg ansi-bold">(</span>cls<span class="ansi-yellow-intense-fg ansi-bold">,</span> function<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>symbols<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>assumptions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     76</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> obj
+<span class="ansi-green-fg">     77</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\sympy\concrete\expr_with_limits.py</span> in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-intense-fg ansi-bold">(cls, function, *symbols, **assumptions)</span>
+<span class="ansi-green-fg">    375</span>                     <span class="ansi-blue-intense-fg ansi-bold">" more than one free symbol, an integration variable should"</span>
+<span class="ansi-green-fg">    376</span>                     <span class="ansi-blue-intense-fg ansi-bold">" be supplied explicitly e.g., integrate(f(x, y), x)"</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 377</span><span class="ansi-yellow-intense-fg ansi-bold">                     % function)
+</span><span class="ansi-green-fg">    378</span>             limits<span class="ansi-yellow-intense-fg ansi-bold">,</span> orientation <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>Tuple<span class="ansi-yellow-intense-fg ansi-bold">(</span>s<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">for</span> s <span class="ansi-green-intense-fg ansi-bold">in</span> free<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">1</span>
+<span class="ansi-green-fg">    379</span> 
+
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>:  specify dummy variables for a*x**2 + b*x + c. If the integrand contains more than one free symbol, an integration variable should be supplied explicitly e.g., integrate(f(x, y), x)</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pues eso, si intentamos integrar la función $f(x)=ax^2+bx+c$ sin especificar la variable de integración, Python nos mandará un error que es bastante sugerente al respecto. Así, lo correcto sería:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{a x^{3}}{3} + \frac{b x^{2}}{2} + c x$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Integrales-definidas">Integrales definidas<a class="anchor-link" href="posts/integrales-con-sympy/#Integrales-definidas">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$1$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" class="u-url">Almacenando imágenes como código utilizando img2py</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -3326,54 +3603,12 @@ Elements: 0
 <br><br>Como puede observarse, en el código sólo se añade una línea, en la cual se instancia un objeto de la clase wx.TextCtrl, pasándole como parent el Frame principal, y el argumento style especificando que se permita el uso de líneas múltiples dentro de ese control.<br><br>¿Y si quiero añadir más controles?, bueno aquí la cuestión se complica un poco, pero vamos, nada que no se pueda resolver. Aunque para ello ha de introducirse otro concepto básico en el desarrollo de aplicaciones en wxPython: los Sizers, que son clases que permiten alinear y organizar los objetos dentro de una ventana o contenedores, mediante algoritmos de posicionamiento. Evidentemente esto lo estaremos tratando en otro post, para no alargarnos demasiado.<br><br>Para tener una referencia más sólida respecto al desarrollo de aplicaciones en wxPython es recomendable que revisen el siguiente libro:<br><br><a href="http://serv.yanchick.org/Books/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/python/Manning.Publications.wxPython.in.Action.Mar.2006.pdf">wxPython in Action  [Noel Rappin and Robin Dunn]</a>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/03/imagenes-en-menus-de-wxpython/" class="u-url">Imágenes en menús de wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline">
-            <a href="posts/2016/03/imagenes-en-menus-de-wxpython/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-03-22T04:24:00-06:00" itemprop="datePublished" title="2016-03-22 04:24">2016-03-22 04:24</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/2016/03/imagenes-en-menus-de-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/imagenes-en-menus-de-wxpython.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">Los menús en wxPython se definen de manera muy sencilla creando primeramente la barra de menú principal, derivada de la clase <span>wx.MenuBar</span>, enseguida se definen los menús principales que compondrán la barra de menú, derivando estos de la clase<span> wx.Menu</span>, finalmente se agregan los sub-menús que tienen cómo base la clase <span>wx.MenuItem</span>. En el siguiente esquema se muestra la jerarquía de menús en wxPython.</div>
-<div class="separator" style="clear: both; text-align: center;"></div>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="https://www.blogger.com/blogger.g?blogID=9181413740889187353" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"></a><a href="http://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-r8eYG6YYEqM/VpwY4YP-YJI/AAAAAAAABrY/jKJ8BfN2Y_s/s1600/wxmenu.png"></a>
-</div>
-<br><br><div class="figure"></div>Un ejemplo muy básico:<br><br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar() <span class="co" style="color: #60a0b0; font-style: italic;"># Creamos barra de menú</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos el menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos los MenuItem (Guardar, Abrir)</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>,<span class="st" style="color: #4070a0;">""</span>)<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregando el menú "Archivo" a la barra</span><br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Configurando a "mb" como la barra de menú del Frame</span><br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)</code></pre></div>
-<div style="text-align: justify;"><br></div>
-<div style="text-align: justify;">En lo anterior se supone que todo ese código está inmerso dentro de una clase heredada de <code style="white-space: pre;">wx.Frame</code>. Así, se crea una barra de menú similar a lo mostrado en la siguiente imagen:</div>
-<div class="figure">
-<br><div class="caption"><br></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-OJKUA24TEVI/VpwY4Zy14YI/AAAAAAAABrc/t78yJZ5aLtA/s1600/img1.png"></a></div>
-<div class="caption"><br></div>
-<div class="caption"><br></div>
-</div>
-<div style="text-align: justify;">Para agregar una imagen al menú, se debe utilizar el método <code style="white-space: pre;">SetBitmap</code> de la clase <code style="white-space: pre;">wx.MenuItem</code>, pasando como parámetro un objeto de la clase <code style="white-space: pre;">wx.Bitmap</code>, el cual deberá contener la información necesaria de la imagen o icono a utilizar, debe tomarse en cuenta que el método <code style="white-space: pre;">SetBitmap</code> deberá "llamarse" antes de agregar el sub-menú al menú padre, de lo contrario no se verá reflejado dicho método.</div>
-<br><div style="text-align: justify;">Enseguida se adjunta el código completo de una aplicación wxPython que incluye imágenes en menús.</div>
-<br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co" style="color: #60a0b0; font-style: italic;"># -*- coding: utf8 -*-</span><br><span class="im">import</span> wx<br><br><span class="kw" style="color: #007020; font-weight: bold;">class</span> MiAplicacion(wx.Frame):<br><span class="kw" style="color: #007020; font-weight: bold;">def</span> <span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title):<br>    wx.Frame.<span class="fu" style="color: #06287e;">__init__</span>(<span class="va" style="color: #19177c;">self</span>,parent,title<span class="op" style="color: #666666;">=</span>title,size<span class="op" style="color: #666666;">=</span>(<span class="dv" style="color: #40a070;">300</span>,<span class="dv" style="color: #40a070;">200</span>))<br><span class="va" style="color: #19177c;">self</span>.createMenu() <span class="co" style="color: #60a0b0; font-style: italic;"># Llamamos al método que inicializa el menú</span><br><span class="va" style="color: #19177c;">self</span>.Centre(<span class="va" style="color: #19177c;">True</span>)<br><span class="va" style="color: #19177c;">self</span>.Show()<br><br><span class="kw" style="color: #007020; font-weight: bold;">def</span> createMenu(<span class="va" style="color: #19177c;">self</span>):<br><span class="co" style="color: #60a0b0; font-style: italic;">"""</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    Crea el menú de la aplicación</span><br><span class="co" style="color: #60a0b0; font-style: italic;">    """</span><br><span class="co" style="color: #60a0b0; font-style: italic;"># Menú archivo</span><br><span class="va" style="color: #19177c;">self</span>.archivo <span class="op" style="color: #666666;">=</span> wx.Menu()<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Guardar</span><br><span class="va" style="color: #19177c;">self</span>.guardar <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Guardar"</span>)<br><span class="va" style="color: #19177c;">self</span>.guardar.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_save.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.guardar)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Abrir</span><br><span class="va" style="color: #19177c;">self</span>.abrir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Abrir"</span>)<br><span class="va" style="color: #19177c;">self</span>.abrir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_open.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.abrir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Imprimir</span><br><span class="va" style="color: #19177c;">self</span>.imprimir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Imprimir"</span>)<br><span class="va" style="color: #19177c;">self</span>.imprimir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_print.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.imprimir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Agregamos el sub-menú Salir</span><br><span class="va" style="color: #19177c;">self</span>.salir <span class="op" style="color: #666666;">=</span> wx.MenuItem(<span class="va" style="color: #19177c;">self</span>.archivo,<span class="op" style="color: #666666;">-</span><span class="dv" style="color: #40a070;">1</span>,<span class="st" style="color: #4070a0;">"Salir"</span>)<br><span class="va" style="color: #19177c;">self</span>.salir.SetBitmap(wx.Bitmap( <span class="st" style="color: #4070a0;">u"img/ic_exit.png"</span>, wx.BITMAP_TYPE_ANY ))<br><span class="va" style="color: #19177c;">self</span>.archivo.AppendItem(<span class="va" style="color: #19177c;">self</span>.salir)<br><span class="co" style="color: #60a0b0; font-style: italic;"># Creamos la barra de menú principal y la configuramos</span><br><span class="va" style="color: #19177c;">self</span>.mb <span class="op" style="color: #666666;">=</span> wx.MenuBar()<br><span class="va" style="color: #19177c;">self</span>.mb.Append(<span class="va" style="color: #19177c;">self</span>.archivo, <span class="st" style="color: #4070a0;">"Archivo"</span>)<br><span class="va" style="color: #19177c;">self</span>.SetMenuBar(<span class="va" style="color: #19177c;">self</span>.mb)<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br>  app <span class="op" style="color: #666666;">=</span> wx.App()<br>  frame <span class="op" style="color: #666666;">=</span> MiAplicacion(<span class="va" style="color: #19177c;">None</span>, <span class="st" style="color: #4070a0;">u"Imágenes Menú"</span>)<br>  app.MainLoop()</code></pre></div>
-<div class="figure">
-<br><div class="caption"><br></div>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-aLIBhIG0F8c/VpwY4ed7L1I/AAAAAAAABrU/TlfK-Yk2POA/s1600/img2.png"></a></div>
-<div class="caption"><br></div>
-<div class="caption">Note que la clase <span>wx.Bitmap</span> necesita como parámetro de entrada la ruta donde se encuentra la imagen y una constante <span>wx.BITMAP_TYPE_ANY</span>, que simplemente especifica el tipo de imagen leída. Puede consultar más en la documentación de <span><a href="http://www.wxpython.org/docs/api/wx.Bitmap-class.html">wx.Bitmap</a>.</span>
-</div>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-2.html" rel="next">Publicaciones anteriores</a>
+                <a href="index-3.html" rel="next">Publicaciones anteriores</a>
             </li>
         </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
