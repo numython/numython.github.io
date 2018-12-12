@@ -812,8 +812,8 @@ article.post-micro {
 }
 
 
-.prompt input_prompt{
-    color: #fff;
+div.prompt.input_prompt{
+    color: #fafafa;
 }
 
 
