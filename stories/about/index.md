@@ -9,6 +9,11 @@
 
 Bienvenido a **Numython**.
 
+**Sobre el blog**
+
+Este blog tiene la finalidad de compartir información sobre el lenguaje de programación Python y algunas 
+de sus librerías de corte técnico-científico.
+
 
 **El logo numython**
 
