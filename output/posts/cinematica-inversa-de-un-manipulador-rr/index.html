@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cinemática inversa de un manipulador rr | Numython</title>
+<title>Cinemática inversa de un manipulador RR | Numython</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Pedro Jorge De Los Santos">
 <meta name="robots" content="noindex">
 <meta property="og:site_name" content="Numython">
-<meta property="og:title" content="Cinemática inversa de un manipulador rr">
+<meta property="og:title" content="Cinemática inversa de un manipulador RR">
 <meta property="og:url" content="https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/">
 <meta property="og:description" content="La cinemática inversa de un manipulador consiste en calcular los valores articulares requeridos para alcanzar una determinada posición y orientación en el espacio. Existen diversos métodos para el cál">
 <meta property="og:type" content="article">
@@ -89,7 +89,7 @@
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Cinemática inversa de un manipulador rr</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Cinemática inversa de un manipulador RR</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -144,7 +144,7 @@ $$ x^2 + y^2 = l_1^2 + l_2^2 + 2 l_1 l_2 \cos\theta_2 $$$$ \cos\theta_2 = \frac{
 $$ u = \arctan\left(\frac{\sin u}{\cos u}\right) \qquad y \qquad \sin u = \pm \sqrt{1-\cos^2 u} $$<p>De tal manera que podemos escribir $\theta_2$ en términos de la función arcotangente, como sigue:</p>
 $$ \theta_2 = \arctan\left(\frac{\pm\sqrt{1-K^2}}{K}\right) $$<p>Para calcular $\theta_1$, de las ecuaciones para $x$ e $y$ podemos expresar el cociente $y/x$ y trabajar con la expresión resultante:</p>
 $$ \frac{y}{x} = \frac{l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 }{ l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 } $$<p>Factorizando y simplificando los términos para $\cos\theta_1$ y $\sin\theta_1$, podemos escribir:</p>
-$$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_2}{l_2 x \cos\theta_2 + l_1 x - l_2 y \sin\theta_2} \right) $$
+$$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_2}{l_2 x \cos\theta_2 + l_1 x + l_2 y \sin\theta_2} \right) $$
 </div>
 </div>
 </div>
@@ -170,7 +170,7 @@ $$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_
         <script>
         var disqus_shortname ="jorge-de-los-santos",
             disqus_url="https://numython.github.io/posts/cinematica-inversa-de-un-manipulador-rr/",
-        disqus_title="Cinem\u00e1tica inversa de un manipulador rr",
+        disqus_title="Cinem\u00e1tica inversa de un manipulador RR",
         disqus_identifier="cache/posts/cinematica-inversa-de-un-manipulador-rr.html",
         disqus_config = function () {
             this.language = "es_ES";
