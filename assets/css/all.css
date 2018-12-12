@@ -666,7 +666,8 @@ blockquote p, blockquote {
     font-size: 12px;
     font-weight: 300;
     line-height: 1.25;
-    color: #575757;
+    border-color: #174456;
+    color: #174456;
 }
 
 ul.bricks > li {
