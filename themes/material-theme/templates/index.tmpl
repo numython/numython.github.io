@@ -1,6 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {% import 'index_helper.tmpl' as helper with context %}
 {% import 'comments_helper.tmpl' as comments with context %}
+{% import 'math_helper.tmpl' as math with context %}
 {% extends 'base.tmpl' %}
 
 {% block extra_head %}
@@ -8,11 +9,15 @@
     {% if posts and (permalink == '/' or permalink == '/' + index_file) %}
         <link rel="prefetch" href="{{ posts[0].permalink() }}" type="text/html">
     {% endif %}
+    {{ math.math_styles_ifposts(posts) }}
 {% endblock %}
 
 {% block content %}
 
     <div class="postindex well post-material ">
+    {% if 'main_index' in pagekind %}
+    {{ front_index_header }}
+    {% endif %}
     {% for post in posts %}
         <article class="h-entry post-{{ post.meta('type') }}">
         <header>
@@ -47,5 +52,5 @@
     </div>
 {{ helper.html_pager() }}
 {{ comments.comment_link_script() }}
-{{ helper.mathjax_script(posts) }}
+{{ math.math_scripts_ifposts(posts) }}
 {% endblock %}
