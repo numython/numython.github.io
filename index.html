@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/graficas-de-pastel-con-matplotlib/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/el-ciclo-for/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -84,7 +84,486 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/graficas-de-pastel-con-matplotlib/" class="u-url">Gráficas de pastel con Matplotlib</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-ciclo-for/" class="u-url">El ciclo for en Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Pedro Jorge De Los Santos
+            </span></p>
+            <p class="dateline">
+            <a href="posts/el-ciclo-for/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-03-17T11:57:21-06:00" itemprop="datePublished" title="2019-03-17 11:57">2019-03-17 11:57</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/el-ciclo-for/#disqus_thread" data-disqus-identifier="cache/posts/el-ciclo-for.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>El ciclo <code>for</code> es una estructura cíclica cuya finalidad es ejecutar un código una cierta cantidad de veces. De manera general, en Python, la sintaxis de <code>for</code> es:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1"># hacer algo</span>
+</pre></div>
+<p>Donde <code>iterable</code> es justamente eso, un iterable de Python que puede ser desde una lista hasta un string. Para la i-ésima iteración la variable de ciclo <code>k</code> adoptará el valor en la i-ésima posición de <code>iterable</code>.</p>
+<p>A continuación vemos un ejemplo muy básico:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10
+20
+30
+40
+50
+60
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Observe que lo único que se hace es imprimir cada elemento que compone la lista <code>numeros</code>.</p>
+<p>Revisemos ahora el siguiente ejemplo:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="n">numero</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10 100
+20 400
+30 900
+40 1600
+50 2500
+60 3600
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note que la única diferencia radica, en que además del propio número, también imprimos su cuadrado.</p>
+<p>Naturalmente, no sólo podemos "recorrer" listas, sino cualquier elemento que sea iterable, como es el caso de los strings.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="s2">"Lucas"</span><span class="p">,</span> <span class="s2">"Catalina"</span><span class="p">,</span> <span class="s2">"Javier"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hola "</span> <span class="o">+</span> <span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hola Ana
+Hola Lucas
+Hola Catalina
+Hola Javier
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En ocasiones tenemos iterables dentro de otro iterable. Es posible acceder a cada elemento del sub-iterable utilizando múltiple variables de ciclo. Por ejemplo:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">puntos</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">puntos</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Px = </span><span class="si">{0}</span><span class="s2">,  Py =</span><span class="si">{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Px = 0,  Py =0
+Px = 3,  Py =5
+Px = -1,  Py =4
+Px = 10,  Py =2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Una utilidad muy común es la de la función <code>enumerate</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">nota</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">notas</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"La nota en posición </span><span class="si">{0}</span><span class="s2"> es: </span><span class="si">{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">nota</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>La nota en posición 0 es: 10
+La nota en posición 1 es: 8
+La nota en posición 2 es: 10
+La nota en posición 3 es: 9
+La nota en posición 4 es: 10
+La nota en posición 5 es: 7
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>De manera muy breve, la variable de ciclo <code>k</code> devuelve la posición del elemento para cada iteración.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Algunos-ejemplos-utilizando-ciclos-for">Algunos ejemplos utilizando ciclos <code>for</code><a class="anchor-link" href="posts/el-ciclo-for/#Algunos-ejemplos-utilizando-ciclos-for">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Una-tabla-de-multiplicar">Una tabla de multiplicar<a class="anchor-link" href="posts/el-ciclo-for/#Una-tabla-de-multiplicar">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{0}</span><span class="s2"> x </span><span class="si">{1}</span><span class="s2"> = </span><span class="si">{2}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">k</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Un-triángulo-de-caracteres">Un triángulo de caracteres<a class="anchor-link" href="posts/el-ciclo-for/#Un-tri%C3%A1ngulo-de-caracteres">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="o">*</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Contando-vocales">Contando vocales<a class="anchor-link" href="posts/el-ciclo-for/#Contando-vocales">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">"Anita lava la tina"</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">frase</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">letra</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"e"</span><span class="p">,</span><span class="s2">"i"</span><span class="p">,</span><span class="s2">"o"</span><span class="p">,</span><span class="s2">"u"</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hay </span><span class="si">{0}</span><span class="s2"> vocales"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hay 8 vocales
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="La-suma-de-los-primeros-cien-enteros-positivos">La suma de los primeros cien enteros positivos<a class="anchor-link" href="posts/el-ciclo-for/#La-suma-de-los-primeros-cien-enteros-positivos">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">suma</span> <span class="o">+=</span> <span class="n">num</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">suma</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5050
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/graficas-de-pastel-con-matplotlib/" class="u-url">Gráficas de pastel con Matplotlib</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Pedro Jorge De Los Santos
@@ -3631,7 +4110,7 @@ tendremos que utilizar la función <code>integrate</code>. Por ejemplo se tiene 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
@@ -3657,7 +4136,7 @@ tendremos que utilizar la función <code>integrate</code>. Por ejemplo se tiene 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
@@ -3674,7 +4153,7 @@ tendremos que utilizar la función <code>integrate</code>. Por ejemplo se tiene 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -3702,7 +4181,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="k">import</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
@@ -3727,7 +4206,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-5-476839d3c49d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-476839d3c49d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-fg">      1</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sympy<span class="ansi-yellow-intense-fg ansi-bold">.</span>abc <span class="ansi-green-intense-fg ansi-bold">import</span> a<span class="ansi-yellow-intense-fg ansi-bold">,</span>b<span class="ansi-yellow-intense-fg ansi-bold">,</span>c
 <span class="ansi-green-fg">      2</span> f <span class="ansi-yellow-intense-fg ansi-bold">=</span> a<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">**</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">+</span>b<span class="ansi-yellow-intense-fg ansi-bold">*</span>x<span class="ansi-yellow-intense-fg ansi-bold">+</span>c
 <span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>integrate<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
@@ -3773,7 +4252,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [18]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -3789,7 +4268,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -3829,7 +4308,7 @@ $$ \int_0^{\frac{\pi}{2}} \cos x \,\, dx  $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
@@ -3847,7 +4326,7 @@ $$ \int_0^{\frac{\pi}{2}} \cos x \,\, dx  $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -3874,7 +4353,7 @@ $$ \int_0^5 x \, dx $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [20]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -3890,7 +4369,7 @@ $$ \int_0^5 x \, dx $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -3929,7 +4408,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="k">import</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span>
@@ -3943,7 +4422,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [26]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">I1</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
@@ -3960,7 +4439,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -4009,32 +4488,6 @@ $$\left(a - b\right) \left(c - d\right)$$
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob<br><span class="im">from</span> wx.tools.img2py <span class="im">import</span> img2py<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br><span class="cf" style="color: #007020; font-weight: bold;">for</span> img <span class="op" style="color: #666666;">in</span> glob.glob(<span class="st" style="color: #4070a0;">"img/*.png"</span>):<br>        img2py(img,<span class="st" style="color: #4070a0;">"iconos.py"</span>, append<span class="op" style="color: #666666;">=</span><span class="va" style="color: #19177c;">True</span>)</code></pre></div>
 <br><div style="text-align: justify;">Lo anterior <em>incrusta</em> el código correspondiente a todas las imágenes PNG contenidas en la carpeta <code style="white-space: pre;">img/</code>.</div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" class="u-url">Un mini editor de texto con wxPython</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
-            <p class="dateline">
-            <a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-03-22T04:27:00-06:00" itemprop="datePublished" title="2016-03-22 04:27">2016-03-22 04:27</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/2016/03/un-mini-editor-de-texto-con-wxpython/#disqus_thread" data-disqus-identifier="cache/posts/2016/03/un-mini-editor-de-texto-con-wxpython.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <p>En esta entrada vamos a explicar cómo desarrollar un editor de texto muy sencillo, que cumpla con algunas funciones muy básicas, tal como un bloc de notas de Windows.<br><br>El resultado final será más o menos el siguiente:<br><br></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="https://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" width="320"></a></div>
-<br>Primeramente vamos a importar los módulos a utilizar:<br><br><pre class="brush: python">import wx<br>import os<br>import os.path<br></pre>
-<br>El módulo wx para la librería gráfica (wxPython), y el módulo os para las operaciones con archivos de texto plano (guardar, abrir, etc...).<br><br>Una vez importados los módulos necesarios, habremos de definir una estructura base para la aplicación. Para ello extenderemos una clase de wx.Frame, tal cómo se muestra enseguida:<br><br><pre class="brush: python">class LABTxt(wx.Frame):<br>    def __init__(self,parent,title):<br>        wx.Frame.__init__(self,parent,title=title,size=(600,400))<br><br>    def configurarEditor(self):<br>        """ Configura las características iniciales del editor """<br><br>    def crearMenu(self):  <br>        """ Crea la barra de menú """<br><br>    def abrirArchivo(self, event):<br>        """ Abre un archivo de texto plano"""<br><br>    def guardarArchivoComo(self, event):<br>        """ Guarda el archivo actual abriendo un cuadro de dialogo """<br><br>    def guardarArchivo(self,event):<br>        """ Guarda el archivo actual """<br><br>    def copiar(self,event):<br>        """ Copia el texto seleccionado al portapapeles """<br><br>    def pegar(self,event):<br>        """ Pega el texto ubicado en el portapapeles """<br><br>    def configurarTema(self,event):<br>        """ Configura el tema a utilizar """<br><br>    def ayuda(self,event):<br>        """ Muestra la ayuda de la aplicacion """<br><br>    def acerca(self, event):<br>        """ Breve descripción del programa """<br><br>if __name__=='__main__':<br>    app = wx.App()<br>    fr = LABTxt(None, "LABTxt 0.0.1")<br>    app.MainLoop()<br></pre>
-<br>En lo anterior se define una clase LABTxt derivada de wx.Frame, con ciertos métodos definidos que posteriormente desarrollaremos y que, evidentemente, le dan funcionalidad a la aplicación.<br><br><span style="font-size: large;"><b>El método __init__</b></span><br>En el método __init__ (comúnmente nombrado "constructor" de la clase) se colocarán los elementos básicos de la aplicación, en este caso un wx.TextCtrl y el Sizer correspondiente, tal como se muestra enseguida:<br><br><pre class="brush: python">def __init__(self,parent,title):<br>    wx.Frame.__init__(self,parent,title=title,size=(600,400))<br>    if os.path.isfile("icono.png"):<br>        self.SetIcon(wx.Icon('icono.png'))<br>    self.archivo='untitled.txt'<br>    p=wx.Panel(self, -1)<br><br>    # Sizer<br>    sz=wx.BoxSizer(wx.VERTICAL)<br><br>    # Editor<br>    self.editor=wx.TextCtrl(p, -1, "", style=wx.TE_MULTILINE)<br>    self.configurarEditor()<br><br>    # Agregar al sizer<br>    sz.Add(self.editor, 1, wx.EXPAND)<br>    p.SetSizer(sz)<br><br>    # Crear barra de menu<br>    self.crearMenu()<br>    self.Show()<br></pre>
-<br>Colocamos un ícono a la aplicación (en el caso de que este exista), se crea un panel sobre el cual se agregará el control de texto. Enseguida se agrega un wx.TextCtrl con la propiedad style definida como wx.TE_MULTILINE, que permitirá tener un campo de texto multilínea, simulando de esta manera el editor que necesitamos. Se "llama" al método configurarEditor que simplemente configura la fuente y color de fondo del mismo. Finalmente se crea la barra de menús y se muestra la ventana con el método Show.<br><br><br><span style="font-size: large;"><b>El método configurarEditor</b></span><br>Este método define las características de la fuente y el color de fondo a utilizar.<br><br><br><span style="font-size: large;"><b>El método crearMenu</b></span><br>Aquí se crea la barra de menús con sus respectivos ítems y se agrega la funcionalidad (eventos) a cada uno de ellos, mediante el uso del método Bind de la clase wx.Frame.<br><br><pre class="brush: python">def crearMenu(self):  <br>    """ Crea la barra de menú """<br>    marchivo=wx.Menu()<br>    abrir=marchivo.Append(-1, "Abrir\tCtrl-O")<br>    guardar=marchivo.Append(-1, "Guardar\tCtrl-S")<br>    guardarComo=marchivo.Append(-1, "Guardar como")<br><br>    meditar=wx.Menu()<br>    copiar=meditar.Append(-1, "Copiar\tCtrl-C")<br>    pegar=meditar.Append(-1, "Pegar\tCtrl-V")<br><br>    self.mtema=wx.Menu()<br>    classic=self.mtema.Append(-1, "Classic")<br>    dark=self.mtema.Append(-1, "Dark")<br>    retro=self.mtema.Append(-1, "Retro")<br>    pink=self.mtema.Append(-1, "Pink")<br><br>    mayuda=wx.Menu()<br>    ayuda=mayuda.Append(-1, "Ayuda")<br>    acerca=mayuda.Append(-1, "Acerca de...")<br><br>    barraMenu=wx.MenuBar()<br>    barraMenu.Append(marchivo, "Archivo")<br>    barraMenu.Append(meditar, "Editar")<br>    barraMenu.Append(self.mtema, "Seleccionar tema")<br>    barraMenu.Append(mayuda, "Ayuda")<br>    self.SetMenuBar(barraMenu)<br><br>    # Definición de "eventos"<br>    self.Bind(wx.EVT_MENU, self.abrirArchivo, abrir)<br>    self.Bind(wx.EVT_MENU, self.guardarArchivoComo, guardarComo)<br>    self.Bind(wx.EVT_MENU, self.guardarArchivo, guardar)<br><br>    self.Bind(wx.EVT_MENU, self.copiar, copiar)<br>    self.Bind(wx.EVT_MENU, self.pegar, pegar)<br><br>    self.Bind(wx.EVT_MENU, self.configurarTema, classic)<br>    self.Bind(wx.EVT_MENU, self.configurarTema, dark)<br>    self.Bind(wx.EVT_MENU, self.configurarTema, retro)<br>    self.Bind(wx.EVT_MENU, self.configurarTema, pink)<br><br>    self.Bind(wx.EVT_MENU, self.acerca, acerca)<br>    self.Bind(wx.EVT_MENU, self.ayuda, ayuda)<br></pre>
-<br>Notará que cada ítem de los menús se "conecta" a un método de la propia clase que define la acción que se ejecutará en cada caso.<br><br><br><span style="font-size: large;"><b>El editor...</b></span><br>Finalmente os dejo el código completo del editor. Desde luego existen muchas mejoras que pueden hacerse.<br><br><pre class="brush: python"># -*- coding: utf-8 -*-<br># ================================<br># Por: Jorge De Los Santos  <br># E-mail: delossantosmfq@gmail.com<br># Licencia: BSD License<br># ================================<br><br>import wx<br>import os<br>import os.path<br><br>class LABTxt(wx.Frame):<br>    def __init__(self,parent,title):<br>        wx.Frame.__init__(self,parent,title=title,size=(600,400))<br>        if os.path.isfile("icono.png"):<br>            self.SetIcon(wx.Icon('icono.png'))<br>        self.archivo='untitled.txt'<br>        p=wx.Panel(self, -1)<br><br>        # Sizer<br>        sz=wx.BoxSizer(wx.VERTICAL)<br><br>        # Editor<br>        self.editor=wx.TextCtrl(p, -1, "", style=wx.TE_MULTILINE)<br>        self.configurarEditor()<br><br>        # Agregar al sizer<br>        sz.Add(self.editor, 1, wx.EXPAND)<br>        p.SetSizer(sz)<br><br>        # Crear barra de menu<br>        self.crearMenu()<br>        self.Show()<br><br>    def configurarEditor(self):<br>        """ Configura las características iniciales del editor """<br>        self.fuente=wx.Font(12, wx.MODERN, wx.NORMAL, wx.NORMAL)<br>        self.fuente.SetFaceName("Courier New")<br>        self.editor.SetFont(self.fuente)<br>        self.editor.SetBackgroundStyle(True)<br><br>    def crearMenu(self):  <br>        """ Crea la barra de menú """<br>        marchivo=wx.Menu()<br>        abrir=marchivo.Append(-1, "Abrir\tCtrl-O")<br>        guardar=marchivo.Append(-1, "Guardar\tCtrl-S")<br>        guardarComo=marchivo.Append(-1, "Guardar como")<br><br>        meditar=wx.Menu()<br>        copiar=meditar.Append(-1, "Copiar\tCtrl-C")<br>        pegar=meditar.Append(-1, "Pegar\tCtrl-V")<br><br>        self.mtema=wx.Menu()<br>        classic=self.mtema.Append(-1, "Classic")<br>        dark=self.mtema.Append(-1, "Dark")<br>        retro=self.mtema.Append(-1, "Retro")<br>        pink=self.mtema.Append(-1, "Pink")<br><br>        mayuda=wx.Menu()<br>        ayuda=mayuda.Append(-1, "Ayuda")<br>        acerca=mayuda.Append(-1, "Acerca de...")<br><br>        barraMenu=wx.MenuBar()<br>        barraMenu.Append(marchivo, "Archivo")<br>        barraMenu.Append(meditar, "Editar")<br>        barraMenu.Append(self.mtema, "Seleccionar tema")<br>        barraMenu.Append(mayuda, "Ayuda")<br>        self.SetMenuBar(barraMenu)<br><br>        # Definición de "eventos"<br>        self.Bind(wx.EVT_MENU, self.abrirArchivo, abrir)<br>        self.Bind(wx.EVT_MENU, self.guardarArchivoComo, guardarComo)<br>        self.Bind(wx.EVT_MENU, self.guardarArchivo, guardar)<br><br>        self.Bind(wx.EVT_MENU, self.copiar, copiar)<br>        self.Bind(wx.EVT_MENU, self.pegar, pegar)<br><br>        self.Bind(wx.EVT_MENU, self.configurarTema, classic)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, dark)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, retro)<br>        self.Bind(wx.EVT_MENU, self.configurarTema, pink)<br><br>        self.Bind(wx.EVT_MENU, self.acerca, acerca)<br>        self.Bind(wx.EVT_MENU, self.ayuda, ayuda)<br><br>    def abrirArchivo(self, event):<br>        dlg=wx.FileDialog(self, "Abrir archivo", os.getcwd(), style=wx.OPEN)<br>        if dlg.ShowModal() == wx.ID_OK:<br>            try:<br>                fid=open(dlg.GetPath(),'r')<br>                texto=fid.readlines()<br>                self.texto="".join(texto)<br>                self.texto = self.texto.decode("utf8")<br>                fid.close()<br>                self.editor.SetValue(self.texto)<br>                self.archivo=dlg.GetPath()<br>                self.SetTitle("LABTxt "+self.archivo)<br>            except:<br>                wx.MessageBox(u"Archivo no válido","Error")<br>        dlg.Destroy()<br><br>    def guardarArchivoComo(self, event):<br>        """ Guarda el archivo actual abriendo un cuadro de dialogo """<br>        dlg=wx.FileDialog(self, "Guardar", os.getcwd(), style=wx.SAVE)<br>        if dlg.ShowModal() == wx.ID_OK:<br>            fid=open(dlg.GetPath(),'w')<br>            txt=str(self.editor.GetValue().encode('utf8'))<br>            fid.write(txt)<br>            fid.close()<br>            self.archivo=dlg.GetPath()<br>            self.SetTitle("LABTxt 0.0.1  "+self.archivo)<br>        dlg.Destroy()<br><br>    def guardarArchivo(self,event):<br>        """ Guarda el archivo actual """<br>        if hasattr(self, 'archivo'):<br>            fid=open(self.archivo,'w')<br>            txt=str(self.editor.GetValue().encode('utf8'))<br>            fid.write(txt)<br>            fid.close()<br>            wx.MessageBox("Hecho","LABTxt")<br>            self.SetTitle("LABTxt 0.0.1  "+self.archivo)<br>        else:<br>            self.guardarArchivoComo(None)<br><br>    def copiar(self,event):<br>        """ Copia el texto seleccionado al portapapeles """<br>        texto=wx.TextDataObject(self.editor.GetStringSelection())<br>        if wx.TheClipboard.Open():<br>            wx.TheClipboard.SetData(texto)<br>            wx.TheClipboard.Close()<br><br>    def pegar(self,event):<br>        """ Pega el texto ubicado en el portapapeles """<br>        txt=wx.TextDataObject()<br>        if wx.TheClipboard.Open():<br>            success=wx.TheClipboard.GetData(txt)<br>            wx.TheClipboard.Close()<br>        if success:<br>            self.editor.SetInsertionPoint(self.editor.GetInsertionPoint()) <br>            self.editor.write(txt.GetText())<br><br>    def configurarTema(self,event):<br>         tema_sel=self.mtema.FindItemById(event.GetId()).GetText()<br>         temas={'Classic':((0,0,255),(255,255,255)),<br>        'Dark':((200,200,200),(0,0,0)),<br>        'Retro':((0,255,0),(0,0,0)),<br>        'Pink':((20,50,50),(250,180,180))}<br>        self.editor.SetForegroundColour(temas[tema_sel][0])<br>        self.editor.SetBackgroundColour(temas[tema_sel][1])<br>        self.editor.Refresh()<br><br>    def ayuda(self,event):<br>        wx.MessageBox("No disponible","LABTxt")<br><br>    def acerca(self, event):<br>        descripcion=""" Editor de texto sin formato desarrollado en<br>        wxPython """<br>        info=wx.AboutDialogInfo()<br>        info.SetName('LABTxt')<br>        info.SetDescription(descripcion)<br>        info.SetVersion('0.0.1')<br>        info.SetLicense('BSD License')<br>        info.SetDevelopers(['Jorge De Los Santos'])<br>        info.SetWebSite(('labdls.blogspot.mx','LAB DLS'))<br>        info.SetCopyright('(c) 2014')<br>        wx.AboutBox(info)<br><br>if __name__=='__main__':<br>    app = wx.App()<br>    fr = LABTxt(None, "LABTxt 0.0.1")<br>    app.MainLoop()<br><br></pre>
-<br><br>
-</div>
     </article>
 </div>
 

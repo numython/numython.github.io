@@ -1,5 +1,436 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 17 Mar 2019 17:41:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Gráficas de pastel con Matplotlib</title><link>https://numython.github.io/posts/graficas-de-pastel-con-matplotlib/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 17 Mar 2019 18:38:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>El ciclo for en Python</title><link>https://numython.github.io/posts/el-ciclo-for/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;El ciclo &lt;code&gt;for&lt;/code&gt; es una estructura cíclica cuya finalidad es ejecutar un código una cierta cantidad de veces. De manera general, en Python, la sintaxis de &lt;code&gt;for&lt;/code&gt; es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;iterable&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;# hacer algo&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Donde &lt;code&gt;iterable&lt;/code&gt; es justamente eso, un iterable de Python que puede ser desde una lista hasta un string. Para la i-ésima iteración la variable de ciclo &lt;code&gt;k&lt;/code&gt; adoptará el valor en la i-ésima posición de &lt;code&gt;iterable&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación vemos un ejemplo muy básico:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;numero&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;numeros&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numero&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;10
+20
+30
+40
+50
+60
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Observe que lo único que se hace es imprimir cada elemento que compone la lista &lt;code&gt;numeros&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Revisemos ahora el siguiente ejemplo:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numeros&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;numero&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;numeros&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numero&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;numero&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;10 100
+20 400
+30 900
+40 1600
+50 2500
+60 3600
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Note que la única diferencia radica, en que además del propio número, también imprimos su cuadrado.&lt;/p&gt;
+&lt;p&gt;Naturalmente, no sólo podemos "recorrer" listas, sino cualquier elemento que sea iterable, como es el caso de los strings.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;nombres&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"Ana"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Lucas"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Catalina"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Javier"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;nombre&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;nombres&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Hola "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;nombre&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Hola Ana
+Hola Lucas
+Hola Catalina
+Hola Javier
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;En ocasiones tenemos iterables dentro de otro iterable. Es posible acceder a cada elemento del sub-iterable utilizando múltiple variables de ciclo. Por ejemplo:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [22]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;puntos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;puntos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Px = &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;,  Py =&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Px = 0,  Py =0
+Px = 3,  Py =5
+Px = -1,  Py =4
+Px = 10,  Py =2
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Una utilidad muy común es la de la función &lt;code&gt;enumerate&lt;/code&gt;:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;notas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;nota&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;notas&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"La nota en posición &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt; es: &lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;nota&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;La nota en posición 0 es: 10
+La nota en posición 1 es: 8
+La nota en posición 2 es: 10
+La nota en posición 3 es: 9
+La nota en posición 4 es: 10
+La nota en posición 5 es: 7
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;De manera muy breve, la variable de ciclo &lt;code&gt;k&lt;/code&gt; devuelve la posición del elemento para cada iteración.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Algunos-ejemplos-utilizando-ciclos-for"&gt;Algunos ejemplos utilizando ciclos &lt;code&gt;for&lt;/code&gt;&lt;a class="anchor-link" href="https://numython.github.io/posts/el-ciclo-for/#Algunos-ejemplos-utilizando-ciclos-for"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="Una-tabla-de-multiplicar"&gt;Una tabla de multiplicar&lt;a class="anchor-link" href="https://numython.github.io/posts/el-ciclo-for/#Una-tabla-de-multiplicar"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [27]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt; x &lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s2"&gt; = &lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="Un-triángulo-de-caracteres"&gt;Un triángulo de caracteres&lt;a class="anchor-link" href="https://numython.github.io/posts/el-ciclo-for/#Un-tri%C3%A1ngulo-de-caracteres"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [30]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"*"&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="Contando-vocales"&gt;Contando vocales&lt;a class="anchor-link" href="https://numython.github.io/posts/el-ciclo-for/#Contando-vocales"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [46]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;frase&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Anita lava la tina"&lt;/span&gt;
+&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;letra&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;frase&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;letra&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"a"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"e"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"i"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"o"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"u"&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Hay &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt; vocales"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Hay 8 vocales
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="La-suma-de-los-primeros-cien-enteros-positivos"&gt;La suma de los primeros cien enteros positivos&lt;a class="anchor-link" href="https://numython.github.io/posts/el-ciclo-for/#La-suma-de-los-primeros-cien-enteros-positivos"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [47]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;suma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;101&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;suma&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;suma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;5050
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://numython.github.io/posts/el-ciclo-for/</guid><pubDate>Sun, 17 Mar 2019 17:57:21 GMT</pubDate></item><item><title>Gráficas de pastel con Matplotlib</title><link>https://numython.github.io/posts/graficas-de-pastel-con-matplotlib/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Las gráficas de barras nos sirven para representar porcentajes y proporciones. En Python podemos utilizar la librería Matplotlib para desarrollar este tipo de gráficas.&lt;/p&gt;
@@ -3257,7 +3688,7 @@ tendremos que utilizar la función &lt;code&gt;integrate&lt;/code&gt;. Por ejemp
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;integrate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;init_printing&lt;/span&gt;
@@ -3281,7 +3712,7 @@ tendremos que utilizar la función &lt;code&gt;integrate&lt;/code&gt;. Por ejemp
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
@@ -3298,7 +3729,7 @@ tendremos que utilizar la función &lt;code&gt;integrate&lt;/code&gt;. Por ejemp
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
 
 
 
@@ -3324,7 +3755,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.abc&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;
@@ -3349,7 +3780,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 &lt;pre&gt;
 &lt;span class="ansi-red-intense-fg ansi-bold"&gt;---------------------------------------------------------------------------&lt;/span&gt;
 &lt;span class="ansi-red-intense-fg ansi-bold"&gt;ValueError&lt;/span&gt;                                Traceback (most recent call last)
-&lt;span class="ansi-green-intense-fg ansi-bold"&gt;&amp;lt;ipython-input-5-476839d3c49d&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;&amp;lt;module&amp;gt;&lt;/span&gt;&lt;span class="ansi-blue-intense-fg ansi-bold"&gt;()&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;&amp;lt;ipython-input-3-476839d3c49d&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;&amp;lt;module&amp;gt;&lt;/span&gt;&lt;span class="ansi-blue-intense-fg ansi-bold"&gt;()&lt;/span&gt;
 &lt;span class="ansi-green-fg"&gt;      1&lt;/span&gt; &lt;span class="ansi-green-intense-fg ansi-bold"&gt;from&lt;/span&gt; sympy&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;.&lt;/span&gt;abc &lt;span class="ansi-green-intense-fg ansi-bold"&gt;import&lt;/span&gt; a&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;,&lt;/span&gt;b&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;,&lt;/span&gt;c
 &lt;span class="ansi-green-fg"&gt;      2&lt;/span&gt; f &lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;=&lt;/span&gt; a&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;*&lt;/span&gt;x&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;**&lt;/span&gt;&lt;span class="ansi-cyan-intense-fg ansi-bold"&gt;2&lt;/span&gt;&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;+&lt;/span&gt;b&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;*&lt;/span&gt;x&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;+&lt;/span&gt;c
 &lt;span class="ansi-green-intense-fg ansi-bold"&gt;----&amp;gt; 3&lt;/span&gt;&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt; &lt;/span&gt;integrate&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;(&lt;/span&gt;f&lt;span class="ansi-yellow-intense-fg ansi-bold"&gt;)&lt;/span&gt;
@@ -3393,7 +3824,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;integrate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3409,7 +3840,7 @@ si la expresión tuviese más de una, habría que especificar de manera explíci
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[18]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
 
 
 
@@ -3444,7 +3875,7 @@ $$ \int_0^{\frac{\pi}{2}} \cos x \,\, dx  $$
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;
@@ -3462,7 +3893,7 @@ $$ \int_0^{\frac{\pi}{2}} \cos x \,\, dx  $$
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[19]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
 
 
 
@@ -3487,7 +3918,7 @@ $$ \int_0^5 x \, dx $$
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [20]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;integrate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -3503,7 +3934,7 @@ $$ \int_0^5 x \, dx $$
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
 
 
 
@@ -3537,7 +3968,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.abc&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;
@@ -3551,7 +3982,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [26]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;I1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;integrate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -3568,7 +3999,7 @@ $$ I_1 = \int_c^d \, dy \qquad \rightarrow \qquad  I = \int_a^b \, I_1 \, dx  $$
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[26]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
 
 
 
@@ -3582,4 +4013,4 @@ $$\left(a - b\right) \left(c - d\right)$$
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>mathjax</category><category>sympy</category><guid>https://numython.github.io/posts/integrales-con-sympy/</guid><pubDate>Wed, 19 Oct 2016 01:31:20 GMT</pubDate></item><item><title>Almacenando imágenes como código utilizando img2py</title><link>https://numython.github.io/posts/2016/04/almacenando-imagenes-como-codigo/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div style="text-align: justify;"&gt;En esta breve entrada vamos a hablar de cómo utilizar la función &lt;code style="white-space: pre;"&gt;ìmg2py&lt;/code&gt; de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con&lt;code style="white-space: pre;"&gt;PyEmbeddedImage&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;Lo primero que debemos hacer es importar la función del módulo &lt;code style="white-space: pre;"&gt;wx.tools.img2py&lt;/code&gt;:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.tools.img2py &lt;span class="im"&gt;import&lt;/span&gt; img2py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Y posteriormente sólo llamaremos a la función pasando como argumentos el archivo de la imagen y el archivo Python de salida, por ejemplo:&lt;/div&gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;img2py("icono.png", "icono.py")&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Con lo anterior se obtendrá un archivo Python &lt;code style="white-space: pre;"&gt;icono.py&lt;/code&gt; que contiene algo parecido a lo siguiente:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;#----------------------------------------------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;# This file was generated by C:\Users\User\Desktop\LABPro\_blogs_\Posts\test_app.py&lt;/span&gt;&lt;br&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;#&lt;/span&gt;&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.lib.embeddedimage &lt;span class="im"&gt;import&lt;/span&gt; PyEmbeddedImage&lt;br&gt;&lt;br&gt;icono &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; PyEmbeddedImage(&lt;br&gt;    &lt;span class="st" style="color: #4070a0;"&gt;"iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABHNCSVQICAgIfAhkiAAAAAlw"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"SFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoA"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"AABlSURBVCiRY2TAChryGBgYJmKXY2BgwiWBD7D819JqQxfMfHHXZMY7ZdyaGBgYKtEFNdk+"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"4bWJLOeR5ydsgtrsnxiSBe5hiG/9IrX2xR+OD4z/tbT+E20FI6M249Wr1+jnp0GuCQD2OxXd"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"g2khLwAAAABJRU5ErkJggg=="&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Luego, ese código generado lo podremos utilizar posteriormente en nuestras aplicaciones, por ejemplo para un icono:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;# -*- coding:utf-8 -*-&lt;/span&gt;&lt;br&gt;&lt;span class="im"&gt;import&lt;/span&gt; wx&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; icono &lt;span class="im"&gt;import&lt;/span&gt; icono&lt;br&gt;&lt;br&gt;&lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;if&lt;/span&gt; &lt;span class="va" style="color: #19177c;"&gt;__name__&lt;/span&gt;&lt;span class="op" style="color: #666666;"&gt;==&lt;/span&gt;&lt;span class="st" style="color: #4070a0;"&gt;'__main__'&lt;/span&gt;:&lt;br&gt;    app &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; wx.App()&lt;br&gt;    fr &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; wx.Frame(&lt;span class="va" style="color: #19177c;"&gt;None&lt;/span&gt;, &lt;span class="op" style="color: #666666;"&gt;-&lt;/span&gt;&lt;span class="dv" style="color: #40a070;"&gt;1&lt;/span&gt;, &lt;span class="st" style="color: #4070a0;"&gt;u"wxPython"&lt;/span&gt;)&lt;br&gt;    fr.SetIcon(icono.GetIcon())&lt;br&gt;    fr.Show()&lt;br&gt;    app.MainLoop()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;strong&gt;&lt;br&gt;&lt;/strong&gt;&lt;strong&gt;¿Y si necesito &lt;em&gt;embeber&lt;/em&gt; varias imágenes en un mismo archivo Python?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Si, es bastante probable que necesite esto, hacer una colección de imagenes embebidas en un mismo archivo Python, la cuestión es muy parecida, sólo tenemos que agregar el &lt;em&gt;keyword argument&lt;/em&gt;&lt;code style="white-space: pre;"&gt;append&lt;/code&gt; a la función &lt;code style="white-space: pre;"&gt;img2py&lt;/code&gt; para evitar que borre lo que se ha colocado anteriormente, un pequeño ejemplo:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="im"&gt;import&lt;/span&gt; glob&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.tools.img2py &lt;span class="im"&gt;import&lt;/span&gt; img2py&lt;br&gt;&lt;br&gt;&lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;if&lt;/span&gt; &lt;span class="va" style="color: #19177c;"&gt;__name__&lt;/span&gt;&lt;span class="op" style="color: #666666;"&gt;==&lt;/span&gt;&lt;span class="st" style="color: #4070a0;"&gt;'__main__'&lt;/span&gt;:&lt;br&gt;    &lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;for&lt;/span&gt; img &lt;span class="op" style="color: #666666;"&gt;in&lt;/span&gt; glob.glob(&lt;span class="st" style="color: #4070a0;"&gt;"img/*.png"&lt;/span&gt;):&lt;br&gt;        img2py(img,&lt;span class="st" style="color: #4070a0;"&gt;"iconos.py"&lt;/span&gt;, append&lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt;&lt;span class="va" style="color: #19177c;"&gt;True&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Lo anterior &lt;em&gt;incrusta&lt;/em&gt; el código correspondiente a todas las imágenes PNG contenidas en la carpeta &lt;code style="white-space: pre;"&gt;img/&lt;/code&gt;.&lt;/div&gt;</description><category>Avanzado</category><category>Imágenes</category><category>wxIcon</category><category>wxPython</category><guid>https://numython.github.io/posts/2016/04/almacenando-imagenes-como-codigo/</guid><pubDate>Fri, 01 Apr 2016 14:15:00 GMT</pubDate></item><item><title>Un mini editor de texto con wxPython</title><link>https://numython.github.io/posts/2016/03/un-mini-editor-de-texto-con-wxpython/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;p&gt;En esta entrada vamos a explicar cómo desarrollar un editor de texto muy sencillo, que cumpla con algunas funciones muy básicas, tal como un bloc de notas de Windows.&lt;br&gt;&lt;br&gt;El resultado final será más o menos el siguiente:&lt;br&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="213" src="https://4.bp.blogspot.com/-3FI4UfHa5z4/VMx2-zuG70I/AAAAAAAABaQ/BP9XL6SDw7o/s1600/Captura.PNG" width="320"&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;Primeramente vamos a importar los módulos a utilizar:&lt;br&gt;&lt;br&gt;&lt;pre class="brush: python"&gt;import wx&lt;br&gt;import os&lt;br&gt;import os.path&lt;br&gt;&lt;/pre&gt;&lt;br&gt;El módulo wx para la librería gráfica (wxPython), y el módulo os para las operaciones con archivos de texto plano (guardar, abrir, etc...).&lt;br&gt;&lt;br&gt;Una vez importados los módulos necesarios, habremos de definir una estructura base para la aplicación. Para ello extenderemos una clase de wx.Frame, tal cómo se muestra enseguida:&lt;br&gt;&lt;br&gt;&lt;pre class="brush: python"&gt;class LABTxt(wx.Frame):&lt;br&gt;    def __init__(self,parent,title):&lt;br&gt;        wx.Frame.__init__(self,parent,title=title,size=(600,400))&lt;br&gt;&lt;br&gt;    def configurarEditor(self):&lt;br&gt;        """ Configura las características iniciales del editor """&lt;br&gt; &lt;br&gt;    def crearMenu(self):  &lt;br&gt;        """ Crea la barra de menú """&lt;br&gt; &lt;br&gt;    def abrirArchivo(self, event):&lt;br&gt;        """ Abre un archivo de texto plano"""&lt;br&gt; &lt;br&gt;    def guardarArchivoComo(self, event):&lt;br&gt;        """ Guarda el archivo actual abriendo un cuadro de dialogo """&lt;br&gt;  &lt;br&gt;    def guardarArchivo(self,event):&lt;br&gt;        """ Guarda el archivo actual """&lt;br&gt; &lt;br&gt;    def copiar(self,event):&lt;br&gt;        """ Copia el texto seleccionado al portapapeles """&lt;br&gt;   &lt;br&gt;    def pegar(self,event):&lt;br&gt;        """ Pega el texto ubicado en el portapapeles """&lt;br&gt; &lt;br&gt;    def configurarTema(self,event):&lt;br&gt;        """ Configura el tema a utilizar """&lt;br&gt;  &lt;br&gt;    def ayuda(self,event):&lt;br&gt;        """ Muestra la ayuda de la aplicacion """&lt;br&gt;  &lt;br&gt;    def acerca(self, event):&lt;br&gt;        """ Breve descripción del programa """&lt;br&gt;&lt;br&gt;if __name__=='__main__':&lt;br&gt;    app = wx.App()&lt;br&gt;    fr = LABTxt(None, "LABTxt 0.0.1")&lt;br&gt;    app.MainLoop()&lt;br&gt;&lt;/pre&gt;&lt;br&gt;En lo anterior se define una clase LABTxt derivada de wx.Frame, con ciertos métodos definidos que posteriormente desarrollaremos y que, evidentemente, le dan funcionalidad a la aplicación.&lt;br&gt;&lt;br&gt;&lt;span style="font-size: large;"&gt;&lt;b&gt;El método __init__&lt;/b&gt;&lt;/span&gt;&lt;br&gt;En el método __init__ (comúnmente nombrado "constructor" de la clase) se colocarán los elementos básicos de la aplicación, en este caso un wx.TextCtrl y el Sizer correspondiente, tal como se muestra enseguida:&lt;br&gt;&lt;br&gt;&lt;pre class="brush: python"&gt;def __init__(self,parent,title):&lt;br&gt;    wx.Frame.__init__(self,parent,title=title,size=(600,400))&lt;br&gt;    if os.path.isfile("icono.png"):&lt;br&gt;        self.SetIcon(wx.Icon('icono.png'))&lt;br&gt;    self.archivo='untitled.txt'&lt;br&gt;    p=wx.Panel(self, -1)&lt;br&gt;  &lt;br&gt;    # Sizer&lt;br&gt;    sz=wx.BoxSizer(wx.VERTICAL)&lt;br&gt;  &lt;br&gt;    # Editor&lt;br&gt;    self.editor=wx.TextCtrl(p, -1, "", style=wx.TE_MULTILINE)&lt;br&gt;    self.configurarEditor()&lt;br&gt;  &lt;br&gt;    # Agregar al sizer&lt;br&gt;    sz.Add(self.editor, 1, wx.EXPAND)&lt;br&gt;    p.SetSizer(sz)&lt;br&gt;  &lt;br&gt;    # Crear barra de menu&lt;br&gt;    self.crearMenu()&lt;br&gt;    self.Show()&lt;br&gt;&lt;/pre&gt;&lt;br&gt;Colocamos un ícono a la aplicación (en el caso de que este exista), se crea un panel sobre el cual se agregará el control de texto. Enseguida se agrega un wx.TextCtrl con la propiedad style definida como wx.TE_MULTILINE, que permitirá tener un campo de texto multilínea, simulando de esta manera el editor que necesitamos. Se "llama" al método configurarEditor que simplemente configura la fuente y color de fondo del mismo. Finalmente se crea la barra de menús y se muestra la ventana con el método Show.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: large;"&gt;&lt;b&gt;El método configurarEditor&lt;/b&gt;&lt;/span&gt;&lt;br&gt;Este método define las características de la fuente y el color de fondo a utilizar.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: large;"&gt;&lt;b&gt;El método crearMenu&lt;/b&gt;&lt;/span&gt;&lt;br&gt;Aquí se crea la barra de menús con sus respectivos ítems y se agrega la funcionalidad (eventos) a cada uno de ellos, mediante el uso del método Bind de la clase wx.Frame.&lt;br&gt;&lt;br&gt;&lt;pre class="brush: python"&gt;def crearMenu(self):  &lt;br&gt;    """ Crea la barra de menú """&lt;br&gt;    marchivo=wx.Menu()&lt;br&gt;    abrir=marchivo.Append(-1, "Abrir\tCtrl-O")&lt;br&gt;    guardar=marchivo.Append(-1, "Guardar\tCtrl-S")&lt;br&gt;    guardarComo=marchivo.Append(-1, "Guardar como")&lt;br&gt;  &lt;br&gt;    meditar=wx.Menu()&lt;br&gt;    copiar=meditar.Append(-1, "Copiar\tCtrl-C")&lt;br&gt;    pegar=meditar.Append(-1, "Pegar\tCtrl-V")&lt;br&gt;  &lt;br&gt;    self.mtema=wx.Menu()&lt;br&gt;    classic=self.mtema.Append(-1, "Classic")&lt;br&gt;    dark=self.mtema.Append(-1, "Dark")&lt;br&gt;    retro=self.mtema.Append(-1, "Retro")&lt;br&gt;    pink=self.mtema.Append(-1, "Pink")&lt;br&gt;  &lt;br&gt;    mayuda=wx.Menu()&lt;br&gt;    ayuda=mayuda.Append(-1, "Ayuda")&lt;br&gt;    acerca=mayuda.Append(-1, "Acerca de...")&lt;br&gt;  &lt;br&gt;    barraMenu=wx.MenuBar()&lt;br&gt;    barraMenu.Append(marchivo, "Archivo")&lt;br&gt;    barraMenu.Append(meditar, "Editar")&lt;br&gt;    barraMenu.Append(self.mtema, "Seleccionar tema")&lt;br&gt;    barraMenu.Append(mayuda, "Ayuda")&lt;br&gt;    self.SetMenuBar(barraMenu)&lt;br&gt;  &lt;br&gt;    # Definición de "eventos"&lt;br&gt;    self.Bind(wx.EVT_MENU, self.abrirArchivo, abrir)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.guardarArchivoComo, guardarComo)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.guardarArchivo, guardar)&lt;br&gt;  &lt;br&gt;    self.Bind(wx.EVT_MENU, self.copiar, copiar)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.pegar, pegar)&lt;br&gt;  &lt;br&gt;    self.Bind(wx.EVT_MENU, self.configurarTema, classic)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.configurarTema, dark)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.configurarTema, retro)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.configurarTema, pink)&lt;br&gt;  &lt;br&gt;    self.Bind(wx.EVT_MENU, self.acerca, acerca)&lt;br&gt;    self.Bind(wx.EVT_MENU, self.ayuda, ayuda)&lt;br&gt;&lt;/pre&gt;&lt;br&gt;Notará que cada ítem de los menús se "conecta" a un método de la propia clase que define la acción que se ejecutará en cada caso.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: large;"&gt;&lt;b&gt;El editor...&lt;/b&gt;&lt;/span&gt;&lt;br&gt;Finalmente os dejo el código completo del editor. Desde luego existen muchas mejoras que pueden hacerse.&lt;br&gt;&lt;br&gt;&lt;pre class="brush: python"&gt;# -*- coding: utf-8 -*-&lt;br&gt;# ================================&lt;br&gt;# Por: Jorge De Los Santos  &lt;br&gt;# E-mail: delossantosmfq@gmail.com&lt;br&gt;# Licencia: BSD License&lt;br&gt;# ================================&lt;br&gt;&lt;br&gt;import wx&lt;br&gt;import os&lt;br&gt;import os.path&lt;br&gt;&lt;br&gt;class LABTxt(wx.Frame):&lt;br&gt;    def __init__(self,parent,title):&lt;br&gt;        wx.Frame.__init__(self,parent,title=title,size=(600,400))&lt;br&gt;        if os.path.isfile("icono.png"):&lt;br&gt;            self.SetIcon(wx.Icon('icono.png'))&lt;br&gt;        self.archivo='untitled.txt'&lt;br&gt;        p=wx.Panel(self, -1)&lt;br&gt;  &lt;br&gt;        # Sizer&lt;br&gt;        sz=wx.BoxSizer(wx.VERTICAL)&lt;br&gt;  &lt;br&gt;        # Editor&lt;br&gt;        self.editor=wx.TextCtrl(p, -1, "", style=wx.TE_MULTILINE)&lt;br&gt;        self.configurarEditor()&lt;br&gt;  &lt;br&gt;        # Agregar al sizer&lt;br&gt;        sz.Add(self.editor, 1, wx.EXPAND)&lt;br&gt;        p.SetSizer(sz)&lt;br&gt;  &lt;br&gt;        # Crear barra de menu&lt;br&gt;        self.crearMenu()&lt;br&gt;        self.Show()&lt;br&gt;&lt;br&gt;    def configurarEditor(self):&lt;br&gt;        """ Configura las características iniciales del editor """&lt;br&gt;        self.fuente=wx.Font(12, wx.MODERN, wx.NORMAL, wx.NORMAL)&lt;br&gt;        self.fuente.SetFaceName("Courier New")&lt;br&gt;        self.editor.SetFont(self.fuente)&lt;br&gt;        self.editor.SetBackgroundStyle(True)&lt;br&gt; &lt;br&gt;    def crearMenu(self):  &lt;br&gt;        """ Crea la barra de menú """&lt;br&gt;        marchivo=wx.Menu()&lt;br&gt;        abrir=marchivo.Append(-1, "Abrir\tCtrl-O")&lt;br&gt;        guardar=marchivo.Append(-1, "Guardar\tCtrl-S")&lt;br&gt;        guardarComo=marchivo.Append(-1, "Guardar como")&lt;br&gt;  &lt;br&gt;        meditar=wx.Menu()&lt;br&gt;        copiar=meditar.Append(-1, "Copiar\tCtrl-C")&lt;br&gt;        pegar=meditar.Append(-1, "Pegar\tCtrl-V")&lt;br&gt;  &lt;br&gt;        self.mtema=wx.Menu()&lt;br&gt;        classic=self.mtema.Append(-1, "Classic")&lt;br&gt;        dark=self.mtema.Append(-1, "Dark")&lt;br&gt;        retro=self.mtema.Append(-1, "Retro")&lt;br&gt;        pink=self.mtema.Append(-1, "Pink")&lt;br&gt;  &lt;br&gt;        mayuda=wx.Menu()&lt;br&gt;        ayuda=mayuda.Append(-1, "Ayuda")&lt;br&gt;        acerca=mayuda.Append(-1, "Acerca de...")&lt;br&gt;  &lt;br&gt;        barraMenu=wx.MenuBar()&lt;br&gt;        barraMenu.Append(marchivo, "Archivo")&lt;br&gt;        barraMenu.Append(meditar, "Editar")&lt;br&gt;        barraMenu.Append(self.mtema, "Seleccionar tema")&lt;br&gt;        barraMenu.Append(mayuda, "Ayuda")&lt;br&gt;        self.SetMenuBar(barraMenu)&lt;br&gt;  &lt;br&gt;        # Definición de "eventos"&lt;br&gt;        self.Bind(wx.EVT_MENU, self.abrirArchivo, abrir)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.guardarArchivoComo, guardarComo)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.guardarArchivo, guardar)&lt;br&gt;  &lt;br&gt;        self.Bind(wx.EVT_MENU, self.copiar, copiar)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.pegar, pegar)&lt;br&gt;  &lt;br&gt;        self.Bind(wx.EVT_MENU, self.configurarTema, classic)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.configurarTema, dark)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.configurarTema, retro)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.configurarTema, pink)&lt;br&gt;  &lt;br&gt;        self.Bind(wx.EVT_MENU, self.acerca, acerca)&lt;br&gt;        self.Bind(wx.EVT_MENU, self.ayuda, ayuda)&lt;br&gt;&lt;br&gt;    def abrirArchivo(self, event):&lt;br&gt;        dlg=wx.FileDialog(self, "Abrir archivo", os.getcwd(), style=wx.OPEN)&lt;br&gt;        if dlg.ShowModal() == wx.ID_OK:&lt;br&gt;            try:&lt;br&gt;                fid=open(dlg.GetPath(),'r')&lt;br&gt;                texto=fid.readlines()&lt;br&gt;                self.texto="".join(texto)&lt;br&gt;                self.texto = self.texto.decode("utf8")&lt;br&gt;                fid.close()&lt;br&gt;                self.editor.SetValue(self.texto)&lt;br&gt;                self.archivo=dlg.GetPath()&lt;br&gt;                self.SetTitle("LABTxt "+self.archivo)&lt;br&gt;            except:&lt;br&gt;                wx.MessageBox(u"Archivo no válido","Error")&lt;br&gt;        dlg.Destroy()&lt;br&gt;&lt;br&gt;    def guardarArchivoComo(self, event):&lt;br&gt;        """ Guarda el archivo actual abriendo un cuadro de dialogo """&lt;br&gt;        dlg=wx.FileDialog(self, "Guardar", os.getcwd(), style=wx.SAVE)&lt;br&gt;        if dlg.ShowModal() == wx.ID_OK:&lt;br&gt;            fid=open(dlg.GetPath(),'w')&lt;br&gt;            txt=str(self.editor.GetValue().encode('utf8'))&lt;br&gt;            fid.write(txt)&lt;br&gt;            fid.close()&lt;br&gt;            self.archivo=dlg.GetPath()&lt;br&gt;            self.SetTitle("LABTxt 0.0.1  "+self.archivo)&lt;br&gt;        dlg.Destroy()&lt;br&gt;&lt;br&gt;    def guardarArchivo(self,event):&lt;br&gt;        """ Guarda el archivo actual """&lt;br&gt;        if hasattr(self, 'archivo'):&lt;br&gt;            fid=open(self.archivo,'w')&lt;br&gt;            txt=str(self.editor.GetValue().encode('utf8'))&lt;br&gt;            fid.write(txt)&lt;br&gt;            fid.close()&lt;br&gt;            wx.MessageBox("Hecho","LABTxt")&lt;br&gt;            self.SetTitle("LABTxt 0.0.1  "+self.archivo)&lt;br&gt;        else:&lt;br&gt;            self.guardarArchivoComo(None)&lt;br&gt;&lt;br&gt;    def copiar(self,event):&lt;br&gt;        """ Copia el texto seleccionado al portapapeles """&lt;br&gt;        texto=wx.TextDataObject(self.editor.GetStringSelection())&lt;br&gt;        if wx.TheClipboard.Open():&lt;br&gt;            wx.TheClipboard.SetData(texto)&lt;br&gt;            wx.TheClipboard.Close()&lt;br&gt;&lt;br&gt;    def pegar(self,event):&lt;br&gt;        """ Pega el texto ubicado en el portapapeles """&lt;br&gt;        txt=wx.TextDataObject()&lt;br&gt;        if wx.TheClipboard.Open():&lt;br&gt;            success=wx.TheClipboard.GetData(txt)&lt;br&gt;            wx.TheClipboard.Close()&lt;br&gt;        if success:&lt;br&gt;            self.editor.SetInsertionPoint(self.editor.GetInsertionPoint()) &lt;br&gt;            self.editor.write(txt.GetText())&lt;br&gt; &lt;br&gt;    def configurarTema(self,event):&lt;br&gt;         tema_sel=self.mtema.FindItemById(event.GetId()).GetText()&lt;br&gt;         temas={'Classic':((0,0,255),(255,255,255)),&lt;br&gt;        'Dark':((200,200,200),(0,0,0)),&lt;br&gt;        'Retro':((0,255,0),(0,0,0)),&lt;br&gt;        'Pink':((20,50,50),(250,180,180))}&lt;br&gt;        self.editor.SetForegroundColour(temas[tema_sel][0])&lt;br&gt;        self.editor.SetBackgroundColour(temas[tema_sel][1])&lt;br&gt;        self.editor.Refresh()&lt;br&gt;  &lt;br&gt;    def ayuda(self,event):&lt;br&gt;        wx.MessageBox("No disponible","LABTxt")&lt;br&gt;&lt;br&gt;    def acerca(self, event):&lt;br&gt;        descripcion=""" Editor de texto sin formato desarrollado en&lt;br&gt;        wxPython """&lt;br&gt;        info=wx.AboutDialogInfo()&lt;br&gt;        info.SetName('LABTxt')&lt;br&gt;        info.SetDescription(descripcion)&lt;br&gt;        info.SetVersion('0.0.1')&lt;br&gt;        info.SetLicense('BSD License')&lt;br&gt;        info.SetDevelopers(['Jorge De Los Santos'])&lt;br&gt;        info.SetWebSite(('labdls.blogspot.mx','LAB DLS'))&lt;br&gt;        info.SetCopyright('(c) 2014')&lt;br&gt;        wx.AboutBox(info)&lt;br&gt;&lt;br&gt;if __name__=='__main__':&lt;br&gt;    app = wx.App()&lt;br&gt;    fr = LABTxt(None, "LABTxt 0.0.1")&lt;br&gt;    app.MainLoop()&lt;br&gt;&lt;br&gt;&lt;/pre&gt;&lt;br&gt;&lt;br&gt;</description><category>MiniApps</category><category>wxPython</category><category>wxTextCtrl</category><guid>https://numython.github.io/posts/2016/03/un-mini-editor-de-texto-con-wxpython/</guid><pubDate>Tue, 22 Mar 2016 10:27:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>mathjax</category><category>sympy</category><guid>https://numython.github.io/posts/integrales-con-sympy/</guid><pubDate>Wed, 19 Oct 2016 01:31:20 GMT</pubDate></item><item><title>Almacenando imágenes como código utilizando img2py</title><link>https://numython.github.io/posts/2016/04/almacenando-imagenes-como-codigo/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div style="text-align: justify;"&gt;En esta breve entrada vamos a hablar de cómo utilizar la función &lt;code style="white-space: pre;"&gt;ìmg2py&lt;/code&gt; de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con&lt;code style="white-space: pre;"&gt;PyEmbeddedImage&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;Lo primero que debemos hacer es importar la función del módulo &lt;code style="white-space: pre;"&gt;wx.tools.img2py&lt;/code&gt;:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.tools.img2py &lt;span class="im"&gt;import&lt;/span&gt; img2py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Y posteriormente sólo llamaremos a la función pasando como argumentos el archivo de la imagen y el archivo Python de salida, por ejemplo:&lt;/div&gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;img2py("icono.png", "icono.py")&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Con lo anterior se obtendrá un archivo Python &lt;code style="white-space: pre;"&gt;icono.py&lt;/code&gt; que contiene algo parecido a lo siguiente:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;#----------------------------------------------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;# This file was generated by C:\Users\User\Desktop\LABPro\_blogs_\Posts\test_app.py&lt;/span&gt;&lt;br&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;#&lt;/span&gt;&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.lib.embeddedimage &lt;span class="im"&gt;import&lt;/span&gt; PyEmbeddedImage&lt;br&gt;&lt;br&gt;icono &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; PyEmbeddedImage(&lt;br&gt;    &lt;span class="st" style="color: #4070a0;"&gt;"iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABHNCSVQICAgIfAhkiAAAAAlw"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"SFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoA"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"AABlSURBVCiRY2TAChryGBgYJmKXY2BgwiWBD7D819JqQxfMfHHXZMY7ZdyaGBgYKtEFNdk+"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"4bWJLOeR5ydsgtrsnxiSBe5hiG/9IrX2xR+OD4z/tbT+E20FI6M249Wr1+jnp0GuCQD2OxXd"&lt;/span&gt;&lt;br&gt;    &lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;"g2khLwAAAABJRU5ErkJggg=="&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Luego, ese código generado lo podremos utilizar posteriormente en nuestras aplicaciones, por ejemplo para un icono:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="co" style="color: #60a0b0; font-style: italic;"&gt;# -*- coding:utf-8 -*-&lt;/span&gt;&lt;br&gt;&lt;span class="im"&gt;import&lt;/span&gt; wx&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; icono &lt;span class="im"&gt;import&lt;/span&gt; icono&lt;br&gt;&lt;br&gt;&lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;if&lt;/span&gt; &lt;span class="va" style="color: #19177c;"&gt;__name__&lt;/span&gt;&lt;span class="op" style="color: #666666;"&gt;==&lt;/span&gt;&lt;span class="st" style="color: #4070a0;"&gt;'__main__'&lt;/span&gt;:&lt;br&gt;    app &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; wx.App()&lt;br&gt;    fr &lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt; wx.Frame(&lt;span class="va" style="color: #19177c;"&gt;None&lt;/span&gt;, &lt;span class="op" style="color: #666666;"&gt;-&lt;/span&gt;&lt;span class="dv" style="color: #40a070;"&gt;1&lt;/span&gt;, &lt;span class="st" style="color: #4070a0;"&gt;u"wxPython"&lt;/span&gt;)&lt;br&gt;    fr.SetIcon(icono.GetIcon())&lt;br&gt;    fr.Show()&lt;br&gt;    app.MainLoop()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;strong&gt;&lt;br&gt;&lt;/strong&gt;&lt;strong&gt;¿Y si necesito &lt;em&gt;embeber&lt;/em&gt; varias imágenes en un mismo archivo Python?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Si, es bastante probable que necesite esto, hacer una colección de imagenes embebidas en un mismo archivo Python, la cuestión es muy parecida, sólo tenemos que agregar el &lt;em&gt;keyword argument&lt;/em&gt;&lt;code style="white-space: pre;"&gt;append&lt;/code&gt; a la función &lt;code style="white-space: pre;"&gt;img2py&lt;/code&gt; para evitar que borre lo que se ha colocado anteriormente, un pequeño ejemplo:&lt;/div&gt;&lt;br&gt;&lt;div class="sourceCode"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span class="im"&gt;import&lt;/span&gt; glob&lt;br&gt;&lt;span class="im"&gt;from&lt;/span&gt; wx.tools.img2py &lt;span class="im"&gt;import&lt;/span&gt; img2py&lt;br&gt;&lt;br&gt;&lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;if&lt;/span&gt; &lt;span class="va" style="color: #19177c;"&gt;__name__&lt;/span&gt;&lt;span class="op" style="color: #666666;"&gt;==&lt;/span&gt;&lt;span class="st" style="color: #4070a0;"&gt;'__main__'&lt;/span&gt;:&lt;br&gt;    &lt;span class="cf" style="color: #007020; font-weight: bold;"&gt;for&lt;/span&gt; img &lt;span class="op" style="color: #666666;"&gt;in&lt;/span&gt; glob.glob(&lt;span class="st" style="color: #4070a0;"&gt;"img/*.png"&lt;/span&gt;):&lt;br&gt;        img2py(img,&lt;span class="st" style="color: #4070a0;"&gt;"iconos.py"&lt;/span&gt;, append&lt;span class="op" style="color: #666666;"&gt;=&lt;/span&gt;&lt;span class="va" style="color: #19177c;"&gt;True&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&lt;div style="text-align: justify;"&gt;Lo anterior &lt;em&gt;incrusta&lt;/em&gt; el código correspondiente a todas las imágenes PNG contenidas en la carpeta &lt;code style="white-space: pre;"&gt;img/&lt;/code&gt;.&lt;/div&gt;</description><category>Avanzado</category><category>Imágenes</category><category>wxIcon</category><category>wxPython</category><guid>https://numython.github.io/posts/2016/04/almacenando-imagenes-como-codigo/</guid><pubDate>Fri, 01 Apr 2016 14:15:00 GMT</pubDate></item></channel></rss>
