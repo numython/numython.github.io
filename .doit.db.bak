@@ -377,3 +377,6 @@
 'render_posts:cache\\posts\\graficas-de-pastel-con-matplotlib.html', (2341888, 440)
 'render_sources:output\\posts\\graficas-de-pastel-con-matplotlib\\index.ipynb', (2342400, 300)
 'render_taxonomies:output\\2019\\index.html', (2353152, 2164)
+'render_posts:cache\\posts\\el-ciclo-for.html', (2373120, 376)
+'render_sources:output\\posts\\el-ciclo-for\\index.ipynb', (2373632, 257)
+'render_pages:output\\posts\\el-ciclo-for\\index.html', (2374144, 4911)

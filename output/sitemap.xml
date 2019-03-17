@@ -22,8 +22,12 @@
   <lastmod>2019-03-17T16:36:00Z</lastmod>
  </url>
  <url>
+  <loc>https://numython.github.io/2019/</loc>
+  <lastmod>2019-03-17T18:38:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://numython.github.io/archive.html</loc>
-  <lastmod>2019-03-17T16:54:00Z</lastmod>
+  <lastmod>2019-03-17T18:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
@@ -163,7 +167,7 @@
  </url>
  <url>
   <loc>https://numython.github.io/index-3.html</loc>
-  <lastmod>2019-03-17T16:54:00Z</lastmod>
+  <lastmod>2019-03-17T18:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/2016/01/bienvenidos/</loc>
@@ -272,6 +276,10 @@
  <url>
   <loc>https://numython.github.io/posts/analizando-datos-conacyt/</loc>
   <lastmod>2018-09-11T22:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://numython.github.io/posts/el-ciclo-for/</loc>
+  <lastmod>2019-03-17T18:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/graficas-de-pastel-con-matplotlib/</loc>
