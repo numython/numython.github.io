@@ -22,24 +22,16 @@
   <lastmod>2019-03-17T16:36:00Z</lastmod>
  </url>
  <url>
-  <loc>https://numython.github.io/2019/</loc>
-  <lastmod>2019-03-17T16:36:00Z</lastmod>
- </url>
- <url>
   <loc>https://numython.github.io/archive.html</loc>
   <lastmod>2019-03-17T16:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/</loc>
-  <lastmod>2019-03-17T16:36:00Z</lastmod>
+  <lastmod>2019-03-17T16:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/avanzado/</loc>
   <lastmod>2018-09-11T22:27:00Z</lastmod>
- </url>
- <url>
-  <loc>https://numython.github.io/categories/basico/</loc>
-  <lastmod>2019-03-17T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/categories/cas/</loc>
@@ -288,10 +280,6 @@
  <url>
   <loc>https://numython.github.io/posts/integrales-con-sympy/</loc>
   <lastmod>2018-09-11T22:27:00Z</lastmod>
- </url>
- <url>
-  <loc>https://numython.github.io/posts/los-ciclos-for-en-python/</loc>
-  <lastmod>2019-03-17T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</loc>
