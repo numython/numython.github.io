@@ -1,4 +1,3 @@
-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -10,13 +9,13 @@
 <li>Método analítico</li>
 <li>Utilizando la Pseudoinversa del Jacobiano </li>
 </ol>
-<h2 id="M&#233;todo-geom&#233;trico">M&#233;todo geom&#233;trico<a class="anchor-link" href="#M&#233;todo-geom&#233;trico">&#182;</a></h2><p>El método geométrico, de manera general, consiste en establecer una serie de construcciones geométricas (típicamente triángulos) y mediante relaciones trigonométricas calcular los valores de interés.</p>
+<h2 id="M%C3%A9todo-geom%C3%A9trico">M&#233;todo geom&#233;trico<a class="anchor-link" href="#M%C3%A9todo-geom%C3%A9trico">&#182;</a></h2><p>El método geométrico, de manera general, consiste en establecer una serie de construcciones geométricas (típicamente triángulos) y mediante relaciones trigonométricas calcular los valores de interés.</p>
 <p>De la figura se observa que la distancia $r$ se puede calcular como:</p>
 $$ r = \sqrt{x^2+y^2} $$<p>Además, por ley de cosenos se tiene:</p>
 $$ r^2 = L_1^2 + L_2^2 + 2 L_1 L_2 \cos\theta_2 $$<p>De tal modo que:</p>
 $$ \cos\theta_2 = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2} $$<p>Reescribiendo en términos de la función tangente:</p>
 $$ \theta_2 = \arctan\left(\frac{\sqrt{1-K^2}}{K}\right) \quad \text{donde} \quad K = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$$<p>Para calcular $\theta_1$ se tiene:</p>
-$$ \alpha = \arctan\left(\frac{y}{x}\right) ; \qquad y \qquad \cos\beta = \frac{L_1^2 + r^2 - L_2^2}{2 L_1 r} $$$$ \theta_1 = \alpha - \beta $$<h2 id="M&#233;todo-anal&#237;tico">M&#233;todo anal&#237;tico<a class="anchor-link" href="#M&#233;todo-anal&#237;tico">&#182;</a></h2><p>De la cinemática directa del manipulador RR sabemos que:</p>
+$$ \alpha = \arctan\left(\frac{y}{x}\right) ; \qquad y \qquad \cos\beta = \frac{L_1^2 + r^2 - L_2^2}{2 L_1 r} $$$$ \theta_1 = \alpha - \beta $$<h2 id="M%C3%A9todo-anal%C3%ADtico">M&#233;todo anal&#237;tico<a class="anchor-link" href="#M%C3%A9todo-anal%C3%ADtico">&#182;</a></h2><p>De la cinemática directa del manipulador RR sabemos que:</p>
 $$ x = l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 $$$$ y = l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 $$<p>Elevando al cuadrado cada miembro de las ecuaciones anteriores y sumándolas, se tiene:</p>
 $$ x^2 + y^2 = \left( l_2 \cos(\theta_1 + \theta_2) + l_1 \cos\theta_1 \right)^2 + 
 \left( l_2 \sin(\theta_1 + \theta_2) + l_1 \sin\theta_1 \right)^2 $$<p>Simplificando términos:</p>
@@ -41,5 +40,5 @@ $$ \theta_1 = \arctan\left( \frac{l_2 y \cos\theta_2 + l_1 y - l_2 x \sin\theta_
 </div>
 
 </div>
- 
+
 

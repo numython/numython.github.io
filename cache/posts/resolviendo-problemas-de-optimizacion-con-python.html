@@ -1,4 +1,3 @@
-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16,7 +15,7 @@ $$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#211;ptimo-no-restringido">&#211;ptimo no restringido<a class="anchor-link" href="#&#211;ptimo-no-restringido">&#182;</a></h1><p>Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:</p>
+<h1 id="%C3%93ptimo-no-restringido">&#211;ptimo no restringido<a class="anchor-link" href="#%C3%93ptimo-no-restringido">&#182;</a></h1><p>Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:</p>
 $$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones <code>hessian</code> y <code>zeros</code> del módulo <code>matrices</code>:</p>
 
 </div>
@@ -27,9 +26,9 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$<p>Esto lo podemos calcular utilizando 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="k">import</span> <span class="n">hessian</span><span class="p">,</span> <span class="n">zeros</span>
+<span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">hessian</span><span class="p">,</span> <span class="n">zeros</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">&quot;mathjax&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">varls</span><span class="p">):</span>
@@ -198,7 +197,7 @@ entonces $x^*$ es un mínimo local para la función $f(x)$.</p>
 
 
 <div class="output_latex output_subarea output_execute_result">
-$$\left[\begin{matrix}2.0 & 1\\1 & 2.0\end{matrix}\right]$$
+$$\left[\begin{matrix}2.0 &amp; 1\\1 &amp; 2.0\end{matrix}\right]$$
 </div>
 
 </div>
@@ -303,8 +302,8 @@ $$0.271441761659491$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#211;ptimizaci&#243;n-con-restricciones">&#211;ptimizaci&#243;n con restricciones<a class="anchor-link" href="#&#211;ptimizaci&#243;n-con-restricciones">&#182;</a></h1><p>La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.</p>
-<h2 id="Usando-el-m&#233;todo-gr&#225;fico">Usando el m&#233;todo gr&#225;fico<a class="anchor-link" href="#Usando-el-m&#233;todo-gr&#225;fico">&#182;</a></h2><p>Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.</p>
+<h1 id="%C3%93ptimizaci%C3%B3n-con-restricciones">&#211;ptimizaci&#243;n con restricciones<a class="anchor-link" href="#%C3%93ptimizaci%C3%B3n-con-restricciones">&#182;</a></h1><p>La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.</p>
+<h2 id="Usando-el-m%C3%A9todo-gr%C3%A1fico">Usando el m&#233;todo gr&#225;fico<a class="anchor-link" href="#Usando-el-m%C3%A9todo-gr%C3%A1fico">&#182;</a></h2><p>Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.</p>
 <p>Lo primero que haremos es importar las librerías a utilizar: NumPy y Matplotlib.</p>
 
 </div>
@@ -4440,7 +4439,7 @@ qFhQFEVRFKUs/x+uWxBUtjnoYwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="k">import</span> <span class="n">minimize</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
 
 <span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">v</span> <span class="o">=</span> <span class="mf">0.08</span>
@@ -4525,5 +4524,5 @@ qFhQFEVRFKUs/x+uWxBUtjnoYwAAAABJRU5ErkJggg==
 </div>
 
 </div>
- 
+
 

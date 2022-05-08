@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552847912.1375244
+_modified_time = 1652047798.7264931
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/ui_helper.tmpl'
 _template_uri = 'ui_helper.tmpl'
@@ -18,7 +18,7 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -29,22 +29,22 @@ def render_breadcrumbs(context,crumbs):
     try:
         index_file = context.get('index_file', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\r\n')
         if crumbs:
-            __M_writer('<nav class="breadcrumbs">\n<ul class="breadcrumb">\n')
+            __M_writer('<nav class="breadcrumbs">\r\n<ul class="breadcrumb">\r\n')
             for link, text in crumbs:
                 if text != index_file:
                     if link == '#':
                         __M_writer('                <li>')
                         __M_writer(str(text.rsplit('.html', 1)[0]))
-                        __M_writer('</li>\n')
+                        __M_writer('</li>\r\n')
                     else:
                         __M_writer('                <li><a href="')
                         __M_writer(str(link))
                         __M_writer('">')
                         __M_writer(str(text))
-                        __M_writer('</a></li>\n')
-            __M_writer('</ul>\n</nav>\n')
+                        __M_writer('</a></li>\r\n')
+            __M_writer('</ul>\r\n</nav>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

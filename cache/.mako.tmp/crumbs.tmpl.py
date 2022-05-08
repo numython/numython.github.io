@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552847912.120602
+_modified_time = 1652047798.7214835
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/crumbs.tmpl'
 _template_uri = 'crumbs.tmpl'
@@ -30,8 +30,8 @@ def render_body(context,**pageargs):
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['*'])
         __M_writer = context.writer()
-        __M_writer('\n')
-        __M_writer('\n')
+        __M_writer('\r\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -44,9 +44,9 @@ def render_bar(context,crumbs):
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['*'])
         ui = _mako_get_namespace(context, 'ui')
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\r\n')
         __M_writer(str(ui.breadcrumbs(crumbs)))
-        __M_writer('\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

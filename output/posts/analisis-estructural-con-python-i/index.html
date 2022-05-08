@@ -99,7 +99,7 @@ universitarios de resistencia de materiales se ens">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                     Pedro Jorge De Los Santos
             </span></p>
             <p class="dateline">
@@ -107,8 +107,8 @@ universitarios de resistencia de materiales se ens">
             <time class="published dt-published" datetime="2016-11-11T20:31:20-05:00" itemprop="datePublished" title="2016-11-11 20:31">2016-11-11 20:31</time></a>
             </p>
                 <p class="commentline">
-        
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/analisis-structural-i.html">Comments</a>
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/analisis-structural-i.html">Comentarios</a>
 
 
             
@@ -119,8 +119,7 @@ universitarios de resistencia de materiales se ens">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -320,7 +319,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Utilizando-NuSA:-una-librería-para-análisis-estructural">Utilizando <a href="https://github.com/JorgeDeLosSantos/nusa">NuSA</a>: una librería para análisis estructural<a class="anchor-link" href="#Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural">¶</a>
+<h2 id="Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural">Utilizando <a href="https://github.com/JorgeDeLosSantos/nusa">NuSA</a>: una librería para análisis estructural<a class="anchor-link" href="#Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural">¶</a>
 </h2>
 <p><strong>NuSA</strong> es una librería Python para el análisis estructural, que facilita el planteamiento y la solución de este tipo de análisis mediante una colección de clases que reciben como dato de entrada las características elementales de un modelo: coordenadas modales, propiedades del material, condiciones de frontera, etc., y retorna valores de salida básicos como desplazamientos y fuerzas.</p>
 <p>Para testear las capacidades de <strong>NuSA</strong> vamos a resolver el ejemplo del elemento resorte. Lo primero es importar las clases que usaremos: <code>Node</code>, <code>Spring</code> y <code>SpringModel</code>.</p>
@@ -333,9 +332,9 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="k">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">nusa.element</span> <span class="k">import</span> <span class="n">Spring</span>
-<span class="kn">from</span> <span class="nn">nusa.model</span> <span class="k">import</span> <span class="n">SpringModel</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nusa.core</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">nusa.element</span> <span class="kn">import</span> <span class="n">Spring</span>
+<span class="kn">from</span> <span class="nn">nusa.model</span> <span class="kn">import</span> <span class="n">SpringModel</span>
 </pre></div>
 
     </div>
@@ -547,7 +546,6 @@ Elements: 0
 </div>
 
 </div>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/fea/" rel="tag">fea</a></li>
@@ -563,7 +561,7 @@ Elements: 0
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="jorge-de-los-santos",
@@ -583,7 +581,7 @@ Elements: 0
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -600,7 +598,7 @@ MathJax.Hub.Config({
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2019         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2022         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

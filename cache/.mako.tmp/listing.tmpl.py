@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552847912.1056082
+_modified_time = 1652047798.6948502
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/listing.tmpl'
 _template_uri = 'listing.tmpl'
@@ -32,31 +32,31 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        def content():
-            return render_content(context._locals(__M_locals))
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         ui = _mako_get_namespace(context, 'ui')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         def sourcelink():
             return render_sourcelink(context._locals(__M_locals))
-        code = _import_ns.get('code', context.get('code', UNDEFINED))
-        files = _import_ns.get('files', context.get('files', UNDEFINED))
-        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        code = _import_ns.get('code', context.get('code', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
-        __M_writer('\n')
-        __M_writer('\n')
+        __M_writer('\r\n')
+        __M_writer('\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\n\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'sourcelink'):
             context['self'].sourcelink(**pageargs)
         
 
-        __M_writer('\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -67,48 +67,48 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        ui = _mako_get_namespace(context, 'ui')
+        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        code = _import_ns.get('code', context.get('code', UNDEFINED))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         def content():
             return render_content(context)
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        code = _import_ns.get('code', context.get('code', UNDEFINED))
-        files = _import_ns.get('files', context.get('files', UNDEFINED))
-        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
-        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\r\n')
         __M_writer(str(ui.bar(crumbs)))
-        __M_writer('\n')
+        __M_writer('\r\n')
         if folders or files:
-            __M_writer('<ul>\n')
+            __M_writer('<ul>\r\n')
             for name in folders:
                 __M_writer('    <li><a href="')
                 __M_writer(filters.url_escape(str(name)))
                 __M_writer('"><i class="glyphicon glyphicon-folder-open"></i> ')
                 __M_writer(filters.html_escape(str(name)))
-                __M_writer('</a>\n')
+                __M_writer('</a>\r\n')
             for name in files:
                 __M_writer('    <li><a href="')
                 __M_writer(filters.url_escape(str(name)))
                 __M_writer('.html"><i class="glyphicon glyphicon-file"></i> ')
                 __M_writer(filters.html_escape(str(name)))
-                __M_writer('</a>\n')
-            __M_writer('</ul>\n')
+                __M_writer('</a>\r\n')
+            __M_writer('</ul>\r\n')
         if code:
             __M_writer('<h1>')
             __M_writer(str(title))
-            __M_writer('\n')
+            __M_writer('\r\n')
             if source_link:
                 __M_writer('        <small><a href="')
                 __M_writer(str(source_link))
                 __M_writer('">(')
                 __M_writer(str(messages("Source")))
-                __M_writer(')</a></small>\n')
-            __M_writer('    </h1>\n    ')
+                __M_writer(')</a></small>\r\n')
+            __M_writer('    </h1>\r\n    ')
             __M_writer(str(code))
-            __M_writer('\n')
+            __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -121,16 +121,16 @@ def render_sourcelink(context,**pageargs):
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
         def sourcelink():
             return render_sourcelink(context)
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\r\n')
         if source_link:
-            __M_writer('    <li>\n    <a href="')
+            __M_writer('    <li>\r\n    <a href="')
             __M_writer(str(source_link))
             __M_writer('" id="sourcelink">')
             __M_writer(str(messages("Source")))
-            __M_writer('</a>\n    </li>\n')
+            __M_writer('</a>\r\n    </li>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

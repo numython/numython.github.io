@@ -52,11 +52,9 @@ div.figure > a > img {
 }
 
 blockquote p, blockquote {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.25;
-    border-color: #174456;
-    color: #174456;
+  font-size: 17.5px;
+  font-weight: 300;
+  line-height: 1.25;
 }
 
 ul.bricks > li {

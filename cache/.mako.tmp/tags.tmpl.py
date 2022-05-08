@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552847912.6028242
+_modified_time = 1652047798.6792238
 _enable_loop = True
 _template_filename = 'themes/bootstrap3/templates/tags.tmpl'
 _template_uri = 'tags.tmpl'
@@ -32,33 +32,33 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
-        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
-        def content():
-            return render_content(context._locals(__M_locals))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        items = _import_ns.get('items', context.get('items', UNDEFINED))
-        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        range = _import_ns.get('range', context.get('range', UNDEFINED))
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
-        range = _import_ns.get('range', context.get('range', UNDEFINED))
+        items = _import_ns.get('items', context.get('items', UNDEFINED))
+        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
-        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
-        __M_writer('\n')
-        __M_writer('\n\n')
+        __M_writer('\r\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
             context['self'].extra_head(**pageargs)
         
 
-        __M_writer('\n\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -69,14 +69,14 @@ def render_extra_head(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         def extra_head():
             return render_extra_head(context)
         kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         __M_writer = context.writer()
-        __M_writer('\n    ')
+        __M_writer('\r\n    ')
         __M_writer(str(feeds_translations.head(kind=kind, feeds=False)))
-        __M_writer('\n')
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -87,57 +87,57 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
+        range = _import_ns.get('range', context.get('range', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
         hidden_tags = _import_ns.get('hidden_tags', context.get('hidden_tags', UNDEFINED))
-        def content():
-            return render_content(context)
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        cat_items = _import_ns.get('cat_items', context.get('cat_items', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
         len = _import_ns.get('len', context.get('len', UNDEFINED))
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
-        range = _import_ns.get('range', context.get('range', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         cat_hierarchy = _import_ns.get('cat_hierarchy', context.get('cat_hierarchy', UNDEFINED))
-        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        def content():
+            return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\n<h1>')
+        __M_writer('\r\n<h1>')
         __M_writer(filters.html_escape(str(title)))
-        __M_writer('</h1>\n<div class="metadata">\n    ')
+        __M_writer('</h1>\r\n<div class="metadata">\r\n    ')
         __M_writer(str(feeds_translations.translation_link(kind)))
-        __M_writer('\n</div>\n')
+        __M_writer('\r\n</div>\r\n')
         if cat_items:
             if items:
                 __M_writer('        <h2>')
                 __M_writer(str(messages("Categories")))
-                __M_writer('</h2>\n')
+                __M_writer('</h2>\r\n')
             for text, full_name, path, link, indent_levels, indent_change_before, indent_change_after in cat_hierarchy:
                 for i in range(indent_change_before):
-                    __M_writer('            <ul class="list-inline">\n')
+                    __M_writer('            <ul class="list-inline">\r\n')
                 __M_writer('        <li><a class="reference badge" href="')
                 __M_writer(str(link))
                 __M_writer('">')
                 __M_writer(filters.html_escape(str(text)))
-                __M_writer('</a>\n')
+                __M_writer('</a>\r\n')
                 if indent_change_after <= 0:
-                    __M_writer('            </li>\n')
+                    __M_writer('            </li>\r\n')
                 for i in range(-indent_change_after):
-                    __M_writer('            </ul>\n')
+                    __M_writer('            </ul>\r\n')
                     if i + 1 < len(indent_levels):
-                        __M_writer('                </li>\n')
+                        __M_writer('                </li>\r\n')
             if items:
                 __M_writer('        <h2>')
                 __M_writer(str(messages("Tags")))
-                __M_writer('</h2>\n')
+                __M_writer('</h2>\r\n')
         if items:
-            __M_writer('    <ul class="list-inline">\n')
+            __M_writer('    <ul class="list-inline">\r\n')
             for text, link in items:
                 if text not in hidden_tags:
                     __M_writer('            <li><a class="reference badge" href="')
                     __M_writer(str(link))
                     __M_writer('">')
                     __M_writer(filters.html_escape(str(text)))
-                    __M_writer('</a></li>\n')
-            __M_writer('    </ul>\n')
+                    __M_writer('</a></li>\r\n')
+            __M_writer('    </ul>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
