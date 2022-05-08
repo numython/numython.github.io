@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre optimización)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/optimizacion.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Wed, 12 Dec 2018 15:11:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre optimización)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/optimizacion.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 08 May 2022 22:10:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Resolviendo problemas de optimización con Python</title><link>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;. Se requiere diseñar un contenedor de desechos, cuya forma será la de un prisma rectangular de dimensiones x, y, z como se muestra en la figura. El volumen del contenedor deberá ser de 0.08 $m^3$. Por requerimientos, la altura debe estar en el rango 0.6-0.8 m, y los lados de la base deben medir al menos 0.1 m. Luego, la idea es diseñar el contenedor de tal forma que se utilice la menor cantidad de material posible. Nota: &lt;em&gt;El contenedor está abierto en la parte superior&lt;/em&gt;.&lt;/p&gt;
@@ -16,7 +16,7 @@ $$ g_3(x_1,x_2) = x_1 - 0.1 \geq 0 $$$$ g_4(x_1,x_2) = x_2 - 0.1 \geq 0 $$
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Óptimo-no-restringido"&gt;Óptimo no restringido&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:&lt;/p&gt;
+&lt;h2 id="%C3%93ptimo-no-restringido"&gt;Óptimo no restringido&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimo-no-restringido"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un valor óptimo no restringido puede calcularse mediante herramientas elementales de cálculo variacional. Para obtener un punto crítico se resuelve el sistema de ecuaciones resultante de igualar a cero el gradiente de la función, es decir:&lt;/p&gt;
 $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utilizando SymPy. Importamos la librería y las funciones &lt;code&gt;hessian&lt;/code&gt; y &lt;code&gt;zeros&lt;/code&gt; del módulo &lt;code&gt;matrices&lt;/code&gt;:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -27,9 +27,9 @@ $$ \left[ \vec{\nabla} f \right] = [0] $$&lt;p&gt;Esto lo podemos calcular utili
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;division&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;division&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sym&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.matrices&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;hessian&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;zeros&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy.matrices&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;hessian&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;zeros&lt;/span&gt;
 &lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;init_printing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;use_latex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"mathjax"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;varls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -303,8 +303,8 @@ $$0.271441761659491$$
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Óptimización-con-restricciones"&gt;Óptimización con restricciones&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimizaci%C3%B3n-con-restricciones"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.&lt;/p&gt;
-&lt;h3 id="Usando-el-método-gráfico"&gt;Usando el método gráfico&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Usando-el-m%C3%A9todo-gr%C3%A1fico"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.&lt;/p&gt;
+&lt;h2 id="%C3%93ptimizaci%C3%B3n-con-restricciones"&gt;Óptimización con restricciones&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#%C3%93ptimizaci%C3%B3n-con-restricciones"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La optimización con restricciones implica tomar en cuenta ecuaciones que definen regiones factibles. Uno de los métodos más simples para resolver problemas con restricciones es el método gráfico.&lt;/p&gt;
+&lt;h3 id="Usando-el-m%C3%A9todo-gr%C3%A1fico"&gt;Usando el método gráfico&lt;a class="anchor-link" href="https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/#Usando-el-m%C3%A9todo-gr%C3%A1fico"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Resolver un problema de optimización por el método gráfico implica trazar las gráficas de contorno de la función objetivo, así como las regiones definidas por las restricciones, y luego mediante inspección ubicar el punto que optimice la función objetivo. Claro está que es un método que puede resultar poco preciso, pero normalmente sirve para dar una aproximación aceptable y que pueda utilizarse como punto de entrada para algoritmos numéricos como los que se verán en la siguiente sección.&lt;/p&gt;
 &lt;p&gt;Lo primero que haremos es importar las librerías a utilizar: NumPy y Matplotlib.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -694,7 +694,7 @@ $$0.884167559673693$$
 &lt;div class="prompt input_prompt"&gt;In [153]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.optimize&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;minimize&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.optimize&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;minimize&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.08&lt;/span&gt;
@@ -778,4 +778,4 @@ $$0.884167559673693$$
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>matplotlib</category><category>optimización</category><category>scipy</category><guid>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</guid><pubDate>Sat, 19 Nov 2016 05:34:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>matplotlib</category><category>optimización</category><category>scipy</category><guid>https://numython.github.io/posts/resolviendo-problemas-de-optimizacion-con-python/</guid><pubDate>Sat, 19 Nov 2016 05:34:55 GMT</pubDate></item></channel></rss>

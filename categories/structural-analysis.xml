@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre structural analysis)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/structural-analysis.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Wed, 12 Dec 2018 17:27:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython (Publicaciones sobre structural analysis)</title><link>https://numython.github.io/</link><description></description><atom:link href="https://numython.github.io/categories/structural-analysis.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 08 May 2022 22:10:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Análisis estructural con Python I. Una introducción</title><link>https://numython.github.io/posts/analisis-estructural-con-python-i/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El análisis estructural es uno de los aspectos elementales para aquellos 
@@ -191,7 +191,7 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Utilizando-NuSA:-una-librería-para-análisis-estructural"&gt;Utilizando &lt;a href="https://github.com/JorgeDeLosSantos/nusa"&gt;NuSA&lt;/a&gt;: una librería para análisis estructural&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NuSA&lt;/strong&gt; es una librería Python para el análisis estructural, que facilita el planteamiento y la solución de este tipo de análisis mediante una colección de clases que reciben como dato de entrada las características elementales de un modelo: coordenadas modales, propiedades del material, condiciones de frontera, etc., y retorna valores de salida básicos como desplazamientos y fuerzas.&lt;/p&gt;
+&lt;h2 id="Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural"&gt;Utilizando &lt;a href="https://github.com/JorgeDeLosSantos/nusa"&gt;NuSA&lt;/a&gt;: una librería para análisis estructural&lt;a class="anchor-link" href="https://numython.github.io/posts/analisis-estructural-con-python-i/#Utilizando-NuSA:-una-librer%C3%ADa-para-an%C3%A1lisis-estructural"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NuSA&lt;/strong&gt; es una librería Python para el análisis estructural, que facilita el planteamiento y la solución de este tipo de análisis mediante una colección de clases que reciben como dato de entrada las características elementales de un modelo: coordenadas modales, propiedades del material, condiciones de frontera, etc., y retorna valores de salida básicos como desplazamientos y fuerzas.&lt;/p&gt;
 &lt;p&gt;Para testear las capacidades de &lt;strong&gt;NuSA&lt;/strong&gt; vamos a resolver el ejemplo del elemento resorte. Lo primero es importar las clases que usaremos: &lt;code&gt;Node&lt;/code&gt;, &lt;code&gt;Spring&lt;/code&gt; y &lt;code&gt;SpringModel&lt;/code&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -202,9 +202,9 @@ u_1 \\ u_2 \\ u_3 \\ u_4
 &lt;div class="prompt input_prompt"&gt;In [25]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.core&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Node&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.element&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Spring&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.model&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SpringModel&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.core&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Node&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.element&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Spring&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nusa.model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SpringModel&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -402,4 +402,4 @@ Elements: 0
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>fea</category><category>mathjax</category><category>numpy</category><category>structural analysis</category><guid>https://numython.github.io/posts/analisis-estructural-con-python-i/</guid><pubDate>Sat, 12 Nov 2016 01:31:20 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>fea</category><category>mathjax</category><category>numpy</category><category>structural analysis</category><guid>https://numython.github.io/posts/analisis-estructural-con-python-i/</guid><pubDate>Sat, 12 Nov 2016 01:31:20 GMT</pubDate></item></channel></rss>
