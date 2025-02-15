@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Python para ingenieros">
@@ -8,54 +8,29 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#33642A">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="es" href="rss.xml">
 <link rel="canonical" href="https://numython.github.io/">
 <link rel="icon" href="favicon.ico" sizes="16x16">
 <link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/el-ciclo-for/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1713810997291636" crossorigin="anonymous"></script><link rel="prefetch" href="posts/el-ciclo-for/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
 
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Mostrar navegación</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="https://numython.github.io/">
-                <img src="logo.png" alt="Numython" id="logo"><span id="blog-title">Numython</span>
-            </a>
-        </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="archive.html">Archivo</a>
-                </li>
-<li>
-<a href="stories/nusa/">NuSA</a>
-                </li>
-<li>
-<a href="stories/about/">Acerca de...</a>
-                </li>
-<li>
-<a href="categories/">Etiquetas</a>
-                </li>
-<li>
-<a href="rss.xml">Canal RSS</a>
-
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
                 
-            </li>
-</ul>
-<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
 <div class="form-group">
 <input type="text" name="q" class="form-control" placeholder="Search">
 </div>
@@ -66,42 +41,72 @@
 </form>
 <!-- End of custom search -->
 
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href=".">
+            <img src="logo.png" alt="Numython" id="logo" class="d-inline-block align-top"><span id="blog-title">Numython</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="archive.html" class="nav-link">Archivo</a>
+                </li>
+<li class="nav-item">
+<a href="stories/nusa/" class="nav-link">NuSA</a>
+                </li>
+<li class="nav-item">
+<a href="stories/about/" class="nav-link">Acerca de...</a>
+                </li>
+<li class="nav-item">
+<a href="categories/" class="nav-link">Etiquetas</a>
+                </li>
+<li class="nav-item">
+<a href="rss.xml" class="nav-link">Canal RSS</a>
 
-            <ul class="nav navbar-nav navbar-right"></ul>
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        <div class="row">
-            
-            
+        
+        
+        
+    
+        
 
     
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-ciclo-for/" class="u-url">El ciclo for en Python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+        
+    <div class="postindex">
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/el-ciclo-for/" class="u-url">El ciclo for en Python</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/el-ciclo-for/" rel="bookmark">
             <time class="published dt-published" datetime="2019-03-17T11:57:21-06:00" itemprop="datePublished" title="2019-03-17 11:57">2019-03-17 11:57</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/el-ciclo-for/#disqus_thread" data-disqus-identifier="cache/posts/el-ciclo-for.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -111,7 +116,7 @@
     <span class="c1"># hacer algo</span>
 </pre></div>
 <p>Donde <code>iterable</code> es justamente eso, un iterable de Python que puede ser desde una lista hasta un string. Para la i-ésima iteración la variable de ciclo <code>k</code> adoptará el valor en la i-ésima posición de <code>iterable</code>.</p>
-<p>A continuación vemos un ejemplo muy básico:</p>
+<p>A continuación, vemos un ejemplo muy básico:</p>
 
 </div>
 </div>
@@ -560,25 +565,25 @@ La nota en posición 5 es: 7
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/graficas-de-pastel-con-matplotlib/" class="u-url">Gráficas de pastel con Matplotlib</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/graficas-de-pastel-con-matplotlib/" class="u-url">Gráficas de pastel con Matplotlib</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/graficas-de-pastel-con-matplotlib/" rel="bookmark">
             <time class="published dt-published" datetime="2018-12-12T23:26:55-06:00" itemprop="datePublished" title="2018-12-12 23:26">2018-12-12 23:26</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/graficas-de-pastel-con-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/graficas-de-pastel-con-matplotlib.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -916,25 +921,25 @@ La nota en posición 5 es: 7
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt-investigadores/" class="u-url">Analizando datos del CONACYT: De los investigadores</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/analizando-datos-conacyt-investigadores/" rel="bookmark">
             <time class="published dt-published" datetime="2017-01-02T20:31:20-05:00" itemprop="datePublished" title="2017-01-02 20:31">2017-01-02 20:31</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/analizando-datos-conacyt-investigadores/#disqus_thread" data-disqus-identifier="cache/posts/analizando-datos-conacyt-investigadores.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1715,28 +1720,25 @@ La nota en posición 5 es: 7
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt/" class="u-url">Analizando datos del CONACYT: De los becarios nacionales</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analizando-datos-conacyt/" class="u-url">Analizando datos del CONACYT: De los becarios nacionales</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/analizando-datos-conacyt/" rel="bookmark">
             <time class="published dt-published" datetime="2017-01-01T20:31:20-05:00" itemprop="datePublished" title="2017-01-01 20:31">2017-01-01 20:31</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/analizando-datos-conacyt/#disqus_thread" data-disqus-identifier="cache/posts/analizando-datos-conacyt.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -1757,9 +1759,9 @@ La nota en posición 5 es: 7
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"ggplot"</span><span class="p">)</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'xtick.labelsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span> 
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'ytick.labelsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span> 
@@ -1770,7 +1772,7 @@ La nota en posición 5 es: 7
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1780,7 +1782,7 @@ La nota en posición 5 es: 7
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Por-género">Por género<a class="anchor-link" href="posts/analizando-datos-conacyt/#Por-g%C3%A9nero">¶</a>
+<h3 id="Por-g%C3%A9nero">Por género<a class="anchor-link" href="posts/analizando-datos-conacyt/#Por-g%C3%A9nero">¶</a>
 </h3>
 </div>
 </div>
@@ -1791,11 +1793,11 @@ La nota en posición 5 es: 7
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">genero</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Genero'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Mujeres: {0}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">"F"</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Hombres: {0}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">"M"</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mujeres: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">"F"</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hombres: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">genero</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">"M"</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1805,7 +1807,7 @@ La nota en posición 5 es: 7
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1841,7 +1843,7 @@ Hombres: 12646
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1851,7 +1853,7 @@ Hombres: 12646
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1871,7 +1873,7 @@ Hombres: 12646
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Áreas-de-conocimientos">Áreas de conocimientos<a class="anchor-link" href="posts/analizando-datos-conacyt/#%C3%81reas-de-conocimientos">¶</a>
+<h3 id="%C3%81reas-de-conocimientos">Áreas de conocimientos<a class="anchor-link" href="posts/analizando-datos-conacyt/#%C3%81reas-de-conocimientos">¶</a>
 </h3>
 </div>
 </div>
@@ -1888,7 +1890,7 @@ Hombres: 12646
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1898,7 +1900,7 @@ Hombres: 12646
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1936,7 +1938,7 @@ Hombres: 12646
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1946,7 +1948,7 @@ Hombres: 12646
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1969,7 +1971,7 @@ Hombres: 12646
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'Nivel'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1979,7 +1981,7 @@ Hombres: 12646
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -1997,30 +1999,38 @@ Name: Nivel, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
     </div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/maximos-y-minimos-de-una-funcion/" class="u-url">Máximos y mínimos de una función</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+</div>
+</div>
+
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/maximos-y-minimos-de-una-funcion/" class="u-url">Máximos y mínimos de una función</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/maximos-y-minimos-de-una-funcion/" rel="bookmark">
             <time class="published dt-published" datetime="2016-12-17T10:38:20-06:00" itemprop="datePublished" title="2016-12-17 10:38">2016-12-17 10:38</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/maximos-y-minimos-de-una-funcion/#disqus_thread" data-disqus-identifier="cache/posts/maximos-y-minimos-de-una-funcion.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -2049,7 +2059,7 @@ Name: Nivel, dtype: int64</pre>
 <span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2072,7 +2082,7 @@ Name: Nivel, dtype: int64</pre>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2097,7 +2107,7 @@ Name: Nivel, dtype: int64</pre>
 <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2107,7 +2117,7 @@ Name: Nivel, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -2141,7 +2151,7 @@ $$\left ( 3 x^{2} - 1, \quad 6 x\right )$$
 <span class="n">pc</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2151,7 +2161,7 @@ $$\left ( 3 x^{2} - 1, \quad 6 x\right )$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -2184,7 +2194,7 @@ $$\left [ - \frac{\sqrt{3}}{3}, \quad \frac{\sqrt{3}}{3}\right ]$$
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">d2f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Primer punto crítico</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2194,7 +2204,7 @@ $$\left [ - \frac{\sqrt{3}}{3}, \quad \frac{\sqrt{3}}{3}\right ]$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -2217,7 +2227,7 @@ $$- 2 \sqrt{3}$$
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">d2f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Segundo punto crítico</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2227,7 +2237,7 @@ $$- 2 \sqrt{3}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -2260,7 +2270,7 @@ $$2 \sqrt{3}$$
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2270,7 +2280,7 @@ $$2 \sqrt{3}$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2283,7 +2293,7 @@ $$2 \sqrt{3}$$
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -2325,10 +2335,10 @@ $$2 \sqrt{3}$$
             <span class="n">tipo</span><span class="o">=</span><span class="s2">"Max"</span>
         <span class="k">else</span><span class="p">:</span> 
             <span class="n">tipo</span><span class="o">=</span><span class="s2">"Indefinido"</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">%f</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">tipo</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">%f</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">tipo</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2341,7 +2351,7 @@ $$2 \sqrt{3}$$
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">maxminf</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2351,7 +2361,7 @@ $$2 \sqrt{3}$$
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2375,27 +2385,25 @@ x = 0.577350 (Min)
 </div>
 </div>
 </div>
-    </div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/wxdx-una-gui-para-calculo-elemental/" class="u-url">wxdx, una GUI para cálculo elemental</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/wxdx-una-gui-para-calculo-elemental/" class="u-url">wxdx, una GUI para cálculo elemental</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/wxdx-una-gui-para-calculo-elemental/" rel="bookmark">
             <time class="published dt-published" datetime="2016-12-12T16:25:00-06:00" itemprop="datePublished" title="2016-12-12 16:25">2016-12-12 16:25</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/wxdx-una-gui-para-calculo-elemental/#disqus_thread" data-disqus-identifier="cache/posts/wxdx-una-gui-para-calculo-elemental.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <p>En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
+            </header><div class="e-content entry-content">
+                    <p>En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
 (véase <a href="https://numython.github.io/categories/wxpython/">aquí</a>). En este post vamos a presentar el 
 desarrollo de una mini-aplicación que calcula límites, derivadas e integrales utilizando SymPy como 
 motor de cálculo simbólico.</p>
@@ -2753,25 +2761,25 @@ if __name__=='__main__':
 </pre>
 </noscript>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/resolviendo-problemas-de-optimizacion-con-python/" class="u-url">Resolviendo problemas de optimización con Python</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/resolviendo-problemas-de-optimizacion-con-python/" rel="bookmark">
             <time class="published dt-published" datetime="2016-11-18T23:34:55-06:00" itemprop="datePublished" title="2016-11-18 23:34">2016-11-18 23:34</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/resolviendo-problemas-de-optimizacion-con-python/#disqus_thread" data-disqus-identifier="cache/posts/resolviendo-problemas-de-optimizacion-con-python.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -3597,25 +3605,25 @@ $$0.884167559673693$$
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/analisis-estructural-con-python-i/" class="u-url">Análisis estructural con Python I. Una introducción</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/analisis-estructural-con-python-i/" rel="bookmark">
             <time class="published dt-published" datetime="2016-11-11T20:31:20-05:00" itemprop="datePublished" title="2016-11-11 20:31">2016-11-11 20:31</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/analisis-estructural-con-python-i/#disqus_thread" data-disqus-identifier="cache/posts/analisis-structural-i.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4042,25 +4050,25 @@ Elements: 0
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Calculando integrales con Python y SymPy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/integrales-con-sympy/" class="u-url">Calculando integrales con Python y SymPy</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/integrales-con-sympy/" rel="bookmark">
             <time class="published dt-published" datetime="2016-10-18T20:31:20-05:00" itemprop="datePublished" title="2016-10-18 20:31">2016-10-18 20:31</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/integrales-con-sympy/#disqus_thread" data-disqus-identifier="cache/posts/integrales-con-sympy.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div class="cell border-box-sizing text_cell rendered">
+            </header><div class="e-content entry-content">
+                    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -4431,25 +4439,25 @@ $$\left(a - b\right) \left(c - d\right)$$
 </div>
 
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" class="u-url">Almacenando imágenes como código utilizando img2py</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Pedro Jorge De Los Santos
-            </span></p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2016/04/almacenando-imagenes-como-codigo/" class="u-url">Almacenando imágenes como código utilizando img2py</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Pedro Jorge De Los Santos
+                    </span></p>
             <p class="dateline">
             <a href="posts/2016/04/almacenando-imagenes-como-codigo/" rel="bookmark">
             <time class="published dt-published" datetime="2016-04-01T08:15:00-06:00" itemprop="datePublished" title="2016-04-01 08:15">2016-04-01 08:15</time></a>
             </p>
-                <p class="commentline">
+                        <p class="commentline">
     
     <a href="posts/2016/04/almacenando-imagenes-como-codigo/#disqus_thread" data-disqus-identifier="cache/posts/2016/04/almacenando-imagenes-como-codigo.html">Comentarios</a>
 
 
-        </p>
+                </p>
 </div>
-    </header><div class="e-content entry-content">
-    <div style="text-align: justify;">En esta breve entrada vamos a hablar de cómo utilizar la función <code style="white-space: pre;">ìmg2py</code> de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con<code style="white-space: pre;">PyEmbeddedImage</code>.<br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"></a></div>
+            </header><div class="e-content entry-content">
+                    <div style="text-align: justify;">En esta breve entrada vamos a hablar de cómo utilizar la función <code style="white-space: pre;">ìmg2py</code> de wxPython, para generar códigos a partir de imágenes, y posteriormente poder utilizarlas en conjunto con<code style="white-space: pre;">PyEmbeddedImage</code>.<br><br><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s1600/img_01.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="113" src="https://3.bp.blogspot.com/-GNkXb7B7Fz4/Vv4wXGbxfmI/AAAAAAAAB-I/LRZOGisJ2p0Aohh7P_4CbgbaWaSpCdT1A/s400/img_01.png" width="400"></a></div>
 <br><br>
 </div>
 <div style="text-align: justify;">Lo primero que debemos hacer es importar la función del módulo <code style="white-space: pre;">wx.tools.img2py</code>:</div>
@@ -4463,15 +4471,14 @@ $$\left(a - b\right) \left(c - d\right)$$
 <strong><br></strong><strong>¿Y si necesito <em>embeber</em> varias imágenes en un mismo archivo Python?</strong><br><br><div style="text-align: justify;">Si, es bastante probable que necesite esto, hacer una colección de imagenes embebidas en un mismo archivo Python, la cuestión es muy parecida, sólo tenemos que agregar el <em>keyword argument</em><code style="white-space: pre;">append</code> a la función <code style="white-space: pre;">img2py</code> para evitar que borre lo que se ha colocado anteriormente, un pequeño ejemplo:</div>
 <br><div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob<br><span class="im">from</span> wx.tools.img2py <span class="im">import</span> img2py<br><br><span class="cf" style="color: #007020; font-weight: bold;">if</span> <span class="va" style="color: #19177c;">__name__</span><span class="op" style="color: #666666;">==</span><span class="st" style="color: #4070a0;">'__main__'</span>:<br><span class="cf" style="color: #007020; font-weight: bold;">for</span> img <span class="op" style="color: #666666;">in</span> glob.glob(<span class="st" style="color: #4070a0;">"img/*.png"</span>):<br>        img2py(img,<span class="st" style="color: #4070a0;">"iconos.py"</span>, append<span class="op" style="color: #666666;">=</span><span class="va" style="color: #19177c;">True</span>)</code></pre></div>
 <br><div style="text-align: justify;">Lo anterior <em>incrusta</em> el código correspondiente a todas las imágenes PNG contenidas en la carpeta <code style="white-space: pre;">img/</code>.</div>
-    </div>
-    </article>
+                </div>
+            </article>
 </div>
-
-        <nav class="postindexpager"><ul class="pager">
-<li class="next">
-                <a href="index-3.html" rel="next">Publicaciones anteriores</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+    
+        <ul class="pager postindexpager clearfix">
+<li class="next"><a href="index-3.html" rel="next">Publicaciones anteriores</a></li>
+        </ul>
+<script>var disqus_shortname="jorge-de-los-santos";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -4483,27 +4490,19 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer">
-            Contents © 2022         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+</script><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:delossantosmfq@gmail.com">Pedro Jorge De Los Santos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
             
         </footer>
 </div>
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("es");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+        <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 "
 <!-- Start of StatCounter Code for Default Guide -->
@@ -4521,6 +4520,7 @@ analytics"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
 <a href="http://statcounter.com/p11220435/?guest=1">View My
 Stats</a>
+
 
 
 </body>

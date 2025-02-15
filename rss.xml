@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 08 May 2022 22:10:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>El ciclo for en Python</title><link>https://numython.github.io/posts/el-ciclo-for/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numython</title><link>https://numython.github.io/</link><description>Python para ingenieros</description><atom:link href="https://numython.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sat, 15 Feb 2025 23:24:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>El ciclo for en Python</title><link>https://numython.github.io/posts/el-ciclo-for/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;El ciclo &lt;code&gt;for&lt;/code&gt; es una estructura cíclica cuya finalidad es ejecutar un código una cierta cantidad de veces. De manera general, en Python, la sintaxis de &lt;code&gt;for&lt;/code&gt; es:&lt;/p&gt;
@@ -7,7 +7,7 @@
     &lt;span class="c1"&gt;# hacer algo&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Donde &lt;code&gt;iterable&lt;/code&gt; es justamente eso, un iterable de Python que puede ser desde una lista hasta un string. Para la i-ésima iteración la variable de ciclo &lt;code&gt;k&lt;/code&gt; adoptará el valor en la i-ésima posición de &lt;code&gt;iterable&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;A continuación vemos un ejemplo muy básico:&lt;/p&gt;
+&lt;p&gt;A continuación, vemos un ejemplo muy básico:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1510,12 +1510,8 @@ La nota en posición 5 es: 7
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</description><category>conacyt</category><category>pandas</category><category>python</category><guid>https://numython.github.io/posts/analizando-datos-conacyt-investigadores/</guid><pubDate>Tue, 03 Jan 2017 01:31:20 GMT</pubDate></item><item><title>Analizando datos del CONACYT: De los becarios nacionales</title><link>https://numython.github.io/posts/analizando-datos-conacyt/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;</description><category>conacyt</category><category>pandas</category><category>python</category><guid>https://numython.github.io/posts/analizando-datos-conacyt-investigadores/</guid><pubDate>Tue, 03 Jan 2017 01:31:20 GMT</pubDate></item><item><title>Analizando datos del CONACYT: De los becarios nacionales</title><link>https://numython.github.io/posts/analizando-datos-conacyt/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;En este pequeño post vamos a &lt;em&gt;analizar&lt;/em&gt; (en realidad no, sólo a trazar grafiquitas con algunos datos de interés) datos del Consejo Nacional de Ciencia y Tecnología (CONACYT), que hasta hace unos días me listaba entre sus becarios nacionales. Pero bueno, ¿qué es el CONACYT?, según &lt;a href="https://es.wikipedia.org/wiki/Consejo_Nacional_de_Ciencia_y_Tecnolog%C3%ADa_(M%C3%A9xico"&gt;wikipedia:&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;El Consejo Nacional de Ciencia y Tecnología (Conacyt) es un organismo público descentralizado del gobierno federal mexicano dedicado a promover y estimular el desarrollo de la ciencia y la tecnología en ese país. Tiene la responsabilidad oficial para elaborar las políticas de ciencia y tecnología nacionales.&lt;/p&gt;
@@ -1532,9 +1528,9 @@ La nota en posición 5 es: 7
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mpl&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mpl&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"ggplot"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;mpl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'xtick.labelsize'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; 
 &lt;span class="n"&gt;mpl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'ytick.labelsize'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; 
@@ -1545,16 +1541,15 @@ La nota en posición 5 es: 7
 &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Por-género"&gt;Por género&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#Por-g%C3%A9nero"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Por-g%C3%A9nero"&gt;Por género&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#Por-g%C3%A9nero"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1564,11 +1559,11 @@ La nota en posición 5 es: 7
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;genero&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Genero'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value_counts&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Mujeres: {0}"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genero&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_value&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"F"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Hombres: {0}"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genero&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_value&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"M"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Mujeres: &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genero&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_value&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"F"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Hombres: &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genero&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_value&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"M"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1578,7 +1573,7 @@ La nota en posición 5 es: 7
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1593,8 +1588,7 @@ Hombres: 12646
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Por-estados"&gt;Por estados&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#Por-estados"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
@@ -1612,7 +1606,7 @@ Hombres: 12646
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1622,7 +1616,7 @@ Hombres: 12646
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1638,10 +1632,9 @@ Hombres: 12646
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Áreas-de-conocimientos"&gt;Áreas de conocimientos&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#%C3%81reas-de-conocimientos"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="%C3%81reas-de-conocimientos"&gt;Áreas de conocimientos&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#%C3%81reas-de-conocimientos"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1657,7 +1650,7 @@ Hombres: 12646
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1667,7 +1660,7 @@ Hombres: 12646
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1683,8 +1676,7 @@ Hombres: 12646
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Por-instituciones"&gt;Por instituciones&lt;a class="anchor-link" href="https://numython.github.io/posts/analizando-datos-conacyt/#Por-instituciones"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
@@ -1703,7 +1695,7 @@ Hombres: 12646
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1713,7 +1705,7 @@ Hombres: 12646
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1736,7 +1728,7 @@ Hombres: 12646
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Nivel'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value_counts&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1746,7 +1738,7 @@ Hombres: 12646
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[31]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[31]:&lt;/div&gt;
 
 
 
@@ -1764,13 +1756,20 @@ Name: Nivel, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</description><category>conacyt</category><category>pandas</category><category>python</category><guid>https://numython.github.io/posts/analizando-datos-conacyt/</guid><pubDate>Mon, 02 Jan 2017 01:31:20 GMT</pubDate></item><item><title>Máximos y mínimos de una función</title><link>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</description><category>conacyt</category><category>pandas</category><category>python</category><guid>https://numython.github.io/posts/analizando-datos-conacyt/</guid><pubDate>Mon, 02 Jan 2017 01:31:20 GMT</pubDate></item><item><title>Máximos y mínimos de una función</title><link>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Supongamos que en $x=x_1$ la derivada de la función $y=f(x)$ se reduce a cero, es decir, $f'(x)=0$. Admitamos, además que existe la segunda derivada, $f''(x)$, y es continua sobre cierta vecindad del punto $x_1$. Para este caso es válido el siguiente teorema:&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Teorema 1.&lt;/strong&gt; Si $f'(x_1)=0$, entonces en $x=x_1$ la función tiene máximo cuando $f''(x_1)&amp;lt;0$, y, un mínimo cuando $f''(x_1)&amp;gt;0$.&lt;/p&gt;
@@ -1795,14 +1794,13 @@ Name: Nivel, dtype: int64&lt;/pre&gt;
 &lt;span class="n"&gt;init_printing&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Definimos la función con la cual operaremos:&lt;/p&gt;
 
@@ -1817,14 +1815,13 @@ Name: Nivel, dtype: int64&lt;/pre&gt;
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Acto seguido, calculamos la primera y segunda derivada de $f(x)$ mediante la función &lt;code&gt;diff&lt;/code&gt;:&lt;/p&gt;
 
@@ -1841,7 +1838,7 @@ Name: Nivel, dtype: int64&lt;/pre&gt;
 &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;d2f&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1851,7 +1848,7 @@ Name: Nivel, dtype: int64&lt;/pre&gt;
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[49]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[49]:&lt;/div&gt;
 
 
 
@@ -1867,8 +1864,7 @@ $$\left ( 3 x^{2} - 1, \quad 6 x\right )$$
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Los puntos críticos los calculamos resolviendo la ecuación $f'(x)=0$&lt;/p&gt;
 
@@ -1884,7 +1880,7 @@ $$\left ( 3 x^{2} - 1, \quad 6 x\right )$$
 &lt;span class="n"&gt;pc&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1894,7 +1890,7 @@ $$\left ( 3 x^{2} - 1, \quad 6 x\right )$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[50]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[50]:&lt;/div&gt;
 
 
 
@@ -1910,8 +1906,7 @@ $$\left [ - \frac{\sqrt{3}}{3}, \quad \frac{\sqrt{3}}{3}\right ]$$
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Para determinar si se trata de un mínimo o máximo, utilizamos el criterio de la segunda derivada, sustituyendo los puntos críticos en $f''(x)$, es decir:&lt;/p&gt;
 
@@ -1926,7 +1921,7 @@ $$\left [ - \frac{\sqrt{3}}{3}, \quad \frac{\sqrt{3}}{3}\right ]$$
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;d2f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# Primer punto crítico&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1936,7 +1931,7 @@ $$\left [ - \frac{\sqrt{3}}{3}, \quad \frac{\sqrt{3}}{3}\right ]$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[51]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[51]:&lt;/div&gt;
 
 
 
@@ -1959,7 +1954,7 @@ $$- 2 \sqrt{3}$$
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;d2f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# Segundo punto crítico&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1969,7 +1964,7 @@ $$- 2 \sqrt{3}$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[52]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[52]:&lt;/div&gt;
 
 
 
@@ -1985,8 +1980,7 @@ $$2 \sqrt{3}$$
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Con esto determinamos, acorde al teorema 1, que el primer punto crítico $\left(\frac{-\sqrt{3}}{3}\right)$ es un mínimo y el segundo $\left(\frac{\sqrt{3}}{3}\right)$ un máximo. Podemos comprobarlo trazando la gráfica correspondiente:&lt;/p&gt;
 
@@ -2001,7 +1995,7 @@ $$2 \sqrt{3}$$
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2011,7 +2005,7 @@ $$2 \sqrt{3}$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -2024,7 +2018,7 @@ $$2 \sqrt{3}$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt output_prompt"&gt;Out[54]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[54]:&lt;/div&gt;
 
 
 
@@ -2040,8 +2034,7 @@ $$2 \sqrt{3}$$
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Podemos &lt;em&gt;automatizar&lt;/em&gt; un poco este proceso definiendo una función que realice el procedimiento descrito.&lt;/p&gt;
 
@@ -2065,10 +2058,10 @@ $$2 \sqrt{3}$$
             &lt;span class="n"&gt;tipo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Max"&lt;/span&gt;
         &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
             &lt;span class="n"&gt;tipo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Indefinido"&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"x = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt; (&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;tipo&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"x = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt; (&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;tipo&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2081,7 +2074,7 @@ $$2 \sqrt{3}$$
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;maxminf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2091,7 +2084,7 @@ $$2 \sqrt{3}$$
 
 &lt;div class="output_area"&gt;
 
-&lt;div class="prompt"&gt;&lt;/div&gt;
+    &lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -2106,16 +2099,13 @@ x = 0.577350 (Min)
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;La función anterior puede arrojar errores cuando se tienen raíces complejas, lo cual podría considerarse mediante una estructura try-except o bien verificando si el punto crítico es un valor real.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</description><guid>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</guid><pubDate>Sat, 17 Dec 2016 16:38:20 GMT</pubDate></item><item><title>wxdx, una GUI para cálculo elemental</title><link>https://numython.github.io/posts/wxdx-una-gui-para-calculo-elemental/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;p&gt;En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
+&lt;/div&gt;</description><guid>https://numython.github.io/posts/maximos-y-minimos-de-una-funcion/</guid><pubDate>Sat, 17 Dec 2016 16:38:20 GMT</pubDate></item><item><title>wxdx, una GUI para cálculo elemental</title><link>https://numython.github.io/posts/wxdx-una-gui-para-calculo-elemental/</link><dc:creator>Pedro Jorge De Los Santos</dc:creator><description>&lt;p&gt;En este blog ya hemos tratado algunas veces cómo desarrollar interfaces gráficas utilizando wxPython 
 (véase &lt;a href="https://numython.github.io/categories/wxpython/"&gt;aquí&lt;/a&gt;). En este post vamos a presentar el 
 desarrollo de una mini-aplicación que calcula límites, derivadas e integrales utilizando SymPy como 
 motor de cálculo simbólico.&lt;/p&gt;
