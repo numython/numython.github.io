@@ -188,7 +188,6 @@ article.post-micro {
     overflow-x: scroll;
 }
 
-
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
     *, *:before, *:after {
@@ -217,5 +216,3 @@ article.post-micro {
         display: none;
     }
 }
-
-

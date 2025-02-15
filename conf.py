@@ -140,7 +140,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "bootblog4"
 # ~ THEME = "material-theme"
 
 # Primary color of your theme. This will be used to customize your theme and
@@ -1113,7 +1113,10 @@ SEARCH_FORM = """
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = """
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1713810997291636"
+     crossorigin="anonymous"></script>
+"""
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
@@ -1137,6 +1140,7 @@ analytics"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
 <a href="http://statcounter.com/p11220435/?guest=1">View My
 Stats</a>
+
 """
 
 # The possibility to extract metadata from the filename by using a
