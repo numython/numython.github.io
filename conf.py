@@ -140,7 +140,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "bootstrap4"
 # ~ THEME = "material-theme"
 
 # Primary color of your theme. This will be used to customize your theme and
