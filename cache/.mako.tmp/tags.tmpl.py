@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1739674330.7416444
+_modified_time = 1746211367.2989712
 _enable_loop = True
-_template_filename = 'C:/Users/delos/anaconda3/lib/site-packages/nikola/data/themes/bootstrap4/templates/tags.tmpl'
+_template_filename = 'C:/Users/delos/OneDrive/Documentos/Blogs/nikola-venv/Lib/site-packages/nikola/data/themes/bootstrap4/templates/tags.tmpl'
 _template_uri = 'tags.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['content']
@@ -28,15 +28,15 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
+        hidden_tags = context.get('hidden_tags', UNDEFINED)
+        range = context.get('range', UNDEFINED)
+        items = context.get('items', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
-        cat_items = context.get('cat_items', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        items = context.get('items', UNDEFINED)
-        range = context.get('range', UNDEFINED)
-        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
         len = context.get('len', UNDEFINED)
-        hidden_tags = context.get('hidden_tags', UNDEFINED)
+        cat_items = context.get('cat_items', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n\n')
@@ -53,15 +53,15 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
+        hidden_tags = context.get('hidden_tags', UNDEFINED)
+        range = context.get('range', UNDEFINED)
+        items = context.get('items', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         def content():
             return render_content(context)
-        cat_items = context.get('cat_items', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
-        items = context.get('items', UNDEFINED)
-        range = context.get('range', UNDEFINED)
-        cat_hierarchy = context.get('cat_hierarchy', UNDEFINED)
         len = context.get('len', UNDEFINED)
-        hidden_tags = context.get('hidden_tags', UNDEFINED)
+        cat_items = context.get('cat_items', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<h1>')
@@ -110,6 +110,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/delos/anaconda3/lib/site-packages/nikola/data/themes/bootstrap4/templates/tags.tmpl", "uri": "tags.tmpl", "source_encoding": "utf-8", "line_map": {"27": 0, "42": 2, "47": 38, "53": 4, "67": 4, "68": 5, "69": 5, "70": 6, "72": 7, "73": 8, "74": 8, "75": 8, "76": 10, "78": 11, "79": 12, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 15, "86": 16, "87": 18, "88": 19, "89": 20, "90": 21, "91": 25, "92": 26, "93": 26, "94": 26, "95": 29, "96": 30, "97": 31, "99": 32, "100": 33, "101": 33, "102": 33, "103": 33, "104": 33, "105": 36, "111": 105}}
+{"filename": "C:/Users/delos/OneDrive/Documentos/Blogs/nikola-venv/Lib/site-packages/nikola/data/themes/bootstrap4/templates/tags.tmpl", "uri": "tags.tmpl", "source_encoding": "utf-8", "line_map": {"27": 0, "42": 2, "47": 38, "53": 4, "67": 4, "68": 5, "69": 5, "70": 6, "72": 7, "73": 8, "74": 8, "75": 8, "76": 10, "78": 11, "79": 12, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 15, "86": 16, "87": 18, "88": 19, "89": 20, "90": 21, "91": 25, "92": 26, "93": 26, "94": 26, "95": 29, "96": 30, "97": 31, "99": 32, "100": 33, "101": 33, "102": 33, "103": 33, "104": 33, "105": 36, "111": 105}}
 __M_END_METADATA
 """
