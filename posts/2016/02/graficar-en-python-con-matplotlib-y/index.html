@@ -140,8 +140,9 @@ bg-dark
 <br><i>Agregando rejilla</i><br><br>Para agregar una rejilla debe incluirse la instrucción grid() como se muestra:<br><br><pre class="brush: python">plt.grid()<br></pre>
 <br><br><b><span style="font-size: large;">Mostrar más de una gráfica</span></b><br><br>Para mostrar más de una gráfica en la misma ventana, utilice hold(True) después de haber creado la primer gráfica o bien antes de ella, tal como se muestra en el código siguiente:<br><br><pre class="brush: python">import matplotlib.pyplot as plt<br>import numpy as np<br><br>x = np.arange(0,10,0.2)<br>y1 = np.cos(x)<br>y2 = np.sin(x)<br><br>plt.plot(x,y1,'o',linewidth=3,color=(0.2,0.1,0.4))<br>plt.hold(True)<br>plt.plot(x,y2,'-',linewidth=2,color='g')<br>plt.grid()<br>plt.axis('equal')<br>plt.xlabel('x')<br>plt.ylabel('y')<br>plt.title('Lab DLS')<br>plt.show()<br></pre>
 <br><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="270" src="https://3.bp.blogspot.com/-zLEWNeou8Ck/UxwGMYIi3wI/AAAAAAAABE0/m1tXOSZnuOM/s1600/graph2.PNG" width="320"></a></div>
-<br><br><br>
-Para una referencia más completa y actualizada acerca de gráficas en Matplotlib puedes visitar el siguiente link: <a href="https://jorgedelossantos.github.io/apuntes-python/Matplotlib.html">https://jorgedelossantos.github.io/apuntes-python/Matplotlib.html</a>
+<br><br><br><div style="background-color: rgba(255, 238, 0, 0.833); border-radius: 5px; padding: 10px;">
+    Para una referencia más completa y actualizada acerca de gráficas en Matplotlib puedes visitar el siguiente link: <a href="https://jorgedelossantos.github.io/apuntes-python/Matplotlib.html">https://jorgedelossantos.github.io/apuntes-python/Matplotlib.html</a>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../categories/matplotlib/" rel="tag">matplotlib</a></li>
